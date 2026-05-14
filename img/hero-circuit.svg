@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600" opacity="0.18">
+  <!-- Grid lines horizontal -->
+  <line x1="0" y1="80" x2="1200" y2="80" stroke="#0a84ff" stroke-width="0.5" opacity="0.4"/>
+  <line x1="0" y1="200" x2="1200" y2="200" stroke="#0a84ff" stroke-width="0.5" opacity="0.3"/>
+  <line x1="0" y1="320" x2="1200" y2="320" stroke="#0a84ff" stroke-width="0.5" opacity="0.4"/>
+  <line x1="0" y1="440" x2="1200" y2="440" stroke="#0a84ff" stroke-width="0.5" opacity="0.3"/>
+  <line x1="0" y1="560" x2="1200" y2="560" stroke="#0a84ff" stroke-width="0.5" opacity="0.2"/>
+  <!-- Grid lines vertical -->
+  <line x1="120" y1="0" x2="120" y2="600" stroke="#0a84ff" stroke-width="0.5" opacity="0.3"/>
+  <line x1="280" y1="0" x2="280" y2="600" stroke="#0a84ff" stroke-width="0.5" opacity="0.4"/>
+  <line x1="440" y1="0" x2="440" y2="600" stroke="#0a84ff" stroke-width="0.5" opacity="0.3"/>
+  <line x1="600" y1="0" x2="600" y2="600" stroke="#0a84ff" stroke-width="0.5" opacity="0.4"/>
+  <line x1="760" y1="0" x2="760" y2="600" stroke="#0a84ff" stroke-width="0.5" opacity="0.3"/>
+  <line x1="920" y1="0" x2="920" y2="600" stroke="#0a84ff" stroke-width="0.5" opacity="0.4"/>
+  <line x1="1080" y1="0" x2="1080" y2="600" stroke="#0a84ff" stroke-width="0.5" opacity="0.3"/>
+  <!-- Circuit paths -->
+  <path d="M0 80 H200 V200 H440 V80 H600 V320 H760 V200 H1000 V80 H1200" fill="none" stroke="#00e5cc" stroke-width="1" opacity="0.5"/>
+  <path d="M0 320 H280 V440 H440 V320 H760 V440 H920 V320 H1200" fill="none" stroke="#0a84ff" stroke-width="1" opacity="0.4"/>
+  <path d="M120 0 V200 H280 V80 H440 V440 H600 V320 H760 V560 H920 V440 H1080 V0" fill="none" stroke="#00e5cc" stroke-width="0.8" opacity="0.35"/>
+  <!-- Nodes/pads -->
+  <circle cx="200" cy="80" r="4" fill="#00e5cc" opacity="0.7"/>
+  <circle cx="440" cy="80" r="4" fill="#00e5cc" opacity="0.7"/>
+  <circle cx="440" cy="200" r="4" fill="#0a84ff" opacity="0.7"/>
+  <circle cx="600" cy="320" r="4" fill="#00e5cc" opacity="0.7"/>
+  <circle cx="760" cy="200" r="4" fill="#0a84ff" opacity="0.7"/>
+  <circle cx="760" cy="320" r="4" fill="#00e5cc" opacity="0.7"/>
+  <circle cx="920" cy="320" r="4" fill="#0a84ff" opacity="0.7"/>
+  <circle cx="280" cy="440" r="4" fill="#00e5cc" opacity="0.7"/>
+  <circle cx="440" cy="440" r="4" fill="#0a84ff" opacity="0.7"/>
+  <circle cx="920" cy="440" r="4" fill="#00e5cc" opacity="0.7"/>
+  <!-- IC chips -->
+  <rect x="560" y="60" width="80" height="40" rx="3" fill="none" stroke="#00e5cc" stroke-width="1" opacity="0.5"/>
+  <rect x="380" y="300" width="60" height="40" rx="3" fill="none" stroke="#0a84ff" stroke-width="1" opacity="0.5"/>
+  <rect x="860" y="180" width="60" height="40" rx="3" fill="none" stroke="#00e5cc" stroke-width="1" opacity="0.5"/>
+  <!-- Diagonal accent lines -->
+  <line x1="100" y1="500" x2="300" y2="300" stroke="#0a84ff" stroke-width="0.5" opacity="0.2"/>
+  <line x1="900" y1="100" x2="1100" y2="300" stroke="#00e5cc" stroke-width="0.5" opacity="0.2"/>
+</svg>

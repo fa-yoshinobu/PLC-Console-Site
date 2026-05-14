@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="ja" data-lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PLC IO Checker — Mitsubishi MELSEC / KEYENCE PLC の入出力をスマートフォンでリアルタイム監視。現場エンジニアのためのプロフェッショナルなモバイル監視ツール。">
+  <title>PLC IO Checker — PLCの入出力をスマートフォンで監視</title>
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ========== HEADER ========== -->
+<header class="header" id="header">
+  <nav class="nav container">
+    <a class="nav__logo" href="#hero">
+      <img src="img/logo.svg" alt="PLC IO Checker">
+      <span>PLC IO Checker</span>
+    </a>
+    <ul class="nav__links" role="list">
+      <li><a href="#overview" data-i18n="nav.overview">製品概要</a></li>
+      <li><a href="#features" data-i18n="nav.features">機能</a></li>
+      <li><a href="#plc-support" data-i18n="nav.plc">対応機種</a></li>
+      <li><a href="#pricing" data-i18n="nav.pricing">価格</a></li>
+      <li><a href="#download" data-i18n="nav.download">ダウンロード</a></li>
+      <li><a href="usage.html">使い方</a></li>
+      <li><a href="samples.html">設定サンプル</a></li>
+      <li><a href="guide.html" style="color:var(--accent-cyan)">技術ガイド</a></li>
+    </ul>
+    <div class="nav__actions">
+      <button id="lang-toggle" class="btn btn--ghost btn--sm" aria-label="言語切り替え">EN</button>
+      <button class="nav__hamburger" aria-label="メニューを開く" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<!-- ========== HERO ========== -->
+<section id="hero" class="hero">
+  <div class="hero__bg">
+    <img src="img/hero-circuit.svg" alt="" aria-hidden="true">
+  </div>
+  <div class="container">
+    <div class="hero__inner">
+      <div class="hero__content">
+        <div class="hero__eyebrow">
+          <span class="badge badge--version" data-i18n="hero.badge">v0.2.0 リリース</span>
+        </div>
+        <h1 class="hero__title" data-i18n="hero.title">
+          設備立ち上げのIOチェックを、<br><span class="text-accent">スマートフォン1台で完結</span>
+        </h1>
+        <p class="hero__sub" data-i18n="hero.sub">
+          装置製造メーカーの立ち上げエンジニアへ。<br>
+          PLC盤と設備を何度も往復する作業を、スマートフォン1台で解決します。
+        </p>
+        <div class="hero__cta">
+          <a href="#download" class="btn btn--primary btn--lg" data-i18n="hero.cta.appstore">App Store で購入</a>
+          <a href="#download" class="btn btn--gold btn--lg" data-i18n="hero.cta.googleplay">Google Play で購入</a>
+          <a href="guide.html" class="btn btn--outline btn--lg" data-i18n="hero.cta.guide">使い方を見る →</a>
+        </div>
+        <div class="hero__makers">
+          <span class="hero__makers-label" data-i18n="hero.makers.label">対応メーカー</span>
+          <span class="badge badge--maker">Mitsubishi MELSEC</span>
+          <span class="badge badge--maker">KEYENCE KV</span>
+        </div>
+      </div>
+      <div class="hero__visual">
+        <div class="hero__mockup-wrap">
+          <div class="hero__glow"></div>
+          <div class="ph-img ph-img--hero">スクリーンショット（準備中）</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PROBLEM / SOLUTION ========== -->
+<section class="section section--alt" id="problem">
+  <div class="container">
+    <h2 class="section__title" data-i18n="problem.title">立ち上げ現場のこんな手間、ありませんか？</h2>
+    <div class="problem-cards">
+      <div class="problem-card card" data-animate data-animate-delay="1">
+        <div class="problem-card__icon">🚶</div>
+        <h3 data-i18n="problem.1.title">PLC盤と設備を何度も往復</h3>
+        <p data-i18n="problem.1.desc">配線・IOチェックのたびにPLC盤に戻って確認。設備規模が大きいほど移動の手間が増えます。</p>
+      </div>
+      <div class="problem-card card" data-animate data-animate-delay="2">
+        <div class="problem-card__icon">💼</div>
+        <h3 data-i18n="problem.2.title">ラップトップを持ち歩く不便</h3>
+        <p data-i18n="problem.2.desc">IOチェックのためだけに重いPCを抱えて現場を歩き回っていませんか？</p>
+      </div>
+      <div class="problem-card card" data-animate data-animate-delay="3">
+        <div class="problem-card__icon">⌨️</div>
+        <h3 data-i18n="problem.3.title">監視設定の手入力が煩雑</h3>
+        <p data-i18n="problem.3.desc">チェック対象のデバイスアドレスをアプリに一から手入力していませんか？</p>
+      </div>
+    </div>
+    <div class="solution-banner" data-animate>
+      <h3 data-i18n="solution.title">PLC IO Checker が解決します</h3>
+      <p data-i18n="solution.desc">PCで監視デバイスを設定してQRコードを生成。スマートフォンで読み取ってPLCに接続するだけ。立ち上げエンジニアが設備のそばに立ったまま、すべてのIOをリアルタイムで確認・操作できます。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== OVERVIEW FLOW ========== -->
+<section id="overview" class="section">
+  <div class="container">
+    <h2 class="section__title" data-i18n="overview.title">3つのツールが連携する</h2>
+    <p class="section__sub" data-i18n="overview.sub">PCで設定を作り、QRで転送、スマートフォンで監視。シンプルなワークフロー。</p>
+
+    <div class="flow">
+      <!-- Node: Project Builder -->
+      <div class="flow__node card" data-animate>
+        <div class="flow__node-icon">
+          <img src="img/icon-windows.svg" alt="Windows PC">
+        </div>
+        <h3 data-i18n="overview.pb.title">Project Builder</h3>
+        <p class="flow__node-platform" data-i18n="overview.pb.platform">Windows PC</p>
+        <p data-i18n="overview.pb.desc">PLC接続設定・監視デバイス・アラートルールをGUIで作成</p>
+        <div class="flow__node-price">
+          <span class="badge badge--free" data-i18n="overview.pb.price">無料</span>
+        </div>
+      </div>
+
+      <!-- Arrow 1 -->
+      <div class="flow__arrow" aria-hidden="true">
+        <div class="flow__arrow-label" data-i18n="overview.arrow1.label">QRコードで転送</div>
+        <svg class="flow__arrow-svg" width="32" height="16" viewBox="0 0 32 16" fill="none">
+          <path d="M0 8 H26 M20 2 L30 8 L20 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <!-- Node: Mobile App -->
+      <div class="flow__node card" data-animate data-animate-delay="2">
+        <div class="flow__node-icon" style="background:rgba(10,132,255,0.15);border-color:rgba(10,132,255,0.3)">
+          <img src="img/icon-android.svg" alt="スマートフォン">
+        </div>
+        <h3 data-i18n="overview.app.title">PLC IO Checker</h3>
+        <p class="flow__node-platform" data-i18n="overview.app.platform">Android / iOS</p>
+        <p data-i18n="overview.app.desc">スマートフォンからPLCをリアルタイム監視・制御</p>
+        <div class="flow__node-price">
+          <span class="badge badge--version" data-i18n="overview.app.price">¥10,000</span>
+        </div>
+      </div>
+
+      <!-- Arrow 2 -->
+      <div class="flow__arrow" aria-hidden="true">
+        <div class="flow__arrow-label" data-i18n="overview.arrow2.label">Ethernet / Wi-Fi</div>
+        <svg class="flow__arrow-svg" width="32" height="16" viewBox="0 0 32 16" fill="none">
+          <path d="M0 8 H26 M20 2 L30 8 L20 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <!-- Node: PLC -->
+      <div class="flow__node card" data-animate data-animate-delay="4">
+        <div class="flow__node-icon" style="background:rgba(0,229,204,0.1);border-color:rgba(0,229,204,0.25)">
+          <img src="img/icon-plc.svg" alt="PLC">
+        </div>
+        <h3 data-i18n="overview.plc.title">PLC</h3>
+        <p class="flow__node-platform" data-i18n="overview.plc.platform">MELSEC / KEYENCE</p>
+        <p data-i18n="overview.plc.desc">既存の制御システムにそのまま接続。設定変更は最小限</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FEATURES ========== -->
+<section id="features" class="section section--alt">
+  <div class="container">
+    <h2 class="section__title" data-i18n="features.title">主要機能</h2>
+    <p class="section__sub" data-i18n="features.sub">現場のエンジニアが本当に必要とする機能を、すべて搭載しています。</p>
+
+    <div class="tabs" role="tablist">
+      <button class="tab tab--active" role="tab" aria-selected="true"
+              aria-controls="tab-app" data-target="tab-app"
+              data-i18n="features.tab.app">Android / iOS アプリ</button>
+      <button class="tab" role="tab" aria-selected="false"
+              aria-controls="tab-pb" data-target="tab-pb"
+              data-i18n="features.tab.pb">Project Builder</button>
+    </div>
+
+    <!-- App Tab -->
+    <div id="tab-app" class="tab-panel tab-panel--active" role="tabpanel">
+      <div class="features__grid">
+        <div class="feature-card card" data-animate data-animate-delay="1">
+          <div class="feature-card__icon">📋</div>
+          <h3 data-i18n="features.app.1.title">デバイス一覧監視</h3>
+          <p data-i18n="features.app.1.desc">登録デバイスの現在値をリアルタイム表示。グループ・フィルタ・検索対応。</p>
+        </div>
+        <div class="feature-card card" data-animate data-animate-delay="2">
+          <div class="feature-card__icon">🎯</div>
+          <h3 data-i18n="features.app.2.title">フォーカスパネル</h3>
+          <p data-i18n="features.app.2.desc">選択したデバイスの値を読み書き。ビット・ワード・Float32対応。</p>
+        </div>
+        <div class="feature-card card" data-animate data-animate-delay="3">
+          <div class="feature-card__icon">🔲</div>
+          <h3 data-i18n="features.app.3.title">ブロック監視</h3>
+          <p data-i18n="features.app.3.desc">連続アドレスをまとめて一覧表示。コンパクト／詳細モード切替。</p>
+        </div>
+        <div class="feature-card card" data-animate data-animate-delay="1">
+          <div class="feature-card__icon">📈</div>
+          <h3 data-i18n="features.app.4.title">タイムチャート</h3>
+          <p data-i18n="features.app.4.desc">最大20chの信号波形をリアルタイム記録。CSVエクスポート対応（500ms記録・約500秒バッファ）。</p>
+          <span class="feature-card__tag">最大20ch</span>
+        </div>
+        <div class="feature-card card" data-animate data-animate-delay="2">
+          <div class="feature-card__icon">🔔</div>
+          <h3 data-i18n="features.app.5.title">トラップ / アラート</h3>
+          <p data-i18n="features.app.5.desc">Rise / Fall / Change / 閾値比較でイベント検知。CSV履歴エクスポート。</p>
+        </div>
+        <div class="feature-card card" data-animate data-animate-delay="3">
+          <div class="feature-card__icon">🎮</div>
+          <h3 data-i18n="features.app.6.title">デモモード</h3>
+          <p data-i18n="features.app.6.desc">実機なしで全機能を評価できます。購入前のお試しに最適。</p>
+          <span class="feature-card__tag">無料体験可</span>
+        </div>
+      </div>
+      <div class="features__screenshot">
+        <div class="ph-img ph-img--large">アプリスクリーンショット（準備中）</div>
+      </div>
+    </div>
+
+    <!-- Project Builder Tab -->
+    <div id="tab-pb" class="tab-panel" role="tabpanel" hidden>
+      <div class="features__grid">
+        <div class="feature-card card" data-animate data-animate-delay="1">
+          <div class="feature-card__icon">🔌</div>
+          <h3 data-i18n="features.pb.1.title">PLC接続設定</h3>
+          <p data-i18n="features.pb.1.desc">IPアドレス・ポート・プロトコル・MELSECルーティングを設定。</p>
+        </div>
+        <div class="feature-card card" data-animate data-animate-delay="2">
+          <div class="feature-card__icon">📝</div>
+          <h3 data-i18n="features.pb.2.title">デバイス一括登録</h3>
+          <p data-i18n="features.pb.2.desc">Excelからのコピー&ペーストに対応。大量デバイスも素早く登録。</p>
+        </div>
+        <div class="feature-card card" data-animate data-animate-delay="3">
+          <div class="feature-card__icon">📊</div>
+          <h3 data-i18n="features.pb.3.title">タイムチャート設定</h3>
+          <p data-i18n="features.pb.3.desc">最大20chの監視対象アドレス・データ型を設定。</p>
+        </div>
+        <div class="feature-card card" data-animate data-animate-delay="1">
+          <div class="feature-card__icon">⚡</div>
+          <h3 data-i18n="features.pb.4.title">トラップルール設定</h3>
+          <p data-i18n="features.pb.4.desc">Rise / Fall / Change / 比較演算子としきい値を直感的に設定。</p>
+        </div>
+        <div class="feature-card card" data-animate data-animate-delay="2">
+          <div class="feature-card__icon">📱</div>
+          <h3 data-i18n="features.pb.5.title">マルチページQRコード生成</h3>
+          <p data-i18n="features.pb.5.desc">大規模プロジェクトも分割QRで転送。PNG出力・JSON出力に対応。</p>
+        </div>
+      </div>
+      <div class="features__screenshot">
+        <div class="ph-img ph-img--large">Project Builder スクリーンショット（準備中）</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PLC SUPPORT ========== -->
+<section id="plc-support" class="section">
+  <div class="container">
+    <h2 class="section__title" data-i18n="plc.title">対応PLC機種</h2>
+    <p class="section__sub" data-i18n="plc.sub">国内主要PLC2メーカーに対応。既存設備をそのまま活用できます。</p>
+
+    <div class="plc-grid">
+      <!-- Mitsubishi MELSEC -->
+      <div class="plc-group card" data-animate>
+        <div class="plc-group__header">
+          <span class="plc-group__brand" data-i18n="plc.melsec.title">Mitsubishi MELSEC</span>
+          <span class="plc-group__protocol" data-i18n="plc.melsec.protocol">SLMP / Ethernet</span>
+        </div>
+        <ul class="plc-list">
+          <li class="plc-item">
+            <span class="plc-item__dot"></span>
+            <span class="plc-item__series">iQ-R系</span>
+            <span class="plc-item__detail">RJ71EN71 等（SLMP）</span>
+          </li>
+          <li class="plc-item">
+            <span class="plc-item__dot"></span>
+            <span class="plc-item__series">iQ-F系</span>
+            <span class="plc-item__detail">FX5U-Ethernet 等</span>
+          </li>
+          <li class="plc-item">
+            <span class="plc-item__dot"></span>
+            <span class="plc-item__series">iQ-L系</span>
+            <span class="plc-item__detail">Ethernet内蔵モデル</span>
+          </li>
+          <li class="plc-item">
+            <span class="plc-item__dot"></span>
+            <span class="plc-item__series">Q系</span>
+            <span class="plc-item__detail">QJ71E71-100 等</span>
+          </li>
+          <li class="plc-item">
+            <span class="plc-item__dot"></span>
+            <span class="plc-item__series">L系</span>
+            <span class="plc-item__detail">LJ71E71-100 等</span>
+          </li>
+        </ul>
+        <p style="margin-top:16px;font-size:0.8rem;color:var(--text-muted)">対応デバイス: X/Y/M/D/T/C/R/W 等 40種以上</p>
+      </div>
+
+      <!-- KEYENCE KV -->
+      <div class="plc-group card" data-animate data-animate-delay="2">
+        <div class="plc-group__header">
+          <span class="plc-group__brand" data-i18n="plc.keyence.title">KEYENCE KV</span>
+          <span class="plc-group__protocol" data-i18n="plc.keyence.protocol">HostLink / Ethernet</span>
+        </div>
+        <ul class="plc-list">
+          <li class="plc-item">
+            <span class="plc-item__dot" style="background:var(--accent-cyan)"></span>
+            <span class="plc-item__series">KV-X500</span>
+            <span class="plc-item__detail">Ethernet内蔵</span>
+          </li>
+          <li class="plc-item">
+            <span class="plc-item__dot" style="background:var(--accent-cyan)"></span>
+            <span class="plc-item__series">KV-8000</span>
+            <span class="plc-item__detail">Ethernet内蔵</span>
+          </li>
+          <li class="plc-item">
+            <span class="plc-item__dot" style="background:var(--accent-cyan)"></span>
+            <span class="plc-item__series">KV-7000</span>
+            <span class="plc-item__detail">KV-7500 等</span>
+          </li>
+          <li class="plc-item">
+            <span class="plc-item__dot" style="background:var(--accent-cyan)"></span>
+            <span class="plc-item__series">KV-5000/5500</span>
+            <span class="plc-item__detail">Ethernet内蔵モデル</span>
+          </li>
+        </ul>
+        <p style="margin-top:16px;font-size:0.8rem;color:var(--text-muted)">対応デバイス: R/MR/LR/CR/VB/DM/EM/TM/CTH 等</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PRICING ========== -->
+<section id="pricing" class="section section--alt">
+  <div class="container">
+    <h2 class="section__title" data-i18n="pricing.title">価格・ライセンス</h2>
+    <p class="section__sub" data-i18n="pricing.sub">買い切りライセンス。サブスクリプションなし。</p>
+
+    <div class="pricing-grid">
+      <!-- Android -->
+      <div class="pricing-card card pricing-card--featured"
+           data-label="最も選ばれています" data-animate>
+        <div class="pricing-card__header">
+          <div class="pricing-card__icon">
+            <img src="img/icon-android.svg" alt="Android">
+          </div>
+          <h3 data-i18n="pricing.android.name">PLC IO Checker</h3>
+          <p class="pricing-card__platform" data-i18n="pricing.android.platform">Android</p>
+        </div>
+        <div class="pricing-card__price">
+          <div class="pricing-card__amount" data-i18n="pricing.android.amount">¥10,000</div>
+          <p class="pricing-card__period" data-i18n="pricing.android.period">買い切り・永続ライセンス</p>
+        </div>
+        <ul class="pricing-card__features">
+          <li class="pricing-feature"><span class="pricing-feature__check">✓</span><span data-i18n="pricing.android.f1">MELSEC + KEYENCE 両対応</span></li>
+          <li class="pricing-feature"><span class="pricing-feature__check">✓</span><span data-i18n="pricing.android.f2">タイムチャート最大20ch</span></li>
+          <li class="pricing-feature"><span class="pricing-feature__check">✓</span><span data-i18n="pricing.android.f3">トラップ/アラート機能</span></li>
+          <li class="pricing-feature"><span class="pricing-feature__check">✓</span><span data-i18n="pricing.android.f4">デモモード搭載</span></li>
+          <li class="pricing-feature"><span class="pricing-feature__check">✓</span><span data-i18n="pricing.android.f5">アップデート無料</span></li>
+          <li class="pricing-feature"><span class="pricing-feature__check">✓</span><span data-i18n="pricing.android.f6">日本語 / English 対応</span></li>
+        </ul>
+        <a href="#download" class="btn btn--primary" style="width:100%;justify-content:center">Google Play で購入</a>
+      </div>
+
+      <!-- iOS -->
+      <div class="pricing-card card" data-animate data-animate-delay="2">
+        <div class="pricing-card__header">
+          <div class="pricing-card__icon">
+            <img src="img/icon-ios.svg" alt="iOS">
+          </div>
+          <h3 data-i18n="pricing.ios.name">PLC IO Checker</h3>
+          <p class="pricing-card__platform" data-i18n="pricing.ios.platform">iOS</p>
+        </div>
+        <div class="pricing-card__price">
+          <div class="pricing-card__amount" data-i18n="pricing.ios.amount">¥10,000</div>
+          <p class="pricing-card__period" data-i18n="pricing.ios.period">買い切り・永続ライセンス</p>
+        </div>
+        <ul class="pricing-card__features">
+          <li class="pricing-feature"><span class="pricing-feature__check">✓</span><span data-i18n="pricing.android.f1">MELSEC + KEYENCE 両対応</span></li>
+          <li class="pricing-feature"><span class="pricing-feature__check">✓</span><span data-i18n="pricing.android.f2">タイムチャート最大20ch</span></li>
+          <li class="pricing-feature"><span class="pricing-feature__check">✓</span><span data-i18n="pricing.android.f3">トラップ/アラート機能</span></li>
+          <li class="pricing-feature"><span class="pricing-feature__check">✓</span><span data-i18n="pricing.android.f4">デモモード搭載</span></li>
+          <li class="pricing-feature"><span class="pricing-feature__check">✓</span><span data-i18n="pricing.android.f5">アップデート無料</span></li>
+          <li class="pricing-feature"><span class="pricing-feature__check">✓</span><span data-i18n="pricing.ios.note">Android版と同一機能</span></li>
+        </ul>
+        <a href="#download" class="btn btn--outline" style="width:100%;justify-content:center">App Store で購入</a>
+      </div>
+
+      <!-- Project Builder -->
+      <div class="pricing-card card" data-animate data-animate-delay="3">
+        <div class="pricing-card__header">
+          <div class="pricing-card__icon" style="background:rgba(48,209,88,0.1);border-color:rgba(48,209,88,0.2)">
+            <img src="img/icon-windows.svg" alt="Windows">
+          </div>
+          <h3 data-i18n="pricing.pb.name">Project Builder</h3>
+          <p class="pricing-card__platform" data-i18n="pricing.pb.platform">Windows PC</p>
+        </div>
+        <div class="pricing-card__price">
+          <div class="pricing-card__amount pricing-card__amount--free" data-i18n="pricing.pb.amount">無料</div>
+          <p class="pricing-card__period" data-i18n="pricing.pb.period">MITライセンス・制限なし</p>
+        </div>
+        <ul class="pricing-card__features">
+          <li class="pricing-feature"><span class="pricing-feature__check">✓</span><span data-i18n="pricing.pb.f1">GUI でプロジェクト作成</span></li>
+          <li class="pricing-feature"><span class="pricing-feature__check">✓</span><span data-i18n="pricing.pb.f2">QRコード生成・PNG出力</span></li>
+          <li class="pricing-feature"><span class="pricing-feature__check">✓</span><span data-i18n="pricing.pb.f3">シングルEXE — インストール不要</span></li>
+          <li class="pricing-feature"><span class="pricing-feature__check">✓</span><span data-i18n="pricing.pb.f4">日本語 / English 対応</span></li>
+        </ul>
+        <a href="#download" class="btn btn--outline" style="width:100%;justify-content:center;border-color:var(--accent-green);color:var(--accent-green)" data-i18n="pricing.pb.btn">無料でダウンロード</a>
+      </div>
+
+      <!-- ROI Banner -->
+      <div class="pricing-roi" data-animate>
+        <p data-i18n="pricing.roi">現場エンジニア1名が工数を<strong>月1時間削減</strong>できれば、<strong>初月で投資回収</strong>できます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== DOWNLOAD ========== -->
+<section id="download" class="section">
+  <div class="container">
+    <h2 class="section__title" data-i18n="download.title">ダウンロード</h2>
+    <p class="section__sub" data-i18n="download.sub">まずはデモモードで無料体験。実機なしで全機能を評価できます。</p>
+
+    <div class="download-grid">
+      <!-- Mobile App -->
+      <div class="download-card card" data-animate>
+        <h3 data-i18n="download.app.h">PLC IO Checker</h3>
+        <p class="download-card__platform">Android / iOS</p>
+        <div class="download-card__price text-gold">¥10,000</div>
+        <p class="download-card__note" data-i18n="download.app.note">デモモード搭載 — 実機なしで評価可能</p>
+        <div class="download-badges">
+          <a href="#" aria-label="Google Play でダウンロード">
+            <img src="img/badge-googleplay.svg" alt="Google Play で手に入れよう">
+          </a>
+          <a href="#" aria-label="App Store でダウンロード">
+            <img src="img/badge-appstore.svg" alt="App Store からダウンロード">
+          </a>
+        </div>
+      </div>
+
+      <!-- Project Builder -->
+      <div class="download-card card download-card--free" data-animate data-animate-delay="2">
+        <h3 data-i18n="download.pb.h">Project Builder</h3>
+        <p class="download-card__platform" data-i18n="download.pb.platform">Windows 10/11 (x64) · .NET 8.0</p>
+        <div class="download-card__price text-green">無料</div>
+        <p class="download-card__note" data-i18n="download.pb.note">無料 · MITライセンス · シングルEXE</p>
+        <a href="#" class="btn btn--outline" style="border-color:var(--accent-green);color:var(--accent-green);width:100%;justify-content:center;margin-bottom:16px" data-i18n="download.pb.btn">EXEをダウンロード（無料）</a>
+        <ul class="download-info">
+          <li>インストール不要</li>
+          <li>Windows 10 / 11 対応</li>
+          <li>日本語 / English 対応</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:40px">
+      <a href="guide.html" class="btn btn--outline btn--lg">詳しい使い方ガイドを見る →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <img src="img/logo.svg" alt="PLC IO Checker">
+        <span>PLC IO Checker</span>
+      </div>
+      <nav class="footer__nav" aria-label="フッターナビゲーション">
+        <a href="#overview" data-i18n="nav.overview">製品概要</a>
+        <a href="#features" data-i18n="nav.features">機能</a>
+        <a href="#plc-support" data-i18n="nav.plc">対応機種</a>
+        <a href="#pricing" data-i18n="nav.pricing">価格</a>
+        <a href="guide.html" data-i18n="nav.guide">使い方ガイド</a>
+      </nav>
+      <div class="footer__right">
+        <p data-i18n="footer.tagline">現場エンジニアのための PLC 監視ツール</p>
+        <p style="margin-top:4px;font-size:0.75rem" data-i18n="footer.pb.note">Project Builder は MIT ライセンスで公開</p>
+      </div>
+    </div>
+    <p class="footer__copy" data-i18n="footer.copy">© 2026 PLC IO Checker. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
