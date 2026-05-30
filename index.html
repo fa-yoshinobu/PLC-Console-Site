@@ -17,7 +17,10 @@
           <small>操作マニュアル</small>
         </span>
       </a>
-      <nav class="top-nav" aria-label="主要ページ">
+      <button class="nav-toggle" id="nav-toggle" aria-label="メニュー" aria-expanded="false" aria-controls="top-nav">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="top-nav" id="top-nav" aria-label="主要ページ">
         <details class="nav-group">
           <summary>開始</summary>
           <div class="nav-menu">
@@ -96,18 +99,25 @@
   </header>
 
   <main>
-    <section class="hero section-band">
-      <div class="hero-copy">
-        <h1>PLC IO Checker 操作マニュアル</h1>
-        <p class="lead">
-          MELSEC / KEYENCE PLC のデバイス監視、書込、記録、案件共有を行うための公開用マニュアルです。
-          画面と機能ごとにページを分けています。
-        </p>
-      </div>
-      <figure class="hero-shot">
-        <img src="assets/images/monitoring/block-monitor.png" alt="PLC IO Checker のブロック監視画面">
-      </figure>
-    </section>
+    <div class="hero-band-wrapper">
+      <section class="hero section-band">
+        <div class="hero-copy">
+          <p class="eyebrow">操作マニュアル</p>
+          <h1>PLC IO Checker</h1>
+          <p class="lead">
+            MELSEC / KEYENCE PLC のデバイス監視、書込、記録、案件共有を行うための公開用マニュアルです。
+            画面と機能ごとにページを分けています。
+          </p>
+          <div class="platform-badges">
+            <span class="platform-badge">Android</span>
+            <span class="platform-badge">iOS</span>
+          </div>
+        </div>
+        <figure class="hero-shot">
+          <img src="assets/images/monitoring/block-monitor.png" alt="PLC IO Checker のブロック監視画面">
+        </figure>
+      </section>
+    </div>
 
     <section class="section">
       <div class="notice danger">
@@ -394,7 +404,44 @@
   </main>
 
   <footer class="site-footer">
-    <p>PLC IO Checker 操作マニュアル</p>
+    <div class="footer-inner">
+      <a class="footer-brand" href="index.html">
+        <span class="brand-mark">PLC</span>
+        <span>
+          <strong>PLC IO Checker</strong>
+          <small>操作マニュアル</small>
+        </span>
+      </a>
+      <div>
+        <nav class="footer-links" aria-label="フッターリンク">
+          <a href="reference/privacy-policy.html">プライバシーポリシー</a>
+          <a href="reference/terms.html">利用条件</a>
+          <a href="reference/purchase-info.html">購入・返金</a>
+          <a href="reference/support.html">サポート</a>
+          <a href="reference/faq.html">FAQ</a>
+          <a href="reference/release-notes.html">リリースノート</a>
+        </nav>
+        <p class="footer-copy">© 2026 FA Labo</p>
+      </div>
+    </div>
   </footer>
+
+  <script>
+  (function(){
+    var t=document.getElementById("nav-toggle");
+    var n=document.querySelector(".top-nav");
+    if(!t||!n)return;
+    t.addEventListener("click",function(){
+      var o=n.classList.toggle("is-open");
+      t.setAttribute("aria-expanded",String(o));
+    });
+    document.addEventListener("click",function(e){
+      if(!t.contains(e.target)&&!n.contains(e.target)){
+        n.classList.remove("is-open");
+        t.setAttribute("aria-expanded","false");
+      }
+    });
+  })();
+  </script>
 </body>
 </html>
