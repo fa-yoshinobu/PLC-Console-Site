@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ProjectBuilder のデバイス、タイムチャート、トラップ入力。">
+  <title>ProjectBuilder 入力 | PLC IO Checker 操作マニュアル</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../index.html"><span class="brand-mark">PLC</span><span><strong>PLC IO Checker</strong><small>操作マニュアル</small></span></a>
+            <button class="nav-toggle" id="nav-toggle" aria-label="メニュー" aria-expanded="false" aria-controls="top-nav">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="top-nav" id="top-nav" aria-label="主要ページ">
+        <details class="nav-group">
+          <summary>開始</summary>
+          <div class="nav-menu">
+            <a href="../start/install.html">入手</a>
+            <a href="../start/getting-started.html">はじめる</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>PLC</summary>
+          <div class="nav-menu">
+            <a href="../plc/supported-plc.html">対応 PLC</a>
+            <a href="../plc/connection.html">接続・プロジェクト</a>
+            <a href="../plc/plc-side-settings.html">接続設定例</a>
+            <a href="../plc/melsec-settings.html">MELSEC</a>
+            <a href="../plc/keyence-settings.html">KEYENCE</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>操作</summary>
+          <div class="nav-menu">
+            <a href="../monitoring/monitoring.html">監視</a>
+            <a href="../monitoring/list-edit.html">List 登録編集</a>
+            <a href="../monitoring/focus-panel.html">操作パネル</a>
+            <a href="../monitoring/writing.html">書込</a>
+            <a href="../monitoring/cpu-control.html">CPU操作</a>
+            <a href="../monitoring/comments.html">コメント</a>
+            <a href="../monitoring/time-chart.html">タイムチャート</a>
+            <a href="../monitoring/traps.html">トラップ</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>転送</summary>
+          <div class="nav-menu">
+            <a href="../transfer/import-export.html">QR/JSON</a>
+            <a href="../transfer/project-json.html">プロジェクトJSON</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>設定</summary>
+          <div class="nav-menu">
+            <a href="../settings/tools-menu.html">メニュー</a>
+            <a href="../settings/app-settings.html">アプリ設定</a>
+            <a href="../settings/license.html">ライセンス</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>公開情報</summary>
+          <div class="nav-menu">
+            <a href="../reference/support.html">サポート</a>
+            <a href="../reference/privacy-policy.html">プライバシー</a>
+            <a href="../reference/app-permissions.html">権限</a>
+            <a href="../reference/terms.html">利用条件</a>
+            <a href="../reference/purchase-info.html">購入・返金</a>
+            <a href="../reference/store-release-checklist.html">公開準備</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary class="active">ProjectBuilder</summary>
+          <div class="nav-menu">
+            <a href="../projectbuilder/projectbuilder.html">ProjectBuilder</a>
+            <a class="active" href="../projectbuilder/projectbuilder-devices.html">入力</a>
+            <a href="../projectbuilder/projectbuilder-qr.html">QR 生成</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>参考</summary>
+          <div class="nav-menu">
+            <a href="../reference/glossary.html">用語集</a>
+            <a href="../reference/release-notes.html">リリースノート</a>
+            <a href="../reference/troubleshooting.html">困ったとき</a>
+          </div>
+        </details>
+      </nav>
+    </div>
+  </header>
+
+  <main class="doc-page">
+    <nav class="breadcrumb" aria-label="パンくず"><a href="../index.html">トップ</a><span>ProjectBuilder 入力</span></nav>
+    <section class="page-hero section">
+      <p class="eyebrow">ProjectBuilder</p>
+      <h1>ProjectBuilder 入力</h1>
+      <p class="lead">デバイス、タイムチャート、トラップを PC で入力し、モバイルアプリへ渡すプロジェクトを作成します。</p>
+    </section>
+
+    <section class="section">
+      <h2>接続設定</h2>
+      <p><strong>プロジェクト/接続</strong> では、モバイルアプリへ渡す基本情報と PLC 通信設定を入力します。</p>
+      <div class="info-table" role="table" aria-label="ProjectBuilder connection settings">
+        <div role="row"><div role="cell">プロジェクト</div><div role="cell">プロジェクト名、メーカー、CPU機種、KEYENCE 表示、使用可能 device を確認します。</div></div>
+        <div role="row"><div role="cell">接続</div><div role="cell">Connection mode、IP address、Port、Transport、監視周期 ms、Timeout ms を指定します。</div></div>
+        <div role="row"><div role="cell">MELSEC ルーティング</div><div role="cell">Network / Station は数字で、Module I/O / Multidrop は画面の初期表示と同じ <code>0x</code> 付きで入力します。</div></div>
+        <div role="row"><div role="cell">既定値</div><div role="cell"><strong>ルーティング既定値に戻す</strong> で Network、Station、Module I/O、Multidrop を既定値へ戻します。</div></div>
+        <div role="row"><div role="cell">リモートパスワード</div><div role="cell">MELSEC のリモートパスワードを入力します。</div></div>
+      </div>
+      <figure class="inline-shot projectbuilder-shot">
+        <img src="../assets/images/projectbuilder/project_connection.png" alt="ProjectBuilder の接続設定画面">
+        <figcaption>接続設定</figcaption>
+      </figure>
+    </section>
+
+    <section class="section">
+      <h2>デバイス</h2>
+      <div class="info-table" role="table" aria-label="デバイス列">
+        <div role="row"><div role="cell">アドレス</div><div role="cell">監視する PLC デバイスアドレスです。</div></div>
+        <div role="row"><div role="cell">データタイプ</div><div role="cell"><code>BIT</code>、<code>INT16</code>、<code>UINT16</code>、<code>INT32</code>、<code>UINT32</code>、<code>FLOAT32</code></div></div>
+        <div role="row"><div role="cell">Comment</div><div role="cell">任意のコメントです。同じアドレスが複数ある場合、最初の非空 Comment が同じアドレスに反映されます。</div></div>
+      </div>
+      <p>Excel からタブ区切りでコピー/貼り付けできます。<strong>行を追加</strong>、<strong>ブロック追加</strong>、<strong>削除</strong>、<strong>上へ</strong> / <strong>下へ</strong> で編集します。</p>
+      <figure class="inline-shot projectbuilder-shot">
+        <img src="../assets/images/projectbuilder/device.png" alt="ProjectBuilder のデバイス入力画面">
+        <figcaption>デバイス</figcaption>
+      </figure>
+    </section>
+
+    <section class="section">
+      <h2>タイムチャート</h2>
+      <p>タイムチャートに表示する対象を登録します。最大 20 チャンネルです。</p>
+      <div class="info-table" role="table" aria-label="タイムチャート列">
+        <div role="row"><div role="cell">アドレス</div><div role="cell">記録対象のアドレスです。</div></div>
+        <div role="row"><div role="cell">データタイプ</div><div role="cell">デバイスに同じアドレスがあればそのデータタイプを優先します。</div></div>
+      </div>
+      <p>Excel からタブ区切りでコピー/貼り付けできます。<strong>ブロック追加</strong> では開始アドレスと点数を指定します。</p>
+      <figure class="inline-shot projectbuilder-shot">
+        <img src="../assets/images/projectbuilder/timechart.png" alt="ProjectBuilder のタイムチャート入力画面">
+        <figcaption>タイムチャート</figcaption>
+      </figure>
+    </section>
+
+    <section class="section">
+      <h2>トラップ</h2>
+      <p>条件に一致したタイミングを検知する定義です。最大 20 件です。</p>
+      <div class="info-table" role="table" aria-label="トラップ列">
+        <div role="row"><div role="cell">アドレス / データタイプ</div><div role="cell">検知対象とデータタイプです。</div></div>
+        <div role="row"><div role="cell">検知条件</div><div role="cell">BIT は <code>Rise</code>、<code>Fall</code>、<code>Change</code>。WORD は <code>Change</code>、<code>GreaterOrEqual</code>、<code>LessOrEqual</code>、<code>Equal</code>、<code>NotEqual</code>。</div></div>
+        <div role="row"><div role="cell">しきい値</div><div role="cell">比較条件で必要です。</div></div>
+        <div role="row"><div role="cell">有効</div><div role="cell">有効/無効を指定します。</div></div>
+      </div>
+      <p>Excel からタブ区切りでコピー/貼り付けできます。列は アドレス / データタイプ / 検知条件 / しきい値 / 有効 です。</p>
+      <figure class="inline-shot projectbuilder-shot">
+        <img src="../assets/images/projectbuilder/trap.png" alt="ProjectBuilder のトラップ入力画面">
+        <figcaption>トラップ</figcaption>
+      </figure>
+    </section>
+
+    <nav class="next-links" aria-label="前後ページ">
+      <a href="../projectbuilder/projectbuilder.html">前へ: ProjectBuilder</a>
+      <a href="../projectbuilder/projectbuilder-qr.html">次へ: QR 生成</a>
+    </nav>
+  </main>
+
+  <footer class="site-footer"><p>PLC IO Checker 操作マニュアル / ProjectBuilder 入力</p></footer>
+  <script>
+  (function(){
+    var t=document.getElementById("nav-toggle");
+    var n=document.querySelector(".top-nav");
+    if(!t||!n)return;
+    t.addEventListener("click",function(){
+      var o=n.classList.toggle("is-open");
+      t.setAttribute("aria-expanded",String(o));
+    });
+    document.addEventListener("click",function(e){
+      if(!t.contains(e.target)&&!n.contains(e.target)){
+        n.classList.remove("is-open");
+        t.setAttribute("aria-expanded","false");
+      }
+    });
+  })();
+  </script>
+</body>
+</html>

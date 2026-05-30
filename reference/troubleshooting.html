@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="PLC IO Checker の困ったときとよくある確認項目。">
+  <title>困ったとき | PLC IO Checker 操作マニュアル</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../index.html"><span class="brand-mark">PLC</span><span><strong>PLC IO Checker</strong><small>操作マニュアル</small></span></a>
+            <button class="nav-toggle" id="nav-toggle" aria-label="メニュー" aria-expanded="false" aria-controls="top-nav">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="top-nav" id="top-nav" aria-label="主要ページ">
+        <details class="nav-group">
+          <summary>開始</summary>
+          <div class="nav-menu">
+            <a href="../start/install.html">入手</a>
+            <a href="../start/getting-started.html">はじめる</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>PLC</summary>
+          <div class="nav-menu">
+            <a href="../plc/supported-plc.html">対応 PLC</a>
+            <a href="../plc/connection.html">接続・プロジェクト</a>
+            <a href="../plc/plc-side-settings.html">接続設定例</a>
+            <a href="../plc/melsec-settings.html">MELSEC</a>
+            <a href="../plc/keyence-settings.html">KEYENCE</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>操作</summary>
+          <div class="nav-menu">
+            <a href="../monitoring/monitoring.html">監視</a>
+            <a href="../monitoring/list-edit.html">List 登録編集</a>
+            <a href="../monitoring/focus-panel.html">操作パネル</a>
+            <a href="../monitoring/writing.html">書込</a>
+            <a href="../monitoring/cpu-control.html">CPU操作</a>
+            <a href="../monitoring/comments.html">コメント</a>
+            <a href="../monitoring/time-chart.html">タイムチャート</a>
+            <a href="../monitoring/traps.html">トラップ</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>転送</summary>
+          <div class="nav-menu">
+            <a href="../transfer/import-export.html">QR/JSON</a>
+            <a href="../transfer/project-json.html">プロジェクトJSON</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>設定</summary>
+          <div class="nav-menu">
+            <a href="../settings/tools-menu.html">メニュー</a>
+            <a href="../settings/app-settings.html">アプリ設定</a>
+            <a href="../settings/license.html">ライセンス</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>公開情報</summary>
+          <div class="nav-menu">
+            <a href="../reference/support.html">サポート</a>
+            <a href="../reference/privacy-policy.html">プライバシー</a>
+            <a href="../reference/app-permissions.html">権限</a>
+            <a href="../reference/terms.html">利用条件</a>
+            <a href="../reference/purchase-info.html">購入・返金</a>
+            <a href="../reference/store-release-checklist.html">公開準備</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>ProjectBuilder</summary>
+          <div class="nav-menu">
+            <a href="../projectbuilder/projectbuilder.html">ProjectBuilder</a>
+            <a href="../projectbuilder/projectbuilder-devices.html">入力</a>
+            <a href="../projectbuilder/projectbuilder-qr.html">QR 生成</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary class="active">参考</summary>
+          <div class="nav-menu">
+            <a href="../reference/glossary.html">用語集</a>
+            <a href="../reference/release-notes.html">リリースノート</a>
+            <a class="active" href="../reference/troubleshooting.html">困ったとき</a>
+          </div>
+        </details>
+      </nav>
+    </div>
+  </header>
+
+  <main class="doc-page">
+    <nav class="breadcrumb" aria-label="パンくず"><a href="../index.html">トップ</a><span>困ったとき</span></nav>
+    <section class="page-hero section">
+      <p class="eyebrow">Troubleshooting</p>
+      <h1>困ったとき</h1>
+      <p class="lead">接続、QR、書込、記録、コメント読込、ライセンス、エラー表示で問題が出た場合の確認項目です。</p>
+    </section>
+
+    <section class="section">
+      <div class="faq">
+        <details open>
+          <summary>接続できない</summary>
+          <p>通信設定の <strong>到達確認</strong> を実行し、結果とエラーメッセージを確認してください。あわせて IP、ポート、TCP/UDP、端末のネットワーク接続を確認してください。MELSEC はルート指定とリモートパスワードも確認してください。</p>
+        </details>
+        <details>
+          <summary>QR が読み取れない</summary>
+          <p>画面の明るさを上げ、QR を大きく表示してください。改善しない場合は ProjectBuilder の分割サイズを小さくして再生成します。</p>
+        </details>
+        <details>
+          <summary>タイムチャートの REC が押せない</summary>
+          <p>PLC 接続中で、1 チャンネル以上登録されている必要があります。登録上限は 20 チャンネルです。</p>
+        </details>
+        <details>
+          <summary>トラップを追加できない</summary>
+          <p>登録上限は 20 件です。既に同じアドレスのトラップがある場合や、条件がデータタイプに合わない場合は追加できません。</p>
+        </details>
+        <details>
+          <summary>書込できない</summary>
+          <p>接続状態、書込ロック、アドレスの有効範囲、データタイプ、エラー履歴を確認してください。BIT は ON/OFF、WORD は表示型と入力値を確認します。</p>
+        </details>
+        <details>
+          <summary>出力デバイスを書き込みたい</summary>
+          <p>出力デバイスを書き込む場合は、CPU状態を確認してください。詳しくは <a href="../monitoring/cpu-control.html#output-device-write">出力デバイスを書き込む場合</a> を確認してください。</p>
+        </details>
+        <details>
+          <summary>コメント読込が出ない</summary>
+          <p>PLC からの <strong>コメント読込</strong> は KEYENCE プロジェクトで表示され、接続中に実行できます。MELSEC は <strong>CSVコメント読込</strong> を使用します。</p>
+        </details>
+        <details>
+          <summary>実機通信が途中で使えない</summary>
+          <p>ライセンス未購入では、実機通信は 1 日 5 分までの接続に制限されます。<strong>ライセンス/購入</strong> で購入状態を確認してください。</p>
+        </details>
+        <details id="error-history">
+          <summary>エラー詳細を見たい</summary>
+          <p>右上メニューの <strong>エラー履歴</strong> を開きます。通信エラー、書込エラー、読込エラーの詳細と発生時の情報を確認します。</p>
+        </details>
+      </div>
+    </section>
+
+    <nav class="next-links" aria-label="前後ページ">
+      <a href="../reference/release-notes.html">前へ: リリースノート</a>
+      <a href="../index.html">トップへ戻る</a>
+    </nav>
+  </main>
+
+  <footer class="site-footer">
+  <div class="footer-simple">
+    <span class="brand-mark">PLC</span>
+    <span>PLC IO Checker 操作マニュアル</span>
+    <span style="margin-left:auto">© 2026 FA Labo</span>
+  </div>
+</footer>
+  <script>
+  (function(){
+    var t=document.getElementById("nav-toggle");
+    var n=document.querySelector(".top-nav");
+    if(!t||!n)return;
+    t.addEventListener("click",function(){
+      var o=n.classList.toggle("is-open");
+      t.setAttribute("aria-expanded",String(o));
+    });
+    document.addEventListener("click",function(e){
+      if(!t.contains(e.target)&&!n.contains(e.target)){
+        n.classList.remove("is-open");
+        t.setAttribute("aria-expanded","false");
+      }
+    });
+  })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="PLC IO Checker のサポート情報。">
+  <title>サポート | PLC IO Checker</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../index.html"><span class="brand-mark">PLC</span><span><strong>PLC IO Checker</strong><small>操作マニュアル</small></span></a>
+            <button class="nav-toggle" id="nav-toggle" aria-label="メニュー" aria-expanded="false" aria-controls="top-nav">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="top-nav" id="top-nav" aria-label="主要ページ">
+        <details class="nav-group">
+          <summary>開始</summary>
+          <div class="nav-menu">
+            <a href="../start/install.html">入手</a>
+            <a href="../start/getting-started.html">はじめる</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>PLC</summary>
+          <div class="nav-menu">
+            <a href="../plc/supported-plc.html">対応 PLC</a>
+            <a href="../plc/connection.html">接続・プロジェクト</a>
+            <a href="../plc/plc-side-settings.html">接続設定例</a>
+            <a href="../plc/melsec-settings.html">MELSEC</a>
+            <a href="../plc/keyence-settings.html">KEYENCE</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>操作</summary>
+          <div class="nav-menu">
+            <a href="../monitoring/monitoring.html">監視</a>
+            <a href="../monitoring/list-edit.html">List 登録編集</a>
+            <a href="../monitoring/focus-panel.html">操作パネル</a>
+            <a href="../monitoring/writing.html">書込</a>
+            <a href="../monitoring/cpu-control.html">CPU操作</a>
+            <a href="../monitoring/comments.html">コメント</a>
+            <a href="../monitoring/time-chart.html">タイムチャート</a>
+            <a href="../monitoring/traps.html">トラップ</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>転送</summary>
+          <div class="nav-menu">
+            <a href="../transfer/import-export.html">QR/JSON</a>
+            <a href="../transfer/project-json.html">プロジェクトJSON</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>設定</summary>
+          <div class="nav-menu">
+            <a href="../settings/tools-menu.html">メニュー</a>
+            <a href="../settings/app-settings.html">アプリ設定</a>
+            <a href="../settings/license.html">ライセンス</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary class="active">公開情報</summary>
+          <div class="nav-menu">
+            <a class="active" href="../reference/support.html">サポート</a>
+            <a href="../reference/privacy-policy.html">プライバシー</a>
+            <a href="../reference/app-permissions.html">権限</a>
+            <a href="../reference/terms.html">利用条件</a>
+            <a href="../reference/purchase-info.html">購入・返金</a>
+            <a href="../reference/store-release-checklist.html">公開準備</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>ProjectBuilder</summary>
+          <div class="nav-menu">
+            <a href="../projectbuilder/projectbuilder.html">ProjectBuilder</a>
+            <a href="../projectbuilder/projectbuilder-devices.html">入力</a>
+            <a href="../projectbuilder/projectbuilder-qr.html">QR 生成</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>参考</summary>
+          <div class="nav-menu">
+            <a href="../reference/glossary.html">用語集</a>
+            <a href="../reference/release-notes.html">リリースノート</a>
+            <a href="../reference/troubleshooting.html">困ったとき</a>
+          </div>
+        </details>
+      </nav>
+    </div>
+  </header>
+
+  <main class="doc-page">
+    <nav class="breadcrumb" aria-label="パンくず"><a href="../index.html">トップ</a><span>サポート</span></nav>
+    <section class="page-hero section">
+      <p class="eyebrow">Support</p>
+      <h1>サポート</h1>
+      <p class="lead">PLC IO Checker の問い合わせ先、問い合わせ前に確認する情報、Store 掲載用 URL のためのページです。</p>
+    </section>
+
+    <section class="section">
+      <div class="notice">
+        <h2>公開前確認</h2>
+        <ul>
+          <li>正式なサポートメールアドレス、または問い合わせフォーム URL。</li>
+          <li>Store に表示する販売者名 / 開発者名と、このページに記載する表記の一致。</li>
+          <li>対応言語。現時点の候補: 日本語、必要に応じて英語。</li>
+          <li>返信目安、休業日、業務用途の緊急対応可否。</li>
+          <li>GitHub Issues を問い合わせ窓口として使うか、メールだけにするか。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>問い合わせ前に確認する情報</h2>
+      <p>通信、書込、QR、購入状態の問い合わせでは、次の情報があると確認が早くなります。設備情報を送る場合は、社外秘の IP アドレス、パスワード、設備名、顧客名を含めないようにしてください。</p>
+      <div class="info-table" role="table" aria-label="問い合わせ時の確認項目">
+        <div role="row"><div role="cell">アプリ</div><div role="cell">Android / iOS、アプリバージョン、端末機種、OS バージョン。</div></div>
+        <div role="row"><div role="cell">PLC</div><div role="cell">メーカー、CPU機種、通信方式、ポート、接続先ネットワーク。</div></div>
+        <div role="row"><div role="cell">プロジェクト</div><div role="cell">接続種別、MELSEC / KEYENCE、問題が出るデバイス種別と address。</div></div>
+        <div role="row"><div role="cell">エラー</div><div role="cell">エラー履歴の表示、発生した操作、再現手順。</div></div>
+        <div role="row"><div role="cell">ProjectBuilder</div><div role="cell">使用バージョン、QR 生成条件、JSON読込時のエラー。</div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>サポート範囲</h2>
+      <p>PLC IO Checker の画面操作、プロジェクト読込、QR / JSON、対応 PLC、購入状態、アプリ内のエラー確認を対象にします。PLC 本体、ネットワーク機器、設備制御盤、現場安全手順の設計や変更は、設備管理者または PLC メーカーの資料に従ってください。</p>
+      <p>書込、CPU操作、トラップ、タイムチャート REC は実設備に影響する可能性があります。サポートへの問い合わせ前でも、現場の安全確認を優先してください。</p>
+    </section>
+
+    <section class="section">
+      <h2>公開 URL</h2>
+      <p>このページは App Store Connect の Support URL、Google Play の Web site / support link の候補として使用できます。</p>
+      <div class="notice">
+        <h2>公開前確認</h2>
+        <p>GitHub Pages 公開後の URL を確定し、App Store Connect / Google Play Console の各入力欄へ同じ URL を登録します。独自ドメインを使う場合は、公開前に URL を差し替えます。</p>
+      </div>
+    </section>
+
+    <nav class="next-links" aria-label="前後ページ">
+      <a href="../settings/license.html">前へ: ライセンス/購入</a>
+      <a href="../reference/privacy-policy.html">次へ: プライバシーポリシー</a>
+    </nav>
+  </main>
+
+  <footer class="site-footer"><p>PLC IO Checker / サポート</p></footer>
+  <script>
+  (function(){
+    var t=document.getElementById("nav-toggle");
+    var n=document.querySelector(".top-nav");
+    if(!t||!n)return;
+    t.addEventListener("click",function(){
+      var o=n.classList.toggle("is-open");
+      t.setAttribute("aria-expanded",String(o));
+    });
+    document.addEventListener("click",function(e){
+      if(!t.contains(e.target)&&!n.contains(e.target)){
+        n.classList.remove("is-open");
+        t.setAttribute("aria-expanded","false");
+      }
+    });
+  })();
+  </script>
+</body>
+</html>

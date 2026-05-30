@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="PLC IO Checker は MELSEC / KEYENCE PLC の監視、書込、記録を行う Android / iOS アプリです。">
+  <title>PLC IO Checker 操作マニュアル</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="PLC IO Checker 操作マニュアル">
+        <span class="brand-mark">PLC</span>
+        <span>
+          <strong>PLC IO Checker</strong>
+          <small>操作マニュアル</small>
+        </span>
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="メニュー" aria-expanded="false" aria-controls="top-nav">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="top-nav" id="top-nav" aria-label="主要ページ">
+        <details class="nav-group">
+          <summary>開始</summary>
+          <div class="nav-menu">
+            <a href="start/install.html">入手</a>
+            <a href="start/getting-started.html">はじめる</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>PLC</summary>
+          <div class="nav-menu">
+            <a href="plc/supported-plc.html">対応 PLC</a>
+            <a href="plc/connection.html">接続・プロジェクト</a>
+            <a href="plc/plc-side-settings.html">接続設定例</a>
+            <a href="plc/melsec-settings.html">MELSEC</a>
+            <a href="plc/keyence-settings.html">KEYENCE</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>操作</summary>
+          <div class="nav-menu">
+            <a href="monitoring/monitoring.html">監視</a>
+            <a href="monitoring/list-edit.html">List 登録編集</a>
+            <a href="monitoring/focus-panel.html">操作パネル</a>
+            <a href="monitoring/writing.html">書込</a>
+            <a href="monitoring/cpu-control.html">CPU操作</a>
+            <a href="monitoring/comments.html">コメント</a>
+            <a href="monitoring/time-chart.html">タイムチャート</a>
+            <a href="monitoring/traps.html">トラップ</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>転送</summary>
+          <div class="nav-menu">
+            <a href="transfer/import-export.html">QR/JSON</a>
+            <a href="transfer/project-json.html">プロジェクトJSON</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>設定</summary>
+          <div class="nav-menu">
+            <a href="settings/tools-menu.html">メニュー</a>
+            <a href="settings/app-settings.html">アプリ設定</a>
+            <a href="settings/license.html">ライセンス</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>公開情報</summary>
+          <div class="nav-menu">
+            <a href="reference/support.html">サポート</a>
+            <a href="reference/privacy-policy.html">プライバシー</a>
+            <a href="reference/app-permissions.html">権限</a>
+            <a href="reference/terms.html">利用条件</a>
+            <a href="reference/purchase-info.html">購入・返金</a>
+            <a href="reference/store-release-checklist.html">公開準備</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>ProjectBuilder</summary>
+          <div class="nav-menu">
+            <a href="projectbuilder/projectbuilder.html">ProjectBuilder</a>
+            <a href="projectbuilder/projectbuilder-devices.html">入力</a>
+            <a href="projectbuilder/projectbuilder-qr.html">QR 生成</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>参考</summary>
+          <div class="nav-menu">
+            <a href="reference/glossary.html">用語集</a>
+            <a href="reference/release-notes.html">リリースノート</a>
+            <a href="reference/troubleshooting.html">困ったとき</a>
+          </div>
+        </details>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero-band-wrapper">
+      <section class="hero section-band">
+        <div class="hero-copy">
+          <p class="eyebrow">操作マニュアル</p>
+          <div class="title-with-icon">
+            <img class="title-icon" src="assets/images/app/android-icon.png" alt="PLC IO Checker アプリアイコン">
+            <h1>PLC IO Checker</h1>
+          </div>
+          <p class="lead">
+            PLC IO Checker は、Android / iOS 端末から MELSEC / KEYENCE PLC のデバイス監視、書込、タイムチャート、トラップを行うためのアプリです。
+            FA設備の立ち上げ時に必要な I/O チェック作業を端末で行えます。
+            このサイトでは、基本操作と各機能の使い方を説明します。
+          </p>
+          <div class="platform-badges">
+            <span class="platform-badge">Android</span>
+            <span class="platform-badge">iOS</span>
+          </div>
+        </div>
+        <figure class="hero-shot">
+          <img src="assets/images/monitoring/block-monitor.png" alt="PLC IO Checker のブロック監視画面">
+        </figure>
+      </section>
+    </div>
+
+    <section class="section">
+      <div class="notice danger">
+        <h2>安全上の注意</h2>
+        <p>
+          デバイス書込、CPU操作は実設備の動作に影響する可能性があります。
+          アドレス、データタイプ、値、対象 PLC が正しいことを確認し、現場の安全手順に従って操作してください。
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Start</p>
+        <h2>まず見るページ</h2>
+        <p>初回確認、アプリ入手、対応 PLC の確認に使う入口です。</p>
+      </div>
+      <div class="page-grid">
+        <a class="page-card" href="start/install.html">
+          <span>入手</span>
+          <strong>入手・インストール</strong>
+          <small>アプリ入手先、ProjectBuilder、公開前の案内</small>
+        </a>
+        <a class="page-card" href="start/getting-started.html">
+          <span>開始</span>
+          <strong>はじめる</strong>
+          <small>全体の流れ、画面構成、最短手順</small>
+        </a>
+        <a class="page-card" href="plc/supported-plc.html">
+          <span>対応</span>
+          <strong>対応 PLC</strong>
+          <small>対応機種、CPU機種、既定ポート、通信方式</small>
+        </a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <p class="eyebrow">PLC / Connection</p>
+        <h2>PLC・接続</h2>
+        <p>接続先、PLC 種別、MELSEC / KEYENCE の設定を確認するページです。</p>
+      </div>
+      <div class="page-grid">
+        <a class="page-card" href="plc/connection.html">
+          <span>接続</span>
+          <strong>接続・プロジェクト</strong>
+          <small>接続先切替、通信設定、実機接続</small>
+        </a>
+        <a class="page-card" href="plc/plc-side-settings.html">
+          <span>PLC 側</span>
+          <strong>接続設定例</strong>
+          <small>共通確認項目、機種別ページ一覧</small>
+        </a>
+        <a class="page-card" href="plc/melsec-settings.html">
+          <span>MELSEC</span>
+          <strong>MELSEC 設定</strong>
+          <small>SLMP（Seamless Message Protocol）、ルート指定、リモートパスワード、X/Y表記</small>
+        </a>
+        <a class="page-card" href="plc/keyence-settings.html">
+          <span>KEYENCE</span>
+          <strong>KEYENCE 設定</strong>
+          <small>Host-link、Normal/XYM、コメント読込</small>
+        </a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Monitor / Operation</p>
+        <h2>監視・操作</h2>
+        <p>日常操作で使う監視、登録編集、書込、CPU操作、記録、トラップのページです。</p>
+      </div>
+      <div class="page-grid">
+        <a class="page-card" href="monitoring/monitoring.html">
+          <span>監視</span>
+          <strong>監視</strong>
+          <small>ブロック、リスト、デバイス範囲</small>
+        </a>
+        <a class="page-card" href="monitoring/list-edit.html">
+          <span>List</span>
+          <strong>List 登録編集</strong>
+          <small>単体追加、範囲追加、検索、並び替え、削除</small>
+        </a>
+        <a class="page-card" href="monitoring/focus-panel.html">
+          <span>操作</span>
+          <strong>操作パネル</strong>
+          <small>ON/OFF、数値書込、Dec/Hex/Bit、トラップ追加</small>
+        </a>
+        <a class="page-card" href="monitoring/writing.html">
+          <span>書込</span>
+          <strong>書込</strong>
+          <small>書込ロック、BIT 長押し、数値書込</small>
+        </a>
+        <a class="page-card" href="monitoring/cpu-control.html">
+          <span>CPU</span>
+          <strong>CPU操作</strong>
+          <small>RUN、STOP、PAUSE、PROGRAM</small>
+        </a>
+        <a class="page-card" href="monitoring/comments.html">
+          <span>コメント</span>
+          <strong>コメント</strong>
+          <small>CSVコメント読込、PLCコメント読込</small>
+        </a>
+        <a class="page-card" href="monitoring/time-chart.html">
+          <span>Chart</span>
+          <strong>タイムチャート</strong>
+          <small>CH追加、REC、CSV、履歴クリア</small>
+        </a>
+        <a class="page-card" href="monitoring/traps.html">
+          <span>トラップ</span>
+          <strong>トラップ</strong>
+          <small>条件登録、検知、イベント履歴</small>
+        </a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Transfer / Data</p>
+        <h2>転送・データ形式</h2>
+        <p>QR、JSON、ProjectBuilder とのデータ連携を確認するページです。</p>
+      </div>
+      <div class="page-grid">
+        <a class="page-card" href="transfer/import-export.html">
+          <span>QR/JSON</span>
+          <strong>QR / JSON</strong>
+          <small>QR読込、JSON読込、JSON書出</small>
+        </a>
+        <a class="page-card" href="transfer/project-json.html">
+          <span>JSON</span>
+          <strong>プロジェクトJSON</strong>
+          <small>MELSEC / KEYENCE差分</small>
+        </a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Settings / License</p>
+        <h2>設定・購入</h2>
+        <p>アプリ設定、メニュー構成、ライセンス表示を確認するページです。</p>
+      </div>
+      <div class="page-grid">
+        <a class="page-card" href="settings/tools-menu.html">
+          <span>メニュー</span>
+          <strong>メニュー</strong>
+          <small>メニュー項目、詳細ページへの入口</small>
+        </a>
+        <a class="page-card" href="settings/app-settings.html">
+          <span>設定</span>
+          <strong>アプリ設定</strong>
+          <small>多言語、ライト/ダーク、画面配置、ビット書込</small>
+        </a>
+        <a class="page-card" href="settings/license.html">
+          <span>購入</span>
+          <strong>ライセンス/購入</strong>
+          <small>未購入時の接続制限、MELSEC / KEYENCE実機通信</small>
+        </a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Public Information</p>
+        <h2>公開情報</h2>
+        <p>公開時に必要なサポート、プライバシー、利用条件、購入・返金のページです。未確定項目は公開準備ページにまとめます。</p>
+      </div>
+      <div class="page-grid">
+        <a class="page-card" href="reference/support.html">
+          <span>Support</span>
+          <strong>サポート</strong>
+          <small>問い合わせ先、確認情報、Support URL</small>
+        </a>
+        <a class="page-card" href="reference/privacy-policy.html">
+          <span>Privacy</span>
+          <strong>プライバシーポリシー</strong>
+          <small>個人情報非収集、PLC 通信、QR/ファイル</small>
+        </a>
+        <a class="page-card" href="reference/app-permissions.html">
+          <span>権限</span>
+          <strong>アプリ権限</strong>
+          <small>Android / iOS 権限、カメラ、Local Network、ファイル</small>
+        </a>
+        <a class="page-card" href="reference/terms.html">
+          <span>Terms</span>
+          <strong>利用条件</strong>
+          <small>安全確認、保証、禁止事項、販売条件</small>
+        </a>
+        <a class="page-card" href="reference/purchase-info.html">
+          <span>Purchase</span>
+          <strong>購入・返金</strong>
+          <small>Store 決済、返金窓口、販売方式</small>
+        </a>
+        <a class="page-card" href="reference/store-release-checklist.html">
+          <span>準備</span>
+          <strong>公開準備</strong>
+          <small>未確定項目、公開前チェック</small>
+        </a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <p class="eyebrow">ProjectBuilder</p>
+        <h2>ProjectBuilder</h2>
+        <p>PC 側でプロジェクトを作成し、モバイルアプリへ渡すためのページです。</p>
+      </div>
+      <div class="page-grid">
+        <a class="page-card" href="projectbuilder/projectbuilder.html">
+          <span>PB</span>
+          <strong>ProjectBuilder</strong>
+          <small>PC 側でプロジェクト作成、QR/JSON 出力</small>
+        </a>
+        <a class="page-card" href="projectbuilder/projectbuilder-devices.html">
+          <span>PB入力</span>
+          <strong>ProjectBuilder 入力</strong>
+          <small>デバイス、タイムチャート、トラップ、貼り付け、上限</small>
+        </a>
+        <a class="page-card" href="projectbuilder/projectbuilder-qr.html">
+          <span>PB QR</span>
+          <strong>ProjectBuilder QR</strong>
+          <small>QR 生成、分割サイズ、表示サイズ、誤り訂正</small>
+        </a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <p class="eyebrow">Reference</p>
+        <h2>参考・困ったとき</h2>
+        <p>用語、リリースノート、トラブル時の確認先をまとめたページです。</p>
+      </div>
+      <div class="page-grid">
+        <a class="page-card" href="reference/glossary.html">
+          <span>用語</span>
+          <strong>用語集</strong>
+          <small>プロジェクト、address、データタイプ、BIT/WORD、トラップ</small>
+        </a>
+        <a class="page-card" href="reference/release-notes.html">
+          <span>履歴</span>
+          <strong>リリースノート</strong>
+          <small>公開履歴、変更点、既知の制限</small>
+        </a>
+        <a class="page-card" href="reference/troubleshooting.html">
+          <span>対処</span>
+          <strong>困ったとき</strong>
+          <small>接続、QR、REC、書込、コメント読込、ライセンス</small>
+        </a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <p class="eyebrow">PLC Side Settings</p>
+        <h2>接続設定例</h2>
+        <p>PLC 側で確認する通信設定の参考ページです。</p>
+      </div>
+      <div class="page-grid">
+        <a class="page-card" href="plc/plc-side-settings.html">
+          <span>一覧</span>
+          <strong>接続設定例</strong>
+          <small>共通確認項目、機種別ページ一覧</small>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <a class="footer-brand" href="index.html">
+        <span class="brand-mark">PLC</span>
+        <span>
+          <strong>PLC IO Checker</strong>
+          <small>操作マニュアル</small>
+        </span>
+      </a>
+      <div>
+        <nav class="footer-links" aria-label="フッターリンク">
+          <a href="reference/privacy-policy.html">プライバシーポリシー</a>
+          <a href="reference/terms.html">利用条件</a>
+          <a href="reference/purchase-info.html">購入・返金</a>
+          <a href="reference/support.html">サポート</a>
+          <a href="reference/troubleshooting.html">困ったとき</a>
+          <a href="reference/release-notes.html">リリースノート</a>
+        </nav>
+        <p class="footer-copy">© 2026 FA Labo</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    var t=document.getElementById("nav-toggle");
+    var n=document.querySelector(".top-nav");
+    if(!t||!n)return;
+    t.addEventListener("click",function(){
+      var o=n.classList.toggle("is-open");
+      t.setAttribute("aria-expanded",String(o));
+    });
+    document.addEventListener("click",function(e){
+      if(!t.contains(e.target)&&!n.contains(e.target)){
+        n.classList.remove("is-open");
+        t.setAttribute("aria-expanded","false");
+      }
+    });
+  })();
+  </script>
+</body>
+</html>

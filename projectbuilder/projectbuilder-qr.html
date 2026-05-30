@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ProjectBuilder の QR 生成、分割サイズ、表示サイズ、誤り訂正、PNG/JSON 保存。">
+  <title>ProjectBuilder QR 生成 | PLC IO Checker 操作マニュアル</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../index.html"><span class="brand-mark">PLC</span><span><strong>PLC IO Checker</strong><small>操作マニュアル</small></span></a>
+            <button class="nav-toggle" id="nav-toggle" aria-label="メニュー" aria-expanded="false" aria-controls="top-nav">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="top-nav" id="top-nav" aria-label="主要ページ">
+        <details class="nav-group">
+          <summary>開始</summary>
+          <div class="nav-menu">
+            <a href="../start/install.html">入手</a>
+            <a href="../start/getting-started.html">はじめる</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>PLC</summary>
+          <div class="nav-menu">
+            <a href="../plc/supported-plc.html">対応 PLC</a>
+            <a href="../plc/connection.html">接続・プロジェクト</a>
+            <a href="../plc/plc-side-settings.html">接続設定例</a>
+            <a href="../plc/melsec-settings.html">MELSEC</a>
+            <a href="../plc/keyence-settings.html">KEYENCE</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>操作</summary>
+          <div class="nav-menu">
+            <a href="../monitoring/monitoring.html">監視</a>
+            <a href="../monitoring/list-edit.html">List 登録編集</a>
+            <a href="../monitoring/focus-panel.html">操作パネル</a>
+            <a href="../monitoring/writing.html">書込</a>
+            <a href="../monitoring/cpu-control.html">CPU操作</a>
+            <a href="../monitoring/comments.html">コメント</a>
+            <a href="../monitoring/time-chart.html">タイムチャート</a>
+            <a href="../monitoring/traps.html">トラップ</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>転送</summary>
+          <div class="nav-menu">
+            <a href="../transfer/import-export.html">QR/JSON</a>
+            <a href="../transfer/project-json.html">プロジェクトJSON</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>設定</summary>
+          <div class="nav-menu">
+            <a href="../settings/tools-menu.html">メニュー</a>
+            <a href="../settings/app-settings.html">アプリ設定</a>
+            <a href="../settings/license.html">ライセンス</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>公開情報</summary>
+          <div class="nav-menu">
+            <a href="../reference/support.html">サポート</a>
+            <a href="../reference/privacy-policy.html">プライバシー</a>
+            <a href="../reference/app-permissions.html">権限</a>
+            <a href="../reference/terms.html">利用条件</a>
+            <a href="../reference/purchase-info.html">購入・返金</a>
+            <a href="../reference/store-release-checklist.html">公開準備</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary class="active">ProjectBuilder</summary>
+          <div class="nav-menu">
+            <a href="../projectbuilder/projectbuilder.html">ProjectBuilder</a>
+            <a href="../projectbuilder/projectbuilder-devices.html">入力</a>
+            <a class="active" href="../projectbuilder/projectbuilder-qr.html">QR 生成</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>参考</summary>
+          <div class="nav-menu">
+            <a href="../reference/glossary.html">用語集</a>
+            <a href="../reference/release-notes.html">リリースノート</a>
+            <a href="../reference/troubleshooting.html">困ったとき</a>
+          </div>
+        </details>
+      </nav>
+    </div>
+  </header>
+
+  <main class="doc-page">
+    <nav class="breadcrumb" aria-label="パンくず"><a href="../index.html">トップ</a><span>ProjectBuilder QR 生成</span></nav>
+    <section class="page-hero section">
+      <p class="eyebrow">QR Export</p>
+      <h1>ProjectBuilder QR 生成</h1>
+      <p class="lead">ProjectBuilder で作成したプロジェクトを QR または JSON として出力します。</p>
+    </section>
+
+    <section class="section">
+      <h2>QR 表示</h2>
+      <p><strong>QR 生成</strong> を押すと、モバイルアプリで読み込む QR 画面に切り替わります。複数枚ある場合は、表示中のページ番号を確認しながら読み込みます。</p>
+      <figure class="inline-shot projectbuilder-shot">
+        <img src="../assets/images/projectbuilder/qr.png" alt="ProjectBuilder の QR 表示画面">
+        <figcaption>QR 表示</figcaption>
+      </figure>
+    </section>
+
+    <section class="section">
+      <h2>入口</h2>
+      <ul>
+        <li><strong>QR 生成</strong> ボタンで QR 表示へ切り替えます。</li>
+        <li><strong>入力へ戻る</strong> で編集画面へ戻ります。</li>
+        <li><strong>前へ</strong> / <strong>次へ</strong> で複数ページ QR を切り替えます。</li>
+        <li><strong>自動</strong> で複数ページ QR の自動切換えを開始し、<strong>停止</strong> で止めます。</li>
+        <li><strong>ファイル</strong> メニューから <strong>JSON 読み込み</strong>、<strong>JSON 保存</strong>、<strong>JSON 表示</strong> を使えます。</li>
+        <li>QR メニューから <strong>PNG + JSON 保存</strong> を使えます。</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>QR 設定</h2>
+      <div class="info-table" role="table" aria-label="QR settings">
+        <div role="row"><div role="cell">分割サイズ</div><div role="cell"><code>350</code>、<code>500</code>、<code>800</code>、<code>1200</code>。小さいほどページ数は増えますが読み取りやすくなります。</div></div>
+        <div role="row"><div role="cell">表示サイズ</div><div role="cell"><code>600</code>、<code>800</code>、<code>1000</code>、<code>1200</code> px。</div></div>
+        <div role="row"><div role="cell">誤り訂正</div><div role="cell"><code>L</code>、<code>M</code>、<code>Q</code>、<code>H</code>。強くするほど復元力は上がりますが QR は細かくなります。</div></div>
+        <div role="row"><div role="cell">自動切換え間隔</div><div role="cell"><code>0.0</code> から <code>5.0</code> 秒で指定します。既定値は <code>1.0</code> 秒です。複数ページ QR の場合だけ使います。</div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>モバイルアプリで読む</h2>
+      <ol class="steps compact">
+        <li><strong>QR読込</strong><span>モバイルアプリのメニューから <strong>QR読込</strong> を開きます。</span></li>
+        <li><strong>1枚目</strong><span>ProjectBuilder に表示した 1 枚目を読み込みます。</span></li>
+        <li><strong>次ページ</strong><span>アプリの表示に従って ProjectBuilder 側を次の QR に切り替えます。</span></li>
+        <li><strong>完了</strong><span>全ページを読み込むとプロジェクトに反映されます。</span></li>
+      </ol>
+    </section>
+
+    <section class="section">
+      <div class="notice">
+        <h2>読み取りにくい場合</h2>
+        <p>画面を明るくし、QR を大きく表示します。改善しない場合は分割サイズを下げて、1 枚あたりの文字数を少なくします。</p>
+      </div>
+    </section>
+
+    <nav class="next-links" aria-label="前後ページ">
+      <a href="../projectbuilder/projectbuilder-devices.html">前へ: ProjectBuilder 入力</a>
+      <a href="../reference/glossary.html">次へ: 用語集</a>
+    </nav>
+  </main>
+
+  <footer class="site-footer"><p>PLC IO Checker 操作マニュアル / ProjectBuilder QR</p></footer>
+  <script>
+  (function(){
+    var t=document.getElementById("nav-toggle");
+    var n=document.querySelector(".top-nav");
+    if(!t||!n)return;
+    t.addEventListener("click",function(){
+      var o=n.classList.toggle("is-open");
+      t.setAttribute("aria-expanded",String(o));
+    });
+    document.addEventListener("click",function(e){
+      if(!t.contains(e.target)&&!n.contains(e.target)){
+        n.classList.remove("is-open");
+        t.setAttribute("aria-expanded","false");
+      }
+    });
+  })();
+  </script>
+</body>
+</html>

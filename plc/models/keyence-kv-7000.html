@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="KEYENCE KV-7000 の 接続設定例 TODO。">
+  <title>KEYENCE KV-7000 接続設定例 | PLC IO Checker 操作マニュアル</title>
+  <link rel="stylesheet" href="../../assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../../index.html"><span class="brand-mark">PLC</span><span><strong>PLC IO Checker</strong><small>操作マニュアル</small></span></a>
+            <button class="nav-toggle" id="nav-toggle" aria-label="メニュー" aria-expanded="false" aria-controls="top-nav">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="top-nav" id="top-nav" aria-label="主要ページ">
+        <details class="nav-group">
+          <summary>開始</summary>
+          <div class="nav-menu">
+            <a href="../../start/install.html">入手</a>
+            <a href="../../start/getting-started.html">はじめる</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>PLC</summary>
+          <div class="nav-menu">
+            <a href="../../plc/supported-plc.html">対応 PLC</a>
+            <a href="../../plc/connection.html">接続・プロジェクト</a>
+            <a href="../../plc/plc-side-settings.html">接続設定例</a>
+            <a href="../../plc/melsec-settings.html">MELSEC</a>
+            <a href="../../plc/keyence-settings.html">KEYENCE</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>操作</summary>
+          <div class="nav-menu">
+            <a href="../../monitoring/monitoring.html">監視</a>
+            <a href="../../monitoring/list-edit.html">List 登録編集</a>
+            <a href="../../monitoring/focus-panel.html">操作パネル</a>
+            <a href="../../monitoring/writing.html">書込</a>
+            <a href="../../monitoring/cpu-control.html">CPU操作</a>
+            <a href="../../monitoring/comments.html">コメント</a>
+            <a href="../../monitoring/time-chart.html">タイムチャート</a>
+            <a href="../../monitoring/traps.html">トラップ</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>転送</summary>
+          <div class="nav-menu">
+            <a href="../../transfer/import-export.html">QR/JSON</a>
+            <a href="../../transfer/project-json.html">プロジェクトJSON</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>設定</summary>
+          <div class="nav-menu">
+            <a href="../../settings/tools-menu.html">メニュー</a>
+            <a href="../../settings/app-settings.html">アプリ設定</a>
+            <a href="../../settings/license.html">ライセンス</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>公開情報</summary>
+          <div class="nav-menu">
+            <a href="../../reference/support.html">サポート</a>
+            <a href="../../reference/privacy-policy.html">プライバシー</a>
+            <a href="../../reference/app-permissions.html">権限</a>
+            <a href="../../reference/terms.html">利用条件</a>
+            <a href="../../reference/purchase-info.html">購入・返金</a>
+            <a href="../../reference/store-release-checklist.html">公開準備</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>ProjectBuilder</summary>
+          <div class="nav-menu">
+            <a href="../../projectbuilder/projectbuilder.html">ProjectBuilder</a>
+            <a href="../../projectbuilder/projectbuilder-devices.html">入力</a>
+            <a href="../../projectbuilder/projectbuilder-qr.html">QR 生成</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>参考</summary>
+          <div class="nav-menu">
+            <a href="../../reference/glossary.html">用語集</a>
+            <a href="../../reference/release-notes.html">リリースノート</a>
+            <a href="../../reference/troubleshooting.html">困ったとき</a>
+          </div>
+        </details>
+      </nav>
+    </div>
+  </header>
+
+  <main class="doc-page">
+    <nav class="breadcrumb" aria-label="パンくず"><a href="../../index.html">トップ</a><a href="../plc-side-settings.html">接続設定例</a><span>KEYENCE KV-7000</span></nav>
+    <section class="page-hero section">
+      <p class="eyebrow">KEYENCE / KV-7000</p>
+      <h1>KEYENCE KV-7000 接続設定例</h1>
+      <p class="lead">KEYENCE KV-7000 を PLC IO Checker から接続する場合の PLC 側設定メモ枠です。現時点の詳細内容は dummy / TODO です。</p>
+    </section>
+
+    <section class="section">
+      <div class="notice">
+        <h2>TODO</h2>
+        <p>このページは機種別の 接続設定例を後から追記するための placeholder です。メーカー資料、実機画面、現場設定例を確認してから詳細化します。</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>アプリ側で選ぶ項目</h2>
+      <div class="info-table" role="table" aria-label="アプリ側選択項目">
+        <div role="row"><div role="cell">PLC 種別</div><div role="cell"><code>KEYENCE</code></div></div>
+        <div role="row"><div role="cell">CPU機種</div><div role="cell"><code>KV-7000</code></div></div>
+        <div role="row"><div role="cell">通信方式</div><div role="cell">Host-link</div></div>
+        <div role="row"><div role="cell">既定ポート</div><div role="cell"><code>8501</code></div></div>
+        <div role="row"><div role="cell">KEYENCE 表示</div><div role="cell"><code>Normal</code> または <code>XYM</code>。詳細 TODO。</div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>PLC 側設定メモ</h2>
+      <div class="info-table" role="table" aria-label="PLC 側設定メモ">
+        <div role="row"><div role="cell">PLC 側画面名</div><div role="cell">TODO</div></div>
+        <div role="row"><div role="cell">Ethernet / 通信設定</div><div role="cell">TODO</div></div>
+        <div role="row"><div role="cell">Port / Protocol</div><div role="cell">TODO</div></div>
+        <div role="row"><div role="cell">書込許可 / 保護設定</div><div role="cell">TODO</div></div>
+        <div role="row"><div role="cell">メーカー資料リンク</div><div role="cell">TODO</div></div>
+      </div>
+    </section>
+
+    <nav class="next-links" aria-label="前後ページ">
+      <a href="keyence-kv-8000.html">前へ</a>
+      <a href="../plc-side-settings.html">一覧へ戻る</a>
+      <a href="keyence-kv-5000.html">次へ</a>
+    </nav>
+  </main>
+
+  <footer class="site-footer"><p>PLC IO Checker 操作マニュアル / KEYENCE KV-7000</p></footer>
+  <script>
+  (function(){
+    var t=document.getElementById("nav-toggle");
+    var n=document.querySelector(".top-nav");
+    if(!t||!n)return;
+    t.addEventListener("click",function(){
+      var o=n.classList.toggle("is-open");
+      t.setAttribute("aria-expanded",String(o));
+    });
+    document.addEventListener("click",function(e){
+      if(!t.contains(e.target)&&!n.contains(e.target)){
+        n.classList.remove("is-open");
+        t.setAttribute("aria-expanded","false");
+      }
+    });
+  })();
+  </script>
+</body>
+</html>
