@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="PLC IO Checker の PLC 側設定参考。機種別ページへの入口。">
-  <title>PLC 側設定参考 | PLC IO Checker 操作マニュアル</title>
+  <meta name="description" content="PLC IO Checker の接続設定例。機種別ページへの入口。">
+  <title>接続設定例 | PLC IO Checker 操作マニュアル</title>
   <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
@@ -27,10 +27,9 @@
           <div class="nav-menu">
             <a href="../plc/supported-plc.html">対応 PLC</a>
             <a href="../plc/connection.html">接続・プロジェクト</a>
-            <a class="active" href="../plc/plc-side-settings.html">PLC 側設定参考</a>
+            <a class="active" href="../plc/plc-side-settings.html">接続設定例</a>
             <a href="../plc/melsec-settings.html">MELSEC</a>
             <a href="../plc/keyence-settings.html">KEYENCE</a>
-            <a href="../plc/device-addressing.html">デバイス表記</a>
           </div>
         </details>
         <details class="nav-group">
@@ -40,6 +39,7 @@
             <a href="../monitoring/list-edit.html">List 登録編集</a>
             <a href="../monitoring/focus-panel.html">操作パネル</a>
             <a href="../monitoring/writing.html">書込</a>
+            <a href="../monitoring/cpu-control.html">CPU操作</a>
             <a href="../monitoring/comments.html">コメント</a>
             <a href="../monitoring/time-chart.html">タイムチャート</a>
             <a href="../monitoring/traps.html">トラップ</a>
@@ -83,7 +83,6 @@
           <summary>参考</summary>
           <div class="nav-menu">
             <a href="../reference/glossary.html">用語集</a>
-            <a href="../reference/faq.html">FAQ</a>
             <a href="../reference/release-notes.html">リリースノート</a>
             <a href="../reference/troubleshooting.html">困ったとき</a>
           </div>
@@ -93,28 +92,11 @@
   </header>
 
   <main class="doc-page">
-    <nav class="breadcrumb" aria-label="パンくず"><a href="../index.html">トップ</a><span>PLC 側設定参考</span></nav>
+    <nav class="breadcrumb" aria-label="パンくず"><a href="../index.html">トップ</a><span>接続設定例</span></nav>
     <section class="page-hero section">
       <p class="eyebrow">PLC Side Settings</p>
-      <h1>PLC 側設定参考</h1>
-      <p class="lead">PLC IO Checker から接続するために、PLC 側で確認する設定の参考ページです。現時点では機種別ページの枠だけを作成し、詳細は TODO としています。</p>
-    </section>
-
-    <section class="section">
-      <div class="notice">
-        <h2>TODO</h2>
-        <p>メーカーごとの具体的な PLC 側画面名、設定手順、確認項目、マニュアル参照リンクは未記載です。後で実機・メーカー資料を確認して追記します。</p>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>共通で確認する項目</h2>
-      <div class="info-table" role="table" aria-label="PLC 側共通確認項目">
-        <div role="row"><div role="cell">IP address</div><div role="cell">アプリの接続設定と PLC 側 Ethernet 設定を合わせます。</div></div>
-        <div role="row"><div role="cell">Port</div><div role="cell">MELSEC は既定 <code>1025</code>、KEYENCE は既定 <code>8501</code> です。実際の PLC 側設定に合わせます。</div></div>
-        <div role="row"><div role="cell">Protocol</div><div role="cell">MELSEC は <code>SLMP</code>、KEYENCE は <code>KV Host Link</code> を前提にしています。</div></div>
-        <div role="row"><div role="cell">Access permission</div><div role="cell">PLC 側で外部機器からの通信や書込が許可されているか確認します。詳細手順は TODO です。</div></div>
-      </div>
+      <h1>接続設定例</h1>
+      <p class="lead">PLC 側で行う接続設定の例を、機種別に確認できます。</p>
     </section>
 
     <section class="section">
@@ -123,19 +105,19 @@
         <h2>機種別ページ</h2>
       </div>
       <div class="page-grid">
-        <a class="page-card" href="models/melsec-iq-r.html"><span>M</span><strong>MELSEC iQ-R</strong><small>PLC 側設定参考 TODO / SLMP / 1025</small></a>
-        <a class="page-card" href="models/melsec-iq-f.html"><span>M</span><strong>MELSEC iQ-F</strong><small>PLC 側設定参考 TODO / SLMP / 1025</small></a>
-        <a class="page-card" href="models/melsec-iq-l.html"><span>M</span><strong>MELSEC iQ-L</strong><small>PLC 側設定参考 TODO / SLMP / 1025</small></a>
-        <a class="page-card" href="models/melsec-mx-r.html"><span>M</span><strong>MELSEC MX-R</strong><small>PLC 側設定参考 TODO / SLMP / 1025</small></a>
-        <a class="page-card" href="models/melsec-mx-f.html"><span>M</span><strong>MELSEC MX-F</strong><small>PLC 側設定参考 TODO / SLMP / 1025</small></a>
-        <a class="page-card" href="models/melsec-qnudv.html"><span>M</span><strong>MELSEC QnUDV</strong><small>PLC 側設定参考 TODO / SLMP / 1025</small></a>
-        <a class="page-card" href="models/melsec-qnu.html"><span>M</span><strong>MELSEC QnU</strong><small>PLC 側設定参考 TODO / SLMP / 1025</small></a>
-        <a class="page-card" href="models/melsec-qcpu.html"><span>M</span><strong>MELSEC QCPU</strong><small>PLC 側設定参考 TODO / SLMP / 1025</small></a>
-        <a class="page-card" href="models/melsec-lcpu.html"><span>M</span><strong>MELSEC LCPU</strong><small>PLC 側設定参考 TODO / SLMP / 1025</small></a>
-        <a class="page-card" href="models/keyence-kv-x500.html"><span>K</span><strong>KEYENCE KV-X500</strong><small>PLC 側設定参考 TODO / KV Host Link / 8501</small></a>
-        <a class="page-card" href="models/keyence-kv-8000.html"><span>K</span><strong>KEYENCE KV-8000</strong><small>PLC 側設定参考 TODO / KV Host Link / 8501</small></a>
-        <a class="page-card" href="models/keyence-kv-7000.html"><span>K</span><strong>KEYENCE KV-7000</strong><small>PLC 側設定参考 TODO / KV Host Link / 8501</small></a>
-        <a class="page-card" href="models/keyence-kv-5000.html"><span>K</span><strong>KEYENCE KV-5000</strong><small>PLC 側設定参考 TODO / KV Host Link / 8501</small></a>
+        <a class="page-card" href="models/melsec-iq-r.html"><strong>MELSEC iQ-R</strong><small>PLC 側通信設定</small></a>
+        <a class="page-card" href="models/melsec-iq-f.html"><strong>MELSEC iQ-F</strong><small>PLC 側通信設定</small></a>
+        <a class="page-card" href="models/melsec-iq-l.html"><strong>MELSEC iQ-L</strong><small>PLC 側通信設定</small></a>
+        <a class="page-card" href="models/melsec-mx-r.html"><strong>MELSEC MX-R</strong><small>PLC 側通信設定</small></a>
+        <a class="page-card" href="models/melsec-mx-f.html"><strong>MELSEC MX-F</strong><small>PLC 側通信設定</small></a>
+        <a class="page-card" href="models/melsec-qnudv.html"><strong>MELSEC QnUDV</strong><small>PLC 側通信設定</small></a>
+        <a class="page-card" href="models/melsec-qnu.html"><strong>MELSEC QnU</strong><small>PLC 側通信設定</small></a>
+        <a class="page-card" href="models/melsec-qcpu.html"><strong>MELSEC QCPU</strong><small>PLC 側通信設定</small></a>
+        <a class="page-card" href="models/melsec-lcpu.html"><strong>MELSEC LCPU</strong><small>PLC 側通信設定</small></a>
+        <a class="page-card" href="models/keyence-kv-x500.html"><strong>KEYENCE KV-X500</strong><small>PLC 側通信設定</small></a>
+        <a class="page-card" href="models/keyence-kv-8000.html"><strong>KEYENCE KV-8000</strong><small>PLC 側通信設定</small></a>
+        <a class="page-card" href="models/keyence-kv-7000.html"><strong>KEYENCE KV-7000</strong><small>PLC 側通信設定</small></a>
+        <a class="page-card" href="models/keyence-kv-5000.html"><strong>KEYENCE KV-5000</strong><small>PLC 側通信設定</small></a>
       </div>
     </section>
 
@@ -145,7 +127,7 @@
     </nav>
   </main>
 
-  <footer class="site-footer"><p>PLC IO Checker 操作マニュアル / PLC 側設定参考</p></footer>
+  <footer class="site-footer"><p>PLC IO Checker 操作マニュアル / 接続設定例</p></footer>
   <script>
   (function(){
     var t=document.getElementById("nav-toggle");

@@ -27,10 +27,9 @@
           <div class="nav-menu">
             <a href="../plc/supported-plc.html">対応 PLC</a>
             <a class="active" href="../plc/connection.html">接続・プロジェクト</a>
-            <a href="../plc/plc-side-settings.html">PLC 側設定参考</a>
+            <a href="../plc/plc-side-settings.html">接続設定例</a>
             <a href="../plc/melsec-settings.html">MELSEC</a>
             <a href="../plc/keyence-settings.html">KEYENCE</a>
-            <a href="../plc/device-addressing.html">デバイス表記</a>
           </div>
         </details>
         <details class="nav-group">
@@ -40,6 +39,7 @@
             <a href="../monitoring/list-edit.html">List 登録編集</a>
             <a href="../monitoring/focus-panel.html">操作パネル</a>
             <a href="../monitoring/writing.html">書込</a>
+            <a href="../monitoring/cpu-control.html">CPU操作</a>
             <a href="../monitoring/comments.html">コメント</a>
             <a href="../monitoring/time-chart.html">タイムチャート</a>
             <a href="../monitoring/traps.html">トラップ</a>
@@ -83,7 +83,6 @@
           <summary>参考</summary>
           <div class="nav-menu">
             <a href="../reference/glossary.html">用語集</a>
-            <a href="../reference/faq.html">FAQ</a>
             <a href="../reference/release-notes.html">リリースノート</a>
             <a href="../reference/troubleshooting.html">困ったとき</a>
           </div>
@@ -97,7 +96,7 @@
     <section class="page-hero section">
       <p class="eyebrow">Connection</p>
       <h1>接続・プロジェクト</h1>
-      <p class="lead">接続先切替、プロジェクト作成、通信設定、実機/デモの選択を説明します。</p>
+      <p class="lead">接続先切替、プロジェクト選択、通信設定、到達確認の操作を説明します。</p>
     </section>
 
     <section class="section">
@@ -122,47 +121,36 @@
       <h2>通信設定で確認する項目</h2>
       <div class="info-table" role="table" aria-label="通信設定">
         <div role="row"><div role="cell">PLC 種別</div><div role="cell">MELSEC または KEYENCE を選択します。</div></div>
-        <div role="row"><div role="cell">CPU / Family</div><div role="cell">対象 PLC の CPU ファミリを選択します。</div></div>
+        <div role="row"><div role="cell">CPU機種</div><div role="cell">接続する PLC の CPU機種を選択します。選択肢は対応 PLC ページで確認します。</div></div>
         <div role="row"><div role="cell">IP / Port</div><div role="cell">PLC 側の Ethernet 設定に合わせます。</div></div>
         <div role="row"><div role="cell">Transport</div><div role="cell">TCP または UDP を選択します。</div></div>
-        <div role="row"><div role="cell">ルーティング</div><div role="cell">必要な場合だけネットワーク、局番、ユニットI/O、マルチドロップを指定します。</div></div>
+        <div role="row"><div role="cell">ルーティング</div><div role="cell">MELSEC で必要な場合だけネットワーク、局番、ユニットI/O、マルチドロップを指定します。</div></div>
+        <div role="row"><div role="cell">KEYENCE 表示</div><div role="cell">KEYENCE ではデバイス表記を <code>Normal</code> または <code>XYM</code> から選択します。</div></div>
         <div role="row"><div role="cell">到達確認</div><div role="cell">入力した通信設定で確認を実行し、結果とエラーメッセージを確認します。</div></div>
       </div>
+      <p class="small-note">PLC 側の Ethernet 設定、通信許可、リモートパスワードは <a href="../plc/plc-side-settings.html">接続設定例</a> で確認します。</p>
     </section>
 
     <section class="section">
-      <h2>MELSEC の設定</h2>
+      <h2>PLC 種別ごとの設定</h2>
       <div class="content-grid">
         <article>
-          <h3>通信方式</h3>
-          <p>SLMP で接続します。既定ポートは <code>1025</code> です。</p>
+          <h3>MELSEC</h3>
+          <p>ルーティング、リモートパスワード、X/Y 表記は MELSEC ページで確認します。</p>
+          <p><a href="../plc/melsec-settings.html">MELSEC 設定を見る</a></p>
         </article>
         <article>
-          <h3>CPU モデル</h3>
-          <p><code>iQ-R</code>、<code>iQ-F</code>、<code>iQ-L</code>、<code>MX-R</code>、<code>MX-F</code>、<code>QnUDV</code>、<code>QnU</code>、<code>QCPU</code>、<code>LCPU</code> から選びます。</p>
-        </article>
-        <article>
-          <h3>ルート / パスワード</h3>
-          <p>ネットワーク、局番、ユニットI/O、マルチドロップ、リモートパスワードは MELSEC 用です。</p>
+          <h3>KEYENCE</h3>
+          <p>KEYENCE 表示、コメント読込、対応デバイスは KEYENCE ページで確認します。</p>
+          <p><a href="../plc/keyence-settings.html">KEYENCE 設定を見る</a></p>
         </article>
       </div>
     </section>
 
     <section class="section">
-      <h2>KEYENCE の設定</h2>
-      <div class="content-grid">
-        <article>
-          <h3>通信方式</h3>
-          <p>KV Host Link で接続します。既定ポートは <code>8501</code> です。</p>
-        </article>
-        <article>
-          <h3>対応モデル</h3>
-          <p><code>KV-X500</code>、<code>KV-8000</code>、<code>KV-7000</code>、<code>KV-5000</code> から選びます。</p>
-        </article>
-        <article>
-          <h3>KEYENCE 表示</h3>
-          <p><code>Normal</code> または <code>XYM</code> を選びます。XYM は X/Y/M/L/D/E/F 系の表記を使う場合のモードです。</p>
-        </article>
+      <div class="notice danger">
+        <h2>実機接続の注意</h2>
+        <p>実機通信は設備の状態に影響する場合があります。接続前に対象 PLC、IP、ポート、Transport、通信許可、ネットワーク経路を確認してください。</p>
       </div>
     </section>
 
@@ -174,12 +162,13 @@
         <li>接続できない場合は、通信設定の <strong>到達確認</strong> を実行し、結果とエラーメッセージを確認してください。</li>
         <li>IP、ポート、TCP/UDP、端末のネットワーク接続を確認してください。</li>
         <li>MELSEC では、ルート指定とリモートパスワードも確認してください。</li>
+        <li>PLC 側の通信設定や許可状態は、接続設定例の確認項目と照らし合わせてください。</li>
       </ul>
     </section>
 
     <nav class="next-links" aria-label="前後ページ">
       <a href="../plc/supported-plc.html">前へ: 対応 PLC</a>
-      <a href="../plc/plc-side-settings.html">次へ: PLC 側設定参考</a>
+      <a href="../plc/plc-side-settings.html">次へ: 接続設定例</a>
     </nav>
   </main>
 

@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="PLC IO Checker のメニュー項目、表記ルール、ライセンス/購入。">
-  <title>メニュー・設定 | PLC IO Checker 操作マニュアル</title>
+  <meta name="description" content="PLC IO Checker のメニュー項目と詳細ページへの入口。">
+  <title>メニュー | PLC IO Checker 操作マニュアル</title>
   <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
@@ -27,10 +27,9 @@
           <div class="nav-menu">
             <a href="../plc/supported-plc.html">対応 PLC</a>
             <a href="../plc/connection.html">接続・プロジェクト</a>
-            <a href="../plc/plc-side-settings.html">PLC 側設定参考</a>
+            <a href="../plc/plc-side-settings.html">接続設定例</a>
             <a href="../plc/melsec-settings.html">MELSEC</a>
             <a href="../plc/keyence-settings.html">KEYENCE</a>
-            <a href="../plc/device-addressing.html">デバイス表記</a>
           </div>
         </details>
         <details class="nav-group">
@@ -40,6 +39,7 @@
             <a href="../monitoring/list-edit.html">List 登録編集</a>
             <a href="../monitoring/focus-panel.html">操作パネル</a>
             <a href="../monitoring/writing.html">書込</a>
+            <a href="../monitoring/cpu-control.html">CPU操作</a>
             <a href="../monitoring/comments.html">コメント</a>
             <a href="../monitoring/time-chart.html">タイムチャート</a>
             <a href="../monitoring/traps.html">トラップ</a>
@@ -83,7 +83,6 @@
           <summary>参考</summary>
           <div class="nav-menu">
             <a href="../reference/glossary.html">用語集</a>
-            <a href="../reference/faq.html">FAQ</a>
             <a href="../reference/release-notes.html">リリースノート</a>
             <a href="../reference/troubleshooting.html">困ったとき</a>
           </div>
@@ -93,48 +92,34 @@
   </header>
 
   <main class="doc-page">
-    <nav class="breadcrumb" aria-label="パンくず"><a href="../index.html">トップ</a><span>メニュー・設定</span></nav>
+    <nav class="breadcrumb" aria-label="パンくず"><a href="../index.html">トップ</a><span>メニュー</span></nav>
     <section class="page-hero section">
       <p class="eyebrow">Menu</p>
-      <h1>メニュー・設定</h1>
-      <p class="lead">ハンバーガーメニューの項目、ルート表記、ライセンス/購入の見方です。</p>
+      <h1>メニュー</h1>
+      <p class="lead">右上メニューから開ける項目と、詳細ページへの入口です。</p>
     </section>
 
     <section class="section">
       <h2>メニュー項目</h2>
-      <p>通信設定は上部タイトルから開くため、メニューには表示されません。</p>
       <ol class="menu-order">
-        <li>デバイス範囲</li>
-        <li>CPU操作</li>
-        <li>CSVコメント読込</li>
-        <li>コメント読込</li>
-        <li>QR読込</li>
-        <li>JSON読込</li>
-        <li>JSON書出</li>
-        <li>エラー履歴</li>
-        <li>アプリ設定</li>
-        <li>ライセンス/購入</li>
-        <li>バージョン情報</li>
+        <li><a href="../monitoring/monitoring.html#device-range">デバイス範囲</a></li>
+        <li><a href="../monitoring/cpu-control.html">CPU操作</a></li>
+        <li><a href="../monitoring/comments.html#csv-comment-import">CSVコメント読込</a></li>
+        <li><a href="../monitoring/comments.html#plc-comment-import">コメント読込</a></li>
+        <li><a href="../transfer/import-export.html#qr-import">QR読込</a></li>
+        <li><a href="../transfer/import-export.html#json-import-export">JSON読込</a></li>
+        <li><a href="../transfer/import-export.html#json-import-export">JSON書出</a></li>
+        <li><a href="../reference/troubleshooting.html#error-history">エラー履歴</a></li>
+        <li><a href="../settings/app-settings.html">アプリ設定</a></li>
+        <li><a href="../settings/license.html">ライセンス/購入</a></li>
+        <li><a href="../reference/release-notes.html">バージョン情報</a></li>
       </ol>
     </section>
 
     <section class="section">
-      <h2>ルート表記</h2>
-      <div class="info-table" role="table" aria-label="ルート表記">
-        <div role="row"><div role="cell">ネットワーク</div><div role="cell">10 進表記です。例: <code>1</code></div></div>
-        <div role="row"><div role="cell">局番</div><div role="cell">10 進表記です。例: <code>2</code></div></div>
-        <div role="row"><div role="cell">ユニットI/O</div><div role="cell">16 進表記です。例: <code>03FF</code></div></div>
-        <div role="row"><div role="cell">マルチドロップ</div><div role="cell">16 進表記です。例: <code>00</code></div></div>
-      </div>
-      <p>このルート指定は MELSEC 用です。</p>
-    </section>
-
-    <section class="section">
-      <h2>ライセンス/購入</h2>
-      <p>Demo は常に利用できます。実機通信は本日の無料枠 5分まで利用でき、購入後は対象メーカーの通信が無制限になります。</p>
-      <div class="content-grid">
-        <article><h3>MELSEC 実機通信</h3><p>MELSEC の実機接続を有効化するライセンスです。</p></article>
-        <article><h3>KEYENCE 実機通信</h3><p>KEYENCE の実機接続を有効化するライセンスです。</p></article>
+      <div class="notice">
+        <h2>通信設定</h2>
+        <p>通信設定は右上メニューではなく、上部タイトルから開きます。接続先や PLC 種別の詳細は <a href="../plc/connection.html">接続・プロジェクト</a> を確認してください。</p>
       </div>
     </section>
 

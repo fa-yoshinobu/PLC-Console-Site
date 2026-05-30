@@ -27,10 +27,9 @@
           <div class="nav-menu">
             <a href="../plc/supported-plc.html">対応 PLC</a>
             <a href="../plc/connection.html">接続・プロジェクト</a>
-            <a href="../plc/plc-side-settings.html">PLC 側設定参考</a>
+            <a href="../plc/plc-side-settings.html">接続設定例</a>
             <a href="../plc/melsec-settings.html">MELSEC</a>
             <a href="../plc/keyence-settings.html">KEYENCE</a>
-            <a href="../plc/device-addressing.html">デバイス表記</a>
           </div>
         </details>
         <details class="nav-group">
@@ -40,6 +39,7 @@
             <a href="../monitoring/list-edit.html">List 登録編集</a>
             <a href="../monitoring/focus-panel.html">操作パネル</a>
             <a href="../monitoring/writing.html">書込</a>
+            <a href="../monitoring/cpu-control.html">CPU操作</a>
             <a href="../monitoring/comments.html">コメント</a>
             <a href="../monitoring/time-chart.html">タイムチャート</a>
             <a href="../monitoring/traps.html">トラップ</a>
@@ -83,7 +83,6 @@
           <summary>参考</summary>
           <div class="nav-menu">
             <a href="../reference/glossary.html">用語集</a>
-            <a href="../reference/faq.html">FAQ</a>
             <a href="../reference/release-notes.html">リリースノート</a>
             <a href="../reference/troubleshooting.html">困ったとき</a>
           </div>
@@ -114,27 +113,7 @@
       <ul>
         <li>種類を変更すると先頭ページに戻ります。</li>
         <li>BIT デバイスは ON/OFF 表示になります。</li>
-        <li>数値デバイスはデータ型に応じて値を表示します。</li>
-      </ul>
-    </section>
-
-    <section class="section">
-      <h2>MELSEC の監視</h2>
-      <ul>
-        <li>主な表示順は <code>X</code>、<code>Y</code>、<code>M</code>、<code>D</code>、<code>L</code>、<code>F</code>、<code>B</code>、<code>SB</code>、<code>SM</code>、<code>STC</code>、<code>TC</code>、<code>CC</code>、<code>W</code>、<code>SW</code>、<code>R</code>、<code>ZR</code>、<code>SD</code> です。</li>
-        <li><code>B</code>、<code>W</code>、<code>SB</code>、<code>SW</code> は 16 進表記です。</li>
-        <li><code>iQ-F</code> の <code>X</code> / <code>Y</code> は 8 進表記です。それ以外の MELSEC <code>X</code> / <code>Y</code> は 16 進表記です。</li>
-        <li>使用可能な範囲は CPU ファミリごとのデバイス範囲カタログで確認します。</li>
-      </ul>
-    </section>
-
-    <section class="section">
-      <h2>KEYENCE の監視</h2>
-      <ul>
-        <li><code>Normal</code> 表示では <code>R</code>、<code>B</code>、<code>MR</code>、<code>LR</code>、<code>CR</code>、<code>DM</code>、<code>EM</code>、<code>FM</code>、<code>ZF</code>、<code>W</code>、<code>TM</code>、<code>CM</code> を扱います。</li>
-        <li><code>XYM</code> 表示では <code>B</code>、<code>CR</code>、<code>ZF</code>、<code>W</code>、<code>TM</code>、<code>CM</code>、<code>X</code>、<code>Y</code>、<code>M</code>、<code>L</code>、<code>D</code>、<code>E</code>、<code>F</code> を扱います。</li>
-        <li><code>B</code>、<code>W</code>、<code>X</code>、<code>Y</code> は 16 進表記です。その他は基本的に 10 進表記です。</li>
-        <li><code>R0</code> など実 I/O に割り当たるリレーは PLC スキャンで上書きされる場合があります。書込確認では非 I/O 領域を使ってください。</li>
+        <li>数値デバイスはデータタイプに応じて値を表示します。</li>
       </ul>
     </section>
 
@@ -144,17 +123,12 @@
     </section>
 
     <section class="section">
-      <h2>デバイス範囲</h2>
-      <p>メニューの <strong>デバイス範囲</strong> で、選択中の CPU ファミリで使用できるデバイス範囲を確認できます。</p>
-      <div class="info-table" role="table" aria-label="表記">
-        <div role="row"><div role="cell">ネットワーク / 局番</div><div role="cell">10 進表記です。</div></div>
-        <div role="row"><div role="cell">ユニットI/O / マルチドロップ</div><div role="cell">16 進表記です。</div></div>
-      </div>
-      <p>ネットワーク / 局番 / ユニットI/O / マルチドロップは MELSEC のルート指定で使用します。</p>
+      <h2 id="device-range">デバイス範囲</h2>
+      <p>メニューの <strong>デバイス範囲</strong> で、選択中の CPU機種で使用できるデバイス範囲を確認できます。</p>
     </section>
 
     <nav class="next-links" aria-label="前後ページ">
-      <a href="../plc/device-addressing.html">前へ: デバイス表記</a>
+      <a href="../plc/keyence-settings.html">前へ: KEYENCE 設定</a>
       <a href="../monitoring/list-edit.html">次へ: List 登録編集</a>
     </nav>
   </main>
