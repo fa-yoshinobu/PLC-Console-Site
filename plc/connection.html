@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="PLC IO Checker の接続先切替、案件、通信設定の操作。">
-  <title>接続・案件 | PLC IO Checker 操作マニュアル</title>
+  <meta name="description" content="PLC IO Checker の接続先切替、プロジェクト、通信設定の操作。">
+  <title>接続・プロジェクト | PLC IO Checker 操作マニュアル</title>
   <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
@@ -26,7 +26,7 @@
           <summary class="active">PLC</summary>
           <div class="nav-menu">
             <a href="../plc/supported-plc.html">対応 PLC</a>
-            <a class="active" href="../plc/connection.html">接続・案件</a>
+            <a class="active" href="../plc/connection.html">接続・プロジェクト</a>
             <a href="../plc/plc-side-settings.html">PLC 側設定参考</a>
             <a href="../plc/melsec-settings.html">MELSEC</a>
             <a href="../plc/keyence-settings.html">KEYENCE</a>
@@ -49,7 +49,7 @@
           <summary>転送</summary>
           <div class="nav-menu">
             <a href="../transfer/import-export.html">QR/JSON</a>
-            <a href="../transfer/project-json.html">案件JSON</a>
+            <a href="../transfer/project-json.html">プロジェクトJSON</a>
           </div>
         </details>
         <details class="nav-group">
@@ -93,11 +93,11 @@
   </header>
 
   <main class="doc-page">
-    <nav class="breadcrumb" aria-label="パンくず"><a href="../index.html">トップ</a><span>接続・案件</span></nav>
+    <nav class="breadcrumb" aria-label="パンくず"><a href="../index.html">トップ</a><span>接続・プロジェクト</span></nav>
     <section class="page-hero section">
       <p class="eyebrow">Connection</p>
-      <h1>接続・案件</h1>
-      <p class="lead">接続先切替、案件作成、通信設定、実機/デモの選択を説明します。</p>
+      <h1>接続・プロジェクト</h1>
+      <p class="lead">接続先切替、プロジェクト作成、通信設定、実機/デモの選択を説明します。</p>
     </section>
 
     <section class="section">
@@ -108,7 +108,7 @@
           <ul>
             <li>現在の接続内容を確認できます。</li>
             <li>MELSEC 実機、KEYENCE 実機、MELSEC デモ、KEYENCE デモを選べます。</li>
-            <li>最近使った案件から再選択できます。</li>
+            <li>最近使ったプロジェクトから再選択できます。</li>
           </ul>
         </div>
         <figure class="inline-shot">
@@ -169,7 +169,7 @@
     <section class="section">
       <h2>接続結果の見方</h2>
       <ul>
-        <li>接続成功時は上部ステータスに RUN/STOP、CPU、IP、案件名が表示されます。</li>
+        <li>接続成功時は上部ステータスに RUN/STOP、CPU、IP、プロジェクト名が表示されます。</li>
         <li>未処理の CPU 状態は <code>--</code> と表示されます。</li>
         <li>MELSEC で接続できない場合は、IP、ポート、TCP/UDP、ルート指定、リモートパスワード、PLC 側の通信許可を確認してください。</li>
         <li>KEYENCE で接続できない場合は、IP、ポート、KV Host Link、KEYENCE 表示モード、端末のネットワーク接続を確認してください。</li>

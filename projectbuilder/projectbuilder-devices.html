@@ -26,7 +26,7 @@
           <summary>PLC</summary>
           <div class="nav-menu">
             <a href="../plc/supported-plc.html">対応 PLC</a>
-            <a href="../plc/connection.html">接続・案件</a>
+            <a href="../plc/connection.html">接続・プロジェクト</a>
             <a href="../plc/plc-side-settings.html">PLC 側設定参考</a>
             <a href="../plc/melsec-settings.html">MELSEC</a>
             <a href="../plc/keyence-settings.html">KEYENCE</a>
@@ -49,7 +49,7 @@
           <summary>転送</summary>
           <div class="nav-menu">
             <a href="../transfer/import-export.html">QR/JSON</a>
-            <a href="../transfer/project-json.html">案件JSON</a>
+            <a href="../transfer/project-json.html">プロジェクトJSON</a>
           </div>
         </details>
         <details class="nav-group">
@@ -97,7 +97,23 @@
     <section class="page-hero section">
       <p class="eyebrow">ProjectBuilder</p>
       <h1>ProjectBuilder 入力</h1>
-      <p class="lead">デバイス、タイムチャート、トラップを PC で入力し、モバイルアプリへ案件として渡すプロジェクトを作成します。</p>
+      <p class="lead">デバイス、タイムチャート、トラップを PC で入力し、モバイルアプリへ渡すプロジェクトを作成します。</p>
+    </section>
+
+    <section class="section">
+      <h2>接続設定</h2>
+      <p><strong>プロジェクト/接続</strong> では、モバイルアプリへ渡す基本情報と PLC 通信設定を入力します。</p>
+      <div class="info-table" role="table" aria-label="ProjectBuilder connection settings">
+        <div role="row"><div role="cell">プロジェクト</div><div role="cell">プロジェクト名、メーカー、CPU model、KEYENCE 表示、使用可能 device を確認します。</div></div>
+        <div role="row"><div role="cell">接続</div><div role="cell">Connection mode、IP address、Port、Transport、監視周期 ms、Timeout ms を指定します。</div></div>
+        <div role="row"><div role="cell">MELSEC routing</div><div role="cell">Network / Station は数字で、Module IO / Multidrop は画面の初期表示と同じ <code>0x</code> 付きで入力します。</div></div>
+        <div role="row"><div role="cell">既定値</div><div role="cell"><strong>ルーティング既定値に戻す</strong> で Network、Station、Module IO、Multidrop を既定値へ戻します。</div></div>
+        <div role="row"><div role="cell">リモートパスワード</div><div role="cell">MELSEC のみ出力します。KEYENCE では使用しません。</div></div>
+      </div>
+      <figure class="inline-shot projectbuilder-shot">
+        <img src="../assets/images/projectbuilder/project_connection.png" alt="ProjectBuilder の接続設定画面">
+        <figcaption>接続設定</figcaption>
+      </figure>
     </section>
 
     <section class="section">
@@ -107,16 +123,25 @@
         <div role="row"><div role="cell">Data type</div><div role="cell"><code>BIT</code>、<code>INT16</code>、<code>UINT16</code>、<code>INT32</code>、<code>UINT32</code>、<code>FLOAT32</code></div></div>
         <div role="row"><div role="cell">Comment</div><div role="cell">任意のコメントです。同じアドレスが複数ある場合、最初の非空 Comment が同じアドレスに反映されます。</div></div>
       </div>
-      <p>Excel からタブ区切りでコピー/貼り付けできます。ブロック追加では開始アドレスと点数を指定します。</p>
+      <p>Excel からタブ区切りでコピー/貼り付けできます。<strong>行を追加</strong>、<strong>ブロック追加</strong>、<strong>削除</strong>、<strong>上へ</strong> / <strong>下へ</strong> で編集します。</p>
+      <figure class="inline-shot projectbuilder-shot">
+        <img src="../assets/images/projectbuilder/device.png" alt="ProjectBuilder のデバイス入力画面">
+        <figcaption>デバイス</figcaption>
+      </figure>
     </section>
 
     <section class="section">
       <h2>タイムチャート</h2>
-      <p>モバイルアプリのタイムチャートに表示する対象を登録します。最大 20 チャンネルです。</p>
+      <p>タイムチャートに表示する対象を登録します。最大 20 チャンネルです。</p>
       <div class="info-table" role="table" aria-label="タイムチャート列">
         <div role="row"><div role="cell">アドレス</div><div role="cell">記録対象のアドレスです。</div></div>
         <div role="row"><div role="cell">Data type</div><div role="cell">デバイスに同じアドレスがあればその Data type を優先します。</div></div>
       </div>
+      <p>Excel からタブ区切りでコピー/貼り付けできます。<strong>ブロック追加</strong> では開始アドレスと点数を指定します。</p>
+      <figure class="inline-shot projectbuilder-shot">
+        <img src="../assets/images/projectbuilder/timechart.png" alt="ProjectBuilder のタイムチャート入力画面">
+        <figcaption>タイムチャート</figcaption>
+      </figure>
     </section>
 
     <section class="section">
@@ -128,13 +153,11 @@
         <div role="row"><div role="cell">しきい値</div><div role="cell">比較条件で必要です。</div></div>
         <div role="row"><div role="cell">有効</div><div role="cell">有効/無効を指定します。</div></div>
       </div>
-    </section>
-
-    <section class="section">
-      <div class="notice">
-        <h2>検証</h2>
-        <p>メーカー、CPU model、KEYENCE 表示に応じてデバイスと Data type を検証します。対応しないアドレスや検知条件は生成時または読み込み時にエラーになります。</p>
-      </div>
+      <p>Excel からタブ区切りでコピー/貼り付けできます。列は アドレス / Data type / 検知条件 / しきい値 / 有効 です。</p>
+      <figure class="inline-shot projectbuilder-shot">
+        <img src="../assets/images/projectbuilder/trap.png" alt="ProjectBuilder のトラップ入力画面">
+        <figcaption>トラップ</figcaption>
+      </figure>
     </section>
 
     <nav class="next-links" aria-label="前後ページ">

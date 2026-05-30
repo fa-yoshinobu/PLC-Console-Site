@@ -26,7 +26,7 @@
           <summary class="active">PLC</summary>
           <div class="nav-menu">
             <a href="../plc/supported-plc.html">対応 PLC</a>
-            <a href="../plc/connection.html">接続・案件</a>
+            <a href="../plc/connection.html">接続・プロジェクト</a>
             <a href="../plc/plc-side-settings.html">PLC 側設定参考</a>
             <a class="active" href="../plc/melsec-settings.html">MELSEC</a>
             <a href="../plc/keyence-settings.html">KEYENCE</a>
@@ -49,7 +49,7 @@
           <summary>転送</summary>
           <div class="nav-menu">
             <a href="../transfer/import-export.html">QR/JSON</a>
-            <a href="../transfer/project-json.html">案件JSON</a>
+            <a href="../transfer/project-json.html">プロジェクトJSON</a>
           </div>
         </details>
         <details class="nav-group">
@@ -97,7 +97,7 @@
     <section class="page-hero section">
       <p class="eyebrow">MELSEC</p>
       <h1>MELSEC 設定</h1>
-      <p class="lead">MELSEC 実機または MELSEC デモ案件で使う通信設定と表記ルールです。</p>
+      <p class="lead">MELSEC 実機または MELSEC デモプロジェクトで使う通信設定と表記ルールです。</p>
     </section>
 
     <section class="section">
@@ -105,7 +105,7 @@
       <ol class="steps compact">
         <li><strong>入口</strong><span>上部タイトルをタップして <strong>接続先切替</strong> を開き、MELSEC 実機または MELSEC デモを選びます。</span></li>
         <li><strong>設定</strong><span><strong>接続設定</strong> で IP、Port、機種、通信、ルーティング、タイミングを確認します。</span></li>
-        <li><strong>結果</strong><span>接続後は上部ステータスに RUN/STOP、CPU model、IP、案件名が表示されます。</span></li>
+        <li><strong>結果</strong><span>接続後は上部ステータスに RUN/STOP、CPU model、IP、プロジェクト名が表示されます。</span></li>
       </ol>
     </section>
 
@@ -116,7 +116,7 @@
         <div role="row"><div role="cell">既定ポート</div><div role="cell"><code>1025</code></div></div>
         <div role="row"><div role="cell">通信</div><div role="cell"><code>TCP</code> / <code>UDP</code></div></div>
         <div role="row"><div role="cell">機種</div><div role="cell"><code>iQ-R</code>、<code>iQ-F</code>、<code>iQ-L</code>、<code>MX-R</code>、<code>MX-F</code>、<code>QnUDV</code>、<code>QnU</code>、<code>QCPU</code>、<code>LCPU</code></div></div>
-        <div role="row"><div role="cell">リモートパスワード</div><div role="cell">MELSEC 専用です。KEYENCE 案件では出力しません。</div></div>
+        <div role="row"><div role="cell">リモートパスワード</div><div role="cell">MELSEC 専用です。KEYENCE プロジェクトでは出力しません。</div></div>
       </div>
     </section>
 
@@ -125,8 +125,8 @@
       <div class="info-table" role="table" aria-label="MELSEC ルート指定">
         <div role="row"><div role="cell">network</div><div role="cell">10 進表記</div></div>
         <div role="row"><div role="cell">station</div><div role="cell">10 進表記</div></div>
-        <div role="row"><div role="cell">module_io</div><div role="cell">16 進表記。案件JSONでは <code>0x</code> 付き 16 進文字列です。</div></div>
-        <div role="row"><div role="cell">multidrop</div><div role="cell">16 進表記。案件JSONでは <code>0x</code> 付き 16 進文字列です。</div></div>
+        <div role="row"><div role="cell">module_io</div><div role="cell">16 進表記。プロジェクトJSONでは <code>0x</code> 付き 16 進文字列です。</div></div>
+        <div role="row"><div role="cell">multidrop</div><div role="cell">16 進表記。プロジェクトJSONでは <code>0x</code> 付き 16 進文字列です。</div></div>
       </div>
     </section>
 

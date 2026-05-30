@@ -26,7 +26,7 @@
           <summary>PLC</summary>
           <div class="nav-menu">
             <a href="../plc/supported-plc.html">対応 PLC</a>
-            <a href="../plc/connection.html">接続・案件</a>
+            <a href="../plc/connection.html">接続・プロジェクト</a>
             <a href="../plc/plc-side-settings.html">PLC 側設定参考</a>
             <a href="../plc/melsec-settings.html">MELSEC</a>
             <a href="../plc/keyence-settings.html">KEYENCE</a>
@@ -49,7 +49,7 @@
           <summary>転送</summary>
           <div class="nav-menu">
             <a href="../transfer/import-export.html">QR/JSON</a>
-            <a href="../transfer/project-json.html">案件JSON</a>
+            <a href="../transfer/project-json.html">プロジェクトJSON</a>
           </div>
         </details>
         <details class="nav-group">
@@ -101,22 +101,33 @@
     </section>
 
     <section class="section">
+      <h2>QR 表示</h2>
+      <p><strong>QR 生成</strong> を押すと、モバイルアプリで読み込む QR 画面に切り替わります。複数枚ある場合は、表示中のページ番号を確認しながら読み込みます。</p>
+      <figure class="inline-shot projectbuilder-shot">
+        <img src="../assets/images/projectbuilder/qr.png" alt="ProjectBuilder の QR 表示画面">
+        <figcaption>QR 表示</figcaption>
+      </figure>
+    </section>
+
+    <section class="section">
       <h2>入口</h2>
       <ul>
         <li><strong>QR 生成</strong> ボタンで QR 表示へ切り替えます。</li>
-        <li><strong>Previous</strong> / <strong>Next</strong> で複数ページ QR を切り替えます。</li>
-        <li><strong>PNG + JSON 保存</strong> で QR PNG と JSON を保存します。</li>
-        <li>File メニューから <strong>JSON 読み込み</strong>、<strong>JSON 保存</strong>、<strong>JSON 表示</strong> を使えます。</li>
+        <li><strong>入力へ戻る</strong> で編集画面へ戻ります。</li>
+        <li><strong>前へ</strong> / <strong>次へ</strong> で複数ページ QR を切り替えます。</li>
+        <li><strong>自動</strong> で複数ページ QR の自動切換えを開始し、<strong>停止</strong> で止めます。</li>
+        <li><strong>ファイル</strong> メニューから <strong>JSON 読み込み</strong>、<strong>JSON 保存</strong>、<strong>JSON 表示</strong> を使えます。</li>
+        <li>QR メニューから <strong>PNG + JSON 保存</strong> を使えます。</li>
       </ul>
     </section>
 
     <section class="section">
       <h2>QR 設定</h2>
       <div class="info-table" role="table" aria-label="QR settings">
-        <div role="row"><div role="cell">分割サイズ</div><div role="cell"><code>350</code>、<code>500</code>、<code>800</code>、<code>1200</code> chars/page。小さいほどページ数は増えますが読み取りやすくなります。</div></div>
+        <div role="row"><div role="cell">分割サイズ</div><div role="cell"><code>350</code>、<code>500</code>、<code>800</code>、<code>1200</code>。小さいほどページ数は増えますが読み取りやすくなります。</div></div>
         <div role="row"><div role="cell">表示サイズ</div><div role="cell"><code>600</code>、<code>800</code>、<code>1000</code>、<code>1200</code> px。</div></div>
         <div role="row"><div role="cell">誤り訂正</div><div role="cell"><code>L</code>、<code>M</code>、<code>Q</code>、<code>H</code>。強くするほど復元力は上がりますが QR は細かくなります。</div></div>
-        <div role="row"><div role="cell">圧縮</div><div role="cell">Zstandard 固定です。</div></div>
+        <div role="row"><div role="cell">自動切換え間隔</div><div role="cell"><code>0.0</code> から <code>5.0</code> 秒で指定します。既定値は <code>1.0</code> 秒です。複数ページ QR の場合だけ使います。</div></div>
       </div>
     </section>
 
@@ -126,7 +137,7 @@
         <li><strong>QR読込</strong><span>モバイルアプリのメニューから <strong>QR読込</strong> を開きます。</span></li>
         <li><strong>1枚目</strong><span>ProjectBuilder に表示した 1 枚目を読み込みます。</span></li>
         <li><strong>次ページ</strong><span>アプリの表示に従って ProjectBuilder 側を次の QR に切り替えます。</span></li>
-        <li><strong>完了</strong><span>全ページを読み込むと案件に反映されます。</span></li>
+        <li><strong>完了</strong><span>全ページを読み込むとプロジェクトに反映されます。</span></li>
       </ol>
     </section>
 

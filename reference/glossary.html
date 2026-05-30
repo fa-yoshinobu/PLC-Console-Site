@@ -26,7 +26,7 @@
           <summary>PLC</summary>
           <div class="nav-menu">
             <a href="../plc/supported-plc.html">対応 PLC</a>
-            <a href="../plc/connection.html">接続・案件</a>
+            <a href="../plc/connection.html">接続・プロジェクト</a>
             <a href="../plc/plc-side-settings.html">PLC 側設定参考</a>
             <a href="../plc/melsec-settings.html">MELSEC</a>
             <a href="../plc/keyence-settings.html">KEYENCE</a>
@@ -49,7 +49,7 @@
           <summary>転送</summary>
           <div class="nav-menu">
             <a href="../transfer/import-export.html">QR/JSON</a>
-            <a href="../transfer/project-json.html">案件JSON</a>
+            <a href="../transfer/project-json.html">プロジェクトJSON</a>
           </div>
         </details>
         <details class="nav-group">
@@ -102,18 +102,23 @@
 
     <section class="section">
       <div class="info-table" role="table" aria-label="用語集">
-        <div role="row"><div role="cell">案件</div><div role="cell">PLC 種別、接続設定、List、タイムチャート、トラップなどをまとめた設定です。</div></div>
-        <div role="row"><div role="cell">ProjectBuilder</div><div role="cell">PC でプロジェクトを作成し、QR/JSON でモバイルアプリへ案件として渡すツールです。</div></div>
-        <div role="row"><div role="cell">address</div><div role="cell">PLC デバイスのアドレスです。例: <code>X0</code>、<code>D100</code>、<code>DM100</code>。</div></div>
-        <div role="row"><div role="cell">comment</div><div role="cell">デバイスに付ける表示用コメントです。</div></div>
+        <div role="row"><div role="cell">プロジェクト</div><div role="cell">PLC 接続設定、登録デバイス、タイムチャート、トラップなどをまとめて扱う設定単位です。Android / iOS / ProjectBuilder で共通して使います。</div></div>
+        <div role="row"><div role="cell">ProjectBuilder</div><div role="cell">PC でプロジェクトを作成し、QR または JSON でモバイルアプリへ取り込むためのツールです。</div></div>
+        <div role="row"><div role="cell">プロジェクトJSON</div><div role="cell">プロジェクトをファイルとして読み込み、または書き出すための JSON ファイルです。</div></div>
+        <div role="row"><div role="cell">List</div><div role="cell">登録したデバイスを一覧で監視する画面です。編集は <strong>List 登録編集</strong> から行います。</div></div>
+        <div role="row"><div role="cell">Block</div><div role="cell">PLC のデバイス範囲をページ単位で表示する監視画面です。</div></div>
+        <div role="row"><div role="cell">アドレス / address</div><div role="cell">PLC デバイスのアドレスです。例: <code>X0</code>、<code>D100</code>、<code>DM100</code>。</div></div>
+        <div role="row"><div role="cell">コメント / Comment</div><div role="cell">デバイスに付ける表示用コメントです。</div></div>
         <div role="row"><div role="cell">BIT</div><div role="cell">ON/OFF のような 1 bit 値です。</div></div>
         <div role="row"><div role="cell">WORD</div><div role="cell">数値として扱うデバイス領域です。</div></div>
         <div role="row"><div role="cell">data type</div><div role="cell"><code>BIT</code>、<code>INT16</code>、<code>UINT16</code>、<code>INT32</code>、<code>UINT32</code>、<code>FLOAT32</code> の表示/書込型です。</div></div>
-        <div role="row"><div role="cell">タイムチャート</div><div role="cell">登録したチャンネルの値を記録し、波形と CSV で確認する機能です。</div></div>
-        <div role="row"><div role="cell">トラップ</div><div role="cell">条件一致を検知し、イベントとして記録する機能です。</div></div>
-        <div role="row"><div role="cell">QR読込</div><div role="cell">ProjectBuilder の QR から案件を取り込む機能です。</div></div>
-        <div role="row"><div role="cell">JSON読込 / JSON書出</div><div role="cell">案件を JSON ファイルとして読み込み、または書き出す機能です。</div></div>
-        <div role="row"><div role="cell">接続先切替</div><div role="cell">上部タイトルから開く、現在の接続・クイック開始・最近使った案件を扱う画面です。</div></div>
+        <div role="row"><div role="cell">タイムチャート</div><div role="cell">登録したチャンネルの値を記録し、波形や CSV で確認する機能です。</div></div>
+        <div role="row"><div role="cell">トラップ</div><div role="cell">指定した条件に一致したタイミングをイベントとして記録する機能です。</div></div>
+        <div role="row"><div role="cell">QR読込</div><div role="cell">ProjectBuilder の QR からプロジェクトを取り込む機能です。</div></div>
+        <div role="row"><div role="cell">JSON読込 / JSON書出</div><div role="cell">プロジェクトを JSON ファイルとして読み込み、または書き出す機能です。</div></div>
+        <div role="row"><div role="cell">CSVコメント読込</div><div role="cell">CSV ファイルからデバイスコメントを取り込む機能です。</div></div>
+        <div role="row"><div role="cell">コメント読込</div><div role="cell">PLC からコメントを読み込む機能です。対応する接続で使用できます。</div></div>
+        <div role="row"><div role="cell">接続先切替</div><div role="cell">上部タイトルから開く、現在の接続・クイック開始・最近使ったプロジェクトを扱う画面です。</div></div>
       </div>
     </section>
 

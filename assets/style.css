@@ -723,6 +723,19 @@ figcaption {
   object-position: top center;
 }
 
+.projectbuilder-shot {
+  margin-top: 18px;
+}
+
+.projectbuilder-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+  background: #f8faf8;
+}
+
 /* ─── FAQ ─── */
 
 .faq {

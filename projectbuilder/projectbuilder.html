@@ -26,7 +26,7 @@
           <summary>PLC</summary>
           <div class="nav-menu">
             <a href="../plc/supported-plc.html">対応 PLC</a>
-            <a href="../plc/connection.html">接続・案件</a>
+            <a href="../plc/connection.html">接続・プロジェクト</a>
             <a href="../plc/plc-side-settings.html">PLC 側設定参考</a>
             <a href="../plc/melsec-settings.html">MELSEC</a>
             <a href="../plc/keyence-settings.html">KEYENCE</a>
@@ -49,7 +49,7 @@
           <summary>転送</summary>
           <div class="nav-menu">
             <a href="../transfer/import-export.html">QR/JSON</a>
-            <a href="../transfer/project-json.html">案件JSON</a>
+            <a href="../transfer/project-json.html">プロジェクトJSON</a>
           </div>
         </details>
         <details class="nav-group">
@@ -97,7 +97,7 @@
     <section class="page-hero section">
       <p class="eyebrow">PC Tool</p>
       <h1>ProjectBuilder</h1>
-      <p class="lead">PC で PLC IO Checker のプロジェクトを作成し、Android / iOS アプリへ案件として QR または JSON で転送するためのツールです。</p>
+      <p class="lead">PC で PLC IO Checker のプロジェクトを作成し、Android / iOS アプリへ QR または JSON で転送するためのツールです。</p>
     </section>
 
     <section class="section">
@@ -116,9 +116,9 @@
     <section class="section">
       <h2>主な用途</h2>
       <div class="feature-grid">
-        <article class="feature"><h3>PLC 設定</h3><p>メーカー、CPU model、IP、ポート、TCP/UDP、ルート指定を PC で入力します。</p></article>
+        <article class="feature"><h3>PLC 設定</h3><p>メーカー、CPU model、IP、ポート、Transport、MELSEC ルーティングを PC で入力します。</p></article>
         <article class="feature"><h3>デバイス登録</h3><p>アドレス / Data type / Comment を表形式で登録します。Excel からの貼り付けにも向いています。</p></article>
-        <article class="feature"><h3>QR/JSON 出力</h3><p>作成したプロジェクトを QR ページまたは JSON ファイルとして出力します。</p></article>
+        <article class="feature"><h3>QR/JSON 出力</h3><p>作成したプロジェクトを QR ページ、QR PNG、JSON ファイルとして出力します。</p></article>
       </div>
     </section>
 
@@ -127,15 +127,15 @@
       <div class="content-grid">
         <article>
           <h3>接続設定</h3>
-          <p>CPU モデル、IP、ポート、Transport、network/station/module_io/multidrop、リモートパスワードを設定します。</p>
+          <p>CPU model、IP address、Port、Transport、Network、Station、Module IO、Multidrop、リモートパスワードを設定します。</p>
         </article>
         <article>
-          <h3>JSON 出力</h3>
-          <p><code>networkNo</code> / <code>stationNo</code> は 10 進、<code>moduleIoNo</code> / <code>multidropNo</code> は <code>0x</code> 付き 16 進で出力します。</p>
+          <h3>Routing 表記</h3>
+          <p>Network / Station は数字で、Module IO / Multidrop は画面の初期表示と同じ <code>0x</code> 付きで入力します。</p>
         </article>
         <article>
           <h3>デバイス</h3>
-          <p>MELSEC の CPU ファミリに応じたデバイスを検証します。<code>iQ-F</code> の <code>X</code> / <code>Y</code> は 8 進表記です。</p>
+          <p><code>iQ-F</code> の <code>X</code> / <code>Y</code> は 8 進表記です。<code>B</code>、<code>W</code>、<code>SB</code>、<code>SW</code> は 16 進表記です。</p>
         </article>
       </div>
     </section>
@@ -149,7 +149,7 @@
         </article>
         <article>
           <h3>KEYENCE 表示</h3>
-          <p><code>Normal</code> と <code>XYM</code> を選べます。選択した表示モードで、デバイス / タイムチャート / トラップのアドレス検証が行われます。</p>
+          <p><code>Normal</code> と <code>XYM</code> を選べます。使用するアドレス表記に合わせて選択します。</p>
         </article>
         <article>
           <h3>デバイス</h3>
@@ -165,7 +165,7 @@
         <li><strong>プロジェクトと PLC を設定する</strong><span>プロジェクト名、メーカー、CPU model、IP、ポート、Transport を入力します。</span></li>
         <li><strong>デバイスを登録する</strong><span>監視するアドレス、Data type、Comment を登録します。</span></li>
         <li><strong>タイムチャート / トラップを登録する</strong><span>必要に応じて記録対象や検知条件を登録します。</span></li>
-        <li><strong>QR または JSON を出力する</strong><span>モバイルアプリの QR読込または JSON読込で取り込みます。</span></li>
+        <li><strong>QR または JSON を出力する</strong><span><strong>QR 生成</strong>、ファイル メニュー、QR メニューを使い、モバイルアプリの QR読込または JSON読込で取り込みます。</span></li>
       </ol>
     </section>
 
@@ -173,9 +173,9 @@
       <h2>QR 出力の注意</h2>
       <ul>
         <li>QR は大きく表示してください。</li>
-        <li>複数枚の場合、アプリがすべてのページを読み込むまで順番に表示します。</li>
-        <li>読み取りにくい場合は QR 1枚の文字数を下げて、枚数を増やします。</li>
-        <li>現在の QR 形式は <code>PLCIOC3|ZSTD</code> です。</li>
+        <li>複数枚の場合は <strong>前へ</strong> / <strong>次へ</strong> で切り替えるか、<strong>自動</strong> で自動切換えします。</li>
+        <li>読み取りにくい場合は QR メニューの <strong>分割サイズ</strong> を下げて、1枚あたりの文字数を少なくします。</li>
+        <li><strong>PNG + JSON 保存</strong> は QR メニューから実行します。</li>
       </ul>
     </section>
 

@@ -25,10 +25,10 @@ ProjectBuilder のソースと README は <https://github.com/fa-yoshinobu/PlcIo
 
 - `index.html`: 目次トップ
 - `start/`: 入手・インストール、はじめる
-- `plc/`: 対応 PLC、接続・案件、PLC 側設定参考、MELSEC / KEYENCE 設定、デバイス表記
+- `plc/`: 対応 PLC、接続・プロジェクト、PLC 側設定参考、MELSEC / KEYENCE 設定、デバイス表記
 - `plc/models/`: 対応機種ごとの PLC 側設定参考ページ。現時点は dummy / TODO
 - `monitoring/`: 監視、List 登録編集、操作パネル、書込、コメント、タイムチャート、トラップ
-- `transfer/`: QR / JSON、案件JSON
+- `transfer/`: QR / JSON、プロジェクトJSON
 - `settings/`: メニュー・設定、アプリ設定、ライセンス/購入
 - `projectbuilder/`: ProjectBuilder、ProjectBuilder 入力、ProjectBuilder QR 生成
 - `reference/`: 用語集、FAQ、リリースノート、困ったとき
@@ -47,6 +47,9 @@ ProjectBuilder のソースと README は <https://github.com/fa-yoshinobu/PlcIo
 ## Manual Writing Rules
 
 - Android / iOS / ProjectBuilder の source code、localization/resource、既存 docs を確認してから書く。
+- 公開マニュアルはユーザー向けの操作説明であり、内部仕様書ではない。通常ページでは、ユーザーが操作、判断、復旧に使わない実装詳細を書かない。
+- スクリーンショットに実画面の内部情報が写ることと、本文でその情報を説明することは別に扱う。スクリーンショットは実画面として載せてよいが、本文はユーザーが押すボタン、選ぶメニュー、入力する値、成功/失敗時に見る場所を優先する。
+- payload、checksum、session、schema、圧縮方式、ライブラリ名、内部互換処理などは通常の操作説明に混ぜない。必要な場合だけ、形式確認ページや開発者向けメモに分ける。
 - 実装で確認できない機能、未実装の導線、想像した便利機能は書かない。
 - 開発用メニュー、開発用 overlay、開発用画面や隠し機能は公開マニュアルに載せない。
 - Android / iOS 共通の動作は共通説明として書き、差分が実装上存在する場合だけプラットフォーム差分として書く。
@@ -57,7 +60,7 @@ ProjectBuilder のソースと README は <https://github.com/fa-yoshinobu/PlcIo
 - App Store / Google Play へのリンクを載せる場合、正式 URL が未確定なら dummy link として書き、公開済み・購入可能と誤読される表現にしない。
 - 画面名、ボタン名、メニュー名は app の表示文言に合わせる。手で別名を作らない。
 - 用語を変更する場合は Android の `app/src/main/res/values*/strings.xml`、iOS の `ios-app/PlcIoChecker/*.lproj/Localizable.strings`、ProjectBuilder の `dotnet/src/PlcIoCheckerQr.Wpf/Languages/*.json` を先に照合し、resource と Site の表記がずれないようにする。
-- QR/JSON は現行の `PLCIOC3|ZSTD` と案件JSON schema v3 を前提に説明する。
+- QR/JSON の通常操作ページでは、読込順、保存メニュー、読み取りにくい場合の対処など、ユーザー操作に必要な範囲だけ説明する。内部形式の詳細は形式確認ページに分ける。
 - 旧 QR 形式や未対応形式の fallback、alias 変換、互換 normalization を案内しない。
 - 未確定の金額は公開 manual に書かない。価格は Store 公開時の表示を正とし、確定前は TODO として残す。
 - Privacy Policy、Support URL、Terms、Purchase / Refund は Store 申請で使う公開 URL として単独ページを用意し、未定項目は細かく TODO に分ける。
@@ -69,10 +72,11 @@ ProjectBuilder のソースと README は <https://github.com/fa-yoshinobu/PlcIo
 
 - 各ページの冒頭で対象を明確にする。対象が Android / iOS 共通、Android のみ、iOS のみ、ProjectBuilder のみ、MELSEC のみ、KEYENCE のみのどれか分かるように書く。
 - 操作説明は原則として「入口」「操作」「結果」「失敗時の確認」の順で書く。
-- 接続していないと使えない機能、案件がないと使えない機能、ライセンス状態で変わる機能は実行条件を先に書く。
+- 接続していないと使えない機能、プロジェクトがないと使えない機能、ライセンス状態で変わる機能は実行条件を先に書く。
 - 書込、CPU操作、トラップ、REC、コメント読込、QR/JSON 取込は、成功時の表示と失敗時に見る場所を必ず書く。
 - ProjectBuilder で作成する内容と、モバイルアプリ側で編集する内容を混ぜない。どちらで行う操作かを明記する。
 - 登録上限、対応データ型、複数ページ QR、読み取り順、CSV/JSON の列や項目など、ユーザーが入力前に知るべき制約を書く。
+- ユーザーが知らなくてよい値や内部状態は書かない。説明が詳細化しすぎた場合は、操作手順、入力項目、表示結果、失敗時の確認に戻して整理する。
 - スクリーンショットを差し替える場合は、対象画面と撮影日を commit か作業メモで追えるようにする。
 - 詳細説明を書く時は、根拠として確認した source file、resource、docs を作業メモや PR 説明に残す。
 
@@ -81,7 +85,7 @@ ProjectBuilder のソースと README は <https://github.com/fa-yoshinobu/PlcIo
 新規ページや大きく書き直すページは、必要な項目だけを選んでこの順に揃える。
 
 1. 対象: Android / iOS 共通、Android のみ、iOS のみ、ProjectBuilder、MELSEC、KEYENCE のいずれかを明記する。
-2. 実行条件: 接続状態、案件の有無、ライセンス、対応 PLC、登録上限などを書く。
+2. 実行条件: 接続状態、プロジェクトの有無、ライセンス、対応 PLC、登録上限などを書く。
 3. 入口: どの画面、タブ、メニュー、ボタンから開くかを書く。
 4. 操作: ユーザーが押す順番、入力する値、選ぶ項目を書く。
 5. 結果: 成功時に画面やステータスがどう変わるかを書く。
@@ -92,8 +96,8 @@ ProjectBuilder のソースと README は <https://github.com/fa-yoshinobu/PlcIo
 ## Terminology Rules
 
 - アプリ名は `PLC IO Checker`、PC ツール名は `ProjectBuilder` または `PlcIoChecker_ProjectBuilder` に統一する。
-- モバイルアプリ側では `案件` と `案件JSON` を使う。ProjectBuilder 側では resource に合わせて `プロジェクト`、`デバイス`、`タイムチャート`、`トラップ` を使い、モバイルアプリへ取り込んだ後の説明では `案件` と書く。
-- 現行 resource では日本語の project はモバイルアプリが `案件`、ProjectBuilder が `プロジェクト`、英語は `project` と表記する。別名へ変更する場合は、先に Android / iOS / ProjectBuilder resource と画面表示を変更してから Site を更新する。
+- Android / iOS / ProjectBuilder / Site の日本語表記は `プロジェクト`、`プロジェクト名`、`プロジェクトJSON` に統一する。旧称は使わない。
+- 表記を変える場合は、先に Android / iOS / ProjectBuilder の localization/resource と画面表示を変更してから Site を更新する。
 - 画面名は app 表示に合わせて `List`、`Block`、`タイムチャート`、`トラップ`、`List 登録編集` を使う。
 - 操作名は表示文言に合わせて `QR読込`、`JSON読込`、`JSON書出`、`CSVコメント読込`、`コメント読込`、`CPU操作` と書く。
 - PLC 種別は `MELSEC` / `KEYENCE`、通信方式は `SLMP` / `KV Host Link` のように source と実装に合わせる。
@@ -111,7 +115,7 @@ ProjectBuilder のソースと README は <https://github.com/fa-yoshinobu/PlcIo
 - [ ] 未実装機能、開発用機能、推測した便利機能を書いていない。
 - [ ] MELSEC / KEYENCE の差分を混ぜずに分けている。
 - [ ] 対応 PLC 機種、既定ポート、通信方式、対応デバイスなどの表記が source code と一致している。
-- [ ] QR/JSON は `PLCIOC3|ZSTD` と案件JSON schema v3 の説明になっている。
+- [ ] QR/JSON の通常操作ページに内部形式の説明を混ぜていない。形式詳細が必要な場合は専用ページに分けている。
 - [ ] App Store / Google Play が正式 URL 未確定の場合は dummy link として扱っている。
 - [ ] 書込、CPU操作、トラップ、REC など危険操作に注意書きがある。
 - [ ] `index.html`、上部ナビ、前後リンク、README の `Files` が実ページ構成と一致している。
@@ -137,7 +141,7 @@ ProjectBuilder のソースと README は <https://github.com/fa-yoshinobu/PlcIo
 - [x] `projectbuilder/projectbuilder-devices.html`: デバイス、タイムチャート、トラップの入力、貼り付け、登録上限。
 - [x] `projectbuilder/projectbuilder-qr.html`: QR 生成、分割サイズ、表示サイズ、誤り訂正、PNG/JSON 保存。
 - [x] `transfer/project-json.html`: schema v3、MELSEC / KEYENCE の JSON 差分、対応 value set。
-- [x] `reference/glossary.html`: 案件、デバイス、address、data type、BIT、WORD、トラップ、タイムチャートなどの用語。
+- [x] `reference/glossary.html`: プロジェクト、デバイス、address、data type、BIT、WORD、トラップ、タイムチャートなどの用語。
 - [x] `reference/faq.html`: 接続、QR、REC、書込、コメント読込、ライセンス、エラー履歴の確認項目。
 - [ ] `reference/release-notes.html`: リリースノート。正式な変更履歴は TODO。
 - [x] `reference/privacy-policy.html`: INTERNET permission、ユーザー設定 PLC への通信、個人情報非収集を記載。
