@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="ProjectBuilder の Devices、Time Chart、Traps 入力。">
+  <meta name="description" content="ProjectBuilder のデバイス、タイムチャート、トラップ入力。">
   <title>ProjectBuilder 入力 | PLC IO Checker 操作マニュアル</title>
   <link rel="stylesheet" href="../assets/style.css">
 </head>
@@ -22,9 +22,9 @@
         <details class="nav-group">
           <summary>PLC</summary>
           <div class="nav-menu">
-            <a href="../plc/supported-plc.html">対応PLC</a>
+            <a href="../plc/supported-plc.html">対応 PLC</a>
             <a href="../plc/connection.html">接続・案件</a>
-            <a href="../plc/plc-side-settings.html">PLC側設定参考</a>
+            <a href="../plc/plc-side-settings.html">PLC 側設定参考</a>
             <a href="../plc/melsec-settings.html">MELSEC</a>
             <a href="../plc/keyence-settings.html">KEYENCE</a>
             <a href="../plc/device-addressing.html">デバイス表記</a>
@@ -34,19 +34,19 @@
           <summary>操作</summary>
           <div class="nav-menu">
             <a href="../monitoring/monitoring.html">監視</a>
-            <a href="../monitoring/list-edit.html">List登録編集</a>
+            <a href="../monitoring/list-edit.html">List 登録編集</a>
             <a href="../monitoring/focus-panel.html">操作パネル</a>
             <a href="../monitoring/writing.html">書込</a>
             <a href="../monitoring/comments.html">コメント</a>
-            <a href="../monitoring/time-chart.html">Time Chart</a>
-            <a href="../monitoring/traps.html">Trap</a>
+            <a href="../monitoring/time-chart.html">タイムチャート</a>
+            <a href="../monitoring/traps.html">トラップ</a>
           </div>
         </details>
         <details class="nav-group">
           <summary>転送</summary>
           <div class="nav-menu">
             <a href="../transfer/import-export.html">QR/JSON</a>
-            <a href="../transfer/project-json.html">project JSON</a>
+            <a href="../transfer/project-json.html">案件JSON</a>
           </div>
         </details>
         <details class="nav-group">
@@ -65,7 +65,7 @@
             <a href="../reference/app-permissions.html">権限</a>
             <a href="../reference/terms.html">利用条件</a>
             <a href="../reference/purchase-info.html">購入・返金</a>
-            <a href="../reference/store-release-checklist.html">Store申請TODO</a>
+            <a href="../reference/store-release-checklist.html">Store 申請 TODO</a>
           </div>
         </details>
         <details class="nav-group">
@@ -73,7 +73,7 @@
           <div class="nav-menu">
             <a href="../projectbuilder/projectbuilder.html">ProjectBuilder</a>
             <a class="active" href="../projectbuilder/projectbuilder-devices.html">入力</a>
-            <a href="../projectbuilder/projectbuilder-qr.html">QR生成</a>
+            <a href="../projectbuilder/projectbuilder-qr.html">QR 生成</a>
           </div>
         </details>
         <details class="nav-group">
@@ -94,43 +94,43 @@
     <section class="page-hero section">
       <p class="eyebrow">ProjectBuilder</p>
       <h1>ProjectBuilder 入力</h1>
-      <p class="lead">Devices、Time Chart、Traps を PC で入力し、モバイルアプリに渡す案件を作成します。</p>
+      <p class="lead">デバイス、タイムチャート、トラップを PC で入力し、モバイルアプリへ案件として渡すプロジェクトを作成します。</p>
     </section>
 
     <section class="section">
-      <h2>Devices</h2>
-      <div class="info-table" role="table" aria-label="Devices columns">
-        <div role="row"><div role="cell">Address</div><div role="cell">監視する PLC デバイスアドレスです。</div></div>
+      <h2>デバイス</h2>
+      <div class="info-table" role="table" aria-label="デバイス列">
+        <div role="row"><div role="cell">アドレス</div><div role="cell">監視する PLC デバイスアドレスです。</div></div>
         <div role="row"><div role="cell">Data type</div><div role="cell"><code>BIT</code>、<code>INT16</code>、<code>UINT16</code>、<code>INT32</code>、<code>UINT32</code>、<code>FLOAT32</code></div></div>
-        <div role="row"><div role="cell">Comment</div><div role="cell">任意のコメントです。同じ address が複数ある場合、最初の非空 comment が同じ address に反映されます。</div></div>
+        <div role="row"><div role="cell">Comment</div><div role="cell">任意のコメントです。同じアドレスが複数ある場合、最初の非空 Comment が同じアドレスに反映されます。</div></div>
       </div>
       <p>Excel からタブ区切りでコピー/貼り付けできます。ブロック追加では開始アドレスと点数を指定します。</p>
     </section>
 
     <section class="section">
-      <h2>Time Chart</h2>
-      <p>モバイルアプリの Time Chart に表示する対象を登録します。最大 20 チャンネルです。</p>
-      <div class="info-table" role="table" aria-label="Time Chart columns">
-        <div role="row"><div role="cell">Address</div><div role="cell">記録対象のアドレスです。</div></div>
-        <div role="row"><div role="cell">Data type</div><div role="cell">Devices に同じ address があればその data type を優先します。</div></div>
+      <h2>タイムチャート</h2>
+      <p>モバイルアプリのタイムチャートに表示する対象を登録します。最大 20 チャンネルです。</p>
+      <div class="info-table" role="table" aria-label="タイムチャート列">
+        <div role="row"><div role="cell">アドレス</div><div role="cell">記録対象のアドレスです。</div></div>
+        <div role="row"><div role="cell">Data type</div><div role="cell">デバイスに同じアドレスがあればその Data type を優先します。</div></div>
       </div>
     </section>
 
     <section class="section">
-      <h2>Traps</h2>
+      <h2>トラップ</h2>
       <p>条件に一致したタイミングを検知する定義です。最大 20 件です。</p>
-      <div class="info-table" role="table" aria-label="Trap columns">
-        <div role="row"><div role="cell">Address / Data type</div><div role="cell">検知対象と data type です。</div></div>
-        <div role="row"><div role="cell">Condition</div><div role="cell">BIT は <code>Rise</code>、<code>Fall</code>、<code>Change</code>。WORD は <code>Change</code>、<code>GreaterOrEqual</code>、<code>LessOrEqual</code>、<code>Equal</code>、<code>NotEqual</code>。</div></div>
-        <div role="row"><div role="cell">Threshold</div><div role="cell">比較条件で必要です。</div></div>
-        <div role="row"><div role="cell">Enabled</div><div role="cell">有効/無効を指定します。</div></div>
+      <div class="info-table" role="table" aria-label="トラップ列">
+        <div role="row"><div role="cell">アドレス / Data type</div><div role="cell">検知対象と Data type です。</div></div>
+        <div role="row"><div role="cell">検知条件</div><div role="cell">BIT は <code>Rise</code>、<code>Fall</code>、<code>Change</code>。WORD は <code>Change</code>、<code>GreaterOrEqual</code>、<code>LessOrEqual</code>、<code>Equal</code>、<code>NotEqual</code>。</div></div>
+        <div role="row"><div role="cell">しきい値</div><div role="cell">比較条件で必要です。</div></div>
+        <div role="row"><div role="cell">有効</div><div role="cell">有効/無効を指定します。</div></div>
       </div>
     </section>
 
     <section class="section">
       <div class="notice">
         <h2>検証</h2>
-        <p>Vendor、CPU model、KEYENCE 表示に応じてデバイスと data type を検証します。対応しない address や condition は生成時または読み込み時にエラーになります。</p>
+        <p>メーカー、CPU model、KEYENCE 表示に応じてデバイスと Data type を検証します。対応しないアドレスや検知条件は生成時または読み込み時にエラーになります。</p>
       </div>
     </section>
 

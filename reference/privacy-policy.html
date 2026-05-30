@@ -22,9 +22,9 @@
         <details class="nav-group">
           <summary>PLC</summary>
           <div class="nav-menu">
-            <a href="../plc/supported-plc.html">対応PLC</a>
+            <a href="../plc/supported-plc.html">対応 PLC</a>
             <a href="../plc/connection.html">接続・案件</a>
-            <a href="../plc/plc-side-settings.html">PLC側設定参考</a>
+            <a href="../plc/plc-side-settings.html">PLC 側設定参考</a>
             <a href="../plc/melsec-settings.html">MELSEC</a>
             <a href="../plc/keyence-settings.html">KEYENCE</a>
             <a href="../plc/device-addressing.html">デバイス表記</a>
@@ -34,19 +34,19 @@
           <summary>操作</summary>
           <div class="nav-menu">
             <a href="../monitoring/monitoring.html">監視</a>
-            <a href="../monitoring/list-edit.html">List登録編集</a>
+            <a href="../monitoring/list-edit.html">List 登録編集</a>
             <a href="../monitoring/focus-panel.html">操作パネル</a>
             <a href="../monitoring/writing.html">書込</a>
             <a href="../monitoring/comments.html">コメント</a>
-            <a href="../monitoring/time-chart.html">Time Chart</a>
-            <a href="../monitoring/traps.html">Trap</a>
+            <a href="../monitoring/time-chart.html">タイムチャート</a>
+            <a href="../monitoring/traps.html">トラップ</a>
           </div>
         </details>
         <details class="nav-group">
           <summary>転送</summary>
           <div class="nav-menu">
             <a href="../transfer/import-export.html">QR/JSON</a>
-            <a href="../transfer/project-json.html">project JSON</a>
+            <a href="../transfer/project-json.html">案件JSON</a>
           </div>
         </details>
         <details class="nav-group">
@@ -65,7 +65,7 @@
             <a href="../reference/app-permissions.html">権限</a>
             <a href="../reference/terms.html">利用条件</a>
             <a href="../reference/purchase-info.html">購入・返金</a>
-            <a href="../reference/store-release-checklist.html">Store申請TODO</a>
+            <a href="../reference/store-release-checklist.html">Store 申請 TODO</a>
           </div>
         </details>
         <details class="nav-group">
@@ -73,7 +73,7 @@
           <div class="nav-menu">
             <a href="../projectbuilder/projectbuilder.html">ProjectBuilder</a>
             <a href="../projectbuilder/projectbuilder-devices.html">入力</a>
-            <a href="../projectbuilder/projectbuilder-qr.html">QR生成</a>
+            <a href="../projectbuilder/projectbuilder-qr.html">QR 生成</a>
           </div>
         </details>
         <details class="nav-group">
@@ -112,13 +112,13 @@
     <section class="section">
       <h2>収集する情報</h2>
       <p>PLC IO Checker は、氏名、住所、電話番号、メールアドレス、連絡先、写真、位置情報などの個人情報を収集しません。開発者のサーバーへ個人情報、PLC データ、案件データを送信しません。</p>
-      <p>アプリ内の接続設定、案件、登録デバイス、Time Chart、Trap、コメント、履歴などは、ユーザーの端末内で利用されます。ユーザーが JSON、CSV、QR、画像などを保存または共有した場合、その保存先や共有先での扱いはユーザーが選択したサービスの規約に従います。</p>
+      <p>アプリ内の接続設定、案件、登録デバイス、タイムチャート、トラップ、コメント、履歴などは、ユーザーの端末内で利用されます。ユーザーが JSON、CSV、QR、画像などを保存または共有した場合、その保存先や共有先での扱いはユーザーが選択したサービスの規約に従います。</p>
     </section>
 
     <section class="section">
       <h2>ネットワーク通信</h2>
       <p>Android 版は <code>INTERNET</code> と <code>ACCESS_NETWORK_STATE</code> permission を使用します。iOS 版は Local Network の説明を <code>NSLocalNetworkUsageDescription</code> に記載しています。これらは、ユーザーがアプリで設定した PLC の IP アドレス、ポート、通信方式に対して接続するために使用します。</p>
-      <p>PLC IO Checker は、ユーザーが設定した接続先以外へ PLC 監視値や書込値を送信する目的で通信しません。MELSEC / KEYENCE の読込、書込、コメント読込、CPU 操作などの通信は、ユーザーが選択した PLC に対して行われます。</p>
+      <p>PLC IO Checker は、ユーザーが設定した接続先以外へ PLC 監視値や書込値を送信する目的で通信しません。MELSEC / KEYENCE の読込、書込、コメント読込、CPU操作などの通信は、ユーザーが選択した PLC に対して行われます。</p>
     </section>
 
     <section class="section">
@@ -134,8 +134,8 @@
     </section>
 
     <section class="section">
-      <h2>Time Chart 記録</h2>
-      <p>Android 版は Time Chart の REC 中にバックグラウンドへ移った場合、foreground service の通知を表示して記録を継続します。これは端末内での記録継続のためであり、PLC データを開発者サーバーへ同期する用途ではありません。</p>
+      <h2>タイムチャート記録</h2>
+      <p>Android 版はタイムチャートの REC 中にバックグラウンドへ移った場合、foreground service の通知を表示して記録を継続します。これは端末内での記録継続のためであり、PLC データを開発者サーバーへ同期する用途ではありません。</p>
     </section>
 
     <section class="section">
@@ -152,7 +152,7 @@
 
     <section class="section">
       <h2>ProjectBuilder</h2>
-      <p>PlcIoChecker_ProjectBuilder は、PC 上で PLC IO Checker 用の project JSON と QR を作成するためのツールです。作成したファイル、QR、画像はユーザーが管理します。ProjectBuilder も個人情報を開発者のサーバーへ送信する用途では使用しません。</p>
+      <p>PlcIoChecker_ProjectBuilder は、PC 上で PLC IO Checker 用の案件JSONと QR を作成するためのツールです。作成したファイル、QR、画像はユーザーが管理します。ProjectBuilder も個人情報を開発者のサーバーへ送信する用途では使用しません。</p>
     </section>
 
     <section class="section">

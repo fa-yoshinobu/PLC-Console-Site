@@ -1,6 +1,6 @@
 # PLC IO Checker Manual
 
-Web公開用の静的マニュアルです。Android/iOS 共通の操作説明と、PC 用 `PlcIoChecker_ProjectBuilder` の説明を機能別 HTML に分割しています。
+Web公開用の静的マニュアルです。Android / iOS 共通の操作説明と、PC 用 `PlcIoChecker_ProjectBuilder` の説明を機能別 HTML に分割しています。
 
 Public site: <https://fa-yoshinobu.github.io/PlcIoChecker_Site/>
 Privacy policy: <https://fa-yoshinobu.github.io/PlcIoChecker_Site/reference/privacy-policy.html>
@@ -25,16 +25,16 @@ ProjectBuilder のソースと README は <https://github.com/fa-yoshinobu/PlcIo
 
 - `index.html`: 目次トップ
 - `start/`: 入手・インストール、はじめる
-- `plc/`: 対応 PLC、接続・案件、PLC側設定参考、MELSEC/KEYENCE 設定、デバイス表記
-- `plc/models/`: 対応機種ごとの PLC側設定参考ページ。現時点は dummy / TODO
+- `plc/`: 対応 PLC、接続・案件、PLC 側設定参考、MELSEC / KEYENCE 設定、デバイス表記
+- `plc/models/`: 対応機種ごとの PLC 側設定参考ページ。現時点は dummy / TODO
 - `monitoring/`: 監視、List 登録編集、操作パネル、書込、コメント、タイムチャート、トラップ
-- `transfer/`: QR / JSON、project JSON
+- `transfer/`: QR / JSON、案件JSON
 - `settings/`: メニュー・設定、アプリ設定、ライセンス/購入
 - `projectbuilder/`: ProjectBuilder、ProjectBuilder 入力、ProjectBuilder QR 生成
 - `reference/`: 用語集、FAQ、リリースノート、困ったとき
 - `reference/support.html`: Store metadata 用サポート URL 候補
 - `reference/privacy-policy.html`: Store metadata 用プライバシーポリシー URL 候補
-- `reference/app-permissions.html`: Android/iOS の権限、Local Network、カメラ、ファイルアクセス
+- `reference/app-permissions.html`: Android / iOS の権限、Local Network、カメラ、ファイルアクセス
 - `reference/terms.html`: 利用条件
 - `reference/purchase-info.html`: 購入・返金案内
 - `reference/store-release-checklist.html`: iOS / Android 有料公開前 TODO
@@ -46,30 +46,31 @@ ProjectBuilder のソースと README は <https://github.com/fa-yoshinobu/PlcIo
 
 ## Manual Writing Rules
 
-- Android/iOS/ProjectBuilder の source code、localization/resource、既存 docs を確認してから書く。
+- Android / iOS / ProjectBuilder の source code、localization/resource、既存 docs を確認してから書く。
 - 実装で確認できない機能、未実装の導線、想像した便利機能は書かない。
 - 開発用メニュー、開発用 overlay、開発用画面や隠し機能は公開マニュアルに載せない。
-- Android/iOS 共通の動作は共通説明として書き、差分が実装上存在する場合だけ平台差分として書く。
-- MELSEC と KEYENCE で通信方式、設定項目、対応デバイス、コメント読込、CPU 操作、JSON 項目が変わる場合は、共通説明に混ぜず `MELSEC` / `KEYENCE` の見出しや表で分けて書く。
+- Android / iOS 共通の動作は共通説明として書き、差分が実装上存在する場合だけプラットフォーム差分として書く。
+- MELSEC と KEYENCE で通信方式、設定項目、対応デバイス、コメント読込、CPU操作、JSON 項目が変わる場合は、共通説明に混ぜず `MELSEC` / `KEYENCE` の見出しや表で分けて書く。
 - 対応 PLC 機種、CPU model 選択肢、既定ポート、通信方式、対応デバイス、アドレス表記、使用できない設定項目は source code で確認し、接続・ProjectBuilder・困ったときのページに必要な範囲で書く。
-- 内容が多い場合は 1 ページに詰め込まず、操作単位・機能単位・MELSEC/KEYENCE 差分単位でページを細分化する。HTML は機能別フォルダへ分け、ページを増やした場合は `index.html`、前後リンク、上部ナビ、README の file list も更新する。
+- 内容が多い場合は 1 ページに詰め込まず、操作単位・機能単位・MELSEC / KEYENCE 差分単位でページを細分化する。HTML は機能別フォルダへ分け、ページを増やした場合は `index.html`、前後リンク、上部ナビ、README の file list も更新する。
 - 画像も用途別フォルダへ分ける。接続・PLC 設定系は `assets/images/plc/`、監視・記録系は `assets/images/monitoring/`、QR/JSON 転送系は `assets/images/transfer/`、ProjectBuilder 関連は `assets/images/projectbuilder/` を使う。
 - App Store / Google Play へのリンクを載せる場合、正式 URL が未確定なら dummy link として書き、公開済み・購入可能と誤読される表現にしない。
 - 画面名、ボタン名、メニュー名は app の表示文言に合わせる。手で別名を作らない。
-- QR/JSON は現行の `PLCIOC3|ZSTD` と project JSON schema v3 を前提に説明する。
+- 用語を変更する場合は Android の `app/src/main/res/values*/strings.xml`、iOS の `ios-app/PlcIoChecker/*.lproj/Localizable.strings`、ProjectBuilder の `dotnet/src/PlcIoCheckerQr.Wpf/Languages/*.json` を先に照合し、resource と Site の表記がずれないようにする。
+- QR/JSON は現行の `PLCIOC3|ZSTD` と案件JSON schema v3 を前提に説明する。
 - 旧 QR 形式や未対応形式の fallback、alias 変換、互換 normalization を案内しない。
 - 未確定の金額は公開 manual に書かない。価格は Store 公開時の表示を正とし、確定前は TODO として残す。
 - Privacy Policy、Support URL、Terms、Purchase / Refund は Store 申請で使う公開 URL として単独ページを用意し、未定項目は細かく TODO に分ける。
-- Android/iOS の購入 UI が mock の間は、公開 build から mock 表記、開発用アンロック、未確定の金額表示が消えていることを Store 申請 TODO に残す。
-- 書込、CPU 操作、トラップなど実設備へ影響する操作は、安全確認と対象確認の注意を残す。
-- 更新後は HTML リンク、画像参照、見出し、表記ゆれ、Android/iOS/ProjectBuilder の実装との矛盾を確認する。
+- Android / iOS の購入 UI が mock の間は、公開 build から mock 表記、開発用アンロック、未確定の金額表示が消えていることを Store 申請 TODO に残す。
+- 書込、CPU操作、トラップなど実設備へ影響する操作は、安全確認と対象確認の注意を残す。
+- 更新後は HTML リンク、画像参照、見出し、表記ゆれ、Android / iOS / ProjectBuilder の実装との矛盾を確認する。
 
 ## Detailed Manual Policy
 
-- 各ページの冒頭で対象を明確にする。対象が Android/iOS 共通、Android のみ、iOS のみ、ProjectBuilder のみ、MELSEC のみ、KEYENCE のみのどれか分かるように書く。
+- 各ページの冒頭で対象を明確にする。対象が Android / iOS 共通、Android のみ、iOS のみ、ProjectBuilder のみ、MELSEC のみ、KEYENCE のみのどれか分かるように書く。
 - 操作説明は原則として「入口」「操作」「結果」「失敗時の確認」の順で書く。
 - 接続していないと使えない機能、案件がないと使えない機能、ライセンス状態で変わる機能は実行条件を先に書く。
-- 書込、CPU 操作、トラップ、REC、コメント読込、QR/JSON 取込は、成功時の表示と失敗時に見る場所を必ず書く。
+- 書込、CPU操作、トラップ、REC、コメント読込、QR/JSON 取込は、成功時の表示と失敗時に見る場所を必ず書く。
 - ProjectBuilder で作成する内容と、モバイルアプリ側で編集する内容を混ぜない。どちらで行う操作かを明記する。
 - 登録上限、対応データ型、複数ページ QR、読み取り順、CSV/JSON の列や項目など、ユーザーが入力前に知るべき制約を書く。
 - スクリーンショットを差し替える場合は、対象画面と撮影日を commit か作業メモで追えるようにする。
@@ -79,7 +80,7 @@ ProjectBuilder のソースと README は <https://github.com/fa-yoshinobu/PlcIo
 
 新規ページや大きく書き直すページは、必要な項目だけを選んでこの順に揃える。
 
-1. 対象: Android/iOS 共通、Android のみ、iOS のみ、ProjectBuilder、MELSEC、KEYENCE のいずれかを明記する。
+1. 対象: Android / iOS 共通、Android のみ、iOS のみ、ProjectBuilder、MELSEC、KEYENCE のいずれかを明記する。
 2. 実行条件: 接続状態、案件の有無、ライセンス、対応 PLC、登録上限などを書く。
 3. 入口: どの画面、タブ、メニュー、ボタンから開くかを書く。
 4. 操作: ユーザーが押す順番、入力する値、選ぶ項目を書く。
@@ -91,12 +92,13 @@ ProjectBuilder のソースと README は <https://github.com/fa-yoshinobu/PlcIo
 ## Terminology Rules
 
 - アプリ名は `PLC IO Checker`、PC ツール名は `ProjectBuilder` または `PlcIoChecker_ProjectBuilder` に統一する。
-- モバイル側の案件は `案件`、ProjectBuilder 側の JSON は必要に応じて `project JSON` と書く。
-- 画面名は app 表示に合わせて `List`、`Block`、`Time Chart`、`Trap`、`List 登録編集` を使う。
+- モバイルアプリ側では `案件` と `案件JSON` を使う。ProjectBuilder 側では resource に合わせて `プロジェクト`、`デバイス`、`タイムチャート`、`トラップ` を使い、モバイルアプリへ取り込んだ後の説明では `案件` と書く。
+- 現行 resource では日本語の project はモバイルアプリが `案件`、ProjectBuilder が `プロジェクト`、英語は `project` と表記する。別名へ変更する場合は、先に Android / iOS / ProjectBuilder resource と画面表示を変更してから Site を更新する。
+- 画面名は app 表示に合わせて `List`、`Block`、`タイムチャート`、`トラップ`、`List 登録編集` を使う。
 - 操作名は表示文言に合わせて `QR読込`、`JSON読込`、`JSON書出`、`CSVコメント読込`、`コメント読込`、`CPU操作` と書く。
 - PLC 種別は `MELSEC` / `KEYENCE`、通信方式は `SLMP` / `Host Link TCP` のように source と実装に合わせる。
 - デバイス説明では `BIT` / `WORD`、`data type`、`address`、`comment` の意味が混ざらないように分ける。
-- `Trap` と `Time Chart` は登録対象、実行条件、記録・検知結果を分けて説明する。
+- `トラップ` と `タイムチャート` は登録対象、実行条件、記録・検知結果を分けて説明する。
 - Store や購入に関する説明は、正式公開前は `dummy link`、`予定`、`mock` など現状が分かる表現にする。
 - ただし価格や金額は、正式確定前に具体額を書かない。
 
@@ -104,13 +106,14 @@ ProjectBuilder のソースと README は <https://github.com/fa-yoshinobu/PlcIo
 
 公開前または大きな更新後は、最低限ここを確認する。
 
-- [ ] Android/iOS/ProjectBuilder の source code、localization/resource、既存 docs と矛盾していない。
+- [ ] Android / iOS / ProjectBuilder の source code、localization/resource、既存 docs と矛盾していない。
+- [ ] 画面名、ボタン名、メニュー名、主要用語が Android / iOS / ProjectBuilder の resource と一致している。
 - [ ] 未実装機能、開発用機能、推測した便利機能を書いていない。
 - [ ] MELSEC / KEYENCE の差分を混ぜずに分けている。
 - [ ] 対応 PLC 機種、既定ポート、通信方式、対応デバイスなどの表記が source code と一致している。
-- [ ] QR/JSON は `PLCIOC3|ZSTD` と project JSON schema v3 の説明になっている。
+- [ ] QR/JSON は `PLCIOC3|ZSTD` と案件JSON schema v3 の説明になっている。
 - [ ] App Store / Google Play が正式 URL 未確定の場合は dummy link として扱っている。
-- [ ] 書込、CPU 操作、トラップ、REC など危険操作に注意書きがある。
+- [ ] 書込、CPU操作、トラップ、REC など危険操作に注意書きがある。
 - [ ] `index.html`、上部ナビ、前後リンク、README の `Files` が実ページ構成と一致している。
 - [ ] HTML と画像が機能別フォルダに分かれており、参照パスが崩れていない。
 - [ ] HTML リンク切れ、画像参照切れ、alt text 抜けがない。
@@ -120,7 +123,7 @@ ProjectBuilder のソースと README は <https://github.com/fa-yoshinobu/PlcIo
 
 未作成ページが出た場合は TODO として残す。実際に追加したページだけ `Files`、`index.html`、前後リンク、上部ナビへ反映する。
 
-- [x] `start/install.html`: Android/iOS アプリ入手先、ProjectBuilder 入手先、App Store / Google Play dummy link。
+- [x] `start/install.html`: Android / iOS アプリ入手先、ProjectBuilder 入手先、App Store / Google Play dummy link。
 - [x] `plc/supported-plc.html`: 対応 PLC 機種、CPU model、既定ポート、通信方式。
 - [ ] `plc/plc-side-settings.html`: PLC 側設定参考の親ページ。詳細内容は TODO。
 - [ ] `plc/models/*.html`: 対応機種ごとの PLC 側設定参考ページ。詳細内容は TODO。
@@ -128,21 +131,21 @@ ProjectBuilder のソースと README は <https://github.com/fa-yoshinobu/PlcIo
 - [x] `plc/keyence-settings.html`: KEYENCE の Host Link TCP、Normal/XYM、コメント読込、対応デバイス。
 - [x] `plc/device-addressing.html`: デバイス種別、10 進/16 進/8 進、BIT/WORD、data type。
 - [x] `monitoring/list-edit.html`: `List 登録編集`、単体追加、範囲追加、検索、並び替え、削除。
-- [x] `monitoring/focus-panel.html`: ON/OFF、数値書込、Dec/Hex/Bit、表示型変更、Time Chart/Trap 追加導線。
+- [x] `monitoring/focus-panel.html`: ON/OFF、数値書込、Dec/Hex/Bit、表示型変更、タイムチャート/トラップ追加導線。
 - [x] `settings/app-settings.html`: 多言語、ライト/ダーク、画面配置、ビット書込モード。
-- [x] `settings/license.html`: 無料枠、MELSEC/KEYENCE 実機通信、App Store / Google Play dummy link。
-- [x] `projectbuilder/projectbuilder-devices.html`: Devices、Time Chart、Traps の入力、貼り付け、登録上限。
+- [x] `settings/license.html`: 無料枠、MELSEC / KEYENCE 実機通信、App Store / Google Play dummy link。
+- [x] `projectbuilder/projectbuilder-devices.html`: デバイス、タイムチャート、トラップの入力、貼り付け、登録上限。
 - [x] `projectbuilder/projectbuilder-qr.html`: QR 生成、分割サイズ、表示サイズ、誤り訂正、PNG/JSON 保存。
-- [x] `transfer/project-json.html`: schema v3、MELSEC/KEYENCE の JSON 差分、対応 value set。
-- [x] `reference/glossary.html`: 案件、デバイス、address、data type、BIT、WORD、Trap、Time Chart などの用語。
+- [x] `transfer/project-json.html`: schema v3、MELSEC / KEYENCE の JSON 差分、対応 value set。
+- [x] `reference/glossary.html`: 案件、デバイス、address、data type、BIT、WORD、トラップ、タイムチャートなどの用語。
 - [x] `reference/faq.html`: 接続、QR、REC、書込、コメント読込、ライセンス、エラー履歴の確認項目。
 - [ ] `reference/release-notes.html`: リリースノート。正式な変更履歴は TODO。
 - [x] `reference/privacy-policy.html`: INTERNET permission、ユーザー設定 PLC への通信、個人情報非収集を記載。
-- [x] `reference/app-permissions.html`: Android/iOS の permission、Local Network、Camera、storage/file access を source code ベースで整理。
+- [x] `reference/app-permissions.html`: Android / iOS の permission、Local Network、Camera、storage/file access を source code ベースで整理。
 - [x] `reference/support.html`: Store 用 Support URL 候補。正式連絡先は TODO。
 - [x] `reference/terms.html`: 利用条件。法務・販売条件の未定事項は TODO。
 - [x] `reference/purchase-info.html`: 購入、返金、Store URL。価格は未定として金額を書かない。
-- [x] `reference/store-release-checklist.html`: Android/iOS/ProjectBuilder TODO を Store 申請前項目として整理。
+- [x] `reference/store-release-checklist.html`: Android / iOS / ProjectBuilder TODO を Store 申請前項目として整理。
 
 ## Preview
 

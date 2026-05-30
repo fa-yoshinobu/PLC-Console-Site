@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="PLC IO Checker の PLC 側設定参考。機種別ページへの入口。">
-  <title>PLC側設定参考 | PLC IO Checker 操作マニュアル</title>
+  <title>PLC 側設定参考 | PLC IO Checker 操作マニュアル</title>
   <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
@@ -22,9 +22,9 @@
         <details class="nav-group">
           <summary class="active">PLC</summary>
           <div class="nav-menu">
-            <a href="../plc/supported-plc.html">対応PLC</a>
+            <a href="../plc/supported-plc.html">対応 PLC</a>
             <a href="../plc/connection.html">接続・案件</a>
-            <a class="active" href="../plc/plc-side-settings.html">PLC側設定参考</a>
+            <a class="active" href="../plc/plc-side-settings.html">PLC 側設定参考</a>
             <a href="../plc/melsec-settings.html">MELSEC</a>
             <a href="../plc/keyence-settings.html">KEYENCE</a>
             <a href="../plc/device-addressing.html">デバイス表記</a>
@@ -34,19 +34,19 @@
           <summary>操作</summary>
           <div class="nav-menu">
             <a href="../monitoring/monitoring.html">監視</a>
-            <a href="../monitoring/list-edit.html">List登録編集</a>
+            <a href="../monitoring/list-edit.html">List 登録編集</a>
             <a href="../monitoring/focus-panel.html">操作パネル</a>
             <a href="../monitoring/writing.html">書込</a>
             <a href="../monitoring/comments.html">コメント</a>
-            <a href="../monitoring/time-chart.html">Time Chart</a>
-            <a href="../monitoring/traps.html">Trap</a>
+            <a href="../monitoring/time-chart.html">タイムチャート</a>
+            <a href="../monitoring/traps.html">トラップ</a>
           </div>
         </details>
         <details class="nav-group">
           <summary>転送</summary>
           <div class="nav-menu">
             <a href="../transfer/import-export.html">QR/JSON</a>
-            <a href="../transfer/project-json.html">project JSON</a>
+            <a href="../transfer/project-json.html">案件JSON</a>
           </div>
         </details>
         <details class="nav-group">
@@ -65,7 +65,7 @@
             <a href="../reference/app-permissions.html">権限</a>
             <a href="../reference/terms.html">利用条件</a>
             <a href="../reference/purchase-info.html">購入・返金</a>
-            <a href="../reference/store-release-checklist.html">Store申請TODO</a>
+            <a href="../reference/store-release-checklist.html">Store 申請 TODO</a>
           </div>
         </details>
         <details class="nav-group">
@@ -73,7 +73,7 @@
           <div class="nav-menu">
             <a href="../projectbuilder/projectbuilder.html">ProjectBuilder</a>
             <a href="../projectbuilder/projectbuilder-devices.html">入力</a>
-            <a href="../projectbuilder/projectbuilder-qr.html">QR生成</a>
+            <a href="../projectbuilder/projectbuilder-qr.html">QR 生成</a>
           </div>
         </details>
         <details class="nav-group">
@@ -90,10 +90,10 @@
   </header>
 
   <main class="doc-page">
-    <nav class="breadcrumb" aria-label="パンくず"><a href="../index.html">トップ</a><span>PLC側設定参考</span></nav>
+    <nav class="breadcrumb" aria-label="パンくず"><a href="../index.html">トップ</a><span>PLC 側設定参考</span></nav>
     <section class="page-hero section">
       <p class="eyebrow">PLC Side Settings</p>
-      <h1>PLC側設定参考</h1>
+      <h1>PLC 側設定参考</h1>
       <p class="lead">PLC IO Checker から接続するために、PLC 側で確認する設定の参考ページです。現時点では機種別ページの枠だけを作成し、詳細は TODO としています。</p>
     </section>
 
@@ -106,7 +106,7 @@
 
     <section class="section">
       <h2>共通で確認する項目</h2>
-      <div class="info-table" role="table" aria-label="PLC側共通確認項目">
+      <div class="info-table" role="table" aria-label="PLC 側共通確認項目">
         <div role="row"><div role="cell">IP address</div><div role="cell">アプリの接続設定と PLC 側 Ethernet 設定を合わせます。</div></div>
         <div role="row"><div role="cell">Port</div><div role="cell">MELSEC は既定 <code>1025</code>、KEYENCE は既定 <code>8501</code> です。実際の PLC 側設定に合わせます。</div></div>
         <div role="row"><div role="cell">Protocol</div><div role="cell">MELSEC は <code>SLMP</code>、KEYENCE は <code>KV Host Link TCP</code> を前提にしています。</div></div>
@@ -120,19 +120,19 @@
         <h2>機種別ページ</h2>
       </div>
       <div class="page-grid">
-        <a class="page-card" href="models/melsec-iq-r.html"><span>M</span><strong>MELSEC iQ-R</strong><small>PLC側設定参考 TODO / SLMP / 1025</small></a>
-        <a class="page-card" href="models/melsec-iq-f.html"><span>M</span><strong>MELSEC iQ-F</strong><small>PLC側設定参考 TODO / SLMP / 1025</small></a>
-        <a class="page-card" href="models/melsec-iq-l.html"><span>M</span><strong>MELSEC iQ-L</strong><small>PLC側設定参考 TODO / SLMP / 1025</small></a>
-        <a class="page-card" href="models/melsec-mx-r.html"><span>M</span><strong>MELSEC MX-R</strong><small>PLC側設定参考 TODO / SLMP / 1025</small></a>
-        <a class="page-card" href="models/melsec-mx-f.html"><span>M</span><strong>MELSEC MX-F</strong><small>PLC側設定参考 TODO / SLMP / 1025</small></a>
-        <a class="page-card" href="models/melsec-qnudv.html"><span>M</span><strong>MELSEC QnUDV</strong><small>PLC側設定参考 TODO / SLMP / 1025</small></a>
-        <a class="page-card" href="models/melsec-qnu.html"><span>M</span><strong>MELSEC QnU</strong><small>PLC側設定参考 TODO / SLMP / 1025</small></a>
-        <a class="page-card" href="models/melsec-qcpu.html"><span>M</span><strong>MELSEC QCPU</strong><small>PLC側設定参考 TODO / SLMP / 1025</small></a>
-        <a class="page-card" href="models/melsec-lcpu.html"><span>M</span><strong>MELSEC LCPU</strong><small>PLC側設定参考 TODO / SLMP / 1025</small></a>
-        <a class="page-card" href="models/keyence-kv-x500.html"><span>K</span><strong>KEYENCE KV-X500</strong><small>PLC側設定参考 TODO / KV Host Link TCP / 8501</small></a>
-        <a class="page-card" href="models/keyence-kv-8000.html"><span>K</span><strong>KEYENCE KV-8000</strong><small>PLC側設定参考 TODO / KV Host Link TCP / 8501</small></a>
-        <a class="page-card" href="models/keyence-kv-7000.html"><span>K</span><strong>KEYENCE KV-7000</strong><small>PLC側設定参考 TODO / KV Host Link TCP / 8501</small></a>
-        <a class="page-card" href="models/keyence-kv-5000.html"><span>K</span><strong>KEYENCE KV-5000</strong><small>PLC側設定参考 TODO / KV Host Link TCP / 8501</small></a>
+        <a class="page-card" href="models/melsec-iq-r.html"><span>M</span><strong>MELSEC iQ-R</strong><small>PLC 側設定参考 TODO / SLMP / 1025</small></a>
+        <a class="page-card" href="models/melsec-iq-f.html"><span>M</span><strong>MELSEC iQ-F</strong><small>PLC 側設定参考 TODO / SLMP / 1025</small></a>
+        <a class="page-card" href="models/melsec-iq-l.html"><span>M</span><strong>MELSEC iQ-L</strong><small>PLC 側設定参考 TODO / SLMP / 1025</small></a>
+        <a class="page-card" href="models/melsec-mx-r.html"><span>M</span><strong>MELSEC MX-R</strong><small>PLC 側設定参考 TODO / SLMP / 1025</small></a>
+        <a class="page-card" href="models/melsec-mx-f.html"><span>M</span><strong>MELSEC MX-F</strong><small>PLC 側設定参考 TODO / SLMP / 1025</small></a>
+        <a class="page-card" href="models/melsec-qnudv.html"><span>M</span><strong>MELSEC QnUDV</strong><small>PLC 側設定参考 TODO / SLMP / 1025</small></a>
+        <a class="page-card" href="models/melsec-qnu.html"><span>M</span><strong>MELSEC QnU</strong><small>PLC 側設定参考 TODO / SLMP / 1025</small></a>
+        <a class="page-card" href="models/melsec-qcpu.html"><span>M</span><strong>MELSEC QCPU</strong><small>PLC 側設定参考 TODO / SLMP / 1025</small></a>
+        <a class="page-card" href="models/melsec-lcpu.html"><span>M</span><strong>MELSEC LCPU</strong><small>PLC 側設定参考 TODO / SLMP / 1025</small></a>
+        <a class="page-card" href="models/keyence-kv-x500.html"><span>K</span><strong>KEYENCE KV-X500</strong><small>PLC 側設定参考 TODO / KV Host Link TCP / 8501</small></a>
+        <a class="page-card" href="models/keyence-kv-8000.html"><span>K</span><strong>KEYENCE KV-8000</strong><small>PLC 側設定参考 TODO / KV Host Link TCP / 8501</small></a>
+        <a class="page-card" href="models/keyence-kv-7000.html"><span>K</span><strong>KEYENCE KV-7000</strong><small>PLC 側設定参考 TODO / KV Host Link TCP / 8501</small></a>
+        <a class="page-card" href="models/keyence-kv-5000.html"><span>K</span><strong>KEYENCE KV-5000</strong><small>PLC 側設定参考 TODO / KV Host Link TCP / 8501</small></a>
       </div>
     </section>
 
@@ -142,6 +142,6 @@
     </nav>
   </main>
 
-  <footer class="site-footer"><p>PLC IO Checker 操作マニュアル / PLC側設定参考</p></footer>
+  <footer class="site-footer"><p>PLC IO Checker 操作マニュアル / PLC 側設定参考</p></footer>
 </body>
 </html>

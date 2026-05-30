@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="PLC IO Checker の App Store / Google Play 申請前 TODO。">
-  <title>Store申請TODO | PLC IO Checker</title>
+  <title>Store 申請 TODO | PLC IO Checker</title>
   <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
@@ -22,9 +22,9 @@
         <details class="nav-group">
           <summary>PLC</summary>
           <div class="nav-menu">
-            <a href="../plc/supported-plc.html">対応PLC</a>
+            <a href="../plc/supported-plc.html">対応 PLC</a>
             <a href="../plc/connection.html">接続・案件</a>
-            <a href="../plc/plc-side-settings.html">PLC側設定参考</a>
+            <a href="../plc/plc-side-settings.html">PLC 側設定参考</a>
             <a href="../plc/melsec-settings.html">MELSEC</a>
             <a href="../plc/keyence-settings.html">KEYENCE</a>
             <a href="../plc/device-addressing.html">デバイス表記</a>
@@ -34,19 +34,19 @@
           <summary>操作</summary>
           <div class="nav-menu">
             <a href="../monitoring/monitoring.html">監視</a>
-            <a href="../monitoring/list-edit.html">List登録編集</a>
+            <a href="../monitoring/list-edit.html">List 登録編集</a>
             <a href="../monitoring/focus-panel.html">操作パネル</a>
             <a href="../monitoring/writing.html">書込</a>
             <a href="../monitoring/comments.html">コメント</a>
-            <a href="../monitoring/time-chart.html">Time Chart</a>
-            <a href="../monitoring/traps.html">Trap</a>
+            <a href="../monitoring/time-chart.html">タイムチャート</a>
+            <a href="../monitoring/traps.html">トラップ</a>
           </div>
         </details>
         <details class="nav-group">
           <summary>転送</summary>
           <div class="nav-menu">
             <a href="../transfer/import-export.html">QR/JSON</a>
-            <a href="../transfer/project-json.html">project JSON</a>
+            <a href="../transfer/project-json.html">案件JSON</a>
           </div>
         </details>
         <details class="nav-group">
@@ -65,7 +65,7 @@
             <a href="../reference/app-permissions.html">権限</a>
             <a href="../reference/terms.html">利用条件</a>
             <a href="../reference/purchase-info.html">購入・返金</a>
-            <a class="active" href="../reference/store-release-checklist.html">Store申請TODO</a>
+            <a class="active" href="../reference/store-release-checklist.html">Store 申請 TODO</a>
           </div>
         </details>
         <details class="nav-group">
@@ -73,7 +73,7 @@
           <div class="nav-menu">
             <a href="../projectbuilder/projectbuilder.html">ProjectBuilder</a>
             <a href="../projectbuilder/projectbuilder-devices.html">入力</a>
-            <a href="../projectbuilder/projectbuilder-qr.html">QR生成</a>
+            <a href="../projectbuilder/projectbuilder-qr.html">QR 生成</a>
           </div>
         </details>
         <details class="nav-group">
@@ -90,10 +90,10 @@
   </header>
 
   <main class="doc-page">
-    <nav class="breadcrumb" aria-label="パンくず"><a href="../index.html">トップ</a><span>Store申請TODO</span></nav>
+    <nav class="breadcrumb" aria-label="パンくず"><a href="../index.html">トップ</a><span>Store 申請 TODO</span></nav>
     <section class="page-hero section">
       <p class="eyebrow">Store Release</p>
-      <h1>Store申請TODO</h1>
+      <h1>Store 申請 TODO</h1>
       <p class="lead">iOS / Android を有料アプリまたはアプリ内購入付きアプリとして公開する前に、確定が必要な公開情報を残します。</p>
     </section>
 
@@ -114,10 +114,10 @@
         <li>Privacy Policy URL に GitHub Pages の絶対 URL を設定する。</li>
         <li>Support URL にサポートページの絶対 URL を設定する。</li>
         <li>App Privacy の回答を確定する。現方針: アプリは個人情報を収集しない。PLC 通信はユーザー設定先へのリアルタイム通信で、開発者サーバーへ送信しない。</li>
-        <li>Local Network と Camera の用途を <a href="../reference/app-permissions.html">アプリ権限</a> と矛盾しない説明にする。現行実装は PLC への直接 TCP / UDP 通信と QR 読込。</li>
+        <li>Local Network と Camera の用途を <a href="../reference/app-permissions.html">アプリ権限</a> と矛盾しない説明にする。現行実装は PLC への直接 TCP / UDP 通信と QR読込。</li>
         <li>有料アプリにするか、アプリ内購入にするかを確定し、価格、提供国、税区分、購入復元の説明を確認する。金額は公開前に確定するまで manual へ書かない。</li>
         <li>Review Notes に Demo mode、サンプル QR / JSON、PLC 実機なしで確認できる手順を書く。</li>
-        <li>スクリーンショットを Android/iOS の現行 UI で撮り直し、書込や CPU 操作が危険に見えない説明にする。</li>
+        <li>スクリーンショットを Android / iOS の現行 UI で撮り直し、書込や CPU操作が危険に見えない説明にする。</li>
         <li>アプリ内からプライバシーポリシーを容易に開ける導線があるか確認する。</li>
         <li>現行 iOS 実装は購入 UI が mock である。StoreKit の本実装、商品 ID、購入復元、失敗時表示、sandbox test を完了してから公開する。</li>
         <li>iOS bundle ID は <code>com.fa-labo.plciochecker</code>。公開前に App Store Connect の Bundle ID と一致しているか確認する。</li>
@@ -158,7 +158,7 @@
       <ul>
         <li>ProjectBuilder は GitHub Releases の Assets にある <code>PlcIoCheckerProjectBuilder-win-x64.zip</code> から exe を配布する。Store のリリースノートには ProjectBuilder の履歴を書かず、ProjectBuilder 側の Releases へ誘導する。</li>
         <li>ProjectBuilder の license は MIT。モバイルアプリの利用条件と混同しないよう、ProjectBuilder ページでは ProjectBuilder の配布元と license を分けて書く。</li>
-        <li>QR / JSON は <code>PLCIOC3|ZSTD</code> と schema v3 を前提にする。旧 <code>PLCIOC2D</code> は current import flow で unsupported のまま説明する。</li>
+        <li>QR / JSON は <code>PLCIOC3|ZSTD</code> と schema v3 を前提にする。旧 <code>PLCIOC2D</code> は現行の取込処理では未対応のまま説明する。</li>
         <li>ProjectBuilder が生成する QR / JSON のサンプルを審査用に公開するか、Review Notes だけに添付するか決める。</li>
       </ul>
     </section>
@@ -198,6 +198,6 @@
     </nav>
   </main>
 
-  <footer class="site-footer"><p>PLC IO Checker / Store申請TODO</p></footer>
+  <footer class="site-footer"><p>PLC IO Checker / Store 申請 TODO</p></footer>
 </body>
 </html>

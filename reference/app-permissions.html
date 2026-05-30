@@ -22,9 +22,9 @@
         <details class="nav-group">
           <summary>PLC</summary>
           <div class="nav-menu">
-            <a href="../plc/supported-plc.html">対応PLC</a>
+            <a href="../plc/supported-plc.html">対応 PLC</a>
             <a href="../plc/connection.html">接続・案件</a>
-            <a href="../plc/plc-side-settings.html">PLC側設定参考</a>
+            <a href="../plc/plc-side-settings.html">PLC 側設定参考</a>
             <a href="../plc/melsec-settings.html">MELSEC</a>
             <a href="../plc/keyence-settings.html">KEYENCE</a>
             <a href="../plc/device-addressing.html">デバイス表記</a>
@@ -34,19 +34,19 @@
           <summary>操作</summary>
           <div class="nav-menu">
             <a href="../monitoring/monitoring.html">監視</a>
-            <a href="../monitoring/list-edit.html">List登録編集</a>
+            <a href="../monitoring/list-edit.html">List 登録編集</a>
             <a href="../monitoring/focus-panel.html">操作パネル</a>
             <a href="../monitoring/writing.html">書込</a>
             <a href="../monitoring/comments.html">コメント</a>
-            <a href="../monitoring/time-chart.html">Time Chart</a>
-            <a href="../monitoring/traps.html">Trap</a>
+            <a href="../monitoring/time-chart.html">タイムチャート</a>
+            <a href="../monitoring/traps.html">トラップ</a>
           </div>
         </details>
         <details class="nav-group">
           <summary>転送</summary>
           <div class="nav-menu">
             <a href="../transfer/import-export.html">QR/JSON</a>
-            <a href="../transfer/project-json.html">project JSON</a>
+            <a href="../transfer/project-json.html">案件JSON</a>
           </div>
         </details>
         <details class="nav-group">
@@ -65,7 +65,7 @@
             <a class="active" href="../reference/app-permissions.html">権限</a>
             <a href="../reference/terms.html">利用条件</a>
             <a href="../reference/purchase-info.html">購入・返金</a>
-            <a href="../reference/store-release-checklist.html">Store申請TODO</a>
+            <a href="../reference/store-release-checklist.html">Store 申請 TODO</a>
           </div>
         </details>
         <details class="nav-group">
@@ -73,7 +73,7 @@
           <div class="nav-menu">
             <a href="../projectbuilder/projectbuilder.html">ProjectBuilder</a>
             <a href="../projectbuilder/projectbuilder-devices.html">入力</a>
-            <a href="../projectbuilder/projectbuilder-qr.html">QR生成</a>
+            <a href="../projectbuilder/projectbuilder-qr.html">QR 生成</a>
           </div>
         </details>
         <details class="nav-group">
@@ -94,13 +94,13 @@
     <section class="page-hero section">
       <p class="eyebrow">Permissions</p>
       <h1>アプリ権限</h1>
-      <p class="lead">PLC IO Checker が使用する Android / iOS の権限と、その用途です。権限はソースコードの Manifest、Info.plist、ファイル入出力、QR 読込実装を確認して整理しています。</p>
+      <p class="lead">PLC IO Checker が使用する Android / iOS の権限と、その用途です。権限はソースコードの Manifest、Info.plist、ファイル入出力、QR読込実装を確認して整理しています。</p>
     </section>
 
     <section class="section">
       <h2>概要</h2>
       <p>実機通信は、ユーザーが案件で設定した PLC の IP アドレス、ポート、通信方式に対して行います。開発者サーバーへの PLC データ送信、広告、トラッキング、解析 SDK は使用しません。</p>
-      <p>QR 読込はカメラを使います。JSON / CSV / ログの読込・書出は OS のファイル選択または保存ダイアログでユーザーが選んだファイルだけを対象にします。</p>
+      <p>QR読込はカメラを使います。JSON / CSV / ログの読込・書出は OS のファイル選択または保存ダイアログでユーザーが選んだファイルだけを対象にします。</p>
     </section>
 
     <section class="section">
@@ -108,11 +108,11 @@
       <div class="info-table" role="table" aria-label="Android 権限">
         <div role="row"><div role="cell">INTERNET</div><div role="cell">MELSEC / KEYENCE の実機通信で、ユーザーが設定した PLC へ TCP / UDP 接続するために使用します。</div></div>
         <div role="row"><div role="cell">ACCESS_NETWORK_STATE</div><div role="cell">端末のネットワーク状態を確認し、通信可否やエラー表示の判断に使用します。</div></div>
-        <div role="row"><div role="cell">CAMERA</div><div role="cell">ProjectBuilder に表示した QR を読み込むために使用します。QR 読込画面を開いた時に許可を求めます。</div></div>
-        <div role="row"><div role="cell">FOREGROUND_SERVICE</div><div role="cell">Time Chart の REC 中に、バックグラウンドへ移った場合でも記録を継続するための foreground service に使用します。</div></div>
-        <div role="row"><div role="cell">FOREGROUND_SERVICE_DATA_SYNC</div><div role="cell">Time Chart 記録用 foreground service の種別です。PLC データを開発者サーバーへ同期する用途ではありません。</div></div>
+        <div role="row"><div role="cell">CAMERA</div><div role="cell">ProjectBuilder に表示した QR を読み込むために使用します。QR読込画面を開いた時に許可を求めます。</div></div>
+        <div role="row"><div role="cell">FOREGROUND_SERVICE</div><div role="cell">タイムチャートの REC 中に、バックグラウンドへ移った場合でも記録を継続するための foreground service に使用します。</div></div>
+        <div role="row"><div role="cell">FOREGROUND_SERVICE_DATA_SYNC</div><div role="cell">タイムチャート記録用 foreground service の種別です。PLC データを開発者サーバーへ同期する用途ではありません。</div></div>
       </div>
-      <p>カメラ機能は <code>android.hardware.camera</code> を <code>required=false</code> として宣言しています。カメラのない端末でも、QR 読込以外の機能を使える前提です。</p>
+      <p>カメラ機能は <code>android.hardware.camera</code> を <code>required=false</code> として宣言しています。カメラのない端末でも、QR読込以外の機能を使える前提です。</p>
     </section>
 
     <section class="section">
@@ -133,7 +133,7 @@
 
     <section class="section">
       <h2>QR とカメラ画像</h2>
-      <p>カメラは QR コードの読み取りに使います。QR の内容は project JSON を分割・圧縮した案件データです。カメラ画像や動画を保存したり、開発者サーバーへ送信したりする用途では使用しません。</p>
+      <p>カメラは QR コードの読み取りに使います。QR の内容は案件JSONを分割・圧縮した案件データです。カメラ画像や動画を保存したり、開発者サーバーへ送信したりする用途では使用しません。</p>
     </section>
 
     <section class="section">

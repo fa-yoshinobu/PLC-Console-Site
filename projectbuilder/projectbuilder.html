@@ -22,9 +22,9 @@
         <details class="nav-group">
           <summary>PLC</summary>
           <div class="nav-menu">
-            <a href="../plc/supported-plc.html">対応PLC</a>
+            <a href="../plc/supported-plc.html">対応 PLC</a>
             <a href="../plc/connection.html">接続・案件</a>
-            <a href="../plc/plc-side-settings.html">PLC側設定参考</a>
+            <a href="../plc/plc-side-settings.html">PLC 側設定参考</a>
             <a href="../plc/melsec-settings.html">MELSEC</a>
             <a href="../plc/keyence-settings.html">KEYENCE</a>
             <a href="../plc/device-addressing.html">デバイス表記</a>
@@ -34,19 +34,19 @@
           <summary>操作</summary>
           <div class="nav-menu">
             <a href="../monitoring/monitoring.html">監視</a>
-            <a href="../monitoring/list-edit.html">List登録編集</a>
+            <a href="../monitoring/list-edit.html">List 登録編集</a>
             <a href="../monitoring/focus-panel.html">操作パネル</a>
             <a href="../monitoring/writing.html">書込</a>
             <a href="../monitoring/comments.html">コメント</a>
-            <a href="../monitoring/time-chart.html">Time Chart</a>
-            <a href="../monitoring/traps.html">Trap</a>
+            <a href="../monitoring/time-chart.html">タイムチャート</a>
+            <a href="../monitoring/traps.html">トラップ</a>
           </div>
         </details>
         <details class="nav-group">
           <summary>転送</summary>
           <div class="nav-menu">
             <a href="../transfer/import-export.html">QR/JSON</a>
-            <a href="../transfer/project-json.html">project JSON</a>
+            <a href="../transfer/project-json.html">案件JSON</a>
           </div>
         </details>
         <details class="nav-group">
@@ -65,7 +65,7 @@
             <a href="../reference/app-permissions.html">権限</a>
             <a href="../reference/terms.html">利用条件</a>
             <a href="../reference/purchase-info.html">購入・返金</a>
-            <a href="../reference/store-release-checklist.html">Store申請TODO</a>
+            <a href="../reference/store-release-checklist.html">Store 申請 TODO</a>
           </div>
         </details>
         <details class="nav-group">
@@ -73,7 +73,7 @@
           <div class="nav-menu">
             <a class="active" href="../projectbuilder/projectbuilder.html">ProjectBuilder</a>
             <a href="../projectbuilder/projectbuilder-devices.html">入力</a>
-            <a href="../projectbuilder/projectbuilder-qr.html">QR生成</a>
+            <a href="../projectbuilder/projectbuilder-qr.html">QR 生成</a>
           </div>
         </details>
         <details class="nav-group">
@@ -94,7 +94,7 @@
     <section class="page-hero section">
       <p class="eyebrow">PC Tool</p>
       <h1>ProjectBuilder</h1>
-      <p class="lead">PC で PLC IO Checker の案件を作成し、Android/iOS アプリへ QR または JSON で転送するためのツールです。</p>
+      <p class="lead">PC で PLC IO Checker のプロジェクトを作成し、Android / iOS アプリへ案件として QR または JSON で転送するためのツールです。</p>
     </section>
 
     <section class="section">
@@ -113,14 +113,14 @@
     <section class="section">
       <h2>主な用途</h2>
       <div class="feature-grid">
-        <article class="feature"><h3>PLC 設定</h3><p>Vendor、CPU、IP、ポート、TCP/UDP、ルート指定を PC で入力します。</p></article>
-        <article class="feature"><h3>デバイス登録</h3><p>Address / Data type / Comment を表形式で登録します。Excel からの貼り付けにも向いています。</p></article>
-        <article class="feature"><h3>QR/JSON 出力</h3><p>作成した案件を QR ページまたは JSON ファイルとして出力します。</p></article>
+        <article class="feature"><h3>PLC 設定</h3><p>メーカー、CPU model、IP、ポート、TCP/UDP、ルート指定を PC で入力します。</p></article>
+        <article class="feature"><h3>デバイス登録</h3><p>アドレス / Data type / Comment を表形式で登録します。Excel からの貼り付けにも向いています。</p></article>
+        <article class="feature"><h3>QR/JSON 出力</h3><p>作成したプロジェクトを QR ページまたは JSON ファイルとして出力します。</p></article>
       </div>
     </section>
 
     <section class="section">
-      <h2>MELSEC 案件</h2>
+      <h2>MELSEC プロジェクト</h2>
       <div class="content-grid">
         <article>
           <h3>接続設定</h3>
@@ -138,7 +138,7 @@
     </section>
 
     <section class="section">
-      <h2>KEYENCE 案件</h2>
+      <h2>KEYENCE プロジェクト</h2>
       <div class="content-grid">
         <article>
           <h3>接続設定</h3>
@@ -146,7 +146,7 @@
         </article>
         <article>
           <h3>KEYENCE 表示</h3>
-          <p><code>Normal</code> と <code>XYM</code> を選べます。選択した表示モードで、Devices / Time Chart / Traps のアドレス検証が行われます。</p>
+          <p><code>Normal</code> と <code>XYM</code> を選べます。選択した表示モードで、デバイス / タイムチャート / トラップのアドレス検証が行われます。</p>
         </article>
         <article>
           <h3>デバイス</h3>
@@ -159,9 +159,9 @@
       <h2>基本手順</h2>
       <ol class="steps">
         <li><strong>ProjectBuilder を起動する</strong><span><code>PlcIoCheckerProjectBuilder.exe</code> を起動します。</span></li>
-        <li><strong>案件と PLC を設定する</strong><span>案件名、Vendor、CPU、IP、ポート、Transport を入力します。</span></li>
-        <li><strong>Devices を登録する</strong><span>監視するアドレス、データ型、コメントを登録します。</span></li>
-        <li><strong>Time Chart / Traps を登録する</strong><span>必要に応じて記録対象や検知条件を登録します。</span></li>
+        <li><strong>プロジェクトと PLC を設定する</strong><span>プロジェクト名、メーカー、CPU model、IP、ポート、Transport を入力します。</span></li>
+        <li><strong>デバイスを登録する</strong><span>監視するアドレス、Data type、Comment を登録します。</span></li>
+        <li><strong>タイムチャート / トラップを登録する</strong><span>必要に応じて記録対象や検知条件を登録します。</span></li>
         <li><strong>QR または JSON を出力する</strong><span>モバイルアプリの QR読込または JSON読込で取り込みます。</span></li>
       </ol>
     </section>
