@@ -62,6 +62,7 @@
           <div class="nav-menu">
             <a href="../reference/support.html">サポート</a>
             <a class="active" href="../reference/privacy-policy.html">プライバシー</a>
+            <a href="../reference/app-permissions.html">権限</a>
             <a href="../reference/terms.html">利用条件</a>
             <a href="../reference/purchase-info.html">購入・返金</a>
             <a href="../reference/store-release-checklist.html">Store申請TODO</a>
@@ -116,8 +117,25 @@
 
     <section class="section">
       <h2>ネットワーク通信</h2>
-      <p>Android 版は <code>INTERNET</code> permission を使用します。この permission は、ユーザーがアプリで設定した PLC の IP アドレス、ポート、通信方式に対して接続するために使用します。</p>
+      <p>Android 版は <code>INTERNET</code> と <code>ACCESS_NETWORK_STATE</code> permission を使用します。iOS 版は Local Network の説明を <code>NSLocalNetworkUsageDescription</code> に記載しています。これらは、ユーザーがアプリで設定した PLC の IP アドレス、ポート、通信方式に対して接続するために使用します。</p>
       <p>PLC IO Checker は、ユーザーが設定した接続先以外へ PLC 監視値や書込値を送信する目的で通信しません。MELSEC / KEYENCE の読込、書込、コメント読込、CPU 操作などの通信は、ユーザーが選択した PLC に対して行われます。</p>
+    </section>
+
+    <section class="section">
+      <h2>カメラと QR</h2>
+      <p>Android / iOS 版は、ProjectBuilder に表示した QR コードから案件設定を取り込むためにカメラを使用します。カメラ画像や動画を保存したり、開発者サーバーへ送信したりする用途では使用しません。</p>
+    </section>
+
+    <section class="section">
+      <h2>ファイルと端末内保存</h2>
+      <p>Android 版は外部ストレージ全体へアクセスする permission を宣言していません。iOS 版も写真ライブラリや端末全体のファイルへ常時アクセスする権限は使用しません。</p>
+      <p>JSON、CSV、ログの読込・書出は、OS のファイル選択または保存ダイアログでユーザーが選んだファイルだけを対象にします。案件、設定、コメント、履歴は端末内のアプリ領域に保存されます。</p>
+      <p>権限の詳細は <a href="../reference/app-permissions.html">アプリ権限</a> を確認してください。</p>
+    </section>
+
+    <section class="section">
+      <h2>Time Chart 記録</h2>
+      <p>Android 版は Time Chart の REC 中にバックグラウンドへ移った場合、foreground service の通知を表示して記録を継続します。これは端末内での記録継続のためであり、PLC データを開発者サーバーへ同期する用途ではありません。</p>
     </section>
 
     <section class="section">
@@ -144,12 +162,12 @@
 
     <section class="section">
       <h2>English Summary</h2>
-      <p>PLC IO Checker uses network access only to connect to PLCs configured by the user. The app does not collect personal data, does not send PLC data or project data to developer servers, and does not use advertising, tracking, or analytics services for personal data collection.</p>
+      <p>PLC IO Checker uses network access only to connect to PLCs configured by the user. Camera access is used only for QR import. File import/export is limited to files selected by the user through the operating system. The app does not collect personal data, does not send PLC data or project data to developer servers, and does not use advertising, tracking, or analytics services for personal data collection.</p>
     </section>
 
     <nav class="next-links" aria-label="前後ページ">
-      <a href="../reference/faq.html">前へ: FAQ</a>
-      <a href="../reference/release-notes.html">次へ: リリースノート</a>
+      <a href="../reference/support.html">前へ: サポート</a>
+      <a href="../reference/app-permissions.html">次へ: アプリ権限</a>
     </nav>
   </main>
 

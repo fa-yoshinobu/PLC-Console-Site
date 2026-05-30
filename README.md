@@ -2,8 +2,24 @@
 
 Web公開用の静的マニュアルです。Android/iOS 共通の操作説明と、PC 用 `PlcIoChecker_ProjectBuilder` の説明を機能別 HTML に分割しています。
 
-ProjectBuilder の exe は <https://github.com/fa-yoshinobu/PlcIoChecker_ProjectBuilder/releases> からダウンロードします。
+Public site: <https://fa-yoshinobu.github.io/PlcIoChecker_Site/>
+Privacy policy: <https://fa-yoshinobu.github.io/PlcIoChecker_Site/reference/privacy-policy.html>
+
+Terminal で URL を直接入力すると `zsh: no such file or directory` になります。ブラウザで開くか、macOS の terminal では次のように実行します。
+
+```bash
+open https://fa-yoshinobu.github.io/PlcIoChecker_Site/
+```
+
+ProjectBuilder の exe は <https://github.com/fa-yoshinobu/PlcIoChecker_ProjectBuilder/releases> の各リリースにある Assets から `PlcIoCheckerProjectBuilder-win-x64.zip` をダウンロードして使用します。
 ProjectBuilder のソースと README は <https://github.com/fa-yoshinobu/PlcIoChecker_ProjectBuilder> です。
+
+## Related Repositories
+
+- Android app: <https://github.com/fa-yoshinobu/PlcIoChecker_Android>
+- iOS app: <https://github.com/fa-yoshinobu/PlcIoChecker_iOS>
+- ProjectBuilder: <https://github.com/fa-yoshinobu/PlcIoChecker_ProjectBuilder>
+- Manual site: <https://github.com/fa-yoshinobu/PlcIoChecker_Site>
 
 ## Files
 
@@ -18,6 +34,7 @@ ProjectBuilder のソースと README は <https://github.com/fa-yoshinobu/PlcIo
 - `reference/`: 用語集、FAQ、リリースノート、困ったとき
 - `reference/support.html`: Store metadata 用サポート URL 候補
 - `reference/privacy-policy.html`: Store metadata 用プライバシーポリシー URL 候補
+- `reference/app-permissions.html`: Android/iOS の権限、Local Network、カメラ、ファイルアクセス
 - `reference/terms.html`: 利用条件
 - `reference/purchase-info.html`: 購入・返金案内
 - `reference/store-release-checklist.html`: iOS / Android 有料公開前 TODO
@@ -121,6 +138,7 @@ ProjectBuilder のソースと README は <https://github.com/fa-yoshinobu/PlcIo
 - [x] `reference/faq.html`: 接続、QR、REC、書込、コメント読込、ライセンス、エラー履歴の確認項目。
 - [ ] `reference/release-notes.html`: リリースノート。正式な変更履歴は TODO。
 - [x] `reference/privacy-policy.html`: INTERNET permission、ユーザー設定 PLC への通信、個人情報非収集を記載。
+- [x] `reference/app-permissions.html`: Android/iOS の permission、Local Network、Camera、storage/file access を source code ベースで整理。
 - [x] `reference/support.html`: Store 用 Support URL 候補。正式連絡先は TODO。
 - [x] `reference/terms.html`: 利用条件。法務・販売条件の未定事項は TODO。
 - [x] `reference/purchase-info.html`: 購入、返金、Store URL。価格は未定として金額を書かない。

@@ -62,6 +62,7 @@
           <div class="nav-menu">
             <a href="../reference/support.html">サポート</a>
             <a href="../reference/privacy-policy.html">プライバシー</a>
+            <a href="../reference/app-permissions.html">権限</a>
             <a href="../reference/terms.html">利用条件</a>
             <a href="../reference/purchase-info.html">購入・返金</a>
             <a class="active" href="../reference/store-release-checklist.html">Store申請TODO</a>
@@ -113,6 +114,7 @@
         <li>Privacy Policy URL に GitHub Pages の絶対 URL を設定する。</li>
         <li>Support URL にサポートページの絶対 URL を設定する。</li>
         <li>App Privacy の回答を確定する。現方針: アプリは個人情報を収集しない。PLC 通信はユーザー設定先へのリアルタイム通信で、開発者サーバーへ送信しない。</li>
+        <li>Local Network と Camera の用途を <a href="../reference/app-permissions.html">アプリ権限</a> と矛盾しない説明にする。現行実装は PLC への直接 TCP / UDP 通信と QR 読込。</li>
         <li>有料アプリにするか、アプリ内購入にするかを確定し、価格、提供国、税区分、購入復元の説明を確認する。金額は公開前に確定するまで manual へ書かない。</li>
         <li>Review Notes に Demo mode、サンプル QR / JSON、PLC 実機なしで確認できる手順を書く。</li>
         <li>スクリーンショットを Android/iOS の現行 UI で撮り直し、書込や CPU 操作が危険に見えない説明にする。</li>
@@ -128,7 +130,8 @@
         <li>Store listing の short description、full description、feature graphic、screenshots、category を確定する。</li>
         <li>Privacy Policy URL に公開済みの privacy-policy.html 絶対 URL を設定する。</li>
         <li>Data safety section を privacy policy と矛盾しない内容で入力する。現方針: 個人情報の収集なし、広告なし、トラッキングなし、PLC データを開発者へ送信しない。</li>
-        <li><code>INTERNET</code> permission の用途を、ユーザー設定 PLC への接続として説明できるようにする。</li>
+        <li><code>INTERNET</code>、<code>ACCESS_NETWORK_STATE</code>、<code>CAMERA</code>、foreground service 系 permission の用途を、<a href="../reference/app-permissions.html">アプリ権限</a> と矛盾しない説明にする。</li>
+        <li>外部ストレージ全体への permission は現行 Android 実装では宣言していない。JSON / CSV / ログは document picker / create document 経由であることを Data safety と説明文に反映する。</li>
         <li>アプリ内購入 / 有料アプリの販売方式、価格、提供国、税・支払い profile を確定する。金額は公開前に確定するまで manual へ書かない。</li>
         <li>Content rating questionnaire を入力し、産業用ツールとしての対象年齢を確認する。</li>
         <li>App access / demo 手順に、ログイン不要、Demo mode 利用可能、サンプル QR / JSON の確認手順を書く。</li>
@@ -153,7 +156,7 @@
     <section class="section">
       <h2>ProjectBuilder TODO</h2>
       <ul>
-        <li>ProjectBuilder は GitHub Releases から exe を配布する。Store のリリースノートには ProjectBuilder の履歴を書かず、ProjectBuilder 側の Releases へ誘導する。</li>
+        <li>ProjectBuilder は GitHub Releases の Assets にある <code>PlcIoCheckerProjectBuilder-win-x64.zip</code> から exe を配布する。Store のリリースノートには ProjectBuilder の履歴を書かず、ProjectBuilder 側の Releases へ誘導する。</li>
         <li>ProjectBuilder の license は MIT。モバイルアプリの利用条件と混同しないよう、ProjectBuilder ページでは ProjectBuilder の配布元と license を分けて書く。</li>
         <li>QR / JSON は <code>PLCIOC3|ZSTD</code> と schema v3 を前提にする。旧 <code>PLCIOC2D</code> は current import flow で unsupported のまま説明する。</li>
         <li>ProjectBuilder が生成する QR / JSON のサンプルを審査用に公開するか、Review Notes だけに添付するか決める。</li>

@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="PLC IO Checker のアプリ権限と用途。">
+  <title>アプリ権限 | PLC IO Checker</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../index.html"><span class="brand-mark">PLC</span><span><strong>PLC IO Checker</strong><small>操作マニュアル</small></span></a>
+      <nav class="top-nav" aria-label="主要ページ">
+        <details class="nav-group">
+          <summary>開始</summary>
+          <div class="nav-menu">
+            <a href="../start/install.html">入手</a>
+            <a href="../start/getting-started.html">はじめる</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>PLC</summary>
+          <div class="nav-menu">
+            <a href="../plc/supported-plc.html">対応PLC</a>
+            <a href="../plc/connection.html">接続・案件</a>
+            <a href="../plc/plc-side-settings.html">PLC側設定参考</a>
+            <a href="../plc/melsec-settings.html">MELSEC</a>
+            <a href="../plc/keyence-settings.html">KEYENCE</a>
+            <a href="../plc/device-addressing.html">デバイス表記</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>操作</summary>
+          <div class="nav-menu">
+            <a href="../monitoring/monitoring.html">監視</a>
+            <a href="../monitoring/list-edit.html">List登録編集</a>
+            <a href="../monitoring/focus-panel.html">操作パネル</a>
+            <a href="../monitoring/writing.html">書込</a>
+            <a href="../monitoring/comments.html">コメント</a>
+            <a href="../monitoring/time-chart.html">Time Chart</a>
+            <a href="../monitoring/traps.html">Trap</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>転送</summary>
+          <div class="nav-menu">
+            <a href="../transfer/import-export.html">QR/JSON</a>
+            <a href="../transfer/project-json.html">project JSON</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>設定</summary>
+          <div class="nav-menu">
+            <a href="../settings/tools-menu.html">メニュー</a>
+            <a href="../settings/app-settings.html">アプリ設定</a>
+            <a href="../settings/license.html">ライセンス</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary class="active">公開情報</summary>
+          <div class="nav-menu">
+            <a href="../reference/support.html">サポート</a>
+            <a href="../reference/privacy-policy.html">プライバシー</a>
+            <a class="active" href="../reference/app-permissions.html">権限</a>
+            <a href="../reference/terms.html">利用条件</a>
+            <a href="../reference/purchase-info.html">購入・返金</a>
+            <a href="../reference/store-release-checklist.html">Store申請TODO</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>ProjectBuilder</summary>
+          <div class="nav-menu">
+            <a href="../projectbuilder/projectbuilder.html">ProjectBuilder</a>
+            <a href="../projectbuilder/projectbuilder-devices.html">入力</a>
+            <a href="../projectbuilder/projectbuilder-qr.html">QR生成</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>参考</summary>
+          <div class="nav-menu">
+            <a href="../reference/glossary.html">用語集</a>
+            <a href="../reference/faq.html">FAQ</a>
+            <a href="../reference/release-notes.html">リリースノート</a>
+            <a href="../reference/troubleshooting.html">困ったとき</a>
+          </div>
+        </details>
+      </nav>
+    </div>
+  </header>
+
+  <main class="doc-page">
+    <nav class="breadcrumb" aria-label="パンくず"><a href="../index.html">トップ</a><span>アプリ権限</span></nav>
+    <section class="page-hero section">
+      <p class="eyebrow">Permissions</p>
+      <h1>アプリ権限</h1>
+      <p class="lead">PLC IO Checker が使用する Android / iOS の権限と、その用途です。権限はソースコードの Manifest、Info.plist、ファイル入出力、QR 読込実装を確認して整理しています。</p>
+    </section>
+
+    <section class="section">
+      <h2>概要</h2>
+      <p>実機通信は、ユーザーが案件で設定した PLC の IP アドレス、ポート、通信方式に対して行います。開発者サーバーへの PLC データ送信、広告、トラッキング、解析 SDK は使用しません。</p>
+      <p>QR 読込はカメラを使います。JSON / CSV / ログの読込・書出は OS のファイル選択または保存ダイアログでユーザーが選んだファイルだけを対象にします。</p>
+    </section>
+
+    <section class="section">
+      <h2>Android</h2>
+      <div class="info-table" role="table" aria-label="Android 権限">
+        <div role="row"><div role="cell">INTERNET</div><div role="cell">MELSEC / KEYENCE の実機通信で、ユーザーが設定した PLC へ TCP / UDP 接続するために使用します。</div></div>
+        <div role="row"><div role="cell">ACCESS_NETWORK_STATE</div><div role="cell">端末のネットワーク状態を確認し、通信可否やエラー表示の判断に使用します。</div></div>
+        <div role="row"><div role="cell">CAMERA</div><div role="cell">ProjectBuilder に表示した QR を読み込むために使用します。QR 読込画面を開いた時に許可を求めます。</div></div>
+        <div role="row"><div role="cell">FOREGROUND_SERVICE</div><div role="cell">Time Chart の REC 中に、バックグラウンドへ移った場合でも記録を継続するための foreground service に使用します。</div></div>
+        <div role="row"><div role="cell">FOREGROUND_SERVICE_DATA_SYNC</div><div role="cell">Time Chart 記録用 foreground service の種別です。PLC データを開発者サーバーへ同期する用途ではありません。</div></div>
+      </div>
+      <p>カメラ機能は <code>android.hardware.camera</code> を <code>required=false</code> として宣言しています。カメラのない端末でも、QR 読込以外の機能を使える前提です。</p>
+    </section>
+
+    <section class="section">
+      <h2>iOS</h2>
+      <div class="info-table" role="table" aria-label="iOS 権限">
+        <div role="row"><div role="cell">Local Network</div><div role="cell"><code>NSLocalNetworkUsageDescription</code> で、ユーザーが設定した PLC との TCP / UDP 通信に使うことを説明しています。</div></div>
+        <div role="row"><div role="cell">Camera</div><div role="cell"><code>NSCameraUsageDescription</code> で、ProjectBuilder の QR から案件設定を取り込むために使うことを説明しています。</div></div>
+        <div role="row"><div role="cell">Local networking</div><div role="cell"><code>NSAllowsLocalNetworking</code> を有効にし、ローカルネットワーク上の PLC へ接続できるようにしています。</div></div>
+      </div>
+      <p>現在の実装では Bonjour による PLC 自動検出、端末内写真ライブラリ、位置情報、連絡先、マイク、Bluetooth は使用しません。</p>
+    </section>
+
+    <section class="section">
+      <h2>ストレージとファイル</h2>
+      <p>Android 版は <code>READ_EXTERNAL_STORAGE</code>、<code>WRITE_EXTERNAL_STORAGE</code>、<code>READ_MEDIA_*</code>、<code>MANAGE_EXTERNAL_STORAGE</code> を宣言していません。JSON / CSV / ログは Android の document picker / create document を使い、ユーザーが選んだファイルだけを読み書きします。</p>
+      <p>iOS 版は SwiftUI の file importer / file exporter を使い、ユーザーが選んだ JSON / CSV / ログファイルだけを読み書きします。案件、設定、コメント、履歴はアプリの Application Support 領域に保存します。</p>
+    </section>
+
+    <section class="section">
+      <h2>QR とカメラ画像</h2>
+      <p>カメラは QR コードの読み取りに使います。QR の内容は project JSON を分割・圧縮した案件データです。カメラ画像や動画を保存したり、開発者サーバーへ送信したりする用途では使用しません。</p>
+    </section>
+
+    <section class="section">
+      <h2>Store 申請メモ</h2>
+      <ul>
+        <li>Android の Data safety は、個人情報収集なし、共有なし、端末内保存を前提に回答します。</li>
+        <li>iOS の App Privacy は、PLC データや案件データを開発者が収集しない前提で回答します。</li>
+        <li>権限や StoreKit / Google Play Billing の実装が変わった場合は、このページとプライバシーポリシーを同時に更新します。</li>
+      </ul>
+    </section>
+
+    <nav class="next-links" aria-label="前後ページ">
+      <a href="../reference/privacy-policy.html">前へ: プライバシーポリシー</a>
+      <a href="../reference/terms.html">次へ: 利用条件</a>
+    </nav>
+  </main>
+
+  <footer class="site-footer"><p>PLC IO Checker / アプリ権限</p></footer>
+</body>
+</html>
