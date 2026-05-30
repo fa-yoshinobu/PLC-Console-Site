@@ -85,6 +85,14 @@ ProjectBuilder の exe は、`PlcIoChecker_ProjectBuilder` の Releases にあ�
 - ユーザー向け本文には、作業メモ、仮リンク、開発用語を混ぜない。
 - 開発中の購入 UI がある場合は、公開 build から開発用表記、開発用の購入状態表示、未確定の金額表示が消えていることを公開準備ページに残す。
 
+### リリースノート
+
+- リリースノートには、公開済みの PLC IO Checker アプリの変更点だけを書く。
+- 未実装の予定機能や、公開していない変更は書かない。
+- MELSEC / KEYENCE、Android / iOS で影響範囲が違う場合は分けて書く。
+- ProjectBuilder の更新履歴は、ProjectBuilder 側の Releases で扱う。
+- 書込、CPU操作、通信、QR / JSON に関わる変更は、必要な注意点も一緒に書く。
+
 ## Page Status
 
 | 状態 | Page |
