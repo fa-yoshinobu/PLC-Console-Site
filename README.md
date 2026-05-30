@@ -139,3 +139,4 @@ ProjectBuilder のソースと README は <https://github.com/fa-yoshinobu/PlcIo
 - `.github/workflows/pages.yml` は `main` branch への push または manual dispatch で実行する。
 - workflow は root の静的ファイルを `_site` へコピーし、`.git`、`.github`、`README.md` を除外して Pages artifact として deploy する。
 - GitHub repository settings の Pages source は `GitHub Actions` を選ぶ。
+- 初回は Pages が無効だと `Setup Pages` が `Get Pages site failed` で失敗する。Repository Settings > Pages で Source を `GitHub Actions` に変更してから、workflow を rerun する。
