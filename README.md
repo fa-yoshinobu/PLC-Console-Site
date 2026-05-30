@@ -96,7 +96,7 @@ ProjectBuilder のソースと README は <https://github.com/fa-yoshinobu/PlcIo
 - 現行 resource では日本語の project はモバイルアプリが `案件`、ProjectBuilder が `プロジェクト`、英語は `project` と表記する。別名へ変更する場合は、先に Android / iOS / ProjectBuilder resource と画面表示を変更してから Site を更新する。
 - 画面名は app 表示に合わせて `List`、`Block`、`タイムチャート`、`トラップ`、`List 登録編集` を使う。
 - 操作名は表示文言に合わせて `QR読込`、`JSON読込`、`JSON書出`、`CSVコメント読込`、`コメント読込`、`CPU操作` と書く。
-- PLC 種別は `MELSEC` / `KEYENCE`、通信方式は `SLMP` / `Host Link TCP` のように source と実装に合わせる。
+- PLC 種別は `MELSEC` / `KEYENCE`、通信方式は `SLMP` / `KV Host Link` のように source と実装に合わせる。
 - デバイス説明では `BIT` / `WORD`、`data type`、`address`、`comment` の意味が混ざらないように分ける。
 - `トラップ` と `タイムチャート` は登録対象、実行条件、記録・検知結果を分けて説明する。
 - Store や購入に関する説明は、正式公開前は `dummy link`、`予定`、`mock` など現状が分かる表現にする。
@@ -128,7 +128,7 @@ ProjectBuilder のソースと README は <https://github.com/fa-yoshinobu/PlcIo
 - [ ] `plc/plc-side-settings.html`: PLC 側設定参考の親ページ。詳細内容は TODO。
 - [ ] `plc/models/*.html`: 対応機種ごとの PLC 側設定参考ページ。詳細内容は TODO。
 - [x] `plc/melsec-settings.html`: MELSEC の SLMP、TCP/UDP、ルート指定、remote password、X/Y 表記。
-- [x] `plc/keyence-settings.html`: KEYENCE の Host Link TCP、Normal/XYM、コメント読込、対応デバイス。
+- [x] `plc/keyence-settings.html`: KEYENCE の KV Host Link、Normal/XYM、コメント読込、対応デバイス。
 - [x] `plc/device-addressing.html`: デバイス種別、10 進/16 進/8 進、BIT/WORD、data type。
 - [x] `monitoring/list-edit.html`: `List 登録編集`、単体追加、範囲追加、検索、並び替え、削除。
 - [x] `monitoring/focus-panel.html`: ON/OFF、数値書込、Dec/Hex/Bit、表示型変更、タイムチャート/トラップ追加導線。
