@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="PLC IO Checker のデバイスアドレス、BIT/WORD、data type。">
-  <title>デバイス表記 | PLC IO Checker 操作マニュアル</title>
+  <meta name="description" content="PLC IO Checker の CPU操作。">
+  <title>CPU操作 | PLC IO Checker 操作マニュアル</title>
   <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
@@ -23,23 +23,23 @@
           </div>
         </details>
         <details class="nav-group">
-          <summary class="active">PLC</summary>
+          <summary>PLC</summary>
           <div class="nav-menu">
             <a href="../plc/supported-plc.html">対応 PLC</a>
             <a href="../plc/connection.html">接続・プロジェクト</a>
-            <a href="../plc/plc-side-settings.html">PLC 側設定参考</a>
+            <a href="../plc/plc-side-settings.html">接続設定例</a>
             <a href="../plc/melsec-settings.html">MELSEC</a>
             <a href="../plc/keyence-settings.html">KEYENCE</a>
-            <a class="active" href="../plc/device-addressing.html">デバイス表記</a>
           </div>
         </details>
         <details class="nav-group">
-          <summary>操作</summary>
+          <summary class="active">操作</summary>
           <div class="nav-menu">
             <a href="../monitoring/monitoring.html">監視</a>
             <a href="../monitoring/list-edit.html">List 登録編集</a>
             <a href="../monitoring/focus-panel.html">操作パネル</a>
             <a href="../monitoring/writing.html">書込</a>
+            <a class="active" href="../monitoring/cpu-control.html">CPU操作</a>
             <a href="../monitoring/comments.html">コメント</a>
             <a href="../monitoring/time-chart.html">タイムチャート</a>
             <a href="../monitoring/traps.html">トラップ</a>
@@ -83,7 +83,6 @@
           <summary>参考</summary>
           <div class="nav-menu">
             <a href="../reference/glossary.html">用語集</a>
-            <a href="../reference/faq.html">FAQ</a>
             <a href="../reference/release-notes.html">リリースノート</a>
             <a href="../reference/troubleshooting.html">困ったとき</a>
           </div>
@@ -93,63 +92,71 @@
   </header>
 
   <main class="doc-page">
-    <nav class="breadcrumb" aria-label="パンくず"><a href="../index.html">トップ</a><span>デバイス表記</span></nav>
+    <nav class="breadcrumb" aria-label="パンくず"><a href="../index.html">トップ</a><span>CPU操作</span></nav>
     <section class="page-hero section">
-      <p class="eyebrow">Device Addressing</p>
-      <h1>デバイス表記</h1>
-      <p class="lead">アドレス、BIT/WORD、data type、MELSEC / KEYENCE の表記差分を説明します。</p>
+      <p class="eyebrow">CPU Control</p>
+      <h1>CPU操作</h1>
+      <p class="lead">CPU状態の変更を PLC に送信します。実設備へ影響するため、対象 PLC と設備状態を確認してから実行してください。</p>
     </section>
 
     <section class="section">
-      <h2>data type</h2>
-      <div class="info-table" role="table" aria-label="data type">
-        <div role="row"><div role="cell">BIT</div><div role="cell">BIT デバイス用です。ON/OFF として扱います。</div></div>
-        <div role="row"><div role="cell">INT16 / UINT16</div><div role="cell">1 word の数値として扱います。</div></div>
-        <div role="row"><div role="cell">INT32 / UINT32 / FLOAT32</div><div role="cell">2 word の数値として扱います。アドレス範囲の末尾では使えない場合があります。</div></div>
+      <div class="notice danger">
+        <h2>実行前の確認</h2>
+        <p>対象 PLC、実行する操作、設備の状態が正しいことを確認してください。</p>
       </div>
     </section>
 
     <section class="section">
-      <h2>MELSEC の表示順と表記</h2>
-      <ul>
-        <li>主な表示順は <code>X</code>、<code>Y</code>、<code>M</code>、<code>D</code>、<code>L</code>、<code>F</code>、<code>B</code>、<code>SB</code>、<code>SM</code>、<code>STC</code>、<code>TC</code>、<code>CC</code>、<code>W</code>、<code>SW</code>、<code>R</code>、<code>ZR</code>、<code>SD</code> です。</li>
-        <li><code>B</code>、<code>W</code>、<code>SB</code>、<code>SW</code> は 16 進表記です。</li>
-        <li><code>iQ-F</code> の <code>X</code> / <code>Y</code> は 8 進表記です。</li>
-      </ul>
+      <h2>操作手順</h2>
+      <ol class="steps compact">
+        <li><strong>メニューを開く</strong><span>メニューから <strong>CPU操作</strong> を開きます。</span></li>
+        <li><strong>操作を選ぶ</strong><span>表示された操作から、実行したい CPU状態を選びます。</span></li>
+        <li><strong>実行する</strong><span>画面の内容を確認して、CPU操作を送信します。</span></li>
+      </ol>
     </section>
 
     <section class="section">
-      <h2>KEYENCE の表示順と表記</h2>
+      <h2>操作の種類</h2>
       <div class="content-grid">
         <article>
-          <h3>Normal</h3>
-          <p><code>R</code>、<code>B</code>、<code>MR</code>、<code>LR</code>、<code>CR</code>、<code>DM</code>、<code>EM</code>、<code>FM</code>、<code>ZF</code>、<code>W</code>、<code>TM</code>、<code>CM</code></p>
+          <h3>MELSEC</h3>
+          <p><strong>RUN</strong>、<strong>STOP</strong>、<strong>PAUSE</strong> を操作できます。</p>
         </article>
         <article>
-          <h3>XYM</h3>
-          <p><code>B</code>、<code>CR</code>、<code>ZF</code>、<code>W</code>、<code>TM</code>、<code>CM</code>、<code>X</code>、<code>Y</code>、<code>M</code>、<code>L</code>、<code>D</code>、<code>E</code>、<code>F</code></p>
+          <h3>KEYENCE</h3>
+          <p><strong>RUN</strong> と <strong>PROGRAM</strong> を操作できます。</p>
         </article>
-        <article>
-          <h3>16進表記</h3>
-          <p><code>B</code>、<code>W</code>、<code>X</code>、<code>Y</code> は 16 進表記です。</p>
-        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="notice danger">
+        <h2 id="output-device-write">出力デバイスを書き込む場合</h2>
+        <p>出力デバイスを操作する場合は、CPU を MELSEC では <strong>PAUSE</strong>、KEYENCE では <strong>PROGRAM</strong> 状態に変更してから書込してください。</p>
+        <p>MELSEC では <strong>STOP</strong> 状態だとリモート I/O へ出力が転送されないため、プログラムだけを停止させる <strong>PAUSE</strong> を使用してください。</p>
       </div>
     </section>
 
     <section class="section">
       <div class="notice">
-        <h2>入力時の確認</h2>
-        <p>ProjectBuilder とモバイルアプリは、選択中の PLC 種別、CPU model、KEYENCE デバイス表記に合わせてアドレスを検証します。使えないデバイスや不正な data type は取り込み時や保存時にエラーになります。</p>
+        <h2>失敗時の確認</h2>
+        <p>CPU操作に失敗した場合は、接続状態、対象 PLC、選択した操作、エラー履歴を確認してください。</p>
       </div>
     </section>
 
     <nav class="next-links" aria-label="前後ページ">
-      <a href="../plc/keyence-settings.html">前へ: KEYENCE 設定</a>
-      <a href="../monitoring/monitoring.html">次へ: 監視</a>
+      <a href="../monitoring/writing.html">前へ: 書込</a>
+      <a href="../transfer/import-export.html">次へ: QR / JSON</a>
     </nav>
   </main>
 
-  <footer class="site-footer"><p>PLC IO Checker 操作マニュアル / デバイス表記</p></footer>
+  <footer class="site-footer">
+  <div class="footer-simple">
+    <span class="brand-mark">PLC</span>
+    <span>PLC IO Checker 操作マニュアル</span>
+    <span style="margin-left:auto">© 2026 FA Labo</span>
+  </div>
+</footer>
   <script>
   (function(){
     var t=document.getElementById("nav-toggle");

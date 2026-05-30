@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="PLC IO Checker プロジェクトJSON schema v3 と QR 形式。">
+  <meta name="description" content="PLC IO Checker のプロジェクトJSON。">
   <title>プロジェクトJSON | PLC IO Checker 操作マニュアル</title>
   <link rel="stylesheet" href="../assets/style.css">
 </head>
@@ -27,10 +27,9 @@
           <div class="nav-menu">
             <a href="../plc/supported-plc.html">対応 PLC</a>
             <a href="../plc/connection.html">接続・プロジェクト</a>
-            <a href="../plc/plc-side-settings.html">PLC 側設定参考</a>
+            <a href="../plc/plc-side-settings.html">接続設定例</a>
             <a href="../plc/melsec-settings.html">MELSEC</a>
             <a href="../plc/keyence-settings.html">KEYENCE</a>
-            <a href="../plc/device-addressing.html">デバイス表記</a>
           </div>
         </details>
         <details class="nav-group">
@@ -40,6 +39,7 @@
             <a href="../monitoring/list-edit.html">List 登録編集</a>
             <a href="../monitoring/focus-panel.html">操作パネル</a>
             <a href="../monitoring/writing.html">書込</a>
+            <a href="../monitoring/cpu-control.html">CPU操作</a>
             <a href="../monitoring/comments.html">コメント</a>
             <a href="../monitoring/time-chart.html">タイムチャート</a>
             <a href="../monitoring/traps.html">トラップ</a>
@@ -83,7 +83,6 @@
           <summary>参考</summary>
           <div class="nav-menu">
             <a href="../reference/glossary.html">用語集</a>
-            <a href="../reference/faq.html">FAQ</a>
             <a href="../reference/release-notes.html">リリースノート</a>
             <a href="../reference/troubleshooting.html">困ったとき</a>
           </div>
@@ -97,50 +96,31 @@
     <section class="page-hero section">
       <p class="eyebrow">プロジェクトJSON</p>
       <h1>プロジェクトJSON</h1>
-      <p class="lead">Android / iOS / ProjectBuilder で共有するプロジェクトJSONと QR payload の現行仕様です。</p>
+      <p class="lead">プロジェクトJSONは、プロジェクトをファイルとして保存し、Android / iOS / ProjectBuilder で共有するための形式です。</p>
     </section>
 
     <section class="section">
-      <h2>現行形式</h2>
-      <div class="info-table" role="table" aria-label="schema">
-        <div role="row"><div role="cell">schema</div><div role="cell"><code>plc-io-checker-project</code></div></div>
-        <div role="row"><div role="cell">schemaVersion</div><div role="cell"><code>3</code></div></div>
-        <div role="row"><div role="cell">QR</div><div role="cell"><code>PLCIOC3|ZSTD|&lt;session&gt;|&lt;index&gt;|&lt;total&gt;|&lt;sha256&gt;|&lt;payload-chunk&gt;</code></div></div>
-        <div role="row"><div role="cell">圧縮</div><div role="cell">Zstandard。payload は base64url 文字列を分割します。</div></div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>主な top-level 項目</h2>
-      <p><code>schema</code>、<code>schemaVersion</code>、<code>projectId</code>、<code>projectName</code>、<code>plc</code>、<code>deviceList</code>、<code>timeChart</code>、<code>traps</code>、<code>updatedAtEpochMs</code> を持ちます。</p>
-    </section>
-
-    <section class="section">
-      <h2>MELSEC / KEYENCE の差分</h2>
+      <h2>使いどころ</h2>
       <div class="content-grid">
-        <article>
-          <h3>MELSEC</h3>
-          <p><code>plc.melsec</code> に <code>networkNo</code>、<code>stationNo</code>、<code>moduleIoNo</code>、<code>multidropNo</code>、<code>remotePassword</code> を持ちます。<code>moduleIoNo</code> と <code>multidropNo</code> は <code>0x</code> 付き 16 進文字列です。</p>
-        </article>
-        <article>
-          <h3>KEYENCE</h3>
-          <p><code>plc.keyence.deviceMode</code> に <code>NORMAL</code> または <code>XYM</code> を持ちます。MELSEC のルート指定とリモートパスワードは含みません。</p>
-        </article>
-        <article>
-          <h3>互換方針</h3>
-          <p>旧 QR 形式や無効値の silent fallback は行いません。読み込みに失敗した場合は JSON/QR を修正して再生成します。</p>
-        </article>
+        <article><h3>バックアップ</h3><p>現在のプロジェクトを JSON ファイルとして保存します。</p></article>
+        <article><h3>端末間移行</h3><p>別の Android / iOS 端末へ同じプロジェクトを渡します。</p></article>
+        <article><h3>ProjectBuilder 連携</h3><p>ProjectBuilder で編集したプロジェクトをアプリへ渡します。</p></article>
       </div>
     </section>
 
     <section class="section">
-      <h2>value set</h2>
-      <div class="info-table" role="table" aria-label="value set">
-        <div role="row"><div role="cell">vendor</div><div role="cell"><code>MELSEC</code>、<code>KEYENCE</code></div></div>
-        <div role="row"><div role="cell">connection.mode</div><div role="cell"><code>REAL</code>、<code>DEMO_MOCK</code></div></div>
-        <div role="row"><div role="cell">transport</div><div role="cell"><code>TCP</code>、<code>UDP</code></div></div>
-        <div role="row"><div role="cell">dataType</div><div role="cell"><code>BIT</code>、<code>INT16</code>、<code>UINT16</code>、<code>INT32</code>、<code>UINT32</code>、<code>FLOAT32</code></div></div>
-        <div role="row"><div role="cell">trap.condition</div><div role="cell"><code>RISING_EDGE</code>、<code>FALLING_EDGE</code>、<code>CHANGE</code>、<code>GREATER_OR_EQUAL</code>、<code>LESS_OR_EQUAL</code>、<code>EQUAL</code>、<code>NOT_EQUAL</code></div></div>
+      <h2>保存される内容</h2>
+      <div class="content-grid">
+        <article><h3>プロジェクト</h3><p>プロジェクト名と更新情報を保存します。</p></article>
+        <article><h3>接続設定</h3><p>PLC 種別、CPU機種、接続先、MELSEC / KEYENCE 固有の設定を保存します。</p></article>
+        <article><h3>登録内容</h3><p>デバイス、タイムチャート、トラップの登録内容を保存します。</p></article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="notice">
+        <h2>扱うときの注意</h2>
+        <p>プロジェクトJSONには接続先やパスワードなどの設定が含まれる場合があります。共有や問い合わせ時は、設備情報やパスワードを含めないようにしてください。</p>
       </div>
     </section>
 

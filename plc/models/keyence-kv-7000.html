@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="KEYENCE KV-7000 の PLC 側設定参考 TODO。">
-  <title>KEYENCE KV-7000 PLC 側設定参考 | PLC IO Checker 操作マニュアル</title>
+  <meta name="description" content="KEYENCE KV-7000 の 接続設定例 TODO。">
+  <title>KEYENCE KV-7000 接続設定例 | PLC IO Checker 操作マニュアル</title>
   <link rel="stylesheet" href="../../assets/style.css">
 </head>
 <body>
@@ -27,10 +27,9 @@
           <div class="nav-menu">
             <a href="../../plc/supported-plc.html">対応 PLC</a>
             <a href="../../plc/connection.html">接続・プロジェクト</a>
-            <a href="../../plc/plc-side-settings.html">PLC 側設定参考</a>
+            <a href="../../plc/plc-side-settings.html">接続設定例</a>
             <a href="../../plc/melsec-settings.html">MELSEC</a>
             <a href="../../plc/keyence-settings.html">KEYENCE</a>
-            <a href="../../plc/device-addressing.html">デバイス表記</a>
           </div>
         </details>
         <details class="nav-group">
@@ -40,6 +39,7 @@
             <a href="../../monitoring/list-edit.html">List 登録編集</a>
             <a href="../../monitoring/focus-panel.html">操作パネル</a>
             <a href="../../monitoring/writing.html">書込</a>
+            <a href="../../monitoring/cpu-control.html">CPU操作</a>
             <a href="../../monitoring/comments.html">コメント</a>
             <a href="../../monitoring/time-chart.html">タイムチャート</a>
             <a href="../../monitoring/traps.html">トラップ</a>
@@ -83,7 +83,6 @@
           <summary>参考</summary>
           <div class="nav-menu">
             <a href="../../reference/glossary.html">用語集</a>
-            <a href="../../reference/faq.html">FAQ</a>
             <a href="../../reference/release-notes.html">リリースノート</a>
             <a href="../../reference/troubleshooting.html">困ったとき</a>
           </div>
@@ -93,17 +92,17 @@
   </header>
 
   <main class="doc-page">
-    <nav class="breadcrumb" aria-label="パンくず"><a href="../../index.html">トップ</a><a href="../plc-side-settings.html">PLC 側設定参考</a><span>KEYENCE KV-7000</span></nav>
+    <nav class="breadcrumb" aria-label="パンくず"><a href="../../index.html">トップ</a><a href="../plc-side-settings.html">接続設定例</a><span>KEYENCE KV-7000</span></nav>
     <section class="page-hero section">
       <p class="eyebrow">KEYENCE / KV-7000</p>
-      <h1>KEYENCE KV-7000 PLC 側設定参考</h1>
+      <h1>KEYENCE KV-7000 接続設定例</h1>
       <p class="lead">KEYENCE KV-7000 を PLC IO Checker から接続する場合の PLC 側設定メモ枠です。現時点の詳細内容は dummy / TODO です。</p>
     </section>
 
     <section class="section">
       <div class="notice">
         <h2>TODO</h2>
-        <p>このページは機種別の PLC 側設定参考を後から追記するための placeholder です。メーカー資料、実機画面、現場設定例を確認してから詳細化します。</p>
+        <p>このページは機種別の 接続設定例を後から追記するための placeholder です。メーカー資料、実機画面、現場設定例を確認してから詳細化します。</p>
       </div>
     </section>
 
@@ -111,8 +110,8 @@
       <h2>アプリ側で選ぶ項目</h2>
       <div class="info-table" role="table" aria-label="アプリ側選択項目">
         <div role="row"><div role="cell">PLC 種別</div><div role="cell"><code>KEYENCE</code></div></div>
-        <div role="row"><div role="cell">CPU model</div><div role="cell"><code>KV-7000</code></div></div>
-        <div role="row"><div role="cell">通信方式</div><div role="cell">KV Host Link</div></div>
+        <div role="row"><div role="cell">CPU機種</div><div role="cell"><code>KV-7000</code></div></div>
+        <div role="row"><div role="cell">通信方式</div><div role="cell">Host-link</div></div>
         <div role="row"><div role="cell">既定ポート</div><div role="cell"><code>8501</code></div></div>
         <div role="row"><div role="cell">KEYENCE 表示</div><div role="cell"><code>Normal</code> または <code>XYM</code>。詳細 TODO。</div></div>
       </div>

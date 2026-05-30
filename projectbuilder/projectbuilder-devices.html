@@ -27,10 +27,9 @@
           <div class="nav-menu">
             <a href="../plc/supported-plc.html">対応 PLC</a>
             <a href="../plc/connection.html">接続・プロジェクト</a>
-            <a href="../plc/plc-side-settings.html">PLC 側設定参考</a>
+            <a href="../plc/plc-side-settings.html">接続設定例</a>
             <a href="../plc/melsec-settings.html">MELSEC</a>
             <a href="../plc/keyence-settings.html">KEYENCE</a>
-            <a href="../plc/device-addressing.html">デバイス表記</a>
           </div>
         </details>
         <details class="nav-group">
@@ -40,6 +39,7 @@
             <a href="../monitoring/list-edit.html">List 登録編集</a>
             <a href="../monitoring/focus-panel.html">操作パネル</a>
             <a href="../monitoring/writing.html">書込</a>
+            <a href="../monitoring/cpu-control.html">CPU操作</a>
             <a href="../monitoring/comments.html">コメント</a>
             <a href="../monitoring/time-chart.html">タイムチャート</a>
             <a href="../monitoring/traps.html">トラップ</a>
@@ -83,7 +83,6 @@
           <summary>参考</summary>
           <div class="nav-menu">
             <a href="../reference/glossary.html">用語集</a>
-            <a href="../reference/faq.html">FAQ</a>
             <a href="../reference/release-notes.html">リリースノート</a>
             <a href="../reference/troubleshooting.html">困ったとき</a>
           </div>
@@ -104,7 +103,7 @@
       <h2>接続設定</h2>
       <p><strong>プロジェクト/接続</strong> では、モバイルアプリへ渡す基本情報と PLC 通信設定を入力します。</p>
       <div class="info-table" role="table" aria-label="ProjectBuilder connection settings">
-        <div role="row"><div role="cell">プロジェクト</div><div role="cell">プロジェクト名、メーカー、CPU model、KEYENCE 表示、使用可能 device を確認します。</div></div>
+        <div role="row"><div role="cell">プロジェクト</div><div role="cell">プロジェクト名、メーカー、CPU機種、KEYENCE 表示、使用可能 device を確認します。</div></div>
         <div role="row"><div role="cell">接続</div><div role="cell">Connection mode、IP address、Port、Transport、監視周期 ms、Timeout ms を指定します。</div></div>
         <div role="row"><div role="cell">MELSEC ルーティング</div><div role="cell">Network / Station は数字で、Module I/O / Multidrop は画面の初期表示と同じ <code>0x</code> 付きで入力します。</div></div>
         <div role="row"><div role="cell">既定値</div><div role="cell"><strong>ルーティング既定値に戻す</strong> で Network、Station、Module I/O、Multidrop を既定値へ戻します。</div></div>
@@ -120,7 +119,7 @@
       <h2>デバイス</h2>
       <div class="info-table" role="table" aria-label="デバイス列">
         <div role="row"><div role="cell">アドレス</div><div role="cell">監視する PLC デバイスアドレスです。</div></div>
-        <div role="row"><div role="cell">Data type</div><div role="cell"><code>BIT</code>、<code>INT16</code>、<code>UINT16</code>、<code>INT32</code>、<code>UINT32</code>、<code>FLOAT32</code></div></div>
+        <div role="row"><div role="cell">データタイプ</div><div role="cell"><code>BIT</code>、<code>INT16</code>、<code>UINT16</code>、<code>INT32</code>、<code>UINT32</code>、<code>FLOAT32</code></div></div>
         <div role="row"><div role="cell">Comment</div><div role="cell">任意のコメントです。同じアドレスが複数ある場合、最初の非空 Comment が同じアドレスに反映されます。</div></div>
       </div>
       <p>Excel からタブ区切りでコピー/貼り付けできます。<strong>行を追加</strong>、<strong>ブロック追加</strong>、<strong>削除</strong>、<strong>上へ</strong> / <strong>下へ</strong> で編集します。</p>
@@ -135,7 +134,7 @@
       <p>タイムチャートに表示する対象を登録します。最大 20 チャンネルです。</p>
       <div class="info-table" role="table" aria-label="タイムチャート列">
         <div role="row"><div role="cell">アドレス</div><div role="cell">記録対象のアドレスです。</div></div>
-        <div role="row"><div role="cell">Data type</div><div role="cell">デバイスに同じアドレスがあればその Data type を優先します。</div></div>
+        <div role="row"><div role="cell">データタイプ</div><div role="cell">デバイスに同じアドレスがあればそのデータタイプを優先します。</div></div>
       </div>
       <p>Excel からタブ区切りでコピー/貼り付けできます。<strong>ブロック追加</strong> では開始アドレスと点数を指定します。</p>
       <figure class="inline-shot projectbuilder-shot">
@@ -148,12 +147,12 @@
       <h2>トラップ</h2>
       <p>条件に一致したタイミングを検知する定義です。最大 20 件です。</p>
       <div class="info-table" role="table" aria-label="トラップ列">
-        <div role="row"><div role="cell">アドレス / Data type</div><div role="cell">検知対象と Data type です。</div></div>
+        <div role="row"><div role="cell">アドレス / データタイプ</div><div role="cell">検知対象とデータタイプです。</div></div>
         <div role="row"><div role="cell">検知条件</div><div role="cell">BIT は <code>Rise</code>、<code>Fall</code>、<code>Change</code>。WORD は <code>Change</code>、<code>GreaterOrEqual</code>、<code>LessOrEqual</code>、<code>Equal</code>、<code>NotEqual</code>。</div></div>
         <div role="row"><div role="cell">しきい値</div><div role="cell">比較条件で必要です。</div></div>
         <div role="row"><div role="cell">有効</div><div role="cell">有効/無効を指定します。</div></div>
       </div>
-      <p>Excel からタブ区切りでコピー/貼り付けできます。列は アドレス / Data type / 検知条件 / しきい値 / 有効 です。</p>
+      <p>Excel からタブ区切りでコピー/貼り付けできます。列は アドレス / データタイプ / 検知条件 / しきい値 / 有効 です。</p>
       <figure class="inline-shot projectbuilder-shot">
         <img src="../assets/images/projectbuilder/trap.png" alt="ProjectBuilder のトラップ入力画面">
         <figcaption>トラップ</figcaption>

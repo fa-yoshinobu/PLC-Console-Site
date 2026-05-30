@@ -25,13 +25,13 @@ ProjectBuilder のソースと README は <https://github.com/fa-yoshinobu/PlcIo
 
 - `index.html`: 目次トップ
 - `start/`: 入手・インストール、はじめる
-- `plc/`: 対応 PLC、接続・プロジェクト、PLC 側設定参考、MELSEC / KEYENCE 設定、デバイス表記
-- `plc/models/`: 対応機種ごとの PLC 側設定参考ページ。現時点は dummy / TODO
+- `plc/`: 対応 PLC、接続・プロジェクト、接続設定例、MELSEC / KEYENCE 設定
+- `plc/models/`: 対応機種ごとの 接続設定例ページ。現時点は dummy / TODO
 - `monitoring/`: 監視、List 登録編集、操作パネル、書込、コメント、タイムチャート、トラップ
 - `transfer/`: QR / JSON、プロジェクトJSON
-- `settings/`: メニュー・設定、アプリ設定、ライセンス/購入
+- `settings/`: メニュー、アプリ設定、ライセンス/購入
 - `projectbuilder/`: ProjectBuilder、ProjectBuilder 入力、ProjectBuilder QR 生成
-- `reference/`: 用語集、FAQ、リリースノート、困ったとき
+- `reference/`: 用語集、リリースノート、困ったとき
 - `reference/support.html`: Store metadata 用サポート URL 候補
 - `reference/privacy-policy.html`: Store metadata 用プライバシーポリシー URL 候補
 - `reference/app-permissions.html`: Android / iOS の権限、Local Network、カメラ、ファイルアクセス
@@ -54,7 +54,7 @@ ProjectBuilder のソースと README は <https://github.com/fa-yoshinobu/PlcIo
 - 開発用メニュー、開発用 overlay、開発用画面や隠し機能は公開マニュアルに載せない。
 - Android / iOS 共通の動作は共通説明として書き、差分が実装上存在する場合だけプラットフォーム差分として書く。
 - MELSEC と KEYENCE で通信方式、設定項目、対応デバイス、コメント読込、CPU操作、JSON 項目が変わる場合は、共通説明に混ぜず `MELSEC` / `KEYENCE` の見出しや表で分けて書く。
-- 対応 PLC 機種、CPU model 選択肢、既定ポート、通信方式、対応デバイス、アドレス表記、使用できない設定項目は source code で確認し、接続・ProjectBuilder・困ったときのページに必要な範囲で書く。
+- 対応 PLC 機種、CPU機種の選択肢、既定ポート、通信方式、対応デバイス、アドレス表記、使用できない設定項目は source code で確認し、接続・ProjectBuilder・困ったときのページに必要な範囲で書く。
 - 内容が多い場合は 1 ページに詰め込まず、操作単位・機能単位・MELSEC / KEYENCE 差分単位でページを細分化する。HTML は機能別フォルダへ分け、ページを増やした場合は `index.html`、前後リンク、上部ナビ、README の file list も更新する。
 - 画像も用途別フォルダへ分ける。接続・PLC 設定系は `assets/images/plc/`、監視・記録系は `assets/images/monitoring/`、QR/JSON 転送系は `assets/images/transfer/`、ProjectBuilder 関連は `assets/images/projectbuilder/` を使う。
 - App Store / Google Play へのリンクを載せる場合、正式 URL が未確定なら dummy link として書き、公開済み・購入可能と誤読される表現にしない。
@@ -75,7 +75,7 @@ ProjectBuilder のソースと README は <https://github.com/fa-yoshinobu/PlcIo
 - 接続していないと使えない機能、プロジェクトがないと使えない機能、ライセンス状態で変わる機能は実行条件を先に書く。
 - 書込、CPU操作、トラップ、REC、コメント読込、QR/JSON 取込は、成功時の表示と失敗時に見る場所を必ず書く。
 - ProjectBuilder で作成する内容と、モバイルアプリ側で編集する内容を混ぜない。どちらで行う操作かを明記する。
-- 登録上限、対応データ型、複数ページ QR、読み取り順、CSV/JSON の列や項目など、ユーザーが入力前に知るべき制約を書く。
+- 登録上限、対応データタイプ、複数ページ QR、読み取り順、CSV/JSON の列や項目など、ユーザーが入力前に知るべき制約を書く。
 - ユーザーが知らなくてよい値や内部状態は書かない。説明が詳細化しすぎた場合は、操作手順、入力項目、表示結果、失敗時の確認に戻して整理する。
 - スクリーンショットを差し替える場合は、対象画面と撮影日を commit か作業メモで追えるようにする。
 - 詳細説明を書く時は、根拠として確認した source file、resource、docs を作業メモや PR 説明に残す。
@@ -100,9 +100,9 @@ ProjectBuilder のソースと README は <https://github.com/fa-yoshinobu/PlcIo
 - 表記を変える場合は、先に Android / iOS / ProjectBuilder の localization/resource と画面表示を変更してから Site を更新する。
 - 画面名は app 表示に合わせて `List`、`Block`、`タイムチャート`、`トラップ`、`List 登録編集` を使う。
 - 操作名は表示文言に合わせて `QR読込`、`JSON読込`、`JSON書出`、`CSVコメント読込`、`コメント読込`、`CPU操作` と書く。
-- PLC 種別は `MELSEC` / `KEYENCE`、通信方式は `SLMP` / `KV Host Link` のように source と実装に合わせる。
+- PLC 種別は `MELSEC` / `KEYENCE`、通信方式は `SLMP（Seamless Message Protocol）` / `Host-link` のように source と実装に合わせる。
 - 通常の操作ページでは、内部フィールド名ではなく画面表示を使う。例: `ネットワーク`、`局番`、`ユニットI/O`、`マルチドロップ`。JSON のフィールド名は形式確認ページで必要な場合だけ書く。
-- デバイス説明では `BIT` / `WORD`、`data type`、`address`、`comment` の意味が混ざらないように分ける。
+- デバイス説明では `BIT` / `WORD`、`データタイプ`、`address`、`comment` の意味が混ざらないように分ける。
 - `トラップ` と `タイムチャート` は登録対象、実行条件、記録・検知結果を分けて説明する。
 - Store や購入に関する説明は、正式公開前は `dummy link`、`予定`、`mock` など現状が分かる表現にする。
 - ただし価格や金額は、正式確定前に具体額を書かない。
@@ -129,12 +129,11 @@ ProjectBuilder のソースと README は <https://github.com/fa-yoshinobu/PlcIo
 未作成ページが出た場合は TODO として残す。実際に追加したページだけ `Files`、`index.html`、前後リンク、上部ナビへ反映する。
 
 - [x] `start/install.html`: Android / iOS アプリ入手先、ProjectBuilder 入手先、App Store / Google Play dummy link。
-- [x] `plc/supported-plc.html`: 対応 PLC 機種、CPU model、既定ポート、通信方式。
-- [ ] `plc/plc-side-settings.html`: PLC 側設定参考の親ページ。詳細内容は TODO。
-- [ ] `plc/models/*.html`: 対応機種ごとの PLC 側設定参考ページ。詳細内容は TODO。
-- [x] `plc/melsec-settings.html`: MELSEC の SLMP、TCP/UDP、ルート指定、リモートパスワード、X/Y 表記。
-- [x] `plc/keyence-settings.html`: KEYENCE の KV Host Link、Normal/XYM、コメント読込、対応デバイス。
-- [x] `plc/device-addressing.html`: デバイス種別、10 進/16 進/8 進、BIT/WORD、data type。
+- [x] `plc/supported-plc.html`: 対応 PLC 機種、CPU機種、既定ポート、通信方式。
+- [x] `plc/plc-side-settings.html`: 接続設定例の機種別入口。
+- [ ] `plc/models/*.html`: 対応機種ごとの 接続設定例ページ。詳細内容は TODO。
+- [x] `plc/melsec-settings.html`: MELSEC の SLMP（Seamless Message Protocol）、TCP/UDP、ルート指定、リモートパスワード、デバイス表記、データタイプ。
+- [x] `plc/keyence-settings.html`: KEYENCE の Host-link、TCP/UDP、Normal/XYM、コメント読込、対応デバイス、データタイプ。
 - [x] `monitoring/list-edit.html`: `List 登録編集`、単体追加、範囲追加、検索、並び替え、削除。
 - [x] `monitoring/focus-panel.html`: ON/OFF、数値書込、Dec/Hex/Bit、表示型変更、タイムチャート/トラップ追加導線。
 - [x] `settings/app-settings.html`: 多言語、ライト/ダーク、画面配置、ビット書込モード。
@@ -142,8 +141,8 @@ ProjectBuilder のソースと README は <https://github.com/fa-yoshinobu/PlcIo
 - [x] `projectbuilder/projectbuilder-devices.html`: デバイス、タイムチャート、トラップの入力、貼り付け、登録上限。
 - [x] `projectbuilder/projectbuilder-qr.html`: QR 生成、分割サイズ、表示サイズ、誤り訂正、PNG/JSON 保存。
 - [x] `transfer/project-json.html`: schema v3、MELSEC / KEYENCE の JSON 差分、対応 value set。
-- [x] `reference/glossary.html`: プロジェクト、デバイス、address、data type、BIT、WORD、トラップ、タイムチャートなどの用語。
-- [x] `reference/faq.html`: 接続、QR、REC、書込、コメント読込、ライセンス、エラー履歴の確認項目。
+- [x] `reference/glossary.html`: プロジェクト、デバイス、address、データタイプ、BIT、WORD、トラップ、タイムチャートなどの用語。
+- [x] `reference/troubleshooting.html`: 接続、QR、REC、書込、コメント読込、ライセンス、エラー履歴の確認項目。
 - [ ] `reference/release-notes.html`: リリースノート。正式な変更履歴は TODO。
 - [x] `reference/privacy-policy.html`: INTERNET permission、ユーザー設定 PLC への通信、個人情報非収集を記載。
 - [x] `reference/app-permissions.html`: Android / iOS の permission、Local Network、Camera、storage/file access を source code ベースで整理。

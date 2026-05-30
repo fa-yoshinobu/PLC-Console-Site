@@ -27,10 +27,9 @@
           <div class="nav-menu">
             <a href="../plc/supported-plc.html">対応 PLC</a>
             <a href="../plc/connection.html">接続・プロジェクト</a>
-            <a href="../plc/plc-side-settings.html">PLC 側設定参考</a>
+            <a href="../plc/plc-side-settings.html">接続設定例</a>
             <a href="../plc/melsec-settings.html">MELSEC</a>
             <a href="../plc/keyence-settings.html">KEYENCE</a>
-            <a href="../plc/device-addressing.html">デバイス表記</a>
           </div>
         </details>
         <details class="nav-group">
@@ -40,6 +39,7 @@
             <a href="../monitoring/list-edit.html">List 登録編集</a>
             <a href="../monitoring/focus-panel.html">操作パネル</a>
             <a href="../monitoring/writing.html">書込</a>
+            <a href="../monitoring/cpu-control.html">CPU操作</a>
             <a href="../monitoring/comments.html">コメント</a>
             <a href="../monitoring/time-chart.html">タイムチャート</a>
             <a href="../monitoring/traps.html">トラップ</a>
@@ -83,7 +83,6 @@
           <summary>参考</summary>
           <div class="nav-menu">
             <a href="../reference/glossary.html">用語集</a>
-            <a href="../reference/faq.html">FAQ</a>
             <a href="../reference/release-notes.html">リリースノート</a>
             <a href="../reference/troubleshooting.html">困ったとき</a>
           </div>
@@ -116,8 +115,8 @@
     <section class="section">
       <h2>主な用途</h2>
       <div class="feature-grid">
-        <article class="feature"><h3>PLC 設定</h3><p>メーカー、CPU model、IP、ポート、Transport、MELSEC ルーティングを PC で入力します。</p></article>
-        <article class="feature"><h3>デバイス登録</h3><p>アドレス / Data type / Comment を表形式で登録します。Excel からの貼り付けにも向いています。</p></article>
+        <article class="feature"><h3>PLC 設定</h3><p>メーカー、CPU機種、IP、ポート、Transport、MELSEC ルーティングを PC で入力します。</p></article>
+        <article class="feature"><h3>デバイス登録</h3><p>アドレス / データタイプ / Comment を表形式で登録します。Excel からの貼り付けにも向いています。</p></article>
         <article class="feature"><h3>QR/JSON 出力</h3><p>作成したプロジェクトを QR ページ、QR PNG、JSON ファイルとして出力します。</p></article>
       </div>
     </section>
@@ -127,7 +126,7 @@
       <div class="content-grid">
         <article>
           <h3>接続設定</h3>
-          <p>CPU model、IP address、Port、Transport、Network、Station、Module I/O、Multidrop、リモートパスワードを設定します。</p>
+          <p>CPU機種、IP address、Port、Transport、Network、Station、Module I/O、Multidrop、リモートパスワードを設定します。</p>
         </article>
         <article>
           <h3>Routing 表記</h3>
@@ -162,8 +161,8 @@
       <h2>基本手順</h2>
       <ol class="steps">
         <li><strong>ProjectBuilder を起動する</strong><span><code>PlcIoCheckerProjectBuilder.exe</code> を起動します。</span></li>
-        <li><strong>プロジェクトと PLC を設定する</strong><span>プロジェクト名、メーカー、CPU model、IP、ポート、Transport を入力します。</span></li>
-        <li><strong>デバイスを登録する</strong><span>監視するアドレス、Data type、Comment を登録します。</span></li>
+        <li><strong>プロジェクトと PLC を設定する</strong><span>プロジェクト名、メーカー、CPU機種、IP、ポート、Transport を入力します。</span></li>
+        <li><strong>デバイスを登録する</strong><span>監視するアドレス、データタイプ、Comment を登録します。</span></li>
         <li><strong>タイムチャート / トラップを登録する</strong><span>必要に応じて記録対象や検知条件を登録します。</span></li>
         <li><strong>QR または JSON を出力する</strong><span><strong>QR 生成</strong>、ファイル メニュー、QR メニューを使い、モバイルアプリの QR読込または JSON読込で取り込みます。</span></li>
       </ol>
