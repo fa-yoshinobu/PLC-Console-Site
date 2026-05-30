@@ -125,7 +125,8 @@
         <div role="row"><div role="cell">CPU / Family</div><div role="cell">対象 PLC の CPU ファミリを選択します。</div></div>
         <div role="row"><div role="cell">IP / Port</div><div role="cell">PLC 側の Ethernet 設定に合わせます。</div></div>
         <div role="row"><div role="cell">Transport</div><div role="cell">TCP または UDP を選択します。</div></div>
-        <div role="row"><div role="cell">Route</div><div role="cell">必要な場合だけ network、station、module_io、multidrop を指定します。</div></div>
+        <div role="row"><div role="cell">ルーティング</div><div role="cell">必要な場合だけネットワーク、局番、ユニットI/O、マルチドロップを指定します。</div></div>
+        <div role="row"><div role="cell">到達確認</div><div role="cell">入力した通信設定で確認を実行し、結果とエラーメッセージを確認します。</div></div>
       </div>
     </section>
 
@@ -134,7 +135,7 @@
       <div class="content-grid">
         <article>
           <h3>通信方式</h3>
-          <p>SLMP で接続します。既定ポートは <code>1025</code> です。PLC 側の設定に合わせて TCP または UDP を選びます。</p>
+          <p>SLMP で接続します。既定ポートは <code>1025</code> です。</p>
         </article>
         <article>
           <h3>CPU モデル</h3>
@@ -142,7 +143,7 @@
         </article>
         <article>
           <h3>ルート / パスワード</h3>
-          <p><code>network</code>、<code>station</code>、<code>module_io</code>、<code>multidrop</code> とリモートパスワードは MELSEC 用です。</p>
+          <p>ネットワーク、局番、ユニットI/O、マルチドロップ、リモートパスワードは MELSEC 用です。</p>
         </article>
       </div>
     </section>
@@ -163,7 +164,6 @@
           <p><code>Normal</code> または <code>XYM</code> を選びます。XYM は X/Y/M/L/D/E/F 系の表記を使う場合のモードです。</p>
         </article>
       </div>
-      <p>KEYENCE では MELSEC 用の network/station/module_io/multidrop とリモートパスワードは使用しません。</p>
     </section>
 
     <section class="section">
@@ -171,8 +171,9 @@
       <ul>
         <li>接続成功時は上部ステータスに RUN/STOP、CPU、IP、プロジェクト名が表示されます。</li>
         <li>未処理の CPU 状態は <code>--</code> と表示されます。</li>
-        <li>MELSEC で接続できない場合は、IP、ポート、TCP/UDP、ルート指定、リモートパスワード、PLC 側の通信許可を確認してください。</li>
-        <li>KEYENCE で接続できない場合は、IP、ポート、KV Host Link、KEYENCE 表示モード、端末のネットワーク接続を確認してください。</li>
+        <li>接続できない場合は、通信設定の <strong>到達確認</strong> を実行し、結果とエラーメッセージを確認してください。</li>
+        <li>IP、ポート、TCP/UDP、端末のネットワーク接続を確認してください。</li>
+        <li>MELSEC では、ルート指定とリモートパスワードも確認してください。</li>
       </ul>
     </section>
 
