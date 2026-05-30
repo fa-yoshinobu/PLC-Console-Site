@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="KEYENCE 接続設定、Host Link TCP、Normal/XYM、コメント読込。">
+  <title>KEYENCE 設定 | PLC IO Checker 操作マニュアル</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../index.html"><span class="brand-mark">PLC</span><span><strong>PLC IO Checker</strong><small>操作マニュアル</small></span></a>
+      <nav class="top-nav" aria-label="主要ページ">
+        <details class="nav-group">
+          <summary>開始</summary>
+          <div class="nav-menu">
+            <a href="../start/install.html">入手</a>
+            <a href="../start/getting-started.html">はじめる</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary class="active">PLC</summary>
+          <div class="nav-menu">
+            <a href="../plc/supported-plc.html">対応PLC</a>
+            <a href="../plc/connection.html">接続・案件</a>
+            <a href="../plc/plc-side-settings.html">PLC側設定参考</a>
+            <a href="../plc/melsec-settings.html">MELSEC</a>
+            <a class="active" href="../plc/keyence-settings.html">KEYENCE</a>
+            <a href="../plc/device-addressing.html">デバイス表記</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>操作</summary>
+          <div class="nav-menu">
+            <a href="../monitoring/monitoring.html">監視</a>
+            <a href="../monitoring/list-edit.html">List登録編集</a>
+            <a href="../monitoring/focus-panel.html">操作パネル</a>
+            <a href="../monitoring/writing.html">書込</a>
+            <a href="../monitoring/comments.html">コメント</a>
+            <a href="../monitoring/time-chart.html">Time Chart</a>
+            <a href="../monitoring/traps.html">Trap</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>転送</summary>
+          <div class="nav-menu">
+            <a href="../transfer/import-export.html">QR/JSON</a>
+            <a href="../transfer/project-json.html">project JSON</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>設定</summary>
+          <div class="nav-menu">
+            <a href="../settings/tools-menu.html">メニュー</a>
+            <a href="../settings/app-settings.html">アプリ設定</a>
+            <a href="../settings/license.html">ライセンス</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>公開情報</summary>
+          <div class="nav-menu">
+            <a href="../reference/support.html">サポート</a>
+            <a href="../reference/privacy-policy.html">プライバシー</a>
+            <a href="../reference/terms.html">利用条件</a>
+            <a href="../reference/purchase-info.html">購入・返金</a>
+            <a href="../reference/store-release-checklist.html">Store申請TODO</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>ProjectBuilder</summary>
+          <div class="nav-menu">
+            <a href="../projectbuilder/projectbuilder.html">ProjectBuilder</a>
+            <a href="../projectbuilder/projectbuilder-devices.html">入力</a>
+            <a href="../projectbuilder/projectbuilder-qr.html">QR生成</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>参考</summary>
+          <div class="nav-menu">
+            <a href="../reference/glossary.html">用語集</a>
+            <a href="../reference/faq.html">FAQ</a>
+            <a href="../reference/release-notes.html">リリースノート</a>
+            <a href="../reference/troubleshooting.html">困ったとき</a>
+          </div>
+        </details>
+      </nav>
+    </div>
+  </header>
+
+  <main class="doc-page">
+    <nav class="breadcrumb" aria-label="パンくず"><a href="../index.html">トップ</a><span>KEYENCE 設定</span></nav>
+    <section class="page-hero section">
+      <p class="eyebrow">KEYENCE</p>
+      <h1>KEYENCE 設定</h1>
+      <p class="lead">KEYENCE 実機または KEYENCE デモ案件で使う通信設定、デバイス表記、コメント読込です。</p>
+    </section>
+
+    <section class="section">
+      <h2>実行条件と入口</h2>
+      <ol class="steps compact">
+        <li><strong>入口</strong><span>上部タイトルをタップして <strong>接続先切替</strong> を開き、KEYENCE 実機または KEYENCE デモを選びます。</span></li>
+        <li><strong>設定</strong><span><strong>接続設定</strong> で IP、Port、機種、KEYENCE デバイス表記、通信、タイミングを確認します。</span></li>
+        <li><strong>結果</strong><span>接続後は上部ステータスに RUN/PROGRAM、CPU model、IP、案件名が表示されます。</span></li>
+      </ol>
+    </section>
+
+    <section class="section">
+      <h2>通信設定</h2>
+      <div class="info-table" role="table" aria-label="KEYENCE 通信設定">
+        <div role="row"><div role="cell">通信方式</div><div role="cell">KV Host Link TCP</div></div>
+        <div role="row"><div role="cell">既定ポート</div><div role="cell"><code>8501</code></div></div>
+        <div role="row"><div role="cell">機種</div><div role="cell"><code>KV-X500</code>、<code>KV-8000</code>、<code>KV-7000</code>、<code>KV-5000</code></div></div>
+        <div role="row"><div role="cell">デバイス表記</div><div role="cell"><code>Normal</code> または <code>XYM</code></div></div>
+        <div role="row"><div role="cell">使わない項目</div><div role="cell">network、station、module_io、multidrop、リモートパスワードは KEYENCE では使用しません。</div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Normal / XYM</h2>
+      <div class="content-grid">
+        <article>
+          <h3>Normal</h3>
+          <p><code>R</code>、<code>B</code>、<code>MR</code>、<code>LR</code>、<code>CR</code>、<code>DM</code>、<code>EM</code>、<code>FM</code>、<code>ZF</code>、<code>W</code>、<code>TM</code>、<code>CM</code> を扱います。</p>
+        </article>
+        <article>
+          <h3>XYM</h3>
+          <p><code>B</code>、<code>CR</code>、<code>ZF</code>、<code>W</code>、<code>TM</code>、<code>CM</code>、<code>X</code>、<code>Y</code>、<code>M</code>、<code>L</code>、<code>D</code>、<code>E</code>、<code>F</code> を扱います。</p>
+        </article>
+        <article>
+          <h3>表記</h3>
+          <p><code>B</code>、<code>W</code>、<code>X</code>、<code>Y</code> は 16 進表記です。その他は基本的に 10 進表記です。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>コメント読込</h2>
+      <p>KEYENCE 案件では、接続中にメニューの <strong>コメント読込</strong> が使用できます。表示中のみ読込、全コメント読込、範囲選択の導線があります。</p>
+      <p class="small-note">未接続時や対応しない接続では実行できません。結果はステータスとエラー履歴で確認します。</p>
+    </section>
+
+    <nav class="next-links" aria-label="前後ページ">
+      <a href="../plc/melsec-settings.html">前へ: MELSEC 設定</a>
+      <a href="../plc/device-addressing.html">次へ: デバイス表記</a>
+    </nav>
+  </main>
+
+  <footer class="site-footer"><p>PLC IO Checker 操作マニュアル / KEYENCE</p></footer>
+</body>
+</html>

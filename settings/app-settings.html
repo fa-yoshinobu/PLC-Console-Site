@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="PLC IO Checker のアプリ設定。多言語、ライト/ダーク、画面配置、ビット書込モード。">
+  <title>アプリ設定 | PLC IO Checker 操作マニュアル</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../index.html"><span class="brand-mark">PLC</span><span><strong>PLC IO Checker</strong><small>操作マニュアル</small></span></a>
+      <nav class="top-nav" aria-label="主要ページ">
+        <details class="nav-group">
+          <summary>開始</summary>
+          <div class="nav-menu">
+            <a href="../start/install.html">入手</a>
+            <a href="../start/getting-started.html">はじめる</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>PLC</summary>
+          <div class="nav-menu">
+            <a href="../plc/supported-plc.html">対応PLC</a>
+            <a href="../plc/connection.html">接続・案件</a>
+            <a href="../plc/plc-side-settings.html">PLC側設定参考</a>
+            <a href="../plc/melsec-settings.html">MELSEC</a>
+            <a href="../plc/keyence-settings.html">KEYENCE</a>
+            <a href="../plc/device-addressing.html">デバイス表記</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>操作</summary>
+          <div class="nav-menu">
+            <a href="../monitoring/monitoring.html">監視</a>
+            <a href="../monitoring/list-edit.html">List登録編集</a>
+            <a href="../monitoring/focus-panel.html">操作パネル</a>
+            <a href="../monitoring/writing.html">書込</a>
+            <a href="../monitoring/comments.html">コメント</a>
+            <a href="../monitoring/time-chart.html">Time Chart</a>
+            <a href="../monitoring/traps.html">Trap</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>転送</summary>
+          <div class="nav-menu">
+            <a href="../transfer/import-export.html">QR/JSON</a>
+            <a href="../transfer/project-json.html">project JSON</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary class="active">設定</summary>
+          <div class="nav-menu">
+            <a href="../settings/tools-menu.html">メニュー</a>
+            <a class="active" href="../settings/app-settings.html">アプリ設定</a>
+            <a href="../settings/license.html">ライセンス</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>公開情報</summary>
+          <div class="nav-menu">
+            <a href="../reference/support.html">サポート</a>
+            <a href="../reference/privacy-policy.html">プライバシー</a>
+            <a href="../reference/terms.html">利用条件</a>
+            <a href="../reference/purchase-info.html">購入・返金</a>
+            <a href="../reference/store-release-checklist.html">Store申請TODO</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>ProjectBuilder</summary>
+          <div class="nav-menu">
+            <a href="../projectbuilder/projectbuilder.html">ProjectBuilder</a>
+            <a href="../projectbuilder/projectbuilder-devices.html">入力</a>
+            <a href="../projectbuilder/projectbuilder-qr.html">QR生成</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>参考</summary>
+          <div class="nav-menu">
+            <a href="../reference/glossary.html">用語集</a>
+            <a href="../reference/faq.html">FAQ</a>
+            <a href="../reference/release-notes.html">リリースノート</a>
+            <a href="../reference/troubleshooting.html">困ったとき</a>
+          </div>
+        </details>
+      </nav>
+    </div>
+  </header>
+
+  <main class="doc-page">
+    <nav class="breadcrumb" aria-label="パンくず"><a href="../index.html">トップ</a><span>アプリ設定</span></nav>
+    <section class="page-hero section">
+      <p class="eyebrow">App Settings</p>
+      <h1>アプリ設定</h1>
+      <p class="lead">表示言語、ライト/ダーク、画面配置、ビット書込モードを設定します。Android/iOS とも同じ目的の設定です。</p>
+    </section>
+
+    <section class="section">
+      <h2>設定項目</h2>
+      <div class="info-table" role="table" aria-label="アプリ設定項目">
+        <div role="row"><div role="cell">言語</div><div role="cell"><code>システム</code>、<code>日本語</code>、<code>英語</code></div></div>
+        <div role="row"><div role="cell">テーマ</div><div role="cell"><code>端末に合わせる</code>、<code>ライト</code>、<code>ダーク</code></div></div>
+        <div role="row"><div role="cell">画面配置</div><div role="cell">操作パネルを全画面寄りにするか、下部パネルとして使うかを選びます。</div></div>
+        <div role="row"><div role="cell">ビット書込</div><div role="cell">ビット書込時の確認方法を選びます。</div></div>
+      </div>
+      <p class="notice">設定は保存後に反映されます。表示言語とテーマは、端末設定に従う選択肢と、アプリ内で固定する選択肢があります。</p>
+    </section>
+
+    <section class="section">
+      <h2>多言語切替</h2>
+      <div class="content-grid">
+        <article>
+          <h3>システム</h3>
+          <p>端末の言語設定に従います。日本語環境では日本語、それ以外ではアプリの対応言語に従って表示されます。</p>
+        </article>
+        <article>
+          <h3>日本語</h3>
+          <p>端末設定に関係なく、アプリの表示を日本語に固定します。</p>
+        </article>
+        <article>
+          <h3>英語</h3>
+          <p>端末設定に関係なく、アプリの表示を英語に固定します。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>ライト / ダーク切替</h2>
+      <div class="content-grid">
+        <article>
+          <h3>端末に合わせる</h3>
+          <p>OS のライト/ダーク設定に従います。</p>
+        </article>
+        <article>
+          <h3>ライト</h3>
+          <p>アプリをライトテーマで表示します。明るい背景で使いたい場合に選びます。</p>
+        </article>
+        <article>
+          <h3>ダーク</h3>
+          <p>アプリをダークテーマで表示します。暗い現場や夜間に画面輝度を抑えたい場合に選びます。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>画面配置とビット書込</h2>
+      <div class="content-grid">
+        <article>
+          <h3>画面配置</h3>
+          <p>操作パネルを大きく使う設定と、監視画面を残しながら下部パネルで操作する設定を切り替えます。</p>
+        </article>
+        <article>
+          <h3>ビット書込</h3>
+          <p>ビットデバイスの ON/OFF 書込で使う確認方式を選びます。誤操作防止のため、現場の運用に合わせて設定してください。</p>
+        </article>
+      </div>
+    </section>
+
+    <nav class="next-links" aria-label="前後ページ">
+      <a href="../settings/tools-menu.html">前へ: メニュー・設定</a>
+      <a href="../settings/license.html">次へ: ライセンス</a>
+    </nav>
+  </main>
+
+  <footer class="site-footer"><p>PLC IO Checker 操作マニュアル / アプリ設定</p></footer>
+</body>
+</html>

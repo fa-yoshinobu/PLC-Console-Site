@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="PLC IO Checker の接続先切替、案件、通信設定の操作。">
+  <title>接続・案件 | PLC IO Checker 操作マニュアル</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../index.html"><span class="brand-mark">PLC</span><span><strong>PLC IO Checker</strong><small>操作マニュアル</small></span></a>
+      <nav class="top-nav" aria-label="主要ページ">
+        <details class="nav-group">
+          <summary>開始</summary>
+          <div class="nav-menu">
+            <a href="../start/install.html">入手</a>
+            <a href="../start/getting-started.html">はじめる</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary class="active">PLC</summary>
+          <div class="nav-menu">
+            <a href="../plc/supported-plc.html">対応PLC</a>
+            <a class="active" href="../plc/connection.html">接続・案件</a>
+            <a href="../plc/plc-side-settings.html">PLC側設定参考</a>
+            <a href="../plc/melsec-settings.html">MELSEC</a>
+            <a href="../plc/keyence-settings.html">KEYENCE</a>
+            <a href="../plc/device-addressing.html">デバイス表記</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>操作</summary>
+          <div class="nav-menu">
+            <a href="../monitoring/monitoring.html">監視</a>
+            <a href="../monitoring/list-edit.html">List登録編集</a>
+            <a href="../monitoring/focus-panel.html">操作パネル</a>
+            <a href="../monitoring/writing.html">書込</a>
+            <a href="../monitoring/comments.html">コメント</a>
+            <a href="../monitoring/time-chart.html">Time Chart</a>
+            <a href="../monitoring/traps.html">Trap</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>転送</summary>
+          <div class="nav-menu">
+            <a href="../transfer/import-export.html">QR/JSON</a>
+            <a href="../transfer/project-json.html">project JSON</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>設定</summary>
+          <div class="nav-menu">
+            <a href="../settings/tools-menu.html">メニュー</a>
+            <a href="../settings/app-settings.html">アプリ設定</a>
+            <a href="../settings/license.html">ライセンス</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>公開情報</summary>
+          <div class="nav-menu">
+            <a href="../reference/support.html">サポート</a>
+            <a href="../reference/privacy-policy.html">プライバシー</a>
+            <a href="../reference/terms.html">利用条件</a>
+            <a href="../reference/purchase-info.html">購入・返金</a>
+            <a href="../reference/store-release-checklist.html">Store申請TODO</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>ProjectBuilder</summary>
+          <div class="nav-menu">
+            <a href="../projectbuilder/projectbuilder.html">ProjectBuilder</a>
+            <a href="../projectbuilder/projectbuilder-devices.html">入力</a>
+            <a href="../projectbuilder/projectbuilder-qr.html">QR生成</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>参考</summary>
+          <div class="nav-menu">
+            <a href="../reference/glossary.html">用語集</a>
+            <a href="../reference/faq.html">FAQ</a>
+            <a href="../reference/release-notes.html">リリースノート</a>
+            <a href="../reference/troubleshooting.html">困ったとき</a>
+          </div>
+        </details>
+      </nav>
+    </div>
+  </header>
+
+  <main class="doc-page">
+    <nav class="breadcrumb" aria-label="パンくず"><a href="../index.html">トップ</a><span>接続・案件</span></nav>
+    <section class="page-hero section">
+      <p class="eyebrow">Connection</p>
+      <h1>接続・案件</h1>
+      <p class="lead">接続先切替、案件作成、通信設定、実機/デモの選択を説明します。</p>
+    </section>
+
+    <section class="section">
+      <div class="two-column">
+        <div>
+          <h2>接続先切替を開く</h2>
+          <p>上部タイトル部分をタップすると接続先切替を開けます。通信設定はハンバーガーメニューではなく、このタイトル導線から開きます。</p>
+          <ul>
+            <li>現在の接続内容を確認できます。</li>
+            <li>MELSEC 実機、KEYENCE 実機、MELSEC デモ、KEYENCE デモを選べます。</li>
+            <li>最近使った案件から再選択できます。</li>
+          </ul>
+        </div>
+        <figure class="inline-shot">
+          <img src="../assets/images/plc/connection-switch.png" alt="接続先切替画面">
+          <figcaption>接続先切替</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>通信設定で確認する項目</h2>
+      <div class="info-table" role="table" aria-label="通信設定">
+        <div role="row"><div role="cell">Vendor</div><div role="cell">MELSEC または KEYENCE を選択します。</div></div>
+        <div role="row"><div role="cell">CPU / Family</div><div role="cell">対象 PLC の CPU ファミリを選択します。</div></div>
+        <div role="row"><div role="cell">IP / Port</div><div role="cell">PLC 側の Ethernet 設定に合わせます。</div></div>
+        <div role="row"><div role="cell">Transport</div><div role="cell">TCP または UDP を選択します。</div></div>
+        <div role="row"><div role="cell">Route</div><div role="cell">必要な場合だけ network、station、module_io、multidrop を指定します。</div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>MELSEC の設定</h2>
+      <div class="content-grid">
+        <article>
+          <h3>通信方式</h3>
+          <p>SLMP で接続します。既定ポートは <code>1025</code> です。PLC 側の設定に合わせて TCP または UDP を選びます。</p>
+        </article>
+        <article>
+          <h3>CPU モデル</h3>
+          <p><code>iQ-R</code>、<code>iQ-F</code>、<code>iQ-L</code>、<code>MX-R</code>、<code>MX-F</code>、<code>QnUDV</code>、<code>QnU</code>、<code>QCPU</code>、<code>LCPU</code> から選びます。</p>
+        </article>
+        <article>
+          <h3>ルート / パスワード</h3>
+          <p><code>network</code>、<code>station</code>、<code>module_io</code>、<code>multidrop</code> とリモートパスワードは MELSEC 用です。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>KEYENCE の設定</h2>
+      <div class="content-grid">
+        <article>
+          <h3>通信方式</h3>
+          <p>KV の Host Link TCP で接続します。既定ポートは <code>8501</code> です。</p>
+        </article>
+        <article>
+          <h3>対応モデル</h3>
+          <p><code>KV-X500</code>、<code>KV-8000</code>、<code>KV-7000</code>、<code>KV-5000</code> から選びます。</p>
+        </article>
+        <article>
+          <h3>KEYENCE 表示</h3>
+          <p><code>Normal</code> または <code>XYM</code> を選びます。XYM は X/Y/M/L/D/E/F 系の表記を使う場合のモードです。</p>
+        </article>
+      </div>
+      <p>KEYENCE では MELSEC 用の network/station/module_io/multidrop とリモートパスワードは使用しません。</p>
+    </section>
+
+    <section class="section">
+      <h2>接続結果の見方</h2>
+      <ul>
+        <li>接続成功時は上部ステータスに RUN/STOP、CPU、IP、案件名が表示されます。</li>
+        <li>未処理の CPU 状態は <code>--</code> と表示されます。</li>
+        <li>MELSEC で接続できない場合は、IP、ポート、TCP/UDP、ルート指定、リモートパスワード、PLC 側の通信許可を確認してください。</li>
+        <li>KEYENCE で接続できない場合は、IP、ポート、Host Link TCP、KEYENCE 表示モード、端末のネットワーク接続を確認してください。</li>
+      </ul>
+    </section>
+
+    <nav class="next-links" aria-label="前後ページ">
+      <a href="../plc/supported-plc.html">前へ: 対応 PLC</a>
+      <a href="../plc/plc-side-settings.html">次へ: PLC側設定参考</a>
+    </nav>
+  </main>
+
+  <footer class="site-footer"><p>PLC IO Checker 操作マニュアル</p></footer>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="PLC IO Checker と ProjectBuilder の入手先。">
+  <title>入手・インストール | PLC IO Checker 操作マニュアル</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../index.html"><span class="brand-mark">PLC</span><span><strong>PLC IO Checker</strong><small>操作マニュアル</small></span></a>
+      <nav class="top-nav" aria-label="主要ページ">
+        <details class="nav-group">
+          <summary class="active">開始</summary>
+          <div class="nav-menu">
+            <a class="active" href="../start/install.html">入手</a>
+            <a href="../start/getting-started.html">はじめる</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>PLC</summary>
+          <div class="nav-menu">
+            <a href="../plc/supported-plc.html">対応PLC</a>
+            <a href="../plc/connection.html">接続・案件</a>
+            <a href="../plc/plc-side-settings.html">PLC側設定参考</a>
+            <a href="../plc/melsec-settings.html">MELSEC</a>
+            <a href="../plc/keyence-settings.html">KEYENCE</a>
+            <a href="../plc/device-addressing.html">デバイス表記</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>操作</summary>
+          <div class="nav-menu">
+            <a href="../monitoring/monitoring.html">監視</a>
+            <a href="../monitoring/list-edit.html">List登録編集</a>
+            <a href="../monitoring/focus-panel.html">操作パネル</a>
+            <a href="../monitoring/writing.html">書込</a>
+            <a href="../monitoring/comments.html">コメント</a>
+            <a href="../monitoring/time-chart.html">Time Chart</a>
+            <a href="../monitoring/traps.html">Trap</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>転送</summary>
+          <div class="nav-menu">
+            <a href="../transfer/import-export.html">QR/JSON</a>
+            <a href="../transfer/project-json.html">project JSON</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>設定</summary>
+          <div class="nav-menu">
+            <a href="../settings/tools-menu.html">メニュー</a>
+            <a href="../settings/app-settings.html">アプリ設定</a>
+            <a href="../settings/license.html">ライセンス</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>公開情報</summary>
+          <div class="nav-menu">
+            <a href="../reference/support.html">サポート</a>
+            <a href="../reference/privacy-policy.html">プライバシー</a>
+            <a href="../reference/terms.html">利用条件</a>
+            <a href="../reference/purchase-info.html">購入・返金</a>
+            <a href="../reference/store-release-checklist.html">Store申請TODO</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>ProjectBuilder</summary>
+          <div class="nav-menu">
+            <a href="../projectbuilder/projectbuilder.html">ProjectBuilder</a>
+            <a href="../projectbuilder/projectbuilder-devices.html">入力</a>
+            <a href="../projectbuilder/projectbuilder-qr.html">QR生成</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>参考</summary>
+          <div class="nav-menu">
+            <a href="../reference/glossary.html">用語集</a>
+            <a href="../reference/faq.html">FAQ</a>
+            <a href="../reference/release-notes.html">リリースノート</a>
+            <a href="../reference/troubleshooting.html">困ったとき</a>
+          </div>
+        </details>
+      </nav>
+    </div>
+  </header>
+
+  <main class="doc-page">
+    <nav class="breadcrumb" aria-label="パンくず"><a href="../index.html">トップ</a><span>入手・インストール</span></nav>
+    <section class="page-hero section">
+      <p class="eyebrow">Install</p>
+      <h1>入手・インストール</h1>
+      <p class="lead">Android/iOS アプリと PC 用 ProjectBuilder の入手先をまとめます。ストア URL は正式公開前のため dummy link です。</p>
+    </section>
+
+    <section class="section">
+      <div class="notice">
+        <h2>対象</h2>
+        <p>Android / iOS の PLC IO Checker と、Windows WPF 版の PlcIoChecker_ProjectBuilder が対象です。</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>モバイルアプリ</h2>
+      <div class="content-grid">
+        <article>
+          <h3>Android</h3>
+          <p>Google Play 公開 URL が確定するまでは dummy link を使用します。</p>
+          <p><a href="#" aria-label="Google Play dummy link">Google Play dummy link</a></p>
+        </article>
+        <article>
+          <h3>iOS</h3>
+          <p>App Store 公開 URL が確定するまでは dummy link を使用します。</p>
+          <p><a href="#" aria-label="App Store dummy link">App Store dummy link</a></p>
+        </article>
+        <article>
+          <h3>注意</h3>
+          <p>dummy link は公開済み・購入可能という意味ではありません。正式 URL に差し替えるまでは案内用の仮リンクです。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="two-column">
+        <div>
+          <h2>ProjectBuilder</h2>
+          <p>PC で案件を作成し、QR または JSON でモバイルアプリへ渡す Windows WPF アプリです。exe は GitHub Releases からダウンロードします。</p>
+          <div class="info-table" role="table" aria-label="ProjectBuilder">
+            <div role="row"><div role="cell">対象</div><div role="cell">Windows / .NET 8 / WPF</div></div>
+            <div role="row"><div role="cell">起動ファイル</div><div role="cell"><code>PlcIoCheckerProjectBuilder.exe</code></div></div>
+            <div role="row"><div role="cell">主な用途</div><div role="cell">PLC 設定、Devices、Time Chart、Traps、QR/JSON 出力</div></div>
+            <div role="row"><div role="cell">ダウンロード</div><div role="cell"><a href="https://github.com/fa-yoshinobu/PlcIoChecker_ProjectBuilder/releases">PlcIoChecker_ProjectBuilder Releases</a></div></div>
+            <div role="row"><div role="cell">ソース</div><div role="cell"><a href="https://github.com/fa-yoshinobu/PlcIoChecker_ProjectBuilder">PlcIoChecker_ProjectBuilder</a></div></div>
+          </div>
+        </div>
+        <figure class="inline-shot projectbuilder-logo">
+          <img src="../assets/images/projectbuilder/logo.png" alt="ProjectBuilder ロゴ">
+          <figcaption>ProjectBuilder</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <nav class="next-links" aria-label="前後ページ">
+      <a href="../index.html">前へ: トップ</a>
+      <a href="../start/getting-started.html">次へ: はじめる</a>
+    </nav>
+  </main>
+
+  <footer class="site-footer"><p>PLC IO Checker 操作マニュアル / 入手・インストール</p></footer>
+</body>
+</html>

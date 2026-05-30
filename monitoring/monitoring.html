@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="PLC IO Checker のブロック監視、リスト監視、デバイス範囲の操作。">
+  <title>監視 | PLC IO Checker 操作マニュアル</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../index.html"><span class="brand-mark">PLC</span><span><strong>PLC IO Checker</strong><small>操作マニュアル</small></span></a>
+      <nav class="top-nav" aria-label="主要ページ">
+        <details class="nav-group">
+          <summary>開始</summary>
+          <div class="nav-menu">
+            <a href="../start/install.html">入手</a>
+            <a href="../start/getting-started.html">はじめる</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>PLC</summary>
+          <div class="nav-menu">
+            <a href="../plc/supported-plc.html">対応PLC</a>
+            <a href="../plc/connection.html">接続・案件</a>
+            <a href="../plc/plc-side-settings.html">PLC側設定参考</a>
+            <a href="../plc/melsec-settings.html">MELSEC</a>
+            <a href="../plc/keyence-settings.html">KEYENCE</a>
+            <a href="../plc/device-addressing.html">デバイス表記</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary class="active">操作</summary>
+          <div class="nav-menu">
+            <a class="active" href="../monitoring/monitoring.html">監視</a>
+            <a href="../monitoring/list-edit.html">List登録編集</a>
+            <a href="../monitoring/focus-panel.html">操作パネル</a>
+            <a href="../monitoring/writing.html">書込</a>
+            <a href="../monitoring/comments.html">コメント</a>
+            <a href="../monitoring/time-chart.html">Time Chart</a>
+            <a href="../monitoring/traps.html">Trap</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>転送</summary>
+          <div class="nav-menu">
+            <a href="../transfer/import-export.html">QR/JSON</a>
+            <a href="../transfer/project-json.html">project JSON</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>設定</summary>
+          <div class="nav-menu">
+            <a href="../settings/tools-menu.html">メニュー</a>
+            <a href="../settings/app-settings.html">アプリ設定</a>
+            <a href="../settings/license.html">ライセンス</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>公開情報</summary>
+          <div class="nav-menu">
+            <a href="../reference/support.html">サポート</a>
+            <a href="../reference/privacy-policy.html">プライバシー</a>
+            <a href="../reference/terms.html">利用条件</a>
+            <a href="../reference/purchase-info.html">購入・返金</a>
+            <a href="../reference/store-release-checklist.html">Store申請TODO</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>ProjectBuilder</summary>
+          <div class="nav-menu">
+            <a href="../projectbuilder/projectbuilder.html">ProjectBuilder</a>
+            <a href="../projectbuilder/projectbuilder-devices.html">入力</a>
+            <a href="../projectbuilder/projectbuilder-qr.html">QR生成</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>参考</summary>
+          <div class="nav-menu">
+            <a href="../reference/glossary.html">用語集</a>
+            <a href="../reference/faq.html">FAQ</a>
+            <a href="../reference/release-notes.html">リリースノート</a>
+            <a href="../reference/troubleshooting.html">困ったとき</a>
+          </div>
+        </details>
+      </nav>
+    </div>
+  </header>
+
+  <main class="doc-page">
+    <nav class="breadcrumb" aria-label="パンくず"><a href="../index.html">トップ</a><span>監視</span></nav>
+    <section class="page-hero section">
+      <p class="eyebrow">Monitor</p>
+      <h1>監視</h1>
+      <p class="lead">ブロック監視、リスト監視、デバイス範囲、フォーカスパネルの使い方です。</p>
+    </section>
+
+    <section class="section">
+      <div class="image-grid">
+        <figure><img src="../assets/images/monitoring/block-monitor.png" alt="ブロック監視画面"><figcaption>ブロック監視</figcaption></figure>
+        <figure><img src="../assets/images/monitoring/time-chart.png" alt="タイムチャート画面"><figcaption>タイムチャート</figcaption></figure>
+        <figure><img src="../assets/images/monitoring/trap.png" alt="トラップ画面"><figcaption>トラップ</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>ブロック監視</h2>
+      <p>CPU のデバイス範囲に沿って連続アドレスをページ単位で表示します。範囲行を開くと、デバイス種別、開始番号、ページ、表示密度を変更できます。</p>
+      <ul>
+        <li>種類を変更すると先頭ページに戻ります。</li>
+        <li>BIT デバイスは ON/OFF 表示になります。</li>
+        <li>数値デバイスはデータ型に応じて値を表示します。</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>MELSEC の監視</h2>
+      <ul>
+        <li>主な表示順は <code>X</code>、<code>Y</code>、<code>M</code>、<code>D</code>、<code>L</code>、<code>F</code>、<code>B</code>、<code>SB</code>、<code>SM</code>、<code>STC</code>、<code>TC</code>、<code>CC</code>、<code>W</code>、<code>SW</code>、<code>R</code>、<code>ZR</code>、<code>SD</code> です。</li>
+        <li><code>B</code>、<code>W</code>、<code>SB</code>、<code>SW</code> は 16 進表記です。</li>
+        <li><code>iQ-F</code> の <code>X</code> / <code>Y</code> は 8 進表記です。それ以外の MELSEC <code>X</code> / <code>Y</code> は 16 進表記です。</li>
+        <li>使用可能な範囲は CPU ファミリごとのデバイス範囲カタログで確認します。</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>KEYENCE の監視</h2>
+      <ul>
+        <li><code>Normal</code> 表示では <code>R</code>、<code>B</code>、<code>MR</code>、<code>LR</code>、<code>CR</code>、<code>DM</code>、<code>EM</code>、<code>FM</code>、<code>ZF</code>、<code>W</code>、<code>TM</code>、<code>CM</code> を扱います。</li>
+        <li><code>XYM</code> 表示では <code>B</code>、<code>CR</code>、<code>ZF</code>、<code>W</code>、<code>TM</code>、<code>CM</code>、<code>X</code>、<code>Y</code>、<code>M</code>、<code>L</code>、<code>D</code>、<code>E</code>、<code>F</code> を扱います。</li>
+        <li><code>B</code>、<code>W</code>、<code>X</code>、<code>Y</code> は 16 進表記です。その他は基本的に 10 進表記です。</li>
+        <li><code>R0</code> など実 I/O に割り当たるリレーは PLC スキャンで上書きされる場合があります。書込確認では非 I/O 領域を使ってください。</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>リスト監視</h2>
+      <p>登録したアドレスだけを表示します。表示対象の追加・編集はリスト画面の <strong>List 登録編集</strong> から行います。</p>
+    </section>
+
+    <section class="section">
+      <h2>デバイス範囲</h2>
+      <p>メニューの <strong>デバイス範囲</strong> で、選択中の CPU ファミリで使用できるデバイス範囲を確認できます。</p>
+      <div class="info-table" role="table" aria-label="表記">
+        <div role="row"><div role="cell">network / station</div><div role="cell">10 進表記です。</div></div>
+        <div role="row"><div role="cell">module_io / multidrop</div><div role="cell">16 進表記です。</div></div>
+      </div>
+      <p>network/station/module_io/multidrop は MELSEC のルート指定で使用します。KEYENCE では使用しません。</p>
+    </section>
+
+    <nav class="next-links" aria-label="前後ページ">
+      <a href="../plc/device-addressing.html">前へ: デバイス表記</a>
+      <a href="../monitoring/list-edit.html">次へ: List 登録編集</a>
+    </nav>
+  </main>
+
+  <footer class="site-footer"><p>PLC IO Checker 操作マニュアル</p></footer>
+</body>
+</html>

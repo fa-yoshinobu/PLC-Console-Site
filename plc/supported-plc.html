@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="PLC IO Checker の対応 PLC、CPU model、通信方式、既定ポート。">
+  <title>対応 PLC | PLC IO Checker 操作マニュアル</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../index.html"><span class="brand-mark">PLC</span><span><strong>PLC IO Checker</strong><small>操作マニュアル</small></span></a>
+      <nav class="top-nav" aria-label="主要ページ">
+        <details class="nav-group">
+          <summary>開始</summary>
+          <div class="nav-menu">
+            <a href="../start/install.html">入手</a>
+            <a href="../start/getting-started.html">はじめる</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary class="active">PLC</summary>
+          <div class="nav-menu">
+            <a class="active" href="../plc/supported-plc.html">対応PLC</a>
+            <a href="../plc/connection.html">接続・案件</a>
+            <a href="../plc/plc-side-settings.html">PLC側設定参考</a>
+            <a href="../plc/melsec-settings.html">MELSEC</a>
+            <a href="../plc/keyence-settings.html">KEYENCE</a>
+            <a href="../plc/device-addressing.html">デバイス表記</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>操作</summary>
+          <div class="nav-menu">
+            <a href="../monitoring/monitoring.html">監視</a>
+            <a href="../monitoring/list-edit.html">List登録編集</a>
+            <a href="../monitoring/focus-panel.html">操作パネル</a>
+            <a href="../monitoring/writing.html">書込</a>
+            <a href="../monitoring/comments.html">コメント</a>
+            <a href="../monitoring/time-chart.html">Time Chart</a>
+            <a href="../monitoring/traps.html">Trap</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>転送</summary>
+          <div class="nav-menu">
+            <a href="../transfer/import-export.html">QR/JSON</a>
+            <a href="../transfer/project-json.html">project JSON</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>設定</summary>
+          <div class="nav-menu">
+            <a href="../settings/tools-menu.html">メニュー</a>
+            <a href="../settings/app-settings.html">アプリ設定</a>
+            <a href="../settings/license.html">ライセンス</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>公開情報</summary>
+          <div class="nav-menu">
+            <a href="../reference/support.html">サポート</a>
+            <a href="../reference/privacy-policy.html">プライバシー</a>
+            <a href="../reference/terms.html">利用条件</a>
+            <a href="../reference/purchase-info.html">購入・返金</a>
+            <a href="../reference/store-release-checklist.html">Store申請TODO</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>ProjectBuilder</summary>
+          <div class="nav-menu">
+            <a href="../projectbuilder/projectbuilder.html">ProjectBuilder</a>
+            <a href="../projectbuilder/projectbuilder-devices.html">入力</a>
+            <a href="../projectbuilder/projectbuilder-qr.html">QR生成</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>参考</summary>
+          <div class="nav-menu">
+            <a href="../reference/glossary.html">用語集</a>
+            <a href="../reference/faq.html">FAQ</a>
+            <a href="../reference/release-notes.html">リリースノート</a>
+            <a href="../reference/troubleshooting.html">困ったとき</a>
+          </div>
+        </details>
+      </nav>
+    </div>
+  </header>
+
+  <main class="doc-page">
+    <nav class="breadcrumb" aria-label="パンくず"><a href="../index.html">トップ</a><span>対応 PLC</span></nav>
+    <section class="page-hero section">
+      <p class="eyebrow">Supported PLC</p>
+      <h1>対応 PLC</h1>
+      <p class="lead">アプリと ProjectBuilder で選択できる PLC 種別、CPU model、既定ポート、通信方式です。</p>
+    </section>
+
+    <section class="section">
+      <h2>MELSEC</h2>
+      <div class="info-table" role="table" aria-label="MELSEC 対応">
+        <div role="row"><div role="cell">CPU model</div><div role="cell"><code>iQ-R</code>、<code>iQ-F</code>、<code>iQ-L</code>、<code>MX-R</code>、<code>MX-F</code>、<code>QnUDV</code>、<code>QnU</code>、<code>QCPU</code>、<code>LCPU</code></div></div>
+        <div role="row"><div role="cell">通信方式</div><div role="cell">SLMP</div></div>
+        <div role="row"><div role="cell">既定ポート</div><div role="cell"><code>1025</code></div></div>
+        <div role="row"><div role="cell">通信</div><div role="cell"><code>TCP</code> または <code>UDP</code> を PLC 側設定に合わせます。</div></div>
+        <div role="row"><div role="cell">MELSEC専用項目</div><div role="cell">network、station、module_io、multidrop、リモートパスワード</div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>KEYENCE</h2>
+      <div class="info-table" role="table" aria-label="KEYENCE 対応">
+        <div role="row"><div role="cell">CPU model</div><div role="cell"><code>KV-X500</code>、<code>KV-8000</code>、<code>KV-7000</code>、<code>KV-5000</code></div></div>
+        <div role="row"><div role="cell">通信方式</div><div role="cell">KV Host Link TCP</div></div>
+        <div role="row"><div role="cell">既定ポート</div><div role="cell"><code>8501</code></div></div>
+        <div role="row"><div role="cell">デバイス表記</div><div role="cell"><code>Normal</code> または <code>XYM</code></div></div>
+        <div role="row"><div role="cell">使用しない項目</div><div role="cell">MELSEC の route 指定とリモートパスワードは KEYENCE では使いません。</div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="notice danger">
+        <h2>実機接続の注意</h2>
+        <p>実機通信は PLC 側の Ethernet 設定、ポート、通信許可、ネットワーク経路が合っている必要があります。接続前に対象 PLC と IP アドレスを確認してください。</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>PLC側設定参考</h2>
+      <p>PLC 側で確認する設定は、機種別の参考ページに分けています。現時点では dummy / TODO の枠だけを用意しています。</p>
+      <p><a href="../plc/plc-side-settings.html">PLC側設定参考を見る</a></p>
+    </section>
+
+    <nav class="next-links" aria-label="前後ページ">
+      <a href="../start/getting-started.html">前へ: はじめる</a>
+      <a href="../plc/connection.html">次へ: 接続・案件</a>
+    </nav>
+  </main>
+
+  <footer class="site-footer"><p>PLC IO Checker 操作マニュアル / 対応 PLC</p></footer>
+</body>
+</html>
