@@ -788,6 +788,7 @@ figcaption {
   width: auto;
   max-width: 100%;
   height: auto;
+  margin: 0 auto;
   background: #f8faf8;
 }
 
