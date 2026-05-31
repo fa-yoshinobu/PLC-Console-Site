@@ -785,7 +785,8 @@ figcaption {
 }
 
 .plc-screenshot-grid img {
-  width: 100%;
+  width: auto;
+  max-width: 100%;
   height: auto;
   background: #f8faf8;
 }
