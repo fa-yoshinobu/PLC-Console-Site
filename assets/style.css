@@ -769,6 +769,27 @@ figcaption {
   object-position: top center;
 }
 
+.plc-screenshot-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.plc-screenshot-grid figure {
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+  overflow: hidden;
+}
+
+.plc-screenshot-grid img {
+  width: 100%;
+  height: auto;
+  background: #f8faf8;
+}
+
 .projectbuilder-shot {
   margin-top: 18px;
 }
@@ -1088,6 +1109,7 @@ figcaption {
   .feature-grid,
   .content-grid,
   .image-grid,
+  .plc-screenshot-grid,
   .tab-list,
   .menu-order {
     grid-template-columns: 1fr;
