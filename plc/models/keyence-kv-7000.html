@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="KEYENCE KV-7000 の 接続設定例 TODO。">
+  <meta name="description" content="KEYENCE KV-7000 の Host-link 接続設定例。">
   <title>KEYENCE KV-7000 接続設定例 | PLC IO Checker 操作マニュアル</title>
   <link rel="stylesheet" href="../../assets/style.css">
 </head>
@@ -96,13 +96,14 @@
     <section class="page-hero section">
       <p class="eyebrow">KEYENCE / KV-7000</p>
       <h1>KEYENCE KV-7000 接続設定例</h1>
-      <p class="lead">KEYENCE KV-7000 を PLC IO Checker から接続する場合の PLC 側設定メモ枠です。現時点の詳細内容は dummy / TODO です。</p>
+      <p class="lead">KEYENCE KV-7000 を PLC IO Checker から Host-link（上位リンク）で接続する場合の PLC 側設定例です。</p>
     </section>
 
     <section class="section">
       <div class="notice">
-        <h2>TODO</h2>
-        <p>このページは機種別の 接続設定例を後から追記するための placeholder です。メーカー資料、実機画面、現場設定例を確認してから詳細化します。</p>
+        <h2>設定例の前提</h2>
+        <p>IPアドレス、サブネットマスク、デフォルトゲートウェイは現場ネットワークに合わせて設定してください。以下は PLC IO Checker から Host-link（上位リンク）で接続する場合の設定例です。</p>
+        <p>説明の都合上、IP: <code>192.168.250.100</code>、Port: <code>8501</code>（デフォルト値）に統一しております。この設定に必ずしもする必要はありません。</p>
       </div>
     </section>
 
@@ -114,24 +115,25 @@
     </section>
 
     <section class="section">
-      <h2>アプリ側で選ぶ項目</h2>
-      <div class="info-table" role="table" aria-label="アプリ側選択項目">
-        <div role="row"><div role="cell">PLC 種別</div><div role="cell"><code>KEYENCE</code></div></div>
-        <div role="row"><div role="cell">CPU機種</div><div role="cell"><code>KV-7000</code></div></div>
-        <div role="row"><div role="cell">通信方式</div><div role="cell">Host-link</div></div>
-        <div role="row"><div role="cell">既定ポート</div><div role="cell"><code>8501</code></div></div>
-        <div role="row"><div role="cell">KEYENCE 表示</div><div role="cell"><code>Normal</code> または <code>XYM</code>。詳細 TODO。</div></div>
+      <h2>ユニット設定</h2>
+      <div class="info-table" role="table" aria-label="ユニット設定">
+        <div role="row"><div role="cell">IPアドレス</div><div role="cell"><code>192.168.250.100</code>（例）</div></div>
+        <div role="row"><div role="cell">サブネットマスク</div><div role="cell">要設定</div></div>
+        <div role="row"><div role="cell">上位リンク通信</div><div role="cell">有効</div></div>
+        <div role="row"><div role="cell">ポート番号（上位リンク通信）</div><div role="cell"><code>8501</code>（デフォルト）</div></div>
       </div>
     </section>
 
     <section class="section">
-      <h2>PLC 側設定メモ</h2>
-      <div class="info-table" role="table" aria-label="PLC 側設定メモ">
-        <div role="row"><div role="cell">PLC 側画面名</div><div role="cell">TODO</div></div>
-        <div role="row"><div role="cell">Ethernet / 通信設定</div><div role="cell">TODO</div></div>
-        <div role="row"><div role="cell">Port / Protocol</div><div role="cell">TODO</div></div>
-        <div role="row"><div role="cell">書込許可 / 保護設定</div><div role="cell">TODO</div></div>
-        <div role="row"><div role="cell">メーカー資料リンク</div><div role="cell">TODO</div></div>
+      <h2>アプリ側で選ぶ項目</h2>
+      <h3>通信設定</h3>
+      <div class="info-table" role="table" aria-label="アプリ側通信設定">
+        <div role="row"><div role="cell">PLC 種別</div><div role="cell">KEYENCE実機</div></div>
+        <div role="row"><div role="cell">PLC IP</div><div role="cell"><code>192.168.250.100</code>（例）</div></div>
+        <div role="row"><div role="cell">ポート</div><div role="cell"><code>8501</code></div></div>
+        <div role="row"><div role="cell">機種</div><div role="cell"><code>KV-7000</code></div></div>
+        <div role="row"><div role="cell">通信</div><div role="cell">TCP / UDP</div></div>
+        <div role="row"><div role="cell">KEYENCEデバイス表記</div><div role="cell">Normal / XYM</div></div>
       </div>
     </section>
 

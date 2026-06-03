@@ -96,7 +96,7 @@
     <section class="page-hero section">
       <p class="eyebrow">MELSEC / QnUDV</p>
       <h1>MELSEC QnUDV 接続設定例</h1>
-      <p class="lead">MELSEC QnUDV を PLC IO Checker から SLMP で接続する場合の PLC 側設定例です。ユニットパラメータと相手機器接続設定を確認します。</p>
+      <p class="lead">MELSEC QnUDV を PLC IO Checker から SLMP で接続する場合の PLC 側設定例です。内蔵Ethernetポート設定と内蔵Ethernetポート オープン設定を確認します。</p>
     </section>
 
     <section class="section">
@@ -110,39 +110,37 @@
     <section class="section">
       <h2>PLC 側設定画面</h2>
       <div class="plc-screenshot-grid">
-        <figure><img src="../../assets/images/plc/models/melsec-qnudv/screenshot-01.png" alt="MELSEC QnUDV PLC 側設定画面 1" loading="lazy"><figcaption>PLC 側設定画面 1</figcaption></figure>
-        <figure><img src="../../assets/images/plc/models/melsec-qnudv/screenshot-02.png" alt="MELSEC QnUDV PLC 側設定画面 2" loading="lazy"><figcaption>PLC 側設定画面 2</figcaption></figure>
+        <figure><img src="../../assets/images/plc/models/melsec-qnudv/screenshot-01.png" alt="MELSEC QnUDV PLC 側設定画面 1(内蔵Ethernetポート設定)" loading="lazy"><figcaption>PLC 側設定画面 1(内蔵Ethernetポート設定)</figcaption></figure>
+        <figure><img src="../../assets/images/plc/models/melsec-qnudv/screenshot-02.png" alt="MELSEC QnUDV PLC 側設定画面 2(内蔵Ethernetポート オープン設定)" loading="lazy"><figcaption>PLC 側設定画面 2(内蔵Ethernetポート オープン設定)</figcaption></figure>
       </div>
     </section>
     <section class="section">
-      <h2>ユニットパラメータ</h2>
-      <div class="info-table" role="table" aria-label="ユニットパラメータ">
+      <h2>内蔵Ethernetポート設定</h2>
+      <div class="info-table" role="table" aria-label="内蔵Ethernetポート設定">
         <div role="row"><div role="cell">IPアドレス</div><div role="cell"><code>192.168.250.100</code>（例）</div></div>
         <div role="row"><div role="cell">サブネットマスク</div><div role="cell">要設定</div></div>
         <div role="row"><div role="cell">デフォルトゲートウェイ</div><div role="cell">要設定</div></div>
-        <div role="row"><div role="cell">RUN中の書き込み許可/禁止設定</div><div role="cell">一括で許可する（SLMP）</div></div>
-        <div role="row"><div role="cell">交信データコード</div><div role="cell">バイナリ</div></div>
-        <div role="row"><div role="cell">オープン方法の設定</div><div role="cell">プログラムでOPENしない</div></div>
+        <div role="row"><div role="cell">交信データコード設定</div><div role="cell">バイナリコード交信</div></div>
+        <div role="row"><div role="cell">RUN中書込を許可する（FTPとMCプロトコル）</div><div role="cell">有効</div></div>
       </div>
     </section>
 
     <section class="section">
-      <h2>相手機器接続設定</h2>
+      <h2>内蔵Ethernetポート オープン設定</h2>
       <h3>SLMP接続機器（TCP）</h3>
       <div class="info-table" role="table" aria-label="SLMP接続機器 TCP">
-        <div role="row"><div role="cell">交信手段</div><div role="cell">SLMP</div></div>
         <div role="row"><div role="cell">プロトコル</div><div role="cell">TCP</div></div>
-        <div role="row"><div role="cell">ポート番号</div><div role="cell"><code>1025</code></div></div>
-        <div role="row"><div role="cell">生存確認</div><div role="cell">KeepAlive</div></div>
+        <div role="row"><div role="cell">オープン方式</div><div role="cell">MCプロトコル</div></div>
+        <div role="row"><div role="cell">自局ポート番号</div><div role="cell"><code>1025</code></div></div>
       </div>
 
       <h3>SLMP接続機器（UDP）</h3>
       <div class="info-table" role="table" aria-label="SLMP接続機器 UDP">
-        <div role="row"><div role="cell">交信手段</div><div role="cell">SLMP</div></div>
         <div role="row"><div role="cell">プロトコル</div><div role="cell">UDP</div></div>
-        <div role="row"><div role="cell">ポート番号</div><div role="cell"><code>1035</code></div></div>
-        <div role="row"><div role="cell">生存確認</div><div role="cell">UDP</div></div>
+        <div role="row"><div role="cell">オープン方式</div><div role="cell">MCプロトコル</div></div>
+        <div role="row"><div role="cell">自局ポート番号</div><div role="cell"><code>1035</code></div></div>
       </div>
+      <p class="small-note">※必要に応じてUDP/TCPのMELSOFT接続を設定します（GX Works2との通信用）。</p>
     </section>
 
     <section class="section">
