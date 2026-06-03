@@ -19,7 +19,7 @@ ProjectBuilder の exe は、`PlcIoChecker_ProjectBuilder` の Releases にあ�
 | `index.html` | 目次トップ |
 | `start/` | 入手・インストール、はじめる |
 | `plc/` | 対応 PLC、接続、接続設定例、MELSEC / KEYENCE 設定 |
-| `plc/models/` | 対応機種ごとの接続設定例ページ。未作成の機種は作成中として扱う |
+| `plc/models/` | 対応機種ごとの接続設定例ページ |
 | `monitoring/` | 監視、List 登録編集、操作パネル、書込、CPU操作、コメント、タイムチャート、トラップ |
 | `transfer/` | QR / JSON、プロジェクトJSON |
 | `settings/` | メニュー、アプリ設定、ライセンス/購入 |
@@ -30,12 +30,13 @@ ProjectBuilder の exe は、`PlcIoChecker_ProjectBuilder` の Releases にあ�
 | `assets/images/monitoring/` | 監視・記録系スクリーンショット |
 | `assets/images/transfer/` | QR / JSON 転送系スクリーンショット |
 | `assets/images/projectbuilder/` | ProjectBuilder ロゴ・関連画像 |
+| `TODO.md` | ページ作成状態と更新チェックリスト |
 
 ## Editing Workflow
 
 1. Android / iOS / ProjectBuilder の source code、localization、resource を確認する。
 2. 実装されている画面名、ボタン名、メニュー名に合わせて本文を書く。
-3. 新しいページを追加した場合は、`index.html`、上部ナビ、前後リンク、README の状態一覧を同時に更新する。
+3. 新しいページを追加した場合は、`index.html`、上部ナビ、前後リンク、`TODO.md` の状態一覧を同時に更新する。
 4. スクリーンショットを差し替えた場合は、対象画面と撮影日を作業メモや PR 説明で追えるようにする。
 5. 更新後にリンク、画像参照、表記ゆれ、実装との矛盾を確認する。
 
@@ -93,55 +94,9 @@ ProjectBuilder の exe は、`PlcIoChecker_ProjectBuilder` の Releases にあ�
 - ProjectBuilder の更新履歴は、ProjectBuilder 側の Releases で扱う。
 - 書込、CPU操作、通信、QR / JSON に関わる変更は、必要な注意点も一緒に書く。
 
-## Page Status
+## Tracking
 
-| 状態 | Page |
-| --- | --- |
-| 作成済み | `start/install.html` |
-| 作成済み | `start/getting-started.html` |
-| 作成済み | `plc/supported-plc.html` |
-| 作成済み | `plc/connection.html` |
-| 作成済み | `plc/plc-side-settings.html` |
-| 作成済み | `plc/melsec-settings.html` |
-| 作成済み | `plc/keyence-settings.html` |
-| 作成中 | `plc/models/*.html` |
-| 作成済み | `monitoring/monitoring.html` |
-| 作成済み | `monitoring/list-edit.html` |
-| 作成済み | `monitoring/focus-panel.html` |
-| 作成済み | `monitoring/writing.html` |
-| 作成済み | `monitoring/cpu-control.html` |
-| 作成済み | `monitoring/comments.html` |
-| 作成済み | `monitoring/time-chart.html` |
-| 作成済み | `monitoring/traps.html` |
-| 作成済み | `transfer/import-export.html` |
-| 作成済み | `transfer/project-json.html` |
-| 作成済み | `settings/tools-menu.html` |
-| 作成済み | `settings/app-settings.html` |
-| 作成済み | `settings/license.html` |
-| 作成済み | `projectbuilder/projectbuilder.html` |
-| 作成済み | `projectbuilder/projectbuilder-devices.html` |
-| 作成済み | `projectbuilder/projectbuilder-qr.html` |
-| 作成済み | `reference/privacy-policy.html` |
-| 作成済み | `reference/app-permissions.html` |
-| 作成済み | `reference/terms.html` |
-| 作成済み | `reference/purchase-info.html` |
-| 作成済み | `reference/support.html` |
-| 作成済み | `reference/store-release-checklist.html` |
-| 作成済み | `reference/glossary.html` |
-| 作成中 | `reference/release-notes.html` |
-| 作成済み | `reference/troubleshooting.html` |
-
-## Update Checklist
-
-- [ ] Android / iOS / ProjectBuilder の source code、localization、resource と矛盾していない。
-- [ ] 画面名、ボタン名、メニュー名、主要用語が実画面と一致している。
-- [ ] 未実装機能、開発用機能、推測した便利機能を書いていない。
-- [ ] MELSEC / KEYENCE の差分を混ぜずに分けている。
-- [ ] QR / JSON の通常操作ページに内部形式の説明を混ぜていない。
-- [ ] App Store / Google Play の正式 URL が未確定の場合は、仮リンクを置かず公開前確認に残している。
-- [ ] 書込、CPU操作、トラップ、REC など危険操作に注意書きがある。
-- [ ] `index.html`、上部ナビ、前後リンク、README の `Page Status` が実ページ構成と一致している。
-- [ ] HTML リンク切れ、画像参照切れ、alt text 抜けがない。
+ページ作成状態と更新チェックリストは [`TODO.md`](TODO.md) で管理します。
 
 ## Preview
 

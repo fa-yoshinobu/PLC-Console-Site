@@ -1,0 +1,53 @@
+# PLC IO Checker Manual Site TODO
+
+ページ作成状態と更新前後の確認項目を管理します。
+
+## Page Status
+
+| 状態 | Page |
+| --- | --- |
+| 作成済み | `start/install.html` |
+| 作成済み | `start/getting-started.html` |
+| 作成済み | `plc/supported-plc.html` |
+| 作成済み | `plc/connection.html` |
+| 作成済み | `plc/plc-side-settings.html` |
+| 作成済み | `plc/melsec-settings.html` |
+| 作成済み | `plc/keyence-settings.html` |
+| 作成済み | `plc/models/*.html` |
+| 作成済み | `monitoring/monitoring.html` |
+| 作成済み | `monitoring/list-edit.html` |
+| 作成済み | `monitoring/focus-panel.html` |
+| 作成済み | `monitoring/writing.html` |
+| 作成済み | `monitoring/cpu-control.html` |
+| 作成済み | `monitoring/comments.html` |
+| 作成済み | `monitoring/time-chart.html` |
+| 作成済み | `monitoring/traps.html` |
+| 作成済み | `transfer/import-export.html` |
+| 作成済み | `transfer/project-json.html` |
+| 作成済み | `settings/tools-menu.html` |
+| 作成済み | `settings/app-settings.html` |
+| 作成済み | `settings/license.html` |
+| 作成済み | `projectbuilder/projectbuilder.html` |
+| 作成済み | `projectbuilder/projectbuilder-devices.html` |
+| 作成済み | `projectbuilder/projectbuilder-qr.html` |
+| 作成済み | `reference/privacy-policy.html` |
+| 作成済み | `reference/app-permissions.html` |
+| 作成済み | `reference/terms.html` |
+| 作成済み | `reference/purchase-info.html` |
+| 作成済み | `reference/support.html` |
+| 作成済み | `reference/store-release-checklist.html` |
+| 作成済み | `reference/glossary.html` |
+| 作成中 | `reference/release-notes.html` |
+| 作成済み | `reference/troubleshooting.html` |
+
+## Update Checklist
+
+- [x] Android / iOS / ProjectBuilder の source code、localization、resource と矛盾していない。
+- [x] 画面名、ボタン名、メニュー名、主要用語が実画面と一致している。
+- [x] 未実装機能、開発用機能、推測した便利機能を書いていない。
+- [x] MELSEC / KEYENCE の差分を混ぜずに分けている。
+- [x] QR / JSON の通常操作ページに内部形式の説明を混ぜていない。
+- [x] App Store / Google Play の正式 URL が未確定の場合は、仮リンクを置かず公開前確認に残している。
+- [x] 書込、CPU操作、トラップ、REC など危険操作に注意書きがある。
+- [x] `index.html`、上部ナビ、前後リンク、`TODO.md` の `Page Status` が実ページ構成と一致している。
+- [x] HTML リンク切れ、画像参照切れ、alt text 抜けがない。
