@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="MELSEC MX-R の 接続設定例 TODO。">
+  <meta name="description" content="MELSEC MX-R の SLMP 接続設定例。">
   <title>MELSEC MX-R 接続設定例 | PLC IO Checker 操作マニュアル</title>
   <link rel="stylesheet" href="../../assets/style.css">
 </head>
@@ -96,45 +96,74 @@
     <section class="page-hero section">
       <p class="eyebrow">MELSEC / MX-R</p>
       <h1>MELSEC MX-R 接続設定例</h1>
-      <p class="lead">MELSEC MX-R を PLC IO Checker から接続する場合の PLC 側設定メモ枠です。現時点の詳細内容は dummy / TODO です。</p>
+      <p class="lead">MELSEC MX-R を PLC IO Checker から SLMP で接続する場合の PLC 側設定例です。ユニットパラメータと相手機器接続設定を確認します。</p>
     </section>
 
     <section class="section">
       <div class="notice">
-        <h2>TODO</h2>
-        <p>このページは機種別の 接続設定例を後から追記するための placeholder です。メーカー資料、実機画面、現場設定例を確認してから詳細化します。</p>
+        <h2>設定例の前提</h2>
+        <p>IPアドレス、サブネットマスク、デフォルトゲートウェイは現場ネットワークに合わせて設定してください。以下は PLC IO Checker から SLMP で接続する場合の設定例です。</p>
+        <p>説明の都合上、IP: <code>192.168.250.100</code>、Port(TCP): <code>1025</code>、Port(UDP): <code>1035</code> に統一しております。この設定に必ずしもする必要はありません。</p>
       </div>
     </section>
 
     <section class="section">
       <h2>PLC 側設定画面</h2>
       <div class="plc-screenshot-grid">
-        <figure><img src="../../assets/images/plc/models/melsec-mx-r/screenshot-01.png" alt="MELSEC MX-R PLC 側設定画面 1" loading="lazy"><figcaption>PLC 側設定画面 1</figcaption></figure>
-        <figure><img src="../../assets/images/plc/models/melsec-mx-r/screenshot-02.png" alt="MELSEC MX-R PLC 側設定画面 2" loading="lazy"><figcaption>PLC 側設定画面 2</figcaption></figure>
-        <figure><img src="../../assets/images/plc/models/melsec-mx-r/screenshot-03.png" alt="MELSEC MX-R PLC 側設定画面 3" loading="lazy"><figcaption>PLC 側設定画面 3</figcaption></figure>
+        <figure><img src="../../assets/images/plc/models/melsec-mx-r/screenshot-01.png" alt="MELSEC MX-R PLC 側設定画面 1(ユニットパラメータ)" loading="lazy"><figcaption>PLC 側設定画面 1(ユニットパラメータ)</figcaption></figure>
+        <figure><img src="../../assets/images/plc/models/melsec-mx-r/screenshot-02.png" alt="MELSEC MX-R PLC 側設定画面 2(ユニットパラメータ)" loading="lazy"><figcaption>PLC 側設定画面 2(ユニットパラメータ)</figcaption></figure>
+        <figure><img src="../../assets/images/plc/models/melsec-mx-r/screenshot-03.png" alt="MELSEC MX-R PLC 側設定画面 3(相手機器接続設定)" loading="lazy"><figcaption>PLC 側設定画面 3(相手機器接続設定)</figcaption></figure>
+      </div>
+    </section>
+    <section class="section">
+      <h2>ユニットパラメータ</h2>
+      <div class="info-table" role="table" aria-label="ユニットパラメータ">
+        <div role="row"><div role="cell">IPアドレス</div><div role="cell"><code>192.168.250.100</code>（例）</div></div>
+        <div role="row"><div role="cell">サブネットマスク</div><div role="cell">要設定</div></div>
+        <div role="row"><div role="cell">デフォルトゲートウェイ</div><div role="cell">要設定</div></div>
+        <div role="row"><div role="cell">オープン方法の設定</div><div role="cell">プログラムでOPENしない</div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>相手機器接続設定</h2>
+      <h3>SLMP接続機器（TCP）</h3>
+      <div class="info-table" role="table" aria-label="SLMP接続機器 TCP">
+        <div role="row"><div role="cell">交信手段</div><div role="cell">SLMP</div></div>
+        <div role="row"><div role="cell">プロトコル</div><div role="cell">TCP</div></div>
+        <div role="row"><div role="cell">ポート番号</div><div role="cell"><code>1025</code></div></div>
+        <div role="row"><div role="cell">生存確認</div><div role="cell">KeepAlive</div></div>
+      </div>
+
+      <h3>SLMP接続機器（UDP）</h3>
+      <div class="info-table" role="table" aria-label="SLMP接続機器 UDP">
+        <div role="row"><div role="cell">交信手段</div><div role="cell">SLMP</div></div>
+        <div role="row"><div role="cell">プロトコル</div><div role="cell">UDP</div></div>
+        <div role="row"><div role="cell">ポート番号</div><div role="cell"><code>1035</code></div></div>
+        <div role="row"><div role="cell">生存確認</div><div role="cell">UDP</div></div>
       </div>
     </section>
 
     <section class="section">
       <h2>アプリ側で選ぶ項目</h2>
-      <div class="info-table" role="table" aria-label="アプリ側選択項目">
-        <div role="row"><div role="cell">PLC 種別</div><div role="cell"><code>MELSEC</code></div></div>
-        <div role="row"><div role="cell">CPU機種</div><div role="cell"><code>MX-R</code></div></div>
-        <div role="row"><div role="cell">通信方式</div><div role="cell">SLMP（Seamless Message Protocol）</div></div>
-        <div role="row"><div role="cell">既定ポート</div><div role="cell"><code>1025</code></div></div>
-        <div role="row"><div role="cell">MELSEC ルート</div><div role="cell">ネットワーク / 局番 / ユニットI/O / マルチドロップ。詳細 TODO。</div></div>
+      <h3>通信設定</h3>
+      <div class="info-table" role="table" aria-label="アプリ側通信設定">
+        <div role="row"><div role="cell">PLC 種別</div><div role="cell">MELSEC実機</div></div>
+        <div role="row"><div role="cell">PLC IP</div><div role="cell"><code>192.168.250.100</code>（例）</div></div>
+        <div role="row"><div role="cell">ポート</div><div role="cell"><code>1025</code>（TCP） / <code>1035</code>（UDP）</div></div>
+        <div role="row"><div role="cell">機種</div><div role="cell"><code>MX-R</code></div></div>
+        <div role="row"><div role="cell">通信</div><div role="cell">TCP / UDP</div></div>
+        <div role="row"><div role="cell">リモートパスワード</div><div role="cell">パスワード有の場合のみ入力</div></div>
       </div>
-    </section>
 
-    <section class="section">
-      <h2>PLC 側設定メモ</h2>
-      <div class="info-table" role="table" aria-label="PLC 側設定メモ">
-        <div role="row"><div role="cell">PLC 側画面名</div><div role="cell">TODO</div></div>
-        <div role="row"><div role="cell">Ethernet / 通信設定</div><div role="cell">TODO</div></div>
-        <div role="row"><div role="cell">Port / Protocol</div><div role="cell">TODO</div></div>
-        <div role="row"><div role="cell">書込許可 / 保護設定</div><div role="cell">TODO</div></div>
-        <div role="row"><div role="cell">メーカー資料リンク</div><div role="cell">TODO</div></div>
+      <h3>ルーティング</h3>
+      <div class="info-table" role="table" aria-label="アプリ側ルーティング">
+        <div role="row"><div role="cell">ネットワーク</div><div role="cell"><code>0</code></div></div>
+        <div role="row"><div role="cell">局番</div><div role="cell"><code>255</code></div></div>
+        <div role="row"><div role="cell">ユニットI/O</div><div role="cell"><code>0x03FF</code></div></div>
+        <div role="row"><div role="cell">マルチドロップ</div><div role="cell"><code>0x00</code></div></div>
       </div>
+      <p class="small-note">※上記ルーティングは自局指定（デフォルト）です。必要に応じて設定してください。</p>
     </section>
 
     <nav class="next-links" aria-label="前後ページ">
