@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{DESCRIPTION}}">
+  <title>{{TITLE}} | PLC IO Checker 操作マニュアル</title>
+  <link rel="stylesheet" href="{{BASE}}assets/style.css">
+</head>
+<body>
+  <!--
+    Common page shell reference.
+    Replace {{BASE}} with ./, ../, or ../../ depending on page depth.
+    Use class="active" and aria-current on the current nav location.
+  -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="{{BASE}}index.html"><span class="brand-mark">PLC</span><span><strong>PLC IO Checker</strong><small>操作マニュアル</small></span></a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="メニュー" aria-expanded="false" aria-controls="top-nav">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="top-nav" id="top-nav" aria-label="主要ページ">
+        <details class="nav-group">
+          <summary>開始</summary>
+          <div class="nav-menu">
+            <a href="{{BASE}}start/install.html">入手</a>
+            <a href="{{BASE}}start/getting-started.html">はじめる</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>PLC</summary>
+          <div class="nav-menu">
+            <a href="{{BASE}}plc/connection.html">接続・プロジェクト</a>
+            <a href="{{BASE}}plc/plc-side-settings.html">接続設定例</a>
+            <a href="{{BASE}}plc/melsec-settings.html">MELSEC</a>
+            <a href="{{BASE}}plc/keyence-settings.html">KEYENCE</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>操作</summary>
+          <div class="nav-menu">
+            <a href="{{BASE}}monitoring/monitoring.html">監視</a>
+            <a href="{{BASE}}monitoring/list-edit.html">List 登録編集</a>
+            <a href="{{BASE}}monitoring/focus-panel.html">操作パネル</a>
+            <a href="{{BASE}}monitoring/writing.html">書込</a>
+            <a href="{{BASE}}monitoring/cpu-control.html">CPU操作</a>
+            <a href="{{BASE}}monitoring/comments.html">コメント</a>
+            <a href="{{BASE}}monitoring/time-chart.html">タイムチャート</a>
+            <a href="{{BASE}}monitoring/traps.html">トラップ</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>転送</summary>
+          <div class="nav-menu">
+            <a href="{{BASE}}transfer/import-export.html">QR/JSON</a>
+            <a href="{{BASE}}transfer/project-json.html">プロジェクトJSON</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>設定</summary>
+          <div class="nav-menu">
+            <a href="{{BASE}}settings/tools-menu.html">メニュー</a>
+            <a href="{{BASE}}settings/app-settings.html">アプリ設定</a>
+            <a href="{{BASE}}settings/license.html">ライセンス</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>公開情報</summary>
+          <div class="nav-menu">
+            <a href="{{BASE}}reference/support.html">サポート</a>
+            <a href="{{BASE}}reference/privacy-policy.html">プライバシー</a>
+            <a href="{{BASE}}reference/app-permissions.html">権限</a>
+            <a href="{{BASE}}reference/terms.html">利用条件</a>
+            <a href="{{BASE}}reference/purchase-info.html">購入・返金</a>
+            <a href="{{BASE}}reference/store-release-checklist.html">公開準備</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>ProjectBuilder</summary>
+          <div class="nav-menu">
+            <a href="{{BASE}}projectbuilder/projectbuilder.html">ProjectBuilder</a>
+            <a href="{{BASE}}projectbuilder/projectbuilder-devices.html">入力</a>
+            <a href="{{BASE}}projectbuilder/projectbuilder-qr.html">QR 生成</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>参考</summary>
+          <div class="nav-menu">
+            <a href="{{BASE}}reference/glossary.html">用語集</a>
+            <a href="{{BASE}}reference/release-notes.html">リリースノート</a>
+            <a href="{{BASE}}reference/troubleshooting.html">困ったとき</a>
+          </div>
+        </details>
+      </nav>
+    </div>
+  </header>
+
+  <main class="doc-page">
+    {{CONTENT}}
+  </main>
+
+  <footer class="site-footer"><p>PLC IO Checker 操作マニュアル / {{FOOTER_LABEL}}</p></footer>
+  <script>
+  (function(){
+    var t=document.getElementById("nav-toggle");
+    var n=document.querySelector(".top-nav");
+    if(!t||!n)return;
+    t.addEventListener("click",function(){
+      var o=n.classList.toggle("is-open");
+      t.setAttribute("aria-expanded",String(o));
+    });
+    document.addEventListener("click",function(e){
+      if(!t.contains(e.target)&&!n.contains(e.target)){
+        n.classList.remove("is-open");
+        t.setAttribute("aria-expanded","false");
+      }
+    });
+  })();
+  </script>
+</body>
+</html>

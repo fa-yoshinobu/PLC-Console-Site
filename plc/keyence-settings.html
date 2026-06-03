@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="KEYENCE 接続設定、Host-link、Normal/XYM、コメント読込。">
+  <meta name="description" content="KEYENCE 接続設定、Host-link（上位リンク）、Normal/XYM、コメント読込。">
   <title>KEYENCE 設定 | PLC IO Checker 操作マニュアル</title>
   <link rel="stylesheet" href="../assets/style.css">
 </head>
@@ -25,11 +25,10 @@
         <details class="nav-group">
           <summary class="active">PLC</summary>
           <div class="nav-menu">
-            <a href="../plc/supported-plc.html">対応 PLC</a>
             <a href="../plc/connection.html">接続・プロジェクト</a>
             <a href="../plc/plc-side-settings.html">接続設定例</a>
             <a href="../plc/melsec-settings.html">MELSEC</a>
-            <a class="active" href="../plc/keyence-settings.html">KEYENCE</a>
+            <a class="active" aria-current="page" href="../plc/keyence-settings.html">KEYENCE</a>
           </div>
         </details>
         <details class="nav-group">
@@ -92,7 +91,7 @@
   </header>
 
   <main class="doc-page">
-    <nav class="breadcrumb" aria-label="パンくず"><a href="../index.html">トップ</a><span>KEYENCE 設定</span></nav>
+    <nav class="breadcrumb" aria-label="パンくず"><a href="../index.html">トップ</a><span aria-current="page">KEYENCE 設定</span></nav>
     <section class="page-hero section">
       <p class="eyebrow">KEYENCE</p>
       <h1>KEYENCE 設定</h1>
@@ -111,7 +110,7 @@
     <section class="section">
       <h2>通信設定</h2>
       <div class="info-table" role="table" aria-label="KEYENCE 通信設定">
-        <div role="row"><div role="cell">通信方式</div><div role="cell">Host-link</div></div>
+        <div role="row"><div role="cell">通信方式</div><div role="cell">Host-link（上位リンク）</div></div>
         <div role="row"><div role="cell">既定ポート</div><div role="cell"><code>8501</code></div></div>
         <div role="row"><div role="cell">通信</div><div role="cell"><code>TCP</code> / <code>UDP</code></div></div>
         <div role="row"><div role="cell">機種</div><div role="cell"><code>KV-X500</code>、<code>KV-8000</code>、<code>KV-7000</code>、<code>KV-5000</code></div></div>

@@ -18,7 +18,7 @@ ProjectBuilder の exe は、`PlcIoChecker_ProjectBuilder` の Releases にあ�
 | --- | --- |
 | `index.html` | 目次トップ |
 | `start/` | 入手・インストール、はじめる |
-| `plc/` | 対応 PLC、接続、接続設定例、MELSEC / KEYENCE 設定 |
+| `plc/` | 接続、接続設定例、MELSEC / KEYENCE 設定 |
 | `plc/models/` | 対応機種ごとの接続設定例ページ |
 | `monitoring/` | 監視、List 登録編集、操作パネル、書込、CPU操作、コメント、タイムチャート、トラップ |
 | `transfer/` | QR / JSON、プロジェクトJSON |
@@ -30,6 +30,7 @@ ProjectBuilder の exe は、`PlcIoChecker_ProjectBuilder` の Releases にあ�
 | `assets/images/monitoring/` | 監視・記録系スクリーンショット |
 | `assets/images/transfer/` | QR / JSON 転送系スクリーンショット |
 | `assets/images/projectbuilder/` | ProjectBuilder ロゴ・関連画像 |
+| `templates/` | 共通ヘッダー/ナビ更新時の参照テンプレート |
 | `TODO.md` | ページ作成状態と更新チェックリスト |
 
 ## Editing Workflow
@@ -39,6 +40,7 @@ ProjectBuilder の exe は、`PlcIoChecker_ProjectBuilder` の Releases にあ�
 3. 新しいページを追加した場合は、`index.html`、上部ナビ、前後リンク、`TODO.md` の状態一覧を同時に更新する。
 4. スクリーンショットを差し替えた場合は、対象画面と撮影日を作業メモや PR 説明で追えるようにする。
 5. 更新後にリンク、画像参照、表記ゆれ、実装との矛盾を確認する。
+6. 共通ヘッダーや上部ナビを変更する場合は、`templates/page-shell.html.tmpl` を先に更新し、各 HTML へ反映する。
 
 ## Writing Rules
 
@@ -69,7 +71,7 @@ ProjectBuilder の exe は、`PlcIoChecker_ProjectBuilder` の Releases にあ�
 - 日本語表記は `プロジェクト`、`プロジェクト名`、`プロジェクトJSON` に統一する。
 - 画面名は app 表示に合わせて `List`、`Block`、`タイムチャート`、`トラップ`、`List 登録編集` を使う。
 - 操作名は表示文言に合わせて `QR読込`、`JSON読込`、`JSON書出`、`CSVコメント読込`、`コメント読込`、`CPU操作` と書く。
-- PLC 種別は `MELSEC` / `KEYENCE`、通信方式は `SLMP（Seamless Message Protocol）` / `Host-link` と書く。
+- PLC 種別は `MELSEC` / `KEYENCE`、通信方式は `SLMP（Seamless Message Protocol）` / `Host-link（上位リンク）` と書く。
 - 通常の操作ページでは、内部フィールド名ではなく画面表示を使う。例: `ネットワーク`、`局番`、`ユニットI/O`、`マルチドロップ`。
 - `BIT` / `WORD`、`データタイプ`、`address`、`comment` の意味を混ぜない。
 
@@ -77,6 +79,14 @@ ProjectBuilder の exe は、`PlcIoChecker_ProjectBuilder` の Releases にあ�
 
 - 通信方式、設定項目、対応デバイス、コメント読込、CPU操作、JSON 項目が変わる場合は、共通説明に混ぜず見出しや表で分ける。
 - 対応 PLC 機種、CPU機種、既定ポート、通信方式、対応デバイス、アドレス表記、使用できない設定項目は source code で確認する。
+
+### 接続設定例ページ
+
+- `plc/models/*.html` は、設定例の前提、PLC 側設定画面、PLC 側設定項目、アプリ側で選ぶ項目、前後ナビの順に揃える。
+- `アプリ側で選ぶ項目` は、前後ナビの直前に置く。
+- スクリーンショットのキャプションは `PLC 側設定画面 N(設定画面名)` の形に揃える。
+- スクリーンショット画像は横並びにせず、1枚ずつ縦に並べて文字が読める大きさを保つ。
+- 説明用の IP アドレスやポート番号は、必須値ではなく設定例であることを前提文に明記する。
 
 ### 公開前確認
 
@@ -106,6 +116,12 @@ macOS の terminal から開く場合:
 
 ```bash
 open https://fa-yoshinobu.github.io/PlcIoChecker_Site/
+```
+
+Windows PowerShell からローカル確認する場合:
+
+```powershell
+Start-Process .\index.html
 ```
 
 ## GitHub Pages

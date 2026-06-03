@@ -2,13 +2,18 @@
 
 ページ作成状態と更新前後の確認項目を管理します。
 
+Last verified: 2026-06-04
+
+## Open Tasks
+
+- `reference/release-notes.html` は、公開済みの PLC IO Checker アプリ変更点だけを整理する。
+
 ## Page Status
 
 | 状態 | Page |
 | --- | --- |
 | 作成済み | `start/install.html` |
 | 作成済み | `start/getting-started.html` |
-| 作成済み | `plc/supported-plc.html` |
 | 作成済み | `plc/connection.html` |
 | 作成済み | `plc/plc-side-settings.html` |
 | 作成済み | `plc/melsec-settings.html` |
@@ -42,6 +47,8 @@
 
 ## Update Checklist
 
+このチェックリストは更新作業ごとに確認し、確認後に `Last verified` を更新します。
+
 - [x] Android / iOS / ProjectBuilder の source code、localization、resource と矛盾していない。
 - [x] 画面名、ボタン名、メニュー名、主要用語が実画面と一致している。
 - [x] 未実装機能、開発用機能、推測した便利機能を書いていない。
@@ -51,3 +58,4 @@
 - [x] 書込、CPU操作、トラップ、REC など危険操作に注意書きがある。
 - [x] `index.html`、上部ナビ、前後リンク、`TODO.md` の `Page Status` が実ページ構成と一致している。
 - [x] HTML リンク切れ、画像参照切れ、alt text 抜けがない。
+- [x] スクリーンショット画像を横並びにせず、1枚ずつ縦に並べている。
