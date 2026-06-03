@@ -92,9 +92,10 @@ ProjectBuilder の exe は、`PlcIoChecker_ProjectBuilder` の Releases にあ�
 
 - App Store / Google Play のリンクは、正式 URL が確定してから掲載する。
 - 未確定の金額は書かない。価格は Store 公開時の表示を正とする。
-- 未確定項目は、各ページ冒頭の `公開前確認` または `reference/store-release-checklist.html` の `公開前ブロッカー` に集約する。
+- ユーザーに見せる未確定項目だけを各ページ冒頭の `公開前確認` に残す。
+- Store 公開作業の内部チェックは `.github/STORE_RELEASE_CHECKLIST.md` で管理する。
 - ユーザー向け本文には、作業メモ、仮リンク、開発用語を混ぜない。
-- 開発中の購入 UI がある場合は、公開 build から開発用表記、開発用の購入状態表示、未確定の金額表示が消えていることを公開準備ページに残す。
+- 開発中の購入 UI がある場合は、公開 build から開発用表記、開発用の購入状態表示、未確定の金額表示が消えていることを `.github/STORE_RELEASE_CHECKLIST.md` に残す。
 
 ### リリースノート
 

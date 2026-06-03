@@ -1,0 +1,77 @@
+# Store Release Checklist
+
+PLC IO Checker の App Store / Google Play 公開前に確認する内部リストです。
+このファイルは GitHub Pages の公開対象外です。
+
+## 公開前ブロッカー
+
+- 正式なサポート連絡先。
+- 販売者名 / 開発者名の表記。
+- iOS / Android の正式 Store URL。
+- 有料アプリ、無料 + アプリ内購入、メーカー別購入の最終決定。
+- 価格、提供国、法人利用時の案内。
+- プライバシーポリシーの最終更新日と連絡先。
+- アプリ内のプライバシーポリシー導線の有無。
+- 公開確認用サンプル QR / JSON の公開可否と保存場所。
+- 公開 build から mock 購入、開発用購入状態、未確定の金額表示を消すこと。
+- StoreKit / Google Play Billing の本実装完了確認。
+- Android Predictive Back と release 難読化方針の確認。
+
+## 公開 URL
+
+| 項目 | 確認 |
+| --- | --- |
+| Support URL | `reference/support.html`。GitHub Pages 公開後の絶対 URL にする。 |
+| Privacy Policy URL | `reference/privacy-policy.html`。公開申請ではこの URL を使用する。 |
+| Terms URL | `reference/terms.html`。Apple 標準 EULA / 独自規約の選択を決める。 |
+| Purchase URL | `reference/purchase-info.html`。価格、販売方式、Store URL を確定する。 |
+
+## App Store Connect
+
+- App name、subtitle、description、keywords、category、age rating を確定する。
+- Privacy Policy URL に GitHub Pages の絶対 URL を設定する。
+- Support URL にサポートページの絶対 URL を設定する。
+- App Privacy の回答を確定する。現方針: アプリは個人情報を収集しない。PLC 通信はユーザー設定先へのリアルタイム通信で、開発者サーバーへ送信しない。
+- Local Network と Camera の用途を `reference/app-permissions.html` と矛盾しない説明にする。現行実装は PLC への直接 TCP / UDP 通信と QR読込。
+- 有料アプリにするか、アプリ内購入にするかを確定し、価格、提供国、税区分、購入復元の説明を確認する。金額は公開前に確定するまで manual へ書かない。
+- Review Notes にサンプル QR / JSON と、PLC 実機なしで確認できる手順を書く。
+- スクリーンショットを Android / iOS の現行 UI で撮り直し、書込や CPU操作が危険に見えない説明にする。
+- アプリ内からプライバシーポリシーを容易に開ける導線があるか確認する。
+- 現行 iOS 実装は購入 UI が mock である。StoreKit の本実装、商品 ID、購入復元、失敗時表示、sandbox test を完了してから公開する。
+- iOS bundle ID は `com.fa-labo.plciochecker`。公開前に App Store Connect の Bundle ID と一致しているか確認する。
+
+## Google Play Console
+
+- Store listing の short description、full description、feature graphic、screenshots、category を確定する。
+- Privacy Policy URL に公開済みの privacy-policy.html 絶対 URL を設定する。
+- Data safety section を privacy policy と矛盾しない内容で入力する。現方針: 個人情報の収集なし、広告なし、トラッキングなし、PLC データを開発者へ送信しない。
+- `INTERNET`、`ACCESS_NETWORK_STATE`、`CAMERA`、foreground service 系 permission の用途を `reference/app-permissions.html` と矛盾しない説明にする。
+- 外部ストレージ全体への permission は現行 Android 実装では宣言していない。JSON / CSV / ログは document picker / create document 経由であることを Data safety と説明文に反映する。
+- アプリ内購入 / 有料アプリの販売方式、価格、提供国、税・支払い profile を確定する。金額は公開前に確定するまで manual へ書かない。
+- Content rating questionnaire を入力し、産業用ツールとしての対象年齢を確認する。
+- App access の手順に、ログイン不要で確認できること、サンプル QR / JSON の確認手順を書く。
+- アプリ内からプライバシーポリシーを容易に開ける導線があるか確認する。
+- 現行 Android 実装は購入 UI が mock である。Google Play Billing の本実装、商品 ID、購入復元、失敗時表示、license state 永続化、test purchase を完了してから公開する。
+- Android `applicationId` は `com.fa_labo.plc_io_checker`。Google Play 登録後は変更できないため、公開前にブランド表記と一致しているか確認する。
+- Predictive Back Gesture を実機で確認する。Android 側では `targetSdk = 35` の手動確認が残っている。
+- release build の難読化を行うか決める。現行 Android では `isMinifyEnabled = false` のため、必要なら R8 / ProGuard rules を確認する。
+
+## アプリ内で追加確認する項目
+
+- 公開 manual に開発用メニューや開発用画面は載せない。ただしアプリ内に開発用表示や mock 購入表記が release build で出ないことを確認する。
+- ライセンス/購入画面の文言から mock、未確定の金額表示、開発用の購入状態表示が公開 build に出ないことを確認する。
+- Privacy Policy、Support、Terms、Purchase info をアプリ内メニューから開けるか、Store metadata に URL として登録するかを決める。
+- 確認用接続、未購入時の接続制限、MELSEC / KEYENCE の購入状態表示を iOS / Android で一致させる。
+
+## ProjectBuilder
+
+- ProjectBuilder は GitHub Releases の Assets にある `PlcIoCheckerProjectBuilder-win-x64.zip` から exe を配布する。Store のリリースノートには ProjectBuilder の履歴を書かず、ProjectBuilder 側の Releases へ誘導する。
+- ProjectBuilder の license は MIT。モバイルアプリの利用条件と混同しないよう、ProjectBuilder ページでは ProjectBuilder の配布元と license を分けて書く。
+- QR / JSON は `PLCIOC3|ZSTD` と schema v3 を前提にする。旧 `PLCIOC2D` は現行の取込処理では未対応のまま説明する。
+- ProjectBuilder が生成する QR / JSON のサンプルを公開するか、Review Notes だけに添付するか決める。
+
+## 公式資料
+
+- Apple: App Privacy Details: https://developer.apple.com/app-store/app-privacy-details/
+- Apple: App Review Guidelines: https://developer.apple.com/app-store/review/guidelines/
+- Google Play: User Data policy: https://support.google.com/googleplay/android-developer/answer/10144311

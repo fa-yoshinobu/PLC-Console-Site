@@ -40,7 +40,6 @@ Last verified: 2026-06-04
 | 作成済み | `reference/terms.html` |
 | 作成済み | `reference/purchase-info.html` |
 | 作成済み | `reference/support.html` |
-| 作成済み | `reference/store-release-checklist.html` |
 | 作成済み | `reference/glossary.html` |
 | 作成中 | `reference/release-notes.html` |
 | 作成済み | `reference/troubleshooting.html` |
