@@ -121,10 +121,22 @@
     <section class="section">
       <h2>ルート指定</h2>
       <div class="info-table" role="table" aria-label="MELSEC ルート指定">
-        <div role="row"><div role="cell">ネットワーク</div><div role="cell">10 進表記</div></div>
-        <div role="row"><div role="cell">局番</div><div role="cell">10 進表記</div></div>
-        <div role="row"><div role="cell">ユニットI/O</div><div role="cell">16 進表記です。</div></div>
+        <div role="row"><div role="cell">ネットワーク</div><div role="cell">ネットワーク経由で他局に接続したい場合、ネットワークの番号を指定します。自局CPUに接続する場合は、<code>0</code>を指定してください。</div></div>
+        <div role="row"><div role="cell">局番</div><div role="cell">ネットワーク経由で他局に接続したい場合、子局の番号を指定します。自局CPUに接続する場合は、<code>255</code>を指定してください。</div></div>
+        <div role="row"><div role="cell">ユニットI/O</div><div role="cell">通常は<code>0x03FF</code>を指定してください。詳細はユニットI/O 設定値を参照してください。</div></div>
         <div role="row"><div role="cell">マルチドロップ</div><div role="cell">16 進表記です。</div></div>
+      </div>
+      <h3>ユニットI/O 設定値</h3>
+      <div class="info-table" role="table" aria-label="ユニットI/O 設定値">
+        <div role="row"><div role="cell">制御系CPU</div><div role="cell"><code>0x03D0</code></div></div>
+        <div role="row"><div role="cell">待機系CPU</div><div role="cell"><code>0x03D1</code></div></div>
+        <div role="row"><div role="cell">A系CPU</div><div role="cell"><code>0x03D2</code></div></div>
+        <div role="row"><div role="cell">B系CPU</div><div role="cell"><code>0x03D3</code></div></div>
+        <div role="row"><div role="cell">マルチCPU1号機</div><div role="cell"><code>0x03E0</code></div></div>
+        <div role="row"><div role="cell">マルチCPU2号機</div><div role="cell"><code>0x03E1</code></div></div>
+        <div role="row"><div role="cell">マルチCPU3号機</div><div role="cell"><code>0x03E2</code></div></div>
+        <div role="row"><div role="cell">マルチCPU4号機</div><div role="cell"><code>0x03E3</code></div></div>
+        <div role="row"><div role="cell">自局CPU／管理CPU</div><div role="cell"><code>0x03FF</code></div></div>
       </div>
     </section>
 
@@ -151,22 +163,6 @@
   </main>
 
   <footer class="site-footer"><p>PLC IO Checker 操作マニュアル / MELSEC</p></footer>
-  <script>
-  (function(){
-    var t=document.getElementById("nav-toggle");
-    var n=document.querySelector(".top-nav");
-    if(!t||!n)return;
-    t.addEventListener("click",function(){
-      var o=n.classList.toggle("is-open");
-      t.setAttribute("aria-expanded",String(o));
-    });
-    document.addEventListener("click",function(e){
-      if(!t.contains(e.target)&&!n.contains(e.target)){
-        n.classList.remove("is-open");
-        t.setAttribute("aria-expanded","false");
-      }
-    });
-  })();
-  </script>
+  <script src="../assets/nav.js"></script>
 </body>
 </html>

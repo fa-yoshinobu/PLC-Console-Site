@@ -103,6 +103,7 @@
         <h2>設定例の前提</h2>
         <p>IPアドレス、サブネットマスク、デフォルトゲートウェイは現場ネットワークに合わせて設定してください。以下は PLC IO Checker から SLMP で接続する場合の設定例です。</p>
         <p>説明の都合上、IP: <code>192.168.250.100</code>、Port(TCP): <code>1025</code>、Port(UDP): <code>1035</code> に統一しております。この設定に必ずしもする必要はありません。</p>
+        <p>PLCパラメータ設定後は一度PLCの電源をOFF/ONしてください。</p>
       </div>
     </section>
 
@@ -172,22 +173,6 @@
   </main>
 
   <footer class="site-footer"><p>PLC IO Checker 操作マニュアル / MELSEC QnUDV</p></footer>
-  <script>
-  (function(){
-    var t=document.getElementById("nav-toggle");
-    var n=document.querySelector(".top-nav");
-    if(!t||!n)return;
-    t.addEventListener("click",function(){
-      var o=n.classList.toggle("is-open");
-      t.setAttribute("aria-expanded",String(o));
-    });
-    document.addEventListener("click",function(e){
-      if(!t.contains(e.target)&&!n.contains(e.target)){
-        n.classList.remove("is-open");
-        t.setAttribute("aria-expanded","false");
-      }
-    });
-  })();
-  </script>
+  <script src="../../assets/nav.js"></script>
 </body>
 </html>
