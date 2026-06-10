@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  pull_request:
   workflow_dispatch:
 
 permissions:
@@ -11,13 +12,24 @@ permissions:
   pages: write
   id-token: write
 
-concurrency:
-  group: pages
-  cancel-in-progress: false
-
 jobs:
-  deploy:
+  check:
     runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Run site checks
+        run: python3 .github/scripts/check_site.py
+
+  deploy:
+    needs: check
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    concurrency:
+      group: pages
+      cancel-in-progress: false
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
