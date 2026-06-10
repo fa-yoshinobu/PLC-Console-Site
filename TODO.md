@@ -1,16 +1,16 @@
-# PLC IO Checker Manual Site TODO
+# PLC IO Checker マニュアルサイト TODO
 
 ページ作成状態と更新前後の確認項目を管理します。
 
-Last verified: 2026-06-04
+最終確認日: 2026-06-04
 
-## Open Tasks
+## 未完了作業
 
 - `reference/release-notes.html` は、公開済みの PLC IO Checker アプリ変更点だけを整理する。
 
-## Page Status
+## ページ状態
 
-| 状態 | Page |
+| 状態 | ページ |
 | --- | --- |
 | 作成済み | `start/install.html` |
 | 作成済み | `start/getting-started.html` |
@@ -44,17 +44,17 @@ Last verified: 2026-06-04
 | 作成中 | `reference/release-notes.html` |
 | 作成済み | `reference/troubleshooting.html` |
 
-## Update Checklist
+## 更新チェックリスト
 
-このチェックリストは更新作業ごとに確認し、確認後に `Last verified` を更新します。
+このチェックリストは更新作業ごとに確認し、確認後に `最終確認日` を更新します。
 
-- [x] Android / iOS / ProjectBuilder の source code、localization、resource と矛盾していない。
+- [x] Android / iOS / ProjectBuilder のソースコード、ローカライズ、リソースと矛盾していない。
 - [x] 画面名、ボタン名、メニュー名、主要用語が実画面と一致している。
 - [x] 未実装機能、開発用機能、推測した便利機能を書いていない。
 - [x] MELSEC / KEYENCE の差分を混ぜずに分けている。
 - [x] QR / JSON の通常操作ページに内部形式の説明を混ぜていない。
 - [x] App Store / Google Play の正式 URL が未確定の場合は、仮リンクを置かず公開前確認に残している。
 - [x] 書込、CPU操作、トラップ、REC など危険操作に注意書きがある。
-- [x] `index.html`、上部ナビ、前後リンク、`TODO.md` の `Page Status` が実ページ構成と一致している。
-- [x] HTML リンク切れ、画像参照切れ、alt text 抜けがない。
+- [x] `index.html`、上部ナビ、前後リンク、`TODO.md` の `ページ状態` が実ページ構成と一致している。
+- [x] HTML リンク切れ、画像参照切れ、代替テキスト抜けがない。
 - [x] スクリーンショット画像を横並びにせず、1枚ずつ縦に並べている。
