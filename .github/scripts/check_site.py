@@ -63,6 +63,7 @@ class SiteHTMLParser(HTMLParser):
         self.references: list[tuple[int, str, str, str]] = []
         self.images: list[tuple[int, dict[str, str | None]]] = []
         self.script_sources: list[tuple[int, str]] = []
+        self.anchors: set[str] = set()
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         self._inspect_tag(tag.lower(), attrs)
@@ -83,6 +84,10 @@ class SiteHTMLParser(HTMLParser):
             src = attr_map.get("src")
             if src is not None:
                 self.script_sources.append((line, src))
+        for attr_name in ("id", "name"):
+            anchor = attr_map.get(attr_name)
+            if anchor:
+                self.anchors.add(anchor)
 
 
 class DOMParser(HTMLParser):
@@ -227,12 +232,30 @@ def resolve_reference(page: Path, value: str) -> Path | None:
     return target.resolve()
 
 
-def check_references(page: Path, parser: SiteHTMLParser) -> list[SiteIssue]:
+def anchors_for(path: Path, cache: dict[Path, set[str]]) -> set[str]:
+    resolved = path.resolve()
+    if resolved not in cache:
+        cache[resolved] = parse_site_html(read_text(resolved)).anchors
+    return cache[resolved]
+
+
+def check_references(
+    page: Path,
+    parser: SiteHTMLParser,
+    anchor_cache: dict[Path, set[str]],
+) -> list[SiteIssue]:
     issues: list[SiteIssue] = []
     for line, tag, attr, value in parser.references:
-        if is_skipped_reference(value):
+        stripped = value.strip()
+        parsed = urlsplit(stripped)
+        if not stripped:
             continue
-        target = resolve_reference(page, value)
+        if parsed.scheme.lower() in SKIPPED_LINK_SCHEMES:
+            continue
+        if attr == "href" and not parsed.path and parsed.fragment:
+            target = page.resolve()
+        else:
+            target = resolve_reference(page, value)
         if target is None:
             continue
         try:
@@ -254,6 +277,17 @@ def check_references(page: Path, parser: SiteHTMLParser) -> list[SiteIssue]:
                     f"missing internal target for {tag} {attr}: {value!r}",
                 )
             )
+            continue
+        if attr == "href" and parsed.fragment and target.suffix.lower() == ".html":
+            fragment = unquote(parsed.fragment)
+            if fragment not in anchors_for(target, anchor_cache):
+                issues.append(
+                    SiteIssue(
+                        page,
+                        line,
+                        f"missing anchor {fragment!r} in {relpath(target)} for {tag} {attr}: {value!r}",
+                    )
+                )
     return issues
 
 
@@ -316,11 +350,13 @@ def run() -> int:
     template_source = read_text(TEMPLATE)
     issues: list[SiteIssue] = []
     header_diffs: list[tuple[Path, list[str]]] = []
+    anchor_cache: dict[Path, set[str]] = {}
 
     for page in pages:
         source = read_text(page)
         parser = parse_site_html(source)
-        issues.extend(check_references(page, parser))
+        anchor_cache[page.resolve()] = parser.anchors
+        issues.extend(check_references(page, parser, anchor_cache))
         issues.extend(check_image_alt(page, parser))
         issues.extend(check_nav_js(page, parser))
         header_issues, diff = check_header(page, source, template_source)
@@ -340,6 +376,7 @@ def run() -> int:
 
     print(f"Site check passed: {len(pages)} HTML pages checked.")
     print("- internal href/src targets exist")
+    print("- internal href anchors exist")
     print("- every img has non-empty alt")
     print("- every page loads assets/nav.js")
     print("- site-header blocks match templates/page-shell.html.tmpl")
