@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="PLC IO Checker のトラップ機能。">
+  <meta name="description" content="PLC IO Checker のトラップ機能、Start / Stop、イベント履歴。">
   <title>トラップ | PLC IO Checker 操作マニュアル</title>
   <link rel="stylesheet" href="../assets/style.css">
 </head>
@@ -94,7 +94,7 @@
     <section class="page-hero section">
       <p class="eyebrow">トラップ</p>
       <h1>トラップ</h1>
-      <p class="lead">条件に一致したタイミングをイベントとして記録します。最大 20 件まで登録できます。</p>
+      <p class="lead">条件に一致したタイミングをイベントとして記録します。最大 20 件まで登録でき、Start / Stop でトラップ監視だけを一時停止できます。</p>
     </section>
 
     <section class="section">
@@ -110,6 +110,17 @@
         </div>
         <figure class="inline-shot"><img src="../assets/images/monitoring/trap.png" width="800" height="1280" alt="トラップ画面" loading="lazy"><figcaption>トラップ</figcaption></figure>
       </div>
+    </section>
+
+    <section class="section">
+      <h2>Start / Stop</h2>
+      <p>トラップ画面の <strong>Start</strong> / <strong>Stop</strong> は、登録済みトラップ全体の監視を切り替えるボタンです。PLC の接続や通常の値読込はそのままに、トラップ条件の判定とイベント記録だけを止めたいときに使います。</p>
+      <div class="info-table" role="table" aria-label="トラップ Start Stop">
+        <div role="row"><div role="cell"><code>Start</code></div><div role="cell">トラップ条件の判定を開始します。条件に一致するとイベント履歴へ記録されます。</div></div>
+        <div role="row"><div role="cell"><code>Stop</code></div><div role="cell">トラップ条件の判定を停止します。停止中は条件が一致してもイベント履歴へ追加されません。</div></div>
+        <div role="row"><div role="cell">個別の有効/無効</div><div role="cell">各トラップ定義ごとのチェックです。Start / Stop は、個別設定とは別に全体を一時停止します。</div></div>
+      </div>
+      <p class="small-note">Stop から Start に戻した直後は、現在値を基準にして監視を再開します。しきい値条件が再開直後に意図せず発生しにくいように扱います。</p>
     </section>
 
     <section class="section">
