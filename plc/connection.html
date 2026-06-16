@@ -178,6 +178,17 @@
       </ul>
     </section>
 
+    <section class="section">
+      <h2>到達確認のエラー例</h2>
+      <p>通信設定の <strong>到達確認</strong> を実行したときの主なエラーと確認箇所です。</p>
+      <div class="info-table" role="table" aria-label="到達確認エラー例">
+        <div role="row"><div role="cell">タイムアウト</div><div role="cell">IP アドレスまたはポートが合っていない可能性があります。PLC 側の Ethernet モジュール設定と端末のネットワーク接続を確認してください。</div></div>
+        <div role="row"><div role="cell">接続拒否</div><div role="cell">TCP/UDP の選択が PLC 側と合っていないか、PLC 側で通信が許可されていない可能性があります。</div></div>
+        <div role="row"><div role="cell">認証エラー</div><div role="cell">MELSEC のリモートパスワードが合っていません。通信設定のパスワード欄を確認してください。</div></div>
+        <div role="row"><div role="cell">ルートエラー</div><div role="cell">MELSEC のネットワーク番号、局番、ユニット I/O が合っていない可能性があります。<a href="../plc/melsec-settings.html">MELSEC 設定</a> を確認してください。</div></div>
+      </div>
+    </section>
+
     <nav class="next-links" aria-label="前後ページ">
       <a href="../start/getting-started.html">前へ: はじめる</a>
       <a href="../plc/plc-side-settings.html">次へ: 接続設定例</a>

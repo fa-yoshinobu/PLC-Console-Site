@@ -120,12 +120,18 @@
         <div role="row"><div role="cell"><code>Stop</code></div><div role="cell">トラップ条件の判定を停止します。停止中は条件が一致してもイベント履歴へ追加されません。</div></div>
         <div role="row"><div role="cell">個別の有効/無効</div><div role="cell">各トラップ定義ごとのチェックです。Start / Stop は、個別設定とは別に全体を一時停止します。</div></div>
       </div>
-      <p class="small-note">Stop から Start に戻した直後は、現在値を基準にして監視を再開します。しきい値条件が再開直後に意図せず発生しにくいように扱います。</p>
+      <p class="small-note">Stop から Start に戻した直後は、再開時の現在値を基準として監視を開始します。各条件の再開直後の動作は次のとおりです。</p>
+      <div class="info-table" role="table" aria-label="再開時の動作">
+        <div role="row"><div role="cell">立上り / 立下り</div><div role="cell">再開時に条件が成立していても検知しません。再開後に次の変化が起きたときから検知します。</div></div>
+        <div role="row"><div role="cell">変化</div><div role="cell">再開後に前回値から変化したときから検知します。</div></div>
+        <div role="row"><div role="cell">閾値</div><div role="cell">再開時に閾値を超えていても検知しません。一度条件を外れてから再度満たしたときに検知します。</div></div>
+      </div>
     </section>
 
     <section class="section">
       <h2>イベント履歴</h2>
       <p>検知したイベントは直近イベントに表示されます。CSV 書出で履歴を外部確認できます。</p>
+      <p class="small-note">トラップ定義は最大 20 件まで登録できます。イベント履歴は直近 200 件を保持し、上限を超えると古い順に削除されます。</p>
     </section>
 
     <nav class="next-links" aria-label="前後ページ">

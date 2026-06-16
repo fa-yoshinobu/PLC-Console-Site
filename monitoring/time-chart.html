@@ -113,12 +113,31 @@
     </section>
 
     <section class="section">
+      <h2>記録容量と最大時間</h2>
+      <div class="info-table" role="table" aria-label="タイムチャート仕様">
+        <div role="row"><div role="cell">ポーリング間隔</div><div role="cell">500 ms（固定）</div></div>
+        <div role="row"><div role="cell">最大サンプル数</div><div role="cell">1,000 サンプル</div></div>
+        <div role="row"><div role="cell">最大記録時間</div><div role="cell">約 500 秒（8 分 20 秒）</div></div>
+        <div role="row"><div role="cell">最大チャンネル数</div><div role="cell">20 チャンネル</div></div>
+      </div>
+      <p class="small-note">バッファが上限に達すると、古いサンプルから順に削除されます。アプリを終了するとバッファは消去されます。</p>
+    </section>
+
+    <section class="section">
       <h2>記録条件</h2>
       <ul>
         <li>REC は PLC 接続中かつ 1 チャンネル以上登録済みの場合に開始できます。</li>
         <li>REC 開始前の現在値は <code>--</code> と表示されます。</li>
-        <li>iOS では記録中に画面スリープを防止します。継続記録中は画面を表示したままにしてください。</li>
       </ul>
+    </section>
+
+    <section class="section">
+      <h2>バックグラウンド動作</h2>
+      <div class="info-table" role="table" aria-label="バックグラウンド動作の違い">
+        <div role="row"><div role="cell">Android（REC 中）</div><div role="cell">ホーム画面に戻っても記録が継続されます。通知バーに「タイムチャート記録中」が表示されます。</div></div>
+        <div role="row"><div role="cell">Android（REC 停止中）</div><div role="cell">ホーム画面に戻るとポーリングが停止します。</div></div>
+        <div role="row"><div role="cell">iOS</div><div role="cell">ホーム画面に戻るとアプリが一時停止し、記録は中断されます。記録中は画面を表示したままにしてください。記録中の画面スリープは防止されます。</div></div>
+      </div>
     </section>
 
     <nav class="next-links" aria-label="前後ページ">

@@ -115,6 +115,41 @@
       </div>
     </section>
 
+    <section class="section">
+      <h2>初回公開に含まれる主な機能</h2>
+      <h3>対応 PLC</h3>
+      <div class="info-table" role="table" aria-label="対応PLC">
+        <div role="row"><div role="cell">MELSEC（三菱電機）</div><div role="cell">iQ-F / iQ-L / iQ-R / Q / L シリーズ（SLMP TCP/UDP）</div></div>
+        <div role="row"><div role="cell">KEYENCE</div><div role="cell">KV-5000 / KV-7000 / KV-8000 / KV-X500 / KV-XLE02（HostLink）</div></div>
+      </div>
+      <h3>監視・記録</h3>
+      <ul>
+        <li>List 監視 / Block 監視</li>
+        <li>操作パネル（フォーカスパネル）: 値の拡大表示、書込、トレンド</li>
+        <li>タイムチャート記録: 最大 20 チャンネル、1,000 サンプル（約 500 秒）、CSV 書出</li>
+        <li>トラップ: 最大 20 件の条件登録、イベント履歴 CSV 書出</li>
+        <li>デバイスコメント: PLC からの読込、CSV 一括読込</li>
+        <li>CPU 操作: RUN/STOP（MELSEC のみ）</li>
+      </ul>
+      <h3>プロジェクト管理</h3>
+      <ul>
+        <li>プロジェクト JSON による設定の保存・読込</li>
+        <li>ProjectBuilder との QR コード連携</li>
+        <li>Android / iOS 間でのプロジェクト JSON 互換</li>
+      </ul>
+      <h3>その他</h3>
+      <ul>
+        <li>Demo モード: 実機 PLC なしで動作確認できます（値変化パターン選択可）</li>
+        <li>Android / iOS 対応</li>
+      </ul>
+      <h3>既知の制限</h3>
+      <ul>
+        <li>アプリを終了するとタイムチャートのバッファとトラップイベント履歴は消去されます。</li>
+        <li>iOS はバックグラウンドへ移行するとポーリングが停止します（タイムチャート記録中も同様）。</li>
+        <li>SLMP / HostLink は工場内の閉域ネットワーク向けプロトコルであり、通信は暗号化されません。</li>
+      </ul>
+    </section>
+
     <nav class="next-links" aria-label="前後ページ">
       <a href="glossary.html">前へ: 用語集</a>
       <a href="troubleshooting.html">次へ: 困ったとき</a>
