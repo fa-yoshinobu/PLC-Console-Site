@@ -102,8 +102,8 @@
         <div>
           <h2>登録できる条件</h2>
           <div class="info-table" role="table" aria-label="トラップ条件">
-            <div role="row"><div role="cell">立上り</div><div role="cell">OFF から ON への変化を検知します。</div></div>
-            <div role="row"><div role="cell">立下り</div><div role="cell">ON から OFF への変化を検知します。</div></div>
+            <div role="row"><div role="cell">立上り</div><div role="cell">OFF から ON への変化を検知します。BIT デバイスで選べます。</div></div>
+            <div role="row"><div role="cell">立下り</div><div role="cell">ON から OFF への変化を検知します。BIT デバイスで選べます。</div></div>
             <div role="row"><div role="cell">変化</div><div role="cell">前回値から変わったときに検知します。</div></div>
             <div role="row"><div role="cell">閾値</div><div role="cell"><code>&gt;=</code>、<code>&lt;=</code>、<code>==</code>、<code>!=</code> で検知します。</div></div>
           </div>
@@ -131,7 +131,8 @@
     <section class="section">
       <h2>イベント履歴</h2>
       <p>検知したイベントは直近イベントに表示されます。CSV 書出で履歴を外部確認できます。</p>
-      <p class="small-note">トラップ定義は最大 20 件まで登録できます。イベント履歴は直近 200 件を保持し、上限を超えると古い順に削除されます。</p>
+      <p class="small-note">トラップ定義は最大 20 件まで登録できます。イベント履歴は直近 200 件を保持し、上限を超えると古い順に削除されます。イベント履歴はプロジェクト単位で保存され、前回と同じ接続設定を開いたときだけ復元されます。</p>
+      <p class="small-note">未読バッジは <strong>未読クリア</strong> で消します。<strong>未読クリア</strong> はバッジだけを消し、イベント履歴は削除しません。履歴を削除する場合は <strong>履歴クリア</strong> を使います。</p>
     </section>
 
     <nav class="next-links" aria-label="前後ページ">

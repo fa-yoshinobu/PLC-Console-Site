@@ -94,7 +94,7 @@
     <section class="page-hero section">
       <p class="eyebrow">タイムチャート</p>
       <h1>タイムチャート</h1>
-      <p class="lead">最大 20 チャンネルを 500 ms 周期で記録し、波形確認と CSV 書出を行います。</p>
+      <p class="lead">最大 20 チャンネルを通信周期に合わせて記録し、波形確認と CSV 書出を行います。</p>
     </section>
 
     <section class="section">
@@ -106,6 +106,7 @@
             <li><strong>REC</strong>: 記録を開始・停止します。</li>
             <li><strong>CSV</strong>: 記録データを書き出します。</li>
             <li><strong>クリア</strong>: 表示中の履歴を消去します。</li>
+            <li><strong>コンパクト / 詳細</strong>: チャンネルの高さを切り替えます。設定はプロジェクトに保存されます。</li>
           </ul>
         </div>
         <figure class="inline-shot"><img src="../assets/images/monitoring/time-chart.png" width="800" height="1280" alt="タイムチャート画面" loading="lazy"><figcaption>タイムチャート</figcaption></figure>
@@ -115,12 +116,12 @@
     <section class="section">
       <h2>記録容量と最大時間</h2>
       <div class="info-table" role="table" aria-label="タイムチャート仕様">
-        <div role="row"><div role="cell">ポーリング間隔</div><div role="cell">500 ms（固定）</div></div>
+        <div role="row"><div role="cell">記録間隔</div><div role="cell">Monitor Interval と同じです。通信成功 1 回につき 1 サンプルを追加します。</div></div>
         <div role="row"><div role="cell">最大サンプル数</div><div role="cell">1,000 サンプル</div></div>
-        <div role="row"><div role="cell">最大記録時間</div><div role="cell">約 500 秒（8 分 20 秒）</div></div>
+        <div role="row"><div role="cell">最大記録時間</div><div role="cell">Monitor Interval × 1,000 サンプルです。既定値 500 ms では約 500 秒です。</div></div>
         <div role="row"><div role="cell">最大チャンネル数</div><div role="cell">20 チャンネル</div></div>
       </div>
-      <p class="small-note">バッファが上限に達すると、古いサンプルから順に削除されます。アプリを終了するとバッファは消去されます。</p>
+      <p class="small-note">バッファが上限に達すると、古いサンプルから順に削除されます。波形バッファはプロジェクト単位で保存され、前回と同じ接続設定を開いたときだけ復元されます。</p>
     </section>
 
     <section class="section">
@@ -128,6 +129,8 @@
       <ul>
         <li>REC は PLC 接続中かつ 1 チャンネル以上登録済みの場合に開始できます。</li>
         <li>REC 開始前の現在値は <code>--</code> と表示されます。</li>
+        <li>WORD デバイスは折れ線のみで表示します。BIT デバイスは ON 区間を塗りつぶして表示します。</li>
+        <li>Android ではチャート上のカーソルをタップまたは左右ドラッグで移動できます。</li>
       </ul>
     </section>
 
