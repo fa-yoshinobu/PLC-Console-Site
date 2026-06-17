@@ -36,7 +36,7 @@
           <div class="nav-menu">
             <a class="active" aria-current="page" href="../monitoring/monitoring.html">監視</a>
             <a href="../monitoring/list-edit.html">List 登録編集</a>
-            <a href="../monitoring/focus-panel.html">操作パネル</a>
+            <a href="../monitoring/focus-panel.html">デバイス操作パネル</a>
             <a href="../monitoring/writing.html">書込</a>
             <a href="../monitoring/cpu-control.html">CPU操作</a>
             <a href="../monitoring/comments.html">コメント</a>
@@ -94,7 +94,7 @@
     <section class="page-hero section">
       <p class="eyebrow">Monitor</p>
       <h1>監視</h1>
-      <p class="lead">ブロック監視、リスト監視、デバイス範囲、フォーカスパネルの使い方です。</p>
+      <p class="lead">ブロック監視、リスト監視、デバイス範囲、デバイス操作パネルの使い方です。</p>
     </section>
 
     <section class="section">
@@ -107,7 +107,7 @@
 
     <section class="section">
       <h2>ブロック監視</h2>
-      <p>CPU のデバイス範囲に沿って連続アドレスをページ単位で表示します。通常は <code>CR / CR511 - CR2313 / 1/100</code> のような短い範囲行で表示し、行を開くとデバイス種別、開始番号、ページ、表示密度を変更できます。</p>
+      <p><strong>ブロック</strong> 画面では、CPU のデバイス範囲に沿って連続アドレスをページ単位で表示します。通常は <code>CR / CR511 - CR2313 / 1/100</code> のような短い範囲行で表示し、行を開くとデバイス種別、開始番号、ページ、表示密度を変更できます。</p>
       <ul>
         <li>種類を変更すると先頭ページに戻ります。</li>
         <li>BIT デバイスは ON/OFF 表示になります。</li>
@@ -118,11 +118,12 @@
         <div role="row"><div role="cell">詳細</div><div role="cell">List と同じカード形式で、アドレス、値、コメント、登録状態を確認しやすくします。コメントや値の内容を見ながら選択したいときに使います。</div></div>
         <div role="row"><div role="cell">保存</div><div role="cell">表示密度はプロジェクト設定として保存され、Android / iOS で同じ意味で扱います。</div></div>
       </div>
+      <p class="small-note">表示設定画面の名前は <strong>モニタ表示設定</strong> です。数値バーの 100% 基準は <strong>グラフ100%値</strong> と表示されます。</p>
     </section>
 
     <section class="section">
       <h2>リスト監視</h2>
-      <p>登録したアドレスだけを表示します。List は登録内容を確認しやすい詳細表示が基本です。表示対象の追加・編集はリスト画面の <strong>List 登録編集</strong> から行います。</p>
+      <p><strong>リスト</strong> 画面では、登録したアドレスだけを表示します。List は登録内容を確認しやすい詳細表示が基本です。表示対象の追加・編集はリスト画面の <strong>List 登録編集</strong> から行います。</p>
       <p class="small-note">List 登録は、タイムチャートのチャンネル登録やトラップ登録とは別です。コメントは List と Block の詳細表示で使われます。</p>
     </section>
 

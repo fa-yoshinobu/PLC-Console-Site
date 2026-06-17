@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="PLC IO Checker のトラップ機能、Start / Stop、イベント履歴。">
+  <meta name="description" content="PLC IO Checker のトラップ機能、開始 / 停止、イベント履歴。">
   <title>トラップ | PLC IO Checker 操作マニュアル</title>
   <link rel="stylesheet" href="../assets/style.css">
 </head>
@@ -36,7 +36,7 @@
           <div class="nav-menu">
             <a href="../monitoring/monitoring.html">監視</a>
             <a href="../monitoring/list-edit.html">List 登録編集</a>
-            <a href="../monitoring/focus-panel.html">操作パネル</a>
+            <a href="../monitoring/focus-panel.html">デバイス操作パネル</a>
             <a href="../monitoring/writing.html">書込</a>
             <a href="../monitoring/cpu-control.html">CPU操作</a>
             <a href="../monitoring/comments.html">コメント</a>
@@ -94,7 +94,7 @@
     <section class="page-hero section">
       <p class="eyebrow">トラップ</p>
       <h1>トラップ</h1>
-      <p class="lead">条件に一致したタイミングをイベントとして記録します。最大 20 件まで登録でき、Start / Stop でトラップ監視だけを一時停止できます。</p>
+      <p class="lead">条件に一致したタイミングをイベントとして記録します。最大 20 件まで登録でき、開始 / 停止でトラップ監視だけを一時停止できます。</p>
     </section>
 
     <section class="section">
@@ -114,25 +114,25 @@
 
     <section class="section">
       <h2>登録 / 編集</h2>
-      <p>トラップ登録は、List 登録やタイムチャート登録とは別です。Trap 画面、または操作パネルの <strong>トラップ</strong> から登録します。</p>
+      <p>トラップ登録は、List 登録やタイムチャート登録とは別です。<strong>トラップ</strong> 画面、またはデバイス操作パネルの <strong>トラップ</strong> から登録します。</p>
       <ul>
         <li>トラップ定義は最大 20 件まで登録できます。</li>
         <li>BIT デバイスでは、立上り、立下り、変化などの条件を使えます。</li>
         <li>WORD デバイスでは、変化や閾値条件を使えます。</li>
-        <li>各定義には個別の有効/無効があります。全体の Start / Stop とは別に切り替えられます。</li>
+        <li>各定義には個別の有効/無効があります。全体の開始 / 停止とは別に切り替えられます。</li>
         <li>既に登録済みのアドレスでは、新しいトラップを追加できません。条件を変える場合は既存定義を編集します。</li>
       </ul>
     </section>
 
     <section class="section">
-      <h2>Start / Stop</h2>
-      <p>トラップ画面の <strong>Start</strong> / <strong>Stop</strong> は、登録済みトラップ全体の監視を切り替えるボタンです。PLC の接続や通常の値読込はそのままに、トラップ条件の判定とイベント記録だけを止めたいときに使います。</p>
-      <div class="info-table" role="table" aria-label="トラップ Start Stop">
-        <div role="row"><div role="cell"><code>Start</code></div><div role="cell">トラップ条件の判定を開始します。条件に一致するとイベント履歴へ記録されます。</div></div>
-        <div role="row"><div role="cell"><code>Stop</code></div><div role="cell">トラップ条件の判定を停止します。停止中は条件が一致してもイベント履歴へ追加されません。</div></div>
-        <div role="row"><div role="cell">個別の有効/無効</div><div role="cell">各トラップ定義ごとのチェックです。Start / Stop は、個別設定とは別に全体を一時停止します。</div></div>
+      <h2>開始 / 停止</h2>
+      <p>トラップ画面の <strong>開始</strong> / <strong>停止</strong> は、登録済みトラップ全体の監視を切り替えるボタンです。PLC の接続や通常の値読込はそのままに、トラップ条件の判定とイベント記録だけを止めたいときに使います。</p>
+      <div class="info-table" role="table" aria-label="トラップ開始停止">
+        <div role="row"><div role="cell">開始</div><div role="cell">トラップ条件の判定を開始します。条件に一致するとイベント履歴へ記録されます。</div></div>
+        <div role="row"><div role="cell">停止</div><div role="cell">トラップ条件の判定を停止します。停止中は条件が一致してもイベント履歴へ追加されません。</div></div>
+        <div role="row"><div role="cell">個別の有効/無効</div><div role="cell">各トラップ定義ごとのチェックです。開始 / 停止は、個別設定とは別に全体を一時停止します。</div></div>
       </div>
-      <p class="small-note">Stop から Start に戻した直後は、再開時の現在値を基準として監視を開始します。各条件の再開直後の動作は次のとおりです。</p>
+      <p class="small-note">停止から開始に戻した直後は、再開時の現在値を基準として監視を開始します。各条件の再開直後の動作は次のとおりです。</p>
       <div class="info-table" role="table" aria-label="再開時の動作">
         <div role="row"><div role="cell">立上り / 立下り</div><div role="cell">再開時に条件が成立していても検知しません。再開後に次の変化が起きたときから検知します。</div></div>
         <div role="row"><div role="cell">変化</div><div role="cell">再開後に前回値から変化したときから検知します。</div></div>

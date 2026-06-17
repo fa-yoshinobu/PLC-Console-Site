@@ -36,7 +36,7 @@
           <div class="nav-menu">
             <a href="../monitoring/monitoring.html">監視</a>
             <a href="../monitoring/list-edit.html">List 登録編集</a>
-            <a href="../monitoring/focus-panel.html">操作パネル</a>
+            <a href="../monitoring/focus-panel.html">デバイス操作パネル</a>
             <a href="../monitoring/writing.html">書込</a>
             <a href="../monitoring/cpu-control.html">CPU操作</a>
             <a href="../monitoring/comments.html">コメント</a>
@@ -102,11 +102,12 @@
         <div>
           <h2>基本操作</h2>
           <ul>
+            <li><strong>画面名</strong>: アプリ下部/上部のタブでは <strong>タイムチャート</strong> と表示されます。</li>
             <li><strong>CH追加</strong>: 監視したいアドレスをチャンネルに追加します。</li>
             <li><strong>REC</strong>: 記録を開始・停止します。</li>
             <li><strong>CSV</strong>: 記録データを書き出します。</li>
             <li><strong>クリア</strong>: 表示中の履歴を消去します。</li>
-            <li><strong>コンパクト / 詳細</strong>: チャンネルの高さを切り替えます。設定はプロジェクトに保存されます。</li>
+            <li><strong>ゆったり / 省スペース</strong>: チャンネルの高さを切り替えます。設定はプロジェクトに保存されます。</li>
           </ul>
         </div>
         <figure class="inline-shot"><img src="../assets/images/monitoring/time-chart.png" width="800" height="1280" alt="タイムチャート画面" loading="lazy"><figcaption>タイムチャート</figcaption></figure>
@@ -115,7 +116,7 @@
 
     <section class="section">
       <h2>チャンネル登録と表示</h2>
-      <p>タイムチャートのチャンネル登録は、List 登録とは別です。TimeChart 画面の <strong>CH追加</strong>、または操作パネルの <strong>タイムチャート</strong> から追加します。</p>
+      <p>タイムチャートのチャンネル登録は、List 登録とは別です。<strong>タイムチャート</strong> 画面の <strong>CH追加</strong>、またはデバイス操作パネルの <strong>タイムチャート</strong> から追加します。</p>
       <div class="info-table" role="table" aria-label="タイムチャート表示状態">
         <div role="row"><div role="cell">登録直後</div><div role="cell">REC を開始していなくても、登録済みチャンネルとして画面に表示されます。</div></div>
         <div role="row"><div role="cell">REC 前</div><div role="cell">記録サンプルがまだないため、現在値は <code>--</code> と表示されます。</div></div>
@@ -126,10 +127,10 @@
     </section>
 
     <section class="section">
-      <h2>コンパクト / 詳細表示</h2>
+      <h2>ゆったり / 省スペース表示</h2>
       <div class="info-table" role="table" aria-label="タイムチャート表示密度">
-        <div role="row"><div role="cell">コンパクト</div><div role="cell">チャンネル行とグラフを低めにして、同時に見えるチャンネル数を増やします。</div></div>
-        <div role="row"><div role="cell">詳細</div><div role="cell">チャンネル行とグラフを高めにして、値や波形を読み取りやすくします。</div></div>
+        <div role="row"><div role="cell">ゆったり</div><div role="cell">チャンネル行とグラフを高めにして、値や波形を読み取りやすくします。</div></div>
+        <div role="row"><div role="cell">省スペース</div><div role="cell">チャンネル行とグラフを低めにして、同時に見えるチャンネル数を増やします。</div></div>
         <div role="row"><div role="cell">保存</div><div role="cell">表示密度はプロジェクト設定として保存され、Android / iOS で同じ意味で扱います。</div></div>
       </div>
     </section>
@@ -151,7 +152,7 @@
         <li>REC は PLC 接続中かつ 1 チャンネル以上登録済みの場合に開始できます。</li>
         <li>REC 開始前の現在値は <code>--</code> と表示されます。</li>
         <li>WORD デバイスは折れ線のみで表示します。BIT デバイスは ON 区間を塗りつぶして表示します。</li>
-        <li>Android ではチャート上のカーソルをタップまたは左右ドラッグで移動できます。</li>
+        <li>チャート上をタップ、または左右ドラッグするとカーソル位置の値を確認できます。</li>
       </ul>
     </section>
 

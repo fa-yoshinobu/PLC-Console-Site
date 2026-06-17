@@ -10,7 +10,7 @@ PLC IO Checker マニュアルサイトのメンテナ向け資料です。GitHu
 | `start/` | 入手・インストール、はじめる |
 | `plc/` | 接続、接続設定例、MELSEC / KEYENCE 設定 |
 | `plc/models/` | 対応機種ごとの接続設定例ページ |
-| `monitoring/` | 監視、List 登録編集、操作パネル、書込、CPU操作、コメント、タイムチャート、トラップ |
+| `monitoring/` | 監視、List 登録編集、デバイス操作パネル、書込、CPU操作、コメント、タイムチャート、トラップ |
 | `transfer/` | QR / JSON、プロジェクトJSON |
 | `settings/` | メニュー、アプリ設定、ライセンス/購入 |
 | `projectbuilder/` | ProjectBuilder、入力、QR 生成 |
@@ -59,11 +59,25 @@ PLC IO Checker マニュアルサイトのメンテナ向け資料です。GitHu
 
 - アプリ名は `PLC IO Checker`、PC ツール名は `ProjectBuilder` または `PlcIoChecker_ProjectBuilder` に統一する。
 - 日本語表記は `プロジェクト`、`プロジェクト名`、`プロジェクトJSON` に統一する。
-- 画面名は app 表示に合わせて `List`、`Block`、`タイムチャート`、`トラップ`、`List 登録編集` を使う。
+- 画面名は app 表示に合わせて `List`、`Block`、`デバイス操作パネル`、`タイムチャート`、`トラップ`、`List 登録編集` を使う。
 - 操作名は表示文言に合わせて `QR読込`、`JSON読込`、`JSON書出`、`CSVコメント読込`、`コメント読込`、`CPU操作` と書く。
 - PLC 種別は `MELSEC` / `KEYENCE`、通信方式は `SLMP（Seamless Message Protocol）` / `Host-link（上位リンク）` と書く。
 - 通常の操作ページでは、内部フィールド名ではなく画面表示を使う。例: `ネットワーク`、`局番`、`ユニットI/O`、`マルチドロップ`。
 - `BIT` / `WORD`、`データタイプ`、`address`、`comment` の意味を混ぜない。
+- 公開ページでは原則として内部名を出さない。内部名との対応はこの保守メモで管理する。
+
+### 画面名と内部名
+
+| 公開表示名 | 英語表記 | アプリ内部名・実装名 | 備考 |
+| --- | --- | --- | --- |
+| List / リスト | List | `List` / `ViewMode.List` | 登録済みデバイス一覧 |
+| Block / ブロック | Block | `Block` / `ViewMode.Block` | デバイス範囲のページ表示 |
+| デバイス操作パネル | Device Control Panel | `FocusPanel` | List / Block で選択した 1 デバイスを操作する下部シート/右側ペイン |
+| ON/OFF操作 | ON/OFF control | `FocusPanel` 内の BIT 書込操作 | パネル名ではなく、BIT デバイスの大きな ON/OFF ボタンの操作名 |
+| 表示型を選択 | Select display type | `Select display type` dialog | WORD デバイスの `Type` から開く表示/書込型選択 |
+| モニタ表示設定 | Monitor Display Settings | Block display/settings dialog | `コンパクト / 詳細` と `グラフ100%値` を設定 |
+| タイムチャート | Time Chart | `TimeChart` | チャンネル登録と記録 |
+| トラップ | Trap | `Trap` | 条件登録と検知履歴 |
 
 ### MELSEC / KEYENCE 差分
 
@@ -98,6 +112,8 @@ PLC IO Checker マニュアルサイトのメンテナ向け資料です。GitHu
 ## Tracking
 
 ページ作成状態と更新チェックリストは [`TODO.md`](../TODO.md) で管理します。
+画面、パネル、シート、ダイアログの正式名と内部名の対応は [`WINDOW_NAMES.md`](./WINDOW_NAMES.md) で管理します。
+画面名以外の機能名、操作名、表示モード名、データ名は [`NAMING_CATALOG.md`](./NAMING_CATALOG.md) で管理します。
 
 ## Preview
 
