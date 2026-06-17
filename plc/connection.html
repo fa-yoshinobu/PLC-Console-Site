@@ -101,7 +101,7 @@
       <div class="two-column">
         <div>
           <h2>接続先切替を開く</h2>
-          <p>上部タイトル部分をタップすると接続先切替を開けます。通信設定はハンバーガーメニューではなく、このタイトル導線から開きます。</p>
+          <p>上部ステータス部分をタップすると接続先切替を開けます。通信設定はハンバーガーメニューではなく、このタイトル導線から開きます。</p>
           <ul>
             <li>現在の接続内容を確認できます。</li>
             <li>MELSEC / KEYENCE の接続先を切り替えられます。</li>
@@ -112,6 +112,19 @@
           <img src="../assets/images/plc/connection-switch.png" width="800" height="1280" alt="接続先切替画面" loading="lazy">
           <figcaption>接続先切替</figcaption>
         </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>上部ステータスの見方</h2>
+      <p>上部ステータスには、現在の CPU 状態、CPU機種、IP、プロジェクト名を短く表示します。表示幅を優先するため、ポート番号はこの行には表示しません。</p>
+      <div class="info-table" role="table" aria-label="上部ステータス">
+        <div role="row"><div role="cell">表示内容</div><div role="cell"><code>RUN/STOP/PROGRAM</code> / CPU機種 / IP / プロジェクト名。</div></div>
+        <div role="row"><div role="cell">状態表示</div><div role="cell">CPU 状態は丸マークではなく、<code>RUN</code>、<code>STOP</code>、<code>PROGRAM</code> の文字で確認します。</div></div>
+        <div role="row"><div role="cell">MELSEC</div><div role="cell">CPU停止側の状態は <code>STOP</code> と表示します。</div></div>
+        <div role="row"><div role="cell">KEYENCE</div><div role="cell">CPU停止側の状態は <code>PROGRAM</code> と表示します。</div></div>
+        <div role="row"><div role="cell">接続ボタン</div><div role="cell"><strong>接続中</strong> または <strong>未接続</strong> の 2 状態で表示します。Demo Mock の場合はボタン内に <strong>DEMO</strong> が表示されます。</div></div>
+        <div role="row"><div role="cell">書込ロック</div><div role="cell"><strong>ロック</strong> / <strong>解除</strong> で、出力や値の書込が許可されているかを示します。</div></div>
       </div>
     </section>
 
@@ -169,7 +182,7 @@
     <section class="section">
       <h2>接続結果の見方</h2>
       <ul>
-        <li>接続成功時は上部ステータスに RUN/STOP、CPU、IP、プロジェクト名が表示されます。</li>
+        <li>接続成功時は上部ステータスに RUN/STOP/PROGRAM、CPU、IP、プロジェクト名が表示されます。</li>
         <li>未処理の CPU 状態は <code>--</code> と表示されます。</li>
         <li>接続できない場合は、通信設定の <strong>到達確認</strong> を実行し、結果とエラーメッセージを確認してください。</li>
         <li>IP、ポート、TCP/UDP、端末のネットワーク接続を確認してください。</li>

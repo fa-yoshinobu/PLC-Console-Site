@@ -114,6 +114,27 @@
     </section>
 
     <section class="section">
+      <h2>チャンネル登録と表示</h2>
+      <p>タイムチャートのチャンネル登録は、List 登録とは別です。TimeChart 画面の <strong>CH追加</strong>、または操作パネルの <strong>タイムチャート</strong> から追加します。</p>
+      <div class="info-table" role="table" aria-label="タイムチャート表示状態">
+        <div role="row"><div role="cell">登録直後</div><div role="cell">REC を開始していなくても、登録済みチャンネルとして画面に表示されます。</div></div>
+        <div role="row"><div role="cell">REC 前</div><div role="cell">記録サンプルがまだないため、現在値は <code>--</code> と表示されます。</div></div>
+        <div role="row"><div role="cell">REC 中</div><div role="cell">通信成功ごとに値を記録し、波形に追加します。</div></div>
+        <div role="row"><div role="cell">登録上限</div><div role="cell">最大 20 チャンネルです。</div></div>
+      </div>
+      <p class="small-note">TimeChart 画面の登録内容はプロジェクトに保存されます。QR / JSON で移した場合も、登録チャンネルはプロジェクト情報として引き継がれます。</p>
+    </section>
+
+    <section class="section">
+      <h2>コンパクト / 詳細表示</h2>
+      <div class="info-table" role="table" aria-label="タイムチャート表示密度">
+        <div role="row"><div role="cell">コンパクト</div><div role="cell">チャンネル行とグラフを低めにして、同時に見えるチャンネル数を増やします。</div></div>
+        <div role="row"><div role="cell">詳細</div><div role="cell">チャンネル行とグラフを高めにして、値や波形を読み取りやすくします。</div></div>
+        <div role="row"><div role="cell">保存</div><div role="cell">表示密度はプロジェクト設定として保存され、Android / iOS で同じ意味で扱います。</div></div>
+      </div>
+    </section>
+
+    <section class="section">
       <h2>記録容量と最大時間</h2>
       <div class="info-table" role="table" aria-label="タイムチャート仕様">
         <div role="row"><div role="cell">記録間隔</div><div role="cell">Monitor Interval と同じです。通信成功 1 回につき 1 サンプルを追加します。</div></div>

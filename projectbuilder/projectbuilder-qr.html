@@ -121,7 +121,7 @@
     <section class="section">
       <h2>QR 設定</h2>
       <div class="info-table" role="table" aria-label="QR settings">
-        <div role="row"><div role="cell">分割サイズ</div><div role="cell"><code>350</code>、<code>500</code>、<code>800</code>、<code>1200</code>。小さいほどページ数は増えますが読み取りやすくなります。</div></div>
+        <div role="row"><div role="cell">分割サイズ</div><div role="cell"><code>350</code>、<code>500</code>、<code>800</code>、<code>1200</code>。小さいほどページ数は増えますが読み取りやすくなります。ページ数は固定ではありません。</div></div>
         <div role="row"><div role="cell">表示サイズ</div><div role="cell"><code>600</code>、<code>800</code>、<code>1000</code>、<code>1200</code> px。</div></div>
         <div role="row"><div role="cell">誤り訂正</div><div role="cell"><code>L</code>、<code>M</code>、<code>Q</code>、<code>H</code>。強くするほど復元力は上がりますが QR は細かくなります。</div></div>
         <div role="row"><div role="cell">自動切換え間隔</div><div role="cell"><code>0.0</code> から <code>5.0</code> 秒で指定します。既定値は <code>1.0</code> 秒です。複数ページ QR の場合だけ使います。</div></div>
@@ -133,7 +133,7 @@
       <ol class="steps compact">
         <li><strong>QR読込</strong><span>モバイルアプリのメニューから <strong>QR読込</strong> を開きます。</span></li>
         <li><strong>1枚目</strong><span>ProjectBuilder に表示した 1 枚目を読み込みます。</span></li>
-        <li><strong>次ページ</strong><span>アプリの表示に従って ProjectBuilder 側を次の QR に切り替えます。</span></li>
+        <li><strong>次ページ</strong><span>アプリの表示に従って ProjectBuilder 側を次の QR に切り替えます。順番に読み込むと、未読ページを確認しやすくなります。</span></li>
         <li><strong>完了</strong><span>全ページを読み込むとプロジェクトに反映されます。</span></li>
       </ol>
     </section>
@@ -141,7 +141,7 @@
     <section class="section">
       <div class="notice">
         <h2>読み取りにくい場合</h2>
-        <p>画面を明るくし、QR を大きく表示します。改善しない場合は分割サイズを下げて、1 枚あたりの文字数を少なくします。</p>
+        <p>画面を明るくし、QR を大きく表示します。改善しない場合は分割サイズを下げて、1 枚あたりの文字数を少なくします。途中で生成条件が変わった QR は混ぜず、同じ生成結果の全ページを読み込んでください。</p>
       </div>
     </section>
 

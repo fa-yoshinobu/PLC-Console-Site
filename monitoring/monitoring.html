@@ -107,17 +107,23 @@
 
     <section class="section">
       <h2>ブロック監視</h2>
-      <p>CPU のデバイス範囲に沿って連続アドレスをページ単位で表示します。範囲行を開くと、デバイス種別、開始番号、ページ、表示密度を変更できます。</p>
+      <p>CPU のデバイス範囲に沿って連続アドレスをページ単位で表示します。通常は <code>CR / CR511 - CR2313 / 1/100</code> のような短い範囲行で表示し、行を開くとデバイス種別、開始番号、ページ、表示密度を変更できます。</p>
       <ul>
         <li>種類を変更すると先頭ページに戻ります。</li>
         <li>BIT デバイスは ON/OFF 表示になります。</li>
         <li>数値デバイスはデータタイプに応じて値を表示します。</li>
       </ul>
+      <div class="info-table" role="table" aria-label="ブロック監視の表示密度">
+        <div role="row"><div role="cell">コンパクト</div><div role="cell">連続アドレスを小さなセルで多く表示します。広い範囲の ON/OFF や値変化をまとめて見るときに使います。</div></div>
+        <div role="row"><div role="cell">詳細</div><div role="cell">List と同じカード形式で、アドレス、値、コメント、登録状態を確認しやすくします。コメントや値の内容を見ながら選択したいときに使います。</div></div>
+        <div role="row"><div role="cell">保存</div><div role="cell">表示密度はプロジェクト設定として保存され、Android / iOS で同じ意味で扱います。</div></div>
+      </div>
     </section>
 
     <section class="section">
       <h2>リスト監視</h2>
-      <p>登録したアドレスだけを表示します。表示対象の追加・編集はリスト画面の <strong>List 登録編集</strong> から行います。</p>
+      <p>登録したアドレスだけを表示します。List は登録内容を確認しやすい詳細表示が基本です。表示対象の追加・編集はリスト画面の <strong>List 登録編集</strong> から行います。</p>
+      <p class="small-note">List 登録は、タイムチャートのチャンネル登録やトラップ登録とは別です。コメントは List と Block の詳細表示で使われます。</p>
     </section>
 
     <section class="section">

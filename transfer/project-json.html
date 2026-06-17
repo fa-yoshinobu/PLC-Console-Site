@@ -113,13 +113,14 @@
         <article><h3>接続設定</h3><p>PLC 種別、CPU機種、接続先、MELSEC / KEYENCE 固有の設定を保存します。</p></article>
         <article><h3>登録内容</h3><p>デバイス、タイムチャート、トラップの登録内容を保存します。</p></article>
       </div>
+      <p class="small-note">TimeChart は最大 20 チャンネル、Trap は最大 20 件を取り込み対象にします。上限を超える登録は ProjectBuilder またはモバイルアプリ側で調整してください。</p>
     </section>
 
     <section class="section">
       <div class="notice">
         <h2>扱うときの注意</h2>
         <p>プロジェクトJSONには接続先や登録デバイスなどの設備情報が含まれます。共有や問い合わせ時は、IP アドレス、設備名、顧客名などを含めないようにしてください。</p>
-        <p>リモートパスワードはプロジェクトJSON、QR、JSON書出には含めません。パスワードはモバイルアプリ側で入力し、Android Keystore / iOS Keychain を使って端末内に保存します。旧形式のパスワード入り JSON は読み込み対象外です。</p>
+        <p>リモートパスワードはプロジェクトJSON、QR、JSON書出には含めません。パスワードはモバイルアプリ側で入力し、Android Keystore / iOS Keychain を使って端末内に保存します。</p>
       </div>
     </section>
 
