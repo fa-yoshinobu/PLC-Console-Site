@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="PLC IO Checker の QR読込、JSON読込、JSON書出。">
-  <title>QR / JSON | PLC IO Checker 操作マニュアル</title>
+  <meta name="description" content="PLC IO Checker のエラー履歴。通信、読込、書込、転送のエラー詳細を確認します。">
+  <title>エラー履歴 | PLC IO Checker 操作マニュアル</title>
   <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
   <header class="site-header">
     <div class="header-inner">
       <a class="brand" href="../index.html"><span class="brand-mark">PLC</span><span><strong>PLC IO Checker</strong><small>操作マニュアル</small></span></a>
-            <button class="nav-toggle" id="nav-toggle" aria-label="メニュー" aria-expanded="false" aria-controls="top-nav">
+      <button class="nav-toggle" id="nav-toggle" aria-label="メニュー" aria-expanded="false" aria-controls="top-nav">
         <span></span><span></span><span></span>
       </button>
       <nav class="top-nav" id="top-nav" aria-label="主要ページ">
@@ -44,20 +44,20 @@
           </div>
         </details>
         <details class="nav-group">
-          <summary class="active">転送</summary>
+          <summary>転送</summary>
           <div class="nav-menu">
-            <a class="active" aria-current="page" href="../transfer/import-export.html">QR/JSON</a>
+            <a href="../transfer/import-export.html">QR/JSON</a>
             <a href="../transfer/project-json.html">プロジェクトJSON</a>
           </div>
         </details>
         <details class="nav-group">
-          <summary>設定</summary>
+          <summary class="active">設定</summary>
           <div class="nav-menu">
             <a href="../settings/tools-menu.html">メニュー</a>
             <a href="../settings/cpu-control.html">CPU操作</a>
             <a href="../settings/device-range.html">デバイス範囲</a>
             <a href="../settings/monitor-display-settings.html">モニタ表示設定</a>
-            <a href="../settings/error-history.html">エラー履歴</a>
+            <a class="active" aria-current="page" href="../settings/error-history.html">エラー履歴</a>
             <a href="../settings/app-settings.html">アプリ設定</a>
             <a href="../settings/license.html">ライセンス/購入</a>
             <a href="../settings/version-info.html">バージョン情報</a>
@@ -94,48 +94,60 @@
   </header>
 
   <main class="doc-page">
-    <nav class="breadcrumb" aria-label="パンくず"><a href="../index.html">トップ</a><span aria-current="page">QR / JSON</span></nav>
+    <nav class="breadcrumb" aria-label="パンくず"><a href="../index.html">トップ</a><span aria-current="page">エラー履歴</span></nav>
     <section class="page-hero section">
-      <p class="eyebrow">Import / Export</p>
-      <h1>QR / JSON</h1>
-      <p class="lead">プロジェクトを Android / iOS アプリへ取り込む、または別端末へ渡すための機能です。</p>
+      <p class="eyebrow">Error History</p>
+      <h1>エラー履歴</h1>
+      <p class="lead">通信、読込、書込、QR / JSON、コメント読込で発生したエラーの詳細を確認します。原因確認やサポート問い合わせ時の整理に使います。</p>
     </section>
 
     <section class="section">
-      <div class="two-column">
-        <div>
-          <h2 id="qr-import">QR読込</h2>
-          <p>ProjectBuilder に表示した QR を、アプリの <strong>QR読込</strong> から読み込みます。複数枚 QR の場合、すべてのページを読み込むとプロジェクトへ反映されます。</p>
-          <ul>
-            <li>QR 全体が画面内に入るようにしてください。</li>
-            <li>複数枚 QR の枚数はプロジェクト内容と ProjectBuilder の分割サイズで変わります。</li>
-            <li>複数枚 QR の場合は、アプリの表示に従ってすべてのページを読み込みます。順番に読み込むと確認しやすくなります。</li>
-            <li>読み取りにくい場合は、ProjectBuilder の分割サイズを小さくして再生成してください。</li>
-            <li>QR にはリモートパスワードは含まれません。MELSEC のリモートパスワードはモバイルアプリ側で入力します。</li>
-          </ul>
-        </div>
-        <figure class="inline-shot"><img src="../assets/images/transfer/qr-import.jpg" width="1080" height="2400" alt="QR読込画面" loading="lazy"><figcaption>QR読込</figcaption></figure>
+      <h2>画面概要</h2>
+      <div class="info-table" role="table" aria-label="エラー履歴の概要">
+        <div role="row"><div role="cell">開き方</div><div role="cell">右上メニューから <strong>エラー履歴</strong> を開きます。</div></div>
+        <div role="row"><div role="cell">目的</div><div role="cell">通信、読込、書込、転送で発生したエラーの原因確認に使います。</div></div>
+        <div role="row"><div role="cell">通信エラー</div><div role="cell">接続、切断、タイムアウト、PLC からの応答エラーを確認します。</div></div>
+        <div role="row"><div role="cell">読込 / 書込エラー</div><div role="cell">対象デバイス、データタイプ、アドレス範囲、書込ロックの確認に使います。</div></div>
+        <div role="row"><div role="cell">転送エラー</div><div role="cell">QR 読込、JSON 読込 / 書出、CSV コメント読込の失敗内容を確認します。</div></div>
       </div>
     </section>
 
     <section class="section">
-      <h2 id="json-import-export">JSON読込 / JSON書出</h2>
+      <h2>確認手順</h2>
+      <ol class="steps compact">
+        <li><strong>直近のエラーを見る</strong><span>発生時刻、操作内容、対象デバイス、メッセージを確認します。</span></li>
+        <li><strong>設定を見直す</strong><span>接続設定、デバイス範囲、書込ロック、ファイル内容など、該当する項目を確認します。</span></li>
+      </ol>
+    </section>
+
+    <section class="section">
+      <h2>エラー別の見直し先</h2>
       <div class="content-grid">
-        <article><h3>JSON読込</h3><p>保存済みのプロジェクトJSONを読み込みます。現在のプロジェクトは読み込んだ内容へ切り替わります。</p></article>
-        <article><h3>JSON書出</h3><p>現在のプロジェクトを JSON ファイルとして書き出します。バックアップや端末間移行に使用します。リモートパスワードは書き出しません。</p></article>
+        <article>
+          <h3>接続できない</h3>
+          <p>IP、ポート、TCP / UDP、PLC 側の通信設定を確認します。MELSEC はルート指定とリモートパスワードも確認してください。</p>
+        </article>
+        <article>
+          <h3>書込できない</h3>
+          <p>書込ロック、アドレスの有効範囲、データタイプ、入力値を確認します。出力デバイスを書き込む場合は CPU 状態も確認します。</p>
+        </article>
+        <article>
+          <h3>読込できない</h3>
+          <p>対象デバイスが CPU 機種の範囲内か、通信中か、PLC からエラー応答が返っていないかを確認します。</p>
+        </article>
       </div>
     </section>
 
     <section class="section">
       <div class="notice">
-        <h2>読み込み後の確認</h2>
-        <p>読み込み後は、プロジェクト名、PLC 種別、接続先、登録デバイス、TimeChart と Trap の登録数を確認してください。読み込みに失敗した場合は、画面のエラー表示またはエラー履歴を確認してください。</p>
+        <h2>問い合わせ時の情報</h2>
+        <p>サポートへ問い合わせる場合は、発生した操作、エラー履歴の内容、接続設定、PLC 機種、再現手順をまとめてください。問い合わせ項目は <a href="../reference/support.html">サポート</a> も確認してください。</p>
       </div>
     </section>
 
     <nav class="next-links" aria-label="前後ページ">
-      <a href="../settings/cpu-control.html">前へ: CPU操作</a>
-      <a href="../transfer/project-json.html">次へ: プロジェクトJSON</a>
+      <a href="../settings/monitor-display-settings.html">前へ: モニタ表示設定</a>
+      <a href="../settings/app-settings.html">次へ: アプリ設定</a>
     </nav>
   </main>
 

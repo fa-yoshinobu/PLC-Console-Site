@@ -38,7 +38,6 @@
             <a href="../monitoring/list-edit.html">List 登録編集</a>
             <a href="../monitoring/focus-panel.html">デバイス操作パネル</a>
             <a href="../monitoring/writing.html">書込</a>
-            <a href="../monitoring/cpu-control.html">CPU操作</a>
             <a href="../monitoring/comments.html">コメント</a>
             <a href="../monitoring/time-chart.html">タイムチャート</a>
             <a href="../monitoring/traps.html">トラップ</a>
@@ -55,8 +54,13 @@
           <summary class="active">設定</summary>
           <div class="nav-menu">
             <a href="../settings/tools-menu.html">メニュー</a>
+            <a href="../settings/cpu-control.html">CPU操作</a>
+            <a href="../settings/device-range.html">デバイス範囲</a>
+            <a href="../settings/monitor-display-settings.html">モニタ表示設定</a>
+            <a href="../settings/error-history.html">エラー履歴</a>
             <a href="../settings/app-settings.html">アプリ設定</a>
-            <a class="active" aria-current="page" href="../settings/license.html">ライセンス</a>
+            <a class="active" aria-current="page" href="../settings/license.html">ライセンス/購入</a>
+            <a href="../settings/version-info.html">バージョン情報</a>
           </div>
         </details>
         <details class="nav-group">
@@ -98,22 +102,29 @@
     </section>
 
     <section class="section">
-      <div class="notice">
-        <h2>購入方式</h2>
-        <p>実機通信のアンロックは、MELSEC / KEYENCE のメーカー別に扱います。購入可否、価格、提供地域は App Store / Google Play の表示を確認してください。</p>
+      <div class="image-grid">
+        <figure><img src="../assets/images/settings/license.png" width="858" height="982" alt="ライセンス/購入画面" loading="lazy"><figcaption>ライセンス/購入</figcaption></figure>
       </div>
     </section>
 
     <section class="section">
-      <h2>入口と表示内容</h2>
-      <p>右上メニューから <strong>ライセンス/購入</strong> を開きます。</p>
+      <h2>画面概要</h2>
       <div class="info-table" role="table" aria-label="ライセンス">
-        <div role="row"><div role="cell">確認用接続</div><div role="cell">PLC 実機に接続しない確認用です。実機通信の代替ではありません。</div></div>
+        <div role="row"><div role="cell">開き方</div><div role="cell">右上メニューから <strong>ライセンス/購入</strong> を開きます。</div></div>
+        <div role="row"><div role="cell">目的</div><div role="cell">実機通信の購入状態と、未購入時の接続制限を確認します。</div></div>
+        <div role="row"><div role="cell">DEMO</div><div role="cell">PLC 実機に接続しない確認用です。実機通信の代替ではありません。</div></div>
         <div role="row"><div role="cell">未購入時の制限</div><div role="cell">ライセンス未購入では、実機通信は 1 日 5 分までの接続に制限されます。</div></div>
         <div role="row"><div role="cell">時間切れ</div><div role="cell">ライセンス時間切れのため、PLC通信はできません。継続するにはライセンスの購入が必要です。</div></div>
         <div role="row"><div role="cell">MELSEC 実機通信</div><div role="cell">購入後、MELSEC の実機通信が無制限になります。</div></div>
         <div role="row"><div role="cell">KEYENCE 実機通信</div><div role="cell">購入後、KEYENCE の実機通信が無制限になります。</div></div>
         <div role="row"><div role="cell">価格</div><div role="cell">公開時は App Store / Google Play の表示を確認してください。</div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="notice">
+        <h2>購入方式</h2>
+        <p>実機通信のアンロックは、MELSEC / KEYENCE のメーカー別に扱います。購入可否、価格、提供地域は App Store / Google Play の表示を確認してください。</p>
       </div>
     </section>
 
@@ -144,7 +155,7 @@
 
     <nav class="next-links" aria-label="前後ページ">
       <a href="../settings/app-settings.html">前へ: アプリ設定</a>
-      <a href="../projectbuilder/projectbuilder.html">次へ: ProjectBuilder</a>
+      <a href="../settings/version-info.html">次へ: バージョン情報</a>
     </nav>
   </main>
 
