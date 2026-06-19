@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="PLC IO Checker の QR読込、JSON読込、JSON書出。">
-  <title>QR / JSON | PLC IO Checker 操作マニュアル</title>
+  <meta name="description" content="PLC IO Checker のバージョン情報。アプリのバージョン、公開情報、関連ページを確認します。">
+  <title>バージョン情報 | PLC IO Checker 操作マニュアル</title>
   <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
   <header class="site-header">
     <div class="header-inner">
       <a class="brand" href="../index.html"><span class="brand-mark">PLC</span><span><strong>PLC IO Checker</strong><small>操作マニュアル</small></span></a>
-            <button class="nav-toggle" id="nav-toggle" aria-label="メニュー" aria-expanded="false" aria-controls="top-nav">
+      <button class="nav-toggle" id="nav-toggle" aria-label="メニュー" aria-expanded="false" aria-controls="top-nav">
         <span></span><span></span><span></span>
       </button>
       <nav class="top-nav" id="top-nav" aria-label="主要ページ">
@@ -44,14 +44,14 @@
           </div>
         </details>
         <details class="nav-group">
-          <summary class="active">転送</summary>
+          <summary>転送</summary>
           <div class="nav-menu">
-            <a class="active" aria-current="page" href="../transfer/import-export.html">QR/JSON</a>
+            <a href="../transfer/import-export.html">QR/JSON</a>
             <a href="../transfer/project-json.html">プロジェクトJSON</a>
           </div>
         </details>
         <details class="nav-group">
-          <summary>設定</summary>
+          <summary class="active">設定</summary>
           <div class="nav-menu">
             <a href="../settings/tools-menu.html">メニュー</a>
             <a href="../settings/cpu-control.html">CPU操作</a>
@@ -60,7 +60,7 @@
             <a href="../settings/error-history.html">エラー履歴</a>
             <a href="../settings/app-settings.html">アプリ設定</a>
             <a href="../settings/license.html">ライセンス/購入</a>
-            <a href="../settings/version-info.html">バージョン情報</a>
+            <a class="active" aria-current="page" href="../settings/version-info.html">バージョン情報</a>
           </div>
         </details>
         <details class="nav-group">
@@ -94,48 +94,58 @@
   </header>
 
   <main class="doc-page">
-    <nav class="breadcrumb" aria-label="パンくず"><a href="../index.html">トップ</a><span aria-current="page">QR / JSON</span></nav>
+    <nav class="breadcrumb" aria-label="パンくず"><a href="../index.html">トップ</a><span aria-current="page">バージョン情報</span></nav>
     <section class="page-hero section">
-      <p class="eyebrow">Import / Export</p>
-      <h1>QR / JSON</h1>
-      <p class="lead">プロジェクトを Android / iOS アプリへ取り込む、または別端末へ渡すための機能です。</p>
+      <p class="eyebrow">Version Info</p>
+      <h1>バージョン情報</h1>
+      <p class="lead">アプリのバージョン、公開状態、関連するリリース情報を確認します。サポート問い合わせ時にも確認しておく項目です。</p>
     </section>
 
     <section class="section">
-      <div class="two-column">
-        <div>
-          <h2 id="qr-import">QR読込</h2>
-          <p>ProjectBuilder に表示した QR を、アプリの <strong>QR読込</strong> から読み込みます。複数枚 QR の場合、すべてのページを読み込むとプロジェクトへ反映されます。</p>
-          <ul>
-            <li>QR 全体が画面内に入るようにしてください。</li>
-            <li>複数枚 QR の枚数はプロジェクト内容と ProjectBuilder の分割サイズで変わります。</li>
-            <li>複数枚 QR の場合は、アプリの表示に従ってすべてのページを読み込みます。順番に読み込むと確認しやすくなります。</li>
-            <li>読み取りにくい場合は、ProjectBuilder の分割サイズを小さくして再生成してください。</li>
-            <li>QR にはリモートパスワードは含まれません。MELSEC のリモートパスワードはモバイルアプリ側で入力します。</li>
-          </ul>
-        </div>
-        <figure class="inline-shot"><img src="../assets/images/transfer/qr-import.jpg" width="1080" height="2400" alt="QR読込画面" loading="lazy"><figcaption>QR読込</figcaption></figure>
+      <div class="image-grid">
+        <figure><img src="../assets/images/settings/version-info.png" width="851" height="664" alt="バージョン情報画面" loading="lazy"><figcaption>バージョン情報</figcaption></figure>
       </div>
     </section>
 
     <section class="section">
-      <h2 id="json-import-export">JSON読込 / JSON書出</h2>
+      <h2>画面概要</h2>
+      <div class="info-table" role="table" aria-label="バージョン情報">
+        <div role="row"><div role="cell">開き方</div><div role="cell">右上メニューから <strong>バージョン情報</strong> を開きます。</div></div>
+        <div role="row"><div role="cell">目的</div><div role="cell">使用中のアプリ情報を確認し、問い合わせや更新確認に使います。</div></div>
+        <div role="row"><div role="cell">アプリ名</div><div role="cell">PLC IO Checker Android / PLC IO Checker iOS</div></div>
+        <div role="row"><div role="cell">バージョン</div><div role="cell">インストールされているアプリのバージョンを確認します。</div></div>
+        <div role="row"><div role="cell">公開情報</div><div role="cell">正式公開後は、公開バージョンの変更点を <a href="../reference/release-notes.html">リリースノート</a> に記録します。</div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>問い合わせ時の使い方</h2>
       <div class="content-grid">
-        <article><h3>JSON読込</h3><p>保存済みのプロジェクトJSONを読み込みます。現在のプロジェクトは読み込んだ内容へ切り替わります。</p></article>
-        <article><h3>JSON書出</h3><p>現在のプロジェクトを JSON ファイルとして書き出します。バックアップや端末間移行に使用します。リモートパスワードは書き出しません。</p></article>
+        <article>
+          <h3>不具合確認</h3>
+          <p>発生した操作、エラー履歴、PLC 機種、接続方式とあわせて、アプリのバージョンを確認します。</p>
+        </article>
+        <article>
+          <h3>更新確認</h3>
+          <p>使用中のバージョンとリリースノートを見比べ、修正済みの内容や既知の制限がないか確認します。</p>
+        </article>
+        <article>
+          <h3>購入状態</h3>
+          <p>実機通信の制限や購入状態は <a href="../settings/license.html">ライセンス/購入</a> で確認します。</p>
+        </article>
       </div>
     </section>
 
     <section class="section">
       <div class="notice">
-        <h2>読み込み後の確認</h2>
-        <p>読み込み後は、プロジェクト名、PLC 種別、接続先、登録デバイス、TimeChart と Trap の登録数を確認してください。読み込みに失敗した場合は、画面のエラー表示またはエラー履歴を確認してください。</p>
+        <h2>公開前の状態</h2>
+        <p>正式公開前のため、公開バージョン、公開日、ストア URL は確定後に追記します。変更履歴は <a href="../reference/release-notes.html">リリースノート</a> にまとめます。</p>
       </div>
     </section>
 
     <nav class="next-links" aria-label="前後ページ">
-      <a href="../settings/cpu-control.html">前へ: CPU操作</a>
-      <a href="../transfer/project-json.html">次へ: プロジェクトJSON</a>
+      <a href="../settings/license.html">前へ: ライセンス/購入</a>
+      <a href="../reference/release-notes.html">次へ: リリースノート</a>
     </nav>
   </main>
 

@@ -38,7 +38,6 @@
             <a href="../monitoring/list-edit.html">List 登録編集</a>
             <a href="../monitoring/focus-panel.html">デバイス操作パネル</a>
             <a href="../monitoring/writing.html">書込</a>
-            <a href="../monitoring/cpu-control.html">CPU操作</a>
             <a href="../monitoring/comments.html">コメント</a>
             <a href="../monitoring/time-chart.html">タイムチャート</a>
             <a href="../monitoring/traps.html">トラップ</a>
@@ -55,8 +54,13 @@
           <summary class="active">設定</summary>
           <div class="nav-menu">
             <a href="../settings/tools-menu.html">メニュー</a>
+            <a href="../settings/cpu-control.html">CPU操作</a>
+            <a href="../settings/device-range.html">デバイス範囲</a>
+            <a href="../settings/monitor-display-settings.html">モニタ表示設定</a>
+            <a href="../settings/error-history.html">エラー履歴</a>
             <a class="active" aria-current="page" href="../settings/app-settings.html">アプリ設定</a>
-            <a href="../settings/license.html">ライセンス</a>
+            <a href="../settings/license.html">ライセンス/購入</a>
+            <a href="../settings/version-info.html">バージョン情報</a>
           </div>
         </details>
         <details class="nav-group">
@@ -94,19 +98,25 @@
     <section class="page-hero section">
       <p class="eyebrow">App Settings</p>
       <h1>アプリ設定</h1>
-      <p class="lead">表示言語、ライト/ダーク、画面レイアウト、デバイス操作パネル配置、ビット書込モードを設定します。Android / iOS とも同じ目的の設定です。</p>
+      <p class="lead">表示言語、ライト/ダーク、画面レイアウト、ビット書込モードを設定します。デバイス操作パネルの配置は画面レイアウトに連動します。</p>
     </section>
 
     <section class="section">
-      <h2>設定項目</h2>
+      <div class="image-grid">
+        <figure><img src="../assets/images/settings/app-settings.png" width="983" height="805" alt="アプリ設定画面" loading="lazy"><figcaption>アプリ設定</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>画面概要</h2>
       <div class="info-table" role="table" aria-label="アプリ設定項目">
+        <div role="row"><div role="cell">開き方</div><div role="cell">右上メニューから <strong>アプリ設定</strong> を開きます。</div></div>
+        <div role="row"><div role="cell">目的</div><div role="cell">表示言語、テーマ、画面レイアウト、操作時の確認方法を設定します。</div></div>
         <div role="row"><div role="cell">言語</div><div role="cell"><code>システム</code>、<code>日本語</code>、<code>英語</code></div></div>
         <div role="row"><div role="cell">テーマ</div><div role="cell"><code>端末に合わせる</code>、<code>ライト</code>、<code>ダーク</code></div></div>
-        <div role="row"><div role="cell">画面レイアウト</div><div role="cell"><code>自動</code>、<code>縦固定</code>、<code>横固定</code></div></div>
-        <div role="row"><div role="cell">デバイス操作パネル配置</div><div role="cell">デバイス操作パネルを全画面寄りにするか、下部パネルとして使うかを選びます。</div></div>
+        <div role="row"><div role="cell">画面レイアウト</div><div role="cell"><code>自動</code>、<code>縦固定</code>、<code>横固定</code>。デバイス操作パネルの表示位置は、選択したレイアウトに連動します。</div></div>
         <div role="row"><div role="cell">ビット書込</div><div role="cell">ビット書込時の確認方法を選びます。</div></div>
       </div>
-      <p class="notice">設定は保存後に反映されます。表示言語とテーマは、端末設定に従う選択肢と、アプリ内で固定する選択肢があります。</p>
     </section>
 
     <section class="section">
@@ -150,11 +160,7 @@
       <div class="content-grid">
         <article>
           <h3>画面レイアウト</h3>
-          <p><code>自動</code> では端末サイズと向きに合わせて、縦向き表示と横向きの分割表示を切り替えます。現場で常に同じ表示にしたい場合は <code>縦固定</code> または <code>横固定</code> を選びます。</p>
-        </article>
-        <article>
-          <h3>デバイス操作パネル配置</h3>
-          <p>デバイス操作パネルを大きく使う設定と、監視画面を残しながら下部パネルで操作する設定を切り替えます。</p>
+          <p><code>自動</code> では端末サイズと向きに合わせて、縦向き表示と横向きの分割表示を切り替えます。デバイス操作パネルは、横画面では右パネル、縦画面では下部パネルとして表示されます。現場で常に同じ表示にしたい場合は <code>縦固定</code> または <code>横固定</code> を選びます。</p>
         </article>
         <article>
           <h3>ビット書込</h3>
@@ -164,7 +170,7 @@
     </section>
 
     <nav class="next-links" aria-label="前後ページ">
-      <a href="../settings/tools-menu.html">前へ: メニュー</a>
+      <a href="../settings/error-history.html">前へ: エラー履歴</a>
       <a href="../settings/license.html">次へ: ライセンス</a>
     </nav>
   </main>

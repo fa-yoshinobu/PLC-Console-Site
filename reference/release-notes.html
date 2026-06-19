@@ -38,7 +38,6 @@
             <a href="../monitoring/list-edit.html">List 登録編集</a>
             <a href="../monitoring/focus-panel.html">デバイス操作パネル</a>
             <a href="../monitoring/writing.html">書込</a>
-            <a href="../monitoring/cpu-control.html">CPU操作</a>
             <a href="../monitoring/comments.html">コメント</a>
             <a href="../monitoring/time-chart.html">タイムチャート</a>
             <a href="../monitoring/traps.html">トラップ</a>
@@ -55,8 +54,13 @@
           <summary>設定</summary>
           <div class="nav-menu">
             <a href="../settings/tools-menu.html">メニュー</a>
+            <a href="../settings/cpu-control.html">CPU操作</a>
+            <a href="../settings/device-range.html">デバイス範囲</a>
+            <a href="../settings/monitor-display-settings.html">モニタ表示設定</a>
+            <a href="../settings/error-history.html">エラー履歴</a>
             <a href="../settings/app-settings.html">アプリ設定</a>
-            <a href="../settings/license.html">ライセンス</a>
+            <a href="../settings/license.html">ライセンス/購入</a>
+            <a href="../settings/version-info.html">バージョン情報</a>
           </div>
         </details>
         <details class="nav-group">
@@ -113,42 +117,6 @@
         <div role="row"><div role="cell">概要</div><div role="cell">MELSEC / KEYENCE の接続、監視、書込、記録、QR/JSON 連携を扱う初回公開。</div></div>
         <div role="row"><div role="cell">補足</div><div role="cell">ストア URL、購入状態、接続設定例の詳細は正式公開または実機確認後に追記します。</div></div>
       </div>
-    </section>
-
-    <section class="section">
-      <h2>初回公開に含まれる主な機能</h2>
-      <h3>対応 PLC</h3>
-      <div class="info-table" role="table" aria-label="対応PLC">
-        <div role="row"><div role="cell">MELSEC（三菱電機）</div><div role="cell">iQ-F / iQ-L / iQ-R / Q / L シリーズ（SLMP TCP/UDP）</div></div>
-        <div role="row"><div role="cell">KEYENCE</div><div role="cell">KV-5000 / KV-7000 / KV-8000 / KV-X500 / KV-XLE02（HostLink）</div></div>
-      </div>
-      <h3>監視・記録</h3>
-      <ul>
-        <li>List 監視 / Block 監視</li>
-        <li>デバイス操作パネル: 値の拡大表示、書込、トレンド</li>
-        <li>タイムチャート記録: 最大 20 チャンネル、1,000 サンプル、Monitor Interval 同期、CSV 書出</li>
-        <li>トラップ: 最大 20 件の条件登録、直近 200 件のイベント履歴、CSV 書出</li>
-        <li>デバイスコメント: PLC からの読込、CSV 一括読込</li>
-        <li>CPU 操作: RUN/STOP（MELSEC のみ）</li>
-      </ul>
-      <h3>プロジェクト管理</h3>
-      <ul>
-        <li>プロジェクト JSON による設定の保存・読込</li>
-        <li>ProjectBuilder との QR コード連携</li>
-        <li>Android / iOS 間でのプロジェクト JSON 互換</li>
-        <li>リモートパスワードはプロジェクト JSON / QR に含めず、モバイルアプリ側の安全な保存領域で扱います。</li>
-      </ul>
-      <h3>その他</h3>
-      <ul>
-        <li>Demo モード: 実機 PLC なしで動作確認できます（値変化パターン選択可）</li>
-        <li>Android / iOS 対応</li>
-      </ul>
-      <h3>既知の制限</h3>
-      <ul>
-        <li>タイムチャートのバッファとトラップイベント履歴は、前回と同じ接続設定を開いたときだけ復元されます。接続先や通信方式を変更した場合は前回履歴を表示しません。</li>
-        <li>iOS はバックグラウンドへ移行するとポーリングが停止します（タイムチャート記録中も同様）。</li>
-        <li>SLMP / HostLink は工場内の閉域ネットワーク向けプロトコルであり、通信は暗号化されません。</li>
-      </ul>
     </section>
 
     <nav class="next-links" aria-label="前後ページ">

@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="PLC IO Checker の QR読込、JSON読込、JSON書出。">
-  <title>QR / JSON | PLC IO Checker 操作マニュアル</title>
+  <meta name="description" content="PLC IO Checker のデバイス範囲。選択中の CPU 機種で使用できるデバイス領域を確認します。">
+  <title>デバイス範囲 | PLC IO Checker 操作マニュアル</title>
   <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
   <header class="site-header">
     <div class="header-inner">
       <a class="brand" href="../index.html"><span class="brand-mark">PLC</span><span><strong>PLC IO Checker</strong><small>操作マニュアル</small></span></a>
-            <button class="nav-toggle" id="nav-toggle" aria-label="メニュー" aria-expanded="false" aria-controls="top-nav">
+      <button class="nav-toggle" id="nav-toggle" aria-label="メニュー" aria-expanded="false" aria-controls="top-nav">
         <span></span><span></span><span></span>
       </button>
       <nav class="top-nav" id="top-nav" aria-label="主要ページ">
@@ -44,18 +44,18 @@
           </div>
         </details>
         <details class="nav-group">
-          <summary class="active">転送</summary>
+          <summary>転送</summary>
           <div class="nav-menu">
-            <a class="active" aria-current="page" href="../transfer/import-export.html">QR/JSON</a>
+            <a href="../transfer/import-export.html">QR/JSON</a>
             <a href="../transfer/project-json.html">プロジェクトJSON</a>
           </div>
         </details>
         <details class="nav-group">
-          <summary>設定</summary>
+          <summary class="active">設定</summary>
           <div class="nav-menu">
             <a href="../settings/tools-menu.html">メニュー</a>
             <a href="../settings/cpu-control.html">CPU操作</a>
-            <a href="../settings/device-range.html">デバイス範囲</a>
+            <a class="active" aria-current="page" href="../settings/device-range.html">デバイス範囲</a>
             <a href="../settings/monitor-display-settings.html">モニタ表示設定</a>
             <a href="../settings/error-history.html">エラー履歴</a>
             <a href="../settings/app-settings.html">アプリ設定</a>
@@ -94,48 +94,66 @@
   </header>
 
   <main class="doc-page">
-    <nav class="breadcrumb" aria-label="パンくず"><a href="../index.html">トップ</a><span aria-current="page">QR / JSON</span></nav>
+    <nav class="breadcrumb" aria-label="パンくず"><a href="../index.html">トップ</a><span aria-current="page">デバイス範囲</span></nav>
     <section class="page-hero section">
-      <p class="eyebrow">Import / Export</p>
-      <h1>QR / JSON</h1>
-      <p class="lead">プロジェクトを Android / iOS アプリへ取り込む、または別端末へ渡すための機能です。</p>
+      <p class="eyebrow">Device Range</p>
+      <h1>デバイス範囲</h1>
+      <p class="lead">選択中の CPU 機種で使用できるデバイス領域を確認します。監視や書込の対象アドレスを決める前の確認に使います。</p>
     </section>
 
     <section class="section">
-      <div class="two-column">
-        <div>
-          <h2 id="qr-import">QR読込</h2>
-          <p>ProjectBuilder に表示した QR を、アプリの <strong>QR読込</strong> から読み込みます。複数枚 QR の場合、すべてのページを読み込むとプロジェクトへ反映されます。</p>
-          <ul>
-            <li>QR 全体が画面内に入るようにしてください。</li>
-            <li>複数枚 QR の枚数はプロジェクト内容と ProjectBuilder の分割サイズで変わります。</li>
-            <li>複数枚 QR の場合は、アプリの表示に従ってすべてのページを読み込みます。順番に読み込むと確認しやすくなります。</li>
-            <li>読み取りにくい場合は、ProjectBuilder の分割サイズを小さくして再生成してください。</li>
-            <li>QR にはリモートパスワードは含まれません。MELSEC のリモートパスワードはモバイルアプリ側で入力します。</li>
-          </ul>
-        </div>
-        <figure class="inline-shot"><img src="../assets/images/transfer/qr-import.jpg" width="1080" height="2400" alt="QR読込画面" loading="lazy"><figcaption>QR読込</figcaption></figure>
+      <div class="image-grid">
+        <figure><img src="../assets/images/settings/device-range.png" width="768" height="1024" alt="デバイス範囲画面" loading="lazy"><figcaption>デバイス範囲</figcaption></figure>
       </div>
     </section>
 
     <section class="section">
-      <h2 id="json-import-export">JSON読込 / JSON書出</h2>
+      <h2>画面概要</h2>
+      <div class="info-table" role="table" aria-label="デバイス範囲の概要">
+        <div role="row"><div role="cell">開き方</div><div role="cell">右上メニューから <strong>デバイス範囲</strong> を開きます。</div></div>
+        <div role="row"><div role="cell">目的</div><div role="cell">選択中の CPU 機種で使用できるデバイス領域を確認します。</div></div>
+        <div role="row"><div role="cell">対象</div><div role="cell">現在選択している PLC 種別と CPU 機種です。</div></div>
+        <div role="row"><div role="cell">確認内容</div><div role="cell">使用できるデバイス種別、開始番号、終了番号、BIT / WORD 系の扱いを確認します。</div></div>
+        <div role="row"><div role="cell">使いどころ</div><div role="cell">Block 監視、List 登録編集、書込、タイムチャート、トラップに登録する前のアドレス確認に使います。</div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>確認手順</h2>
+      <ol class="steps compact">
+        <li><strong>対象を確認する</strong><span>PLC 種別と CPU 機種が意図した内容になっていることを確認します。</span></li>
+        <li><strong>範囲を確認する</strong><span>登録または書込したいデバイスが、表示された範囲内にあるか確認します。</span></li>
+      </ol>
+    </section>
+
+    <section class="section">
+      <h2>表示の見方</h2>
       <div class="content-grid">
-        <article><h3>JSON読込</h3><p>保存済みのプロジェクトJSONを読み込みます。現在のプロジェクトは読み込んだ内容へ切り替わります。</p></article>
-        <article><h3>JSON書出</h3><p>現在のプロジェクトを JSON ファイルとして書き出します。バックアップや端末間移行に使用します。リモートパスワードは書き出しません。</p></article>
+        <article>
+          <h3>デバイス種別</h3>
+          <p><code>X</code>、<code>Y</code>、<code>D</code>、<code>DM</code> など、PLC 機種ごとに使用できるデバイス種別を表示します。</p>
+        </article>
+        <article>
+          <h3>開始 / 終了</h3>
+          <p>その CPU 機種で扱える番号範囲を確認します。範囲外のアドレスは監視や書込の対象にできません。</p>
+        </article>
+        <article>
+          <h3>登録前の確認</h3>
+          <p>List 登録編集やタイムチャート登録で迷った場合は、先にこのページで有効範囲を確認してください。</p>
+        </article>
       </div>
     </section>
 
     <section class="section">
       <div class="notice">
-        <h2>読み込み後の確認</h2>
-        <p>読み込み後は、プロジェクト名、PLC 種別、接続先、登録デバイス、TimeChart と Trap の登録数を確認してください。読み込みに失敗した場合は、画面のエラー表示またはエラー履歴を確認してください。</p>
+        <h2>関連ページ</h2>
+        <p>連続アドレスをページ単位で確認する場合は <a href="../monitoring/monitoring.html">監視</a> を、Block 表示の密度を変える場合は <a href="../settings/monitor-display-settings.html">モニタ表示設定</a> を確認してください。</p>
       </div>
     </section>
 
     <nav class="next-links" aria-label="前後ページ">
       <a href="../settings/cpu-control.html">前へ: CPU操作</a>
-      <a href="../transfer/project-json.html">次へ: プロジェクトJSON</a>
+      <a href="../settings/monitor-display-settings.html">次へ: モニタ表示設定</a>
     </nav>
   </main>
 
