@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="PLC IO Checker の CSVコメント読込と PLCコメント読込。">
+  <meta name="description" content="PLC IO Checker の CSVコメント読込とコメント読込。">
   <title>コメント | PLC IO Checker 操作マニュアル</title>
   <link rel="stylesheet" href="../assets/style.css">
 </head>
@@ -44,19 +44,18 @@
           </div>
         </details>
         <details class="nav-group">
-          <summary>転送</summary>
-          <div class="nav-menu">
-            <a href="../transfer/import-export.html">QR/JSON</a>
-            <a href="../transfer/project-json.html">プロジェクトJSON</a>
-          </div>
-        </details>
-        <details class="nav-group">
           <summary>設定</summary>
           <div class="nav-menu">
             <a href="../settings/tools-menu.html">メニュー</a>
             <a href="../settings/cpu-control.html">CPU操作</a>
             <a href="../settings/device-range.html">デバイス範囲</a>
             <a href="../settings/monitor-display-settings.html">モニタ表示設定</a>
+            <a href="../settings/comment-import.html">コメント読込</a>
+            <a href="../settings/csv-comment-import.html">CSVコメント読込</a>
+            <a href="../settings/qr-import.html">QR読込</a>
+            <a href="../settings/json-import.html">JSON読込</a>
+            <a href="../settings/json-export.html">JSON書出</a>
+            <a href="../settings/project-json.html">プロジェクトJSON</a>
             <a href="../settings/error-history.html">エラー履歴</a>
             <a href="../settings/app-settings.html">アプリ設定</a>
             <a href="../settings/license.html">ライセンス/購入</a>
@@ -102,14 +101,17 @@
     </section>
 
     <section class="section">
+      <h2>コメントの読み込み方法</h2>
       <div class="content-grid">
         <article>
-          <h2 id="csv-comment-import">CSVコメント読込</h2>
+          <h3>CSVコメント読込</h3>
           <p>アドレスとコメントを含む CSV を読み込みます。PC で作成したコメント表を端末へ取り込む用途に向いています。</p>
+          <p><a href="../settings/csv-comment-import.html">CSVコメント読込を確認する</a></p>
         </article>
         <article>
-          <h2 id="plc-comment-import">コメント読込</h2>
-          <p>対応 PLC に接続中の場合、PLC から表示中デバイスなどのコメントを読み込めます。接続していない状態では実行できません。</p>
+          <h3>コメント読込</h3>
+          <p>KEYENCE プロジェクトで接続中の場合、PLC からデバイスコメントを読み込めます。接続していない状態、または対応しない接続では実行できません。</p>
+          <p><a href="../settings/comment-import.html">コメント読込を確認する</a></p>
         </article>
       </div>
     </section>
@@ -119,11 +121,11 @@
       <div class="content-grid">
         <article>
           <h3>MELSEC</h3>
-          <p><strong>CSVコメント読込</strong> を使用します。PLC から直接コメントを読むメニューは MELSEC では表示されません。</p>
+          <p><a href="../settings/csv-comment-import.html"><strong>CSVコメント読込</strong></a> を使用します。PLC から直接コメントを読むメニューは MELSEC では表示されません。</p>
         </article>
         <article>
           <h3>KEYENCE</h3>
-          <p><strong>CSVコメント読込</strong> に加えて、接続中は <strong>コメント読込</strong> で PLC からコメントを取得できます。</p>
+          <p><a href="../settings/csv-comment-import.html"><strong>CSVコメント読込</strong></a> に加えて、接続中は <a href="../settings/comment-import.html"><strong>コメント読込</strong></a> で PLC からコメントを取得できます。メニューから範囲読込、デバイス操作パネルから個別読込を使えます。</p>
         </article>
       </div>
     </section>
@@ -133,12 +135,13 @@
       <ul>
         <li>リストや監視画面でコメント表示が更新されます。</li>
         <li>読み込めなかった行がある場合はステータスやエラー履歴を確認してください。</li>
+        <li>PLC から読み込んだコメントは端末内に保存され、同じプロジェクトの表示に反映されます。</li>
         <li>CSV の文字コードや列順が合わない場合は、ProjectBuilder 側で整理してから再読込してください。</li>
       </ul>
     </section>
 
     <nav class="next-links" aria-label="前後ページ">
-      <a href="../transfer/project-json.html">前へ: プロジェクトJSON</a>
+      <a href="../monitoring/writing.html">前へ: 書込</a>
       <a href="../monitoring/time-chart.html">次へ: タイムチャート</a>
     </nav>
   </main>

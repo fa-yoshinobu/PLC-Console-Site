@@ -3,15 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="PLC IO Checker の QR読込、JSON読込、JSON書出。">
-  <title>QR / JSON | PLC IO Checker 操作マニュアル</title>
+  <meta http-equiv="refresh" content="0; url=../settings/qr-import.html">
+  <link rel="canonical" href="../settings/qr-import.html">
+  <title>QR読込へ移動 | PLC IO Checker 操作マニュアル</title>
   <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
   <header class="site-header">
     <div class="header-inner">
       <a class="brand" href="../index.html"><span class="brand-mark">PLC</span><span><strong>PLC IO Checker</strong><small>操作マニュアル</small></span></a>
-            <button class="nav-toggle" id="nav-toggle" aria-label="メニュー" aria-expanded="false" aria-controls="top-nav">
+      <button class="nav-toggle" id="nav-toggle" aria-label="メニュー" aria-expanded="false" aria-controls="top-nav">
         <span></span><span></span><span></span>
       </button>
       <nav class="top-nav" id="top-nav" aria-label="主要ページ">
@@ -44,19 +45,18 @@
           </div>
         </details>
         <details class="nav-group">
-          <summary class="active">転送</summary>
-          <div class="nav-menu">
-            <a class="active" aria-current="page" href="../transfer/import-export.html">QR/JSON</a>
-            <a href="../transfer/project-json.html">プロジェクトJSON</a>
-          </div>
-        </details>
-        <details class="nav-group">
-          <summary>設定</summary>
+          <summary class="active">設定</summary>
           <div class="nav-menu">
             <a href="../settings/tools-menu.html">メニュー</a>
             <a href="../settings/cpu-control.html">CPU操作</a>
             <a href="../settings/device-range.html">デバイス範囲</a>
             <a href="../settings/monitor-display-settings.html">モニタ表示設定</a>
+            <a href="../settings/comment-import.html">コメント読込</a>
+            <a href="../settings/csv-comment-import.html">CSVコメント読込</a>
+            <a class="active" aria-current="page" href="../settings/qr-import.html">QR読込</a>
+            <a href="../settings/json-import.html">JSON読込</a>
+            <a href="../settings/json-export.html">JSON書出</a>
+            <a href="../settings/project-json.html">プロジェクトJSON</a>
             <a href="../settings/error-history.html">エラー履歴</a>
             <a href="../settings/app-settings.html">アプリ設定</a>
             <a href="../settings/license.html">ライセンス/購入</a>
@@ -94,49 +94,13 @@
   </header>
 
   <main class="doc-page">
-    <nav class="breadcrumb" aria-label="パンくず"><a href="../index.html">トップ</a><span aria-current="page">QR / JSON</span></nav>
+    <nav class="breadcrumb" aria-label="パンくず"><a href="../index.html">トップ</a><span aria-current="page">QR読込へ移動</span></nav>
     <section class="page-hero section">
-      <p class="eyebrow">Import / Export</p>
-      <h1>QR / JSON</h1>
-      <p class="lead">プロジェクトを Android / iOS アプリへ取り込む、または別端末へ渡すための機能です。</p>
+      <p class="eyebrow">Moved</p>
+      <h1>QR読込へ移動</h1>
+      <p class="lead">QR / JSON は設定グループへ移動しました。</p>
+      <p><a href="../settings/qr-import.html">QR読込を開く</a></p>
     </section>
-
-    <section class="section">
-      <div class="two-column">
-        <div>
-          <h2 id="qr-import">QR読込</h2>
-          <p>ProjectBuilder に表示した QR を、アプリの <strong>QR読込</strong> から読み込みます。複数枚 QR の場合、すべてのページを読み込むとプロジェクトへ反映されます。</p>
-          <ul>
-            <li>QR 全体が画面内に入るようにしてください。</li>
-            <li>複数枚 QR の枚数はプロジェクト内容と ProjectBuilder の分割サイズで変わります。</li>
-            <li>複数枚 QR の場合は、アプリの表示に従ってすべてのページを読み込みます。順番に読み込むと確認しやすくなります。</li>
-            <li>読み取りにくい場合は、ProjectBuilder の分割サイズを小さくして再生成してください。</li>
-            <li>QR にはリモートパスワードは含まれません。MELSEC のリモートパスワードはモバイルアプリ側で入力します。</li>
-          </ul>
-        </div>
-        <figure class="inline-shot"><img src="../assets/images/transfer/qr-import.jpg" width="1080" height="2400" alt="QR読込画面" loading="lazy"><figcaption>QR読込</figcaption></figure>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2 id="json-import-export">JSON読込 / JSON書出</h2>
-      <div class="content-grid">
-        <article><h3>JSON読込</h3><p>保存済みのプロジェクトJSONを読み込みます。現在のプロジェクトは読み込んだ内容へ切り替わります。</p></article>
-        <article><h3>JSON書出</h3><p>現在のプロジェクトを JSON ファイルとして書き出します。バックアップや端末間移行に使用します。リモートパスワードは書き出しません。</p></article>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="notice">
-        <h2>読み込み後の確認</h2>
-        <p>読み込み後は、プロジェクト名、PLC 種別、接続先、登録デバイス、TimeChart と Trap の登録数を確認してください。読み込みに失敗した場合は、画面のエラー表示またはエラー履歴を確認してください。</p>
-      </div>
-    </section>
-
-    <nav class="next-links" aria-label="前後ページ">
-      <a href="../settings/cpu-control.html">前へ: CPU操作</a>
-      <a href="../transfer/project-json.html">次へ: プロジェクトJSON</a>
-    </nav>
   </main>
 
   <footer class="site-footer">

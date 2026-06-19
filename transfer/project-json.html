@@ -3,15 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="PLC IO Checker のプロジェクトJSON。">
-  <title>プロジェクトJSON | PLC IO Checker 操作マニュアル</title>
+  <meta http-equiv="refresh" content="0; url=../settings/project-json.html">
+  <link rel="canonical" href="../settings/project-json.html">
+  <title>プロジェクトJSONへ移動 | PLC IO Checker 操作マニュアル</title>
   <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
   <header class="site-header">
     <div class="header-inner">
       <a class="brand" href="../index.html"><span class="brand-mark">PLC</span><span><strong>PLC IO Checker</strong><small>操作マニュアル</small></span></a>
-            <button class="nav-toggle" id="nav-toggle" aria-label="メニュー" aria-expanded="false" aria-controls="top-nav">
+      <button class="nav-toggle" id="nav-toggle" aria-label="メニュー" aria-expanded="false" aria-controls="top-nav">
         <span></span><span></span><span></span>
       </button>
       <nav class="top-nav" id="top-nav" aria-label="主要ページ">
@@ -44,19 +45,18 @@
           </div>
         </details>
         <details class="nav-group">
-          <summary class="active">転送</summary>
-          <div class="nav-menu">
-            <a href="../transfer/import-export.html">QR/JSON</a>
-            <a class="active" aria-current="page" href="../transfer/project-json.html">プロジェクトJSON</a>
-          </div>
-        </details>
-        <details class="nav-group">
-          <summary>設定</summary>
+          <summary class="active">設定</summary>
           <div class="nav-menu">
             <a href="../settings/tools-menu.html">メニュー</a>
             <a href="../settings/cpu-control.html">CPU操作</a>
             <a href="../settings/device-range.html">デバイス範囲</a>
             <a href="../settings/monitor-display-settings.html">モニタ表示設定</a>
+            <a href="../settings/comment-import.html">コメント読込</a>
+            <a href="../settings/csv-comment-import.html">CSVコメント読込</a>
+            <a href="../settings/qr-import.html">QR読込</a>
+            <a href="../settings/json-import.html">JSON読込</a>
+            <a href="../settings/json-export.html">JSON書出</a>
+            <a class="active" aria-current="page" href="../settings/project-json.html">プロジェクトJSON</a>
             <a href="../settings/error-history.html">エラー履歴</a>
             <a href="../settings/app-settings.html">アプリ設定</a>
             <a href="../settings/license.html">ライセンス/購入</a>
@@ -94,47 +94,22 @@
   </header>
 
   <main class="doc-page">
-    <nav class="breadcrumb" aria-label="パンくず"><a href="../index.html">トップ</a><span aria-current="page">プロジェクトJSON</span></nav>
+    <nav class="breadcrumb" aria-label="パンくず"><a href="../index.html">トップ</a><span aria-current="page">プロジェクトJSONへ移動</span></nav>
     <section class="page-hero section">
-      <p class="eyebrow">プロジェクトJSON</p>
-      <h1>プロジェクトJSON</h1>
-      <p class="lead">プロジェクトJSONは、プロジェクトをファイルとして保存し、Android / iOS / ProjectBuilder で共有するための形式です。</p>
+      <p class="eyebrow">Moved</p>
+      <h1>プロジェクトJSONへ移動</h1>
+      <p class="lead">プロジェクトJSONは設定グループへ移動しました。</p>
+      <p><a href="../settings/project-json.html">プロジェクトJSONを開く</a></p>
     </section>
-
-    <section class="section">
-      <h2>使いどころ</h2>
-      <div class="content-grid">
-        <article><h3>バックアップ</h3><p>現在のプロジェクトを JSON ファイルとして保存します。</p></article>
-        <article><h3>端末間移行</h3><p>別の Android / iOS 端末へ同じプロジェクトを渡します。</p></article>
-        <article><h3>ProjectBuilder 連携</h3><p>ProjectBuilder で編集したプロジェクトをアプリへ渡します。</p></article>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>保存される内容</h2>
-      <div class="content-grid">
-        <article><h3>プロジェクト</h3><p>プロジェクト名と更新情報を保存します。</p></article>
-        <article><h3>接続設定</h3><p>PLC 種別、CPU機種、接続先、MELSEC / KEYENCE 固有の設定を保存します。</p></article>
-        <article><h3>登録内容</h3><p>デバイス、タイムチャート、トラップの登録内容を保存します。</p></article>
-      </div>
-      <p class="small-note">TimeChart は最大 20 チャンネル、Trap は最大 20 件を取り込み対象にします。上限を超える登録は ProjectBuilder またはモバイルアプリ側で調整してください。</p>
-    </section>
-
-    <section class="section">
-      <div class="notice">
-        <h2>扱うときの注意</h2>
-        <p>プロジェクトJSONには接続先や登録デバイスなどの設備情報が含まれます。共有や問い合わせ時は、IP アドレス、設備名、顧客名などを含めないようにしてください。</p>
-        <p>リモートパスワードはプロジェクトJSON、QR、JSON書出には含めません。パスワードはモバイルアプリ側で入力し、Android Keystore / iOS Keychain を使って端末内に保存します。</p>
-      </div>
-    </section>
-
-    <nav class="next-links" aria-label="前後ページ">
-      <a href="../transfer/import-export.html">前へ: QR / JSON</a>
-      <a href="../monitoring/comments.html">次へ: コメント</a>
-    </nav>
   </main>
 
-  <footer class="site-footer"><p>PLC IO Checker 操作マニュアル / プロジェクトJSON</p></footer>
+  <footer class="site-footer">
+  <div class="footer-simple">
+    <span class="brand-mark">PLC</span>
+    <span>PLC IO Checker 操作マニュアル</span>
+    <span style="margin-left:auto">© 2026 FA Labo</span>
+  </div>
+</footer>
   <script src="../assets/nav.js"></script>
 </body>
 </html>
