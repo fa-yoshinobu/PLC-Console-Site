@@ -44,19 +44,18 @@
           </div>
         </details>
         <details class="nav-group">
-          <summary>転送</summary>
-          <div class="nav-menu">
-            <a href="../transfer/import-export.html">QR/JSON</a>
-            <a href="../transfer/project-json.html">プロジェクトJSON</a>
-          </div>
-        </details>
-        <details class="nav-group">
           <summary>設定</summary>
           <div class="nav-menu">
             <a href="../settings/tools-menu.html">メニュー</a>
             <a href="../settings/cpu-control.html">CPU操作</a>
             <a href="../settings/device-range.html">デバイス範囲</a>
             <a href="../settings/monitor-display-settings.html">モニタ表示設定</a>
+            <a href="../settings/comment-import.html">コメント読込</a>
+            <a href="../settings/csv-comment-import.html">CSVコメント読込</a>
+            <a href="../settings/qr-import.html">QR読込</a>
+            <a href="../settings/json-import.html">JSON読込</a>
+            <a href="../settings/json-export.html">JSON書出</a>
+            <a href="../settings/project-json.html">プロジェクトJSON</a>
             <a href="../settings/error-history.html">エラー履歴</a>
             <a href="../settings/app-settings.html">アプリ設定</a>
             <a href="../settings/license.html">ライセンス/購入</a>
@@ -147,6 +146,7 @@
     <section class="section">
       <h2>イベント履歴</h2>
       <p>検知したイベントは直近イベントに表示されます。CSV 書出で履歴を外部確認できます。</p>
+      <p>CSV には <code>Timestamp</code>、<code>TimestampEpochMs</code>、<code>Address</code>、<code>Condition</code>、<code>ObservedValue</code>、<code>TriggerCount</code>、<code>Message</code>、<code>TrapID</code> が出力されます。</p>
       <p class="small-note">トラップ定義は最大 20 件まで登録できます。イベント履歴は直近 200 件を保持し、上限を超えると古い順に削除されます。イベント履歴はプロジェクト単位で保存され、前回と同じ接続設定を開いたときだけ復元されます。</p>
       <p class="small-note">未読バッジは <strong>未読クリア</strong> で消します。<strong>未読クリア</strong> はバッジだけを消し、イベント履歴は削除しません。履歴を削除する場合は <strong>履歴クリア</strong> を使います。</p>
     </section>

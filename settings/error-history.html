@@ -44,19 +44,18 @@
           </div>
         </details>
         <details class="nav-group">
-          <summary>転送</summary>
-          <div class="nav-menu">
-            <a href="../transfer/import-export.html">QR/JSON</a>
-            <a href="../transfer/project-json.html">プロジェクトJSON</a>
-          </div>
-        </details>
-        <details class="nav-group">
           <summary class="active">設定</summary>
           <div class="nav-menu">
             <a href="../settings/tools-menu.html">メニュー</a>
             <a href="../settings/cpu-control.html">CPU操作</a>
             <a href="../settings/device-range.html">デバイス範囲</a>
             <a href="../settings/monitor-display-settings.html">モニタ表示設定</a>
+            <a href="../settings/comment-import.html">コメント読込</a>
+            <a href="../settings/csv-comment-import.html">CSVコメント読込</a>
+            <a href="../settings/qr-import.html">QR読込</a>
+            <a href="../settings/json-import.html">JSON読込</a>
+            <a href="../settings/json-export.html">JSON書出</a>
+            <a href="../settings/project-json.html">プロジェクトJSON</a>
             <a class="active" aria-current="page" href="../settings/error-history.html">エラー履歴</a>
             <a href="../settings/app-settings.html">アプリ設定</a>
             <a href="../settings/license.html">ライセンス/購入</a>
@@ -102,13 +101,19 @@
     </section>
 
     <section class="section">
+      <div class="image-grid">
+        <figure><img src="../assets/images/settings/error-history.png" width="768" height="561" alt="エラー履歴画面" loading="lazy"><figcaption>エラー履歴</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="section">
       <h2>画面概要</h2>
       <div class="info-table" role="table" aria-label="エラー履歴の概要">
         <div role="row"><div role="cell">開き方</div><div role="cell">右上メニューから <strong>エラー履歴</strong> を開きます。</div></div>
-        <div role="row"><div role="cell">目的</div><div role="cell">通信、読込、書込、転送で発生したエラーの原因確認に使います。</div></div>
+        <div role="row"><div role="cell">目的</div><div role="cell">通信、読込、書込、QR / JSON、コメント読込で発生したエラーの原因確認に使います。</div></div>
         <div role="row"><div role="cell">通信エラー</div><div role="cell">接続、切断、タイムアウト、PLC からの応答エラーを確認します。</div></div>
         <div role="row"><div role="cell">読込 / 書込エラー</div><div role="cell">対象デバイス、データタイプ、アドレス範囲、書込ロックの確認に使います。</div></div>
-        <div role="row"><div role="cell">転送エラー</div><div role="cell">QR 読込、JSON 読込 / 書出、CSV コメント読込の失敗内容を確認します。</div></div>
+        <div role="row"><div role="cell">データ入出力エラー</div><div role="cell">QR読込、JSON読込 / 書出、CSVコメント読込の失敗内容を確認します。</div></div>
       </div>
     </section>
 
@@ -146,7 +151,7 @@
     </section>
 
     <nav class="next-links" aria-label="前後ページ">
-      <a href="../settings/monitor-display-settings.html">前へ: モニタ表示設定</a>
+      <a href="../settings/project-json.html">前へ: プロジェクトJSON</a>
       <a href="../settings/app-settings.html">次へ: アプリ設定</a>
     </nav>
   </main>

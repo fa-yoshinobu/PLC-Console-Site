@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="PLC IO Checker のモニタ表示設定。Block 監視の表示密度とグラフ100%値を設定します。">
-  <title>モニタ表示設定 | PLC IO Checker 操作マニュアル</title>
+  <meta name="description" content="PLC IO Checker の JSON読込。プロジェクトJSONを読み込みます。">
+  <title>JSON読込 | PLC IO Checker 操作マニュアル</title>
   <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
@@ -49,11 +49,11 @@
             <a href="../settings/tools-menu.html">メニュー</a>
             <a href="../settings/cpu-control.html">CPU操作</a>
             <a href="../settings/device-range.html">デバイス範囲</a>
-            <a class="active" aria-current="page" href="../settings/monitor-display-settings.html">モニタ表示設定</a>
+            <a href="../settings/monitor-display-settings.html">モニタ表示設定</a>
             <a href="../settings/comment-import.html">コメント読込</a>
             <a href="../settings/csv-comment-import.html">CSVコメント読込</a>
             <a href="../settings/qr-import.html">QR読込</a>
-            <a href="../settings/json-import.html">JSON読込</a>
+            <a class="active" aria-current="page" href="../settings/json-import.html">JSON読込</a>
             <a href="../settings/json-export.html">JSON書出</a>
             <a href="../settings/project-json.html">プロジェクトJSON</a>
             <a href="../settings/error-history.html">エラー履歴</a>
@@ -93,69 +93,42 @@
   </header>
 
   <main class="doc-page">
-    <nav class="breadcrumb" aria-label="パンくず"><a href="../index.html">トップ</a><span aria-current="page">モニタ表示設定</span></nav>
+    <nav class="breadcrumb" aria-label="パンくず"><a href="../index.html">トップ</a><span aria-current="page">JSON読込</span></nav>
     <section class="page-hero section">
-      <p class="eyebrow">Monitor Display Settings</p>
-      <h1>モニタ表示設定</h1>
-      <p class="lead">Block 監視の表示密度と、数値バーの基準になるグラフ100%値を設定します。現場で見たい点数と読みやすさのバランスを調整できます。</p>
-    </section>
-
-    <section class="section">
-      <div class="image-grid">
-        <figure><img src="../assets/images/settings/monitor-display-settings.png" width="872" height="656" alt="モニタ表示設定画面" loading="lazy"><figcaption>モニタ表示設定</figcaption></figure>
-      </div>
+      <p class="eyebrow">JSON Import</p>
+      <h1>JSON読込</h1>
+      <p class="lead">保存済みのプロジェクトJSONを読み込み、現在のプロジェクトとして開きます。</p>
     </section>
 
     <section class="section">
       <h2>画面概要</h2>
-      <div class="info-table" role="table" aria-label="モニタ表示設定項目">
-        <div role="row"><div role="cell">開き方</div><div role="cell">右上メニューまたは Block 監視の表示設定から <strong>モニタ表示設定</strong> を開きます。</div></div>
-        <div role="row"><div role="cell">目的</div><div role="cell">Block 監視の表示密度と数値バーの基準値を設定します。</div></div>
-        <div role="row"><div role="cell">表示密度</div><div role="cell"><code>コンパクト</code> と <code>詳細</code> を切り替えます。</div></div>
-        <div role="row"><div role="cell">グラフ100%値</div><div role="cell">数値デバイスのバー表示で 100% として扱う値を設定します。</div></div>
-        <div role="row"><div role="cell">保存先</div><div role="cell">表示密度とグラフ100%値は、プロジェクトの表示設定として扱います。</div></div>
+      <div class="info-table" role="table" aria-label="JSON読込の概要">
+        <div role="row"><div role="cell">開き方</div><div role="cell">右上メニューから <strong>JSON読込</strong> を開きます。</div></div>
+        <div role="row"><div role="cell">目的</div><div role="cell">バックアップ済み、または ProjectBuilder で作成したプロジェクトJSONを読み込みます。</div></div>
+        <div role="row"><div role="cell">対象</div><div role="cell">OS のファイル選択で指定した JSON ファイルです。</div></div>
+        <div role="row"><div role="cell">注意点</div><div role="cell">読み込み後、現在のプロジェクトは読み込んだ内容へ切り替わります。</div></div>
       </div>
     </section>
 
     <section class="section">
-      <h2>表示密度</h2>
-      <div class="content-grid">
-        <article>
-          <h3>コンパクト</h3>
-          <p>連続アドレスを小さなセルで多く表示します。広い範囲の ON/OFF や値変化をまとめて見るときに使います。</p>
-        </article>
-        <article>
-          <h3>詳細</h3>
-          <p>List と同じカード形式で表示します。アドレス、値、コメント、登録状態を読み取りながら確認したいときに使います。</p>
-        </article>
-        <article>
-          <h3>選び方</h3>
-          <p>点数を優先する場合はコンパクト、値やコメントの読みやすさを優先する場合は詳細を選びます。</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>グラフ100%値</h2>
-      <p>WORD 系デバイスの値をバーで見るとき、どの値を 100% として扱うかを指定します。設備に合わせて基準値を設定すると、現在値の大小を視覚的に確認しやすくなります。</p>
-      <div class="notice">
-        <h2>設定の目安</h2>
-        <p>たとえば上限値や通常運転時の最大値を入れておくと、Block 監視で値の変化を比較しやすくなります。実際のスケールは設備やデータタイプに合わせて設定してください。</p>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>変更手順</h2>
+      <h2>読込手順</h2>
       <ol class="steps compact">
-        <li><strong>表示密度を選ぶ</strong><span>確認したい点数や読みやすさに合わせて、コンパクトまたは詳細を選びます。</span></li>
-        <li><strong>基準値を設定する</strong><span>数値バーの見え方に合わせて、グラフ100%値を設定します。</span></li>
-        <li><strong>監視に戻る</strong><span>Block 監視に戻り、表示内容が意図した状態になっているか確認します。</span></li>
+        <li><strong>JSON読込を開く</strong><span>右上メニューから <strong>JSON読込</strong> を選びます。</span></li>
+        <li><strong>ファイルを選ぶ</strong><span>OS のファイル選択で、読み込むプロジェクトJSONを指定します。</span></li>
+        <li><strong>内容を確認する</strong><span>プロジェクト名、PLC 種別、接続先、登録デバイス、TimeChart と Trap の登録数を確認します。</span></li>
       </ol>
     </section>
 
+    <section class="section">
+      <div class="notice">
+        <h2>リモートパスワード</h2>
+        <p>リモートパスワードはプロジェクトJSONには含まれません。必要な場合はモバイルアプリ側で入力してください。</p>
+      </div>
+    </section>
+
     <nav class="next-links" aria-label="前後ページ">
-      <a href="../settings/device-range.html">前へ: デバイス範囲</a>
-      <a href="../settings/comment-import.html">次へ: コメント読込</a>
+      <a href="../settings/qr-import.html">前へ: QR読込</a>
+      <a href="../settings/json-export.html">次へ: JSON書出</a>
     </nav>
   </main>
 
