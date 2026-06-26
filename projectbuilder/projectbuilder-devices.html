@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="ProjectBuilder のデバイス、タイムチャート、トラップ入力。">
+  <meta name="description" content="ProjectBuilder のリスト、タイムチャート、トラップ、コメント入力。">
   <title>ProjectBuilder 入力 | PLC IO Checker 操作マニュアル</title>
   <link rel="stylesheet" href="../assets/style.css">
 </head>
@@ -97,36 +97,36 @@
     <section class="page-hero section">
       <p class="eyebrow">ProjectBuilder</p>
       <h1>ProjectBuilder 入力</h1>
-      <p class="lead">デバイス、タイムチャート、トラップを PC で入力し、モバイルアプリへ渡すプロジェクトを作成します。</p>
+      <p class="lead">リスト、タイムチャート、トラップ、コメントを PC で入力し、モバイルアプリへ渡すプロジェクトを作成します。</p>
     </section>
 
     <section class="section">
-      <h2>接続設定</h2>
-      <p><strong>プロジェクト/接続</strong> では、モバイルアプリへ渡す基本情報と PLC 通信設定を入力します。</p>
+      <h2>PLC設定</h2>
+      <p><strong>PLC設定</strong> では、モバイルアプリへ渡す基本情報と PLC 通信設定を入力します。</p>
       <div class="info-table" role="table" aria-label="ProjectBuilder connection settings">
-        <div role="row"><div role="cell">プロジェクト</div><div role="cell">プロジェクト名、メーカー、CPU機種、KEYENCE 表示、使用可能 device を確認します。</div></div>
-        <div role="row"><div role="cell">接続</div><div role="cell">Connection mode、IP address、Port、Transport、監視周期 ms、Timeout ms を指定します。</div></div>
-        <div role="row"><div role="cell">MELSEC ルーティング</div><div role="cell">Network / Station は数字で、Module I/O / Multidrop は画面の初期表示と同じ <code>0x</code> 付きで入力します。</div></div>
-        <div role="row"><div role="cell">既定値</div><div role="cell"><strong>ルーティング既定値に戻す</strong> で Network、Station、Module I/O、Multidrop を既定値へ戻します。</div></div>
+        <div role="row"><div role="cell">プロジェクト</div><div role="cell">プロジェクト名、メーカー、CPU機種、KEYENCE デバイス表記、使用可能デバイスを確認します。</div></div>
+        <div role="row"><div role="cell">接続</div><div role="cell">接続モード、PLC IP / ホスト、ポート、トランスポート、監視周期 ms、タイムアウト ms を指定します。</div></div>
+        <div role="row"><div role="cell">MELSEC ルーティング</div><div role="cell">ネットワーク / 局番 は数字で、モジュール IO / マルチドロップ は画面の初期表示と同じ <code>0x</code> 付きで入力します。</div></div>
+        <div role="row"><div role="cell">既定値</div><div role="cell"><strong>ルーティング既定値に戻す</strong> でネットワーク、局番、モジュール IO、マルチドロップを既定値へ戻します。</div></div>
         <div role="row"><div role="cell">リモートパスワード</div><div role="cell">ProjectBuilder では入力しません。MELSEC のリモートパスワードはモバイルアプリ側で入力します。</div></div>
       </div>
       <figure class="inline-shot projectbuilder-shot">
         <img src="../assets/images/projectbuilder/project_connection.png" width="1634" height="1209" alt="ProjectBuilder の接続設定画面" loading="lazy">
-        <figcaption>接続設定</figcaption>
+        <figcaption>PLC設定</figcaption>
       </figure>
     </section>
 
     <section class="section">
-      <h2>デバイス</h2>
-      <div class="info-table" role="table" aria-label="デバイス列">
+      <h2>リスト</h2>
+      <div class="info-table" role="table" aria-label="リスト列">
         <div role="row"><div role="cell">アドレス</div><div role="cell">監視する PLC デバイスアドレスです。</div></div>
-        <div role="row"><div role="cell">データタイプ</div><div role="cell"><code>BIT</code>、<code>INT16</code>、<code>UINT16</code>、<code>INT32</code>、<code>UINT32</code>、<code>FLOAT32</code></div></div>
-        <div role="row"><div role="cell">Comment</div><div role="cell">任意のコメントです。同じアドレスが複数ある場合、最初の非空 Comment が同じアドレスに反映されます。</div></div>
+        <div role="row"><div role="cell">データ型</div><div role="cell"><code>BIT</code>、<code>INT16</code>、<code>UINT16</code>、<code>INT32</code>、<code>UINT32</code>、<code>FLOAT32</code></div></div>
+        <div role="row"><div role="cell">コメント</div><div role="cell">任意のコメントです。同じアドレスのコメントとデータ型は リスト / タイムチャート / トラップ / コメント で共有されます。</div></div>
       </div>
-      <p>Excel からタブ区切りでコピー/貼り付けできます。<strong>行を追加</strong>、<strong>ブロック追加</strong>、<strong>削除</strong>、<strong>上へ</strong> / <strong>下へ</strong> で編集します。</p>
+      <p>Excel からタブ区切りでコピー/貼り付けできます。列は アドレス / データ型 / コメント です。<strong>行を追加</strong>、<strong>ブロック追加</strong>、<strong>上へ</strong> / <strong>下へ</strong> で編集します。行を選択しているときだけ Delete キーで行を削除できます。</p>
       <figure class="inline-shot projectbuilder-shot">
-        <img src="../assets/images/projectbuilder/device.png" width="1634" height="1117" alt="ProjectBuilder のデバイス入力画面" loading="lazy">
-        <figcaption>デバイス</figcaption>
+        <img src="../assets/images/projectbuilder/device.png" width="1634" height="1117" alt="ProjectBuilder のリスト入力画面" loading="lazy">
+        <figcaption>リスト</figcaption>
       </figure>
     </section>
 
@@ -135,9 +135,10 @@
       <p>タイムチャートに表示する対象を登録します。最大 20 チャンネルです。</p>
       <div class="info-table" role="table" aria-label="タイムチャート列">
         <div role="row"><div role="cell">アドレス</div><div role="cell">記録対象のアドレスです。</div></div>
-        <div role="row"><div role="cell">データタイプ</div><div role="cell">デバイスに同じアドレスがあればそのデータタイプを優先します。</div></div>
+        <div role="row"><div role="cell">データ型</div><div role="cell">同じアドレスのデータ型が リスト / トラップ / コメント にあれば共有されます。</div></div>
+        <div role="row"><div role="cell">コメント</div><div role="cell">同じアドレスのコメントがあれば共有され、QR/JSON では <code>deviceMeta</code> に保存されます。</div></div>
       </div>
-      <p>Excel からタブ区切りでコピー/貼り付けできます。<strong>ブロック追加</strong> では開始アドレスと点数を指定します。</p>
+      <p>Excel からタブ区切りでコピー/貼り付けできます。列は アドレス / データ型 / コメント です。<strong>行を追加</strong>、<strong>上へ</strong> / <strong>下へ</strong> で編集します。最大件数を超える貼り付けは受け付けません。</p>
       <figure class="inline-shot projectbuilder-shot">
         <img src="../assets/images/projectbuilder/timechart.png" width="1634" height="1209" alt="ProjectBuilder のタイムチャート入力画面" loading="lazy">
         <figcaption>タイムチャート</figcaption>
@@ -148,16 +149,28 @@
       <h2>トラップ</h2>
       <p>条件に一致したタイミングを検知する定義です。最大 20 件です。</p>
       <div class="info-table" role="table" aria-label="トラップ列">
-        <div role="row"><div role="cell">アドレス / データタイプ</div><div role="cell">検知対象とデータタイプです。</div></div>
+        <div role="row"><div role="cell">アドレス / データ型</div><div role="cell">検知対象とデータ型です。同じアドレスのデータ型は他タブと共有されます。</div></div>
+        <div role="row"><div role="cell">コメント</div><div role="cell">任意のコメントです。同じアドレスのコメントは他タブと共有されます。</div></div>
         <div role="row"><div role="cell">検知条件</div><div role="cell">BIT は <code>Rise</code>、<code>Fall</code>、<code>Change</code>。WORD は <code>Change</code>、<code>GreaterOrEqual</code>、<code>LessOrEqual</code>、<code>Equal</code>、<code>NotEqual</code>。</div></div>
         <div role="row"><div role="cell">しきい値</div><div role="cell">比較条件で必要です。</div></div>
         <div role="row"><div role="cell">有効</div><div role="cell">有効/無効を指定します。</div></div>
       </div>
-      <p>Excel からタブ区切りでコピー/貼り付けできます。列は アドレス / データタイプ / 検知条件 / しきい値 / 有効 です。</p>
+      <p>Excel からタブ区切りでコピー/貼り付けできます。列は アドレス / データ型 / コメント / 検知条件 / しきい値 / 有効 です。</p>
       <figure class="inline-shot projectbuilder-shot">
         <img src="../assets/images/projectbuilder/trap.png" width="1634" height="1209" alt="ProjectBuilder のトラップ入力画面" loading="lazy">
         <figcaption>トラップ</figcaption>
       </figure>
+    </section>
+
+    <section class="section">
+      <h2>コメント</h2>
+      <p>アドレスごとのコメントとデータ型を編集します。ここで編集した内容は QR/JSON の <code>deviceMeta</code> に保存され、リスト / タイムチャート / トラップ の同じアドレスにも反映されます。</p>
+      <div class="info-table" role="table" aria-label="コメント列">
+        <div role="row"><div role="cell">アドレス</div><div role="cell">コメントを紐づける PLC デバイスアドレスです。</div></div>
+        <div role="row"><div role="cell">データ型</div><div role="cell">同じアドレスで共有する表示用のデータ型です。</div></div>
+        <div role="row"><div role="cell">コメント</div><div role="cell">モバイルアプリで表示するアドレスコメントです。</div></div>
+      </div>
+      <p>Excel からタブ区切りでコピー/貼り付けできます。列は アドレス / データ型 / コメント です。</p>
     </section>
 
     <nav class="next-links" aria-label="前後ページ">

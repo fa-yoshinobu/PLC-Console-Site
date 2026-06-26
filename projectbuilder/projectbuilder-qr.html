@@ -132,6 +132,15 @@
     </section>
 
     <section class="section">
+      <h2>出力形式</h2>
+      <div class="info-table" role="table" aria-label="ProjectBuilder output format">
+        <div role="row"><div role="cell">Project JSON</div><div role="cell">Android / iOS が読み込む <code>plc-io-checker-project</code> schema v1 で出力します。</div></div>
+        <div role="row"><div role="cell">コメントとデータ型</div><div role="cell">アドレス単位の <code>deviceMeta</code> に保存され、リスト / タイムチャート / トラップ から共有されます。</div></div>
+        <div role="row"><div role="cell">QR payload</div><div role="cell"><code>PLCIOC1|ZSTD</code> 形式です。JSON を Zstd 圧縮し、必要に応じて複数ページに分割します。</div></div>
+      </div>
+    </section>
+
+    <section class="section">
       <h2>モバイルアプリで読む</h2>
       <ol class="steps compact">
         <li><strong>QR読込</strong><span>モバイルアプリのメニューから <strong>QR読込</strong> を開きます。</span></li>
