@@ -112,7 +112,7 @@
         <div role="row"><div role="cell">INTERNET</div><div role="cell">MELSEC / KEYENCE の実機通信で、ユーザーが設定した PLC へ TCP / UDP 接続するために使用します。</div></div>
         <div role="row"><div role="cell">ACCESS_NETWORK_STATE</div><div role="cell">端末のネットワーク状態を確認し、通信可否やエラー表示の判断に使用します。</div></div>
         <div role="row"><div role="cell">CAMERA</div><div role="cell">ProjectBuilder に表示した QR を読み込むために使用します。QR読込画面を開いた時に許可を求めます。</div></div>
-        <div role="row"><div role="cell">FOREGROUND_SERVICE</div><div role="cell">タイムチャートの REC 中に、バックグラウンドへ移った場合でも記録を継続するための foreground service に使用します。</div></div>
+        <div role="row"><div role="cell">FOREGROUND_SERVICE</div><div role="cell">タイムチャート記録中に、バックグラウンドへ移った場合でも記録を継続するための foreground service に使用します。</div></div>
         <div role="row"><div role="cell">FOREGROUND_SERVICE_DATA_SYNC</div><div role="cell">タイムチャート記録用 foreground service の種別です。PLC データを開発者サーバーへ同期する用途ではありません。</div></div>
       </div>
       <p>カメラ機能は <code>android.hardware.camera</code> を <code>required=false</code> として宣言しています。カメラのない端末でも、QR読込以外の機能を使える前提です。</p>

@@ -114,9 +114,20 @@
       <div class="content-grid">
         <article><h3>プロジェクト</h3><p>プロジェクト名と更新情報を保存します。</p></article>
         <article><h3>接続設定</h3><p>PLC 種別、CPU機種、接続先、MELSEC / KEYENCE 固有の設定を保存します。</p></article>
-        <article><h3>登録内容</h3><p>デバイス、タイムチャート、トラップの登録内容を保存します。</p></article>
+        <article><h3>登録内容</h3><p>List、タイムチャート、トラップの登録内容を保存します。</p></article>
+        <article><h3>共通メタ情報</h3><p>アドレス単位のコメントとデータ型は <code>deviceMeta</code> に保存され、各登録から共有されます。</p></article>
       </div>
       <p class="small-note">TimeChart は最大 20 チャンネル、Trap は最大 20 件を取り込み対象にします。上限を超える登録は ProjectBuilder またはモバイルアプリ側で調整してください。</p>
+    </section>
+
+    <section class="section">
+      <h2>形式</h2>
+      <div class="info-table" role="table" aria-label="プロジェクトJSON形式">
+        <div role="row"><div role="cell">schema</div><div role="cell"><code>plc-io-checker-project</code></div></div>
+        <div role="row"><div role="cell">schemaVersion</div><div role="cell"><code>1</code></div></div>
+        <div role="row"><div role="cell">コメント / データ型</div><div role="cell"><code>deviceMeta</code> を正として読み書きします。List / TimeChart / Trap 側に同じ情報を重複して持たせません。</div></div>
+        <div role="row"><div role="cell">読込条件</div><div role="cell">必須情報が欠けている JSON は取り込みエラーにします。旧形式への暗黙変換や推測補完は行いません。</div></div>
+      </div>
     </section>
 
     <section class="section">

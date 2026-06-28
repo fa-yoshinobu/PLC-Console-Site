@@ -123,7 +123,7 @@
         <li>BIT デバイスでは、立上り、立下り、変化などの条件を使えます。</li>
         <li>WORD デバイスでは、変化や閾値条件を使えます。</li>
         <li>各定義には個別の有効/無効があります。全体の開始 / 停止とは別に切り替えられます。</li>
-        <li>既に登録済みのアドレスでは、新しいトラップを追加できません。条件を変える場合は既存定義を編集します。</li>
+        <li>同じアドレス、条件、しきい値の組み合わせは重複登録できません。別条件で監視したい場合は新しい定義として追加できます。</li>
       </ul>
     </section>
 
@@ -146,9 +146,9 @@
     <section class="section">
       <h2>イベント履歴</h2>
       <p>検知したイベントは直近イベントに表示されます。CSV 書出で履歴を外部確認できます。</p>
-      <p>CSV には <code>Timestamp</code>、<code>TimestampEpochMs</code>、<code>Address</code>、<code>Condition</code>、<code>ObservedValue</code>、<code>TriggerCount</code>、<code>Message</code>、<code>TrapID</code> が出力されます。</p>
+      <p>CSV には <code>Timestamp</code>、<code>Address</code>、<code>Condition</code>、<code>ObservedValue</code>、<code>TriggerCount</code>、<code>Message</code> が出力されます。</p>
       <p class="small-note">トラップ定義は最大 20 件まで登録できます。イベント履歴は直近 200 件を保持し、上限を超えると古い順に削除されます。イベント履歴はプロジェクト単位で保存され、前回と同じ接続設定を開いたときだけ復元されます。</p>
-      <p class="small-note">未読バッジは <strong>未読クリア</strong> で消します。<strong>未読クリア</strong> はバッジだけを消し、イベント履歴は削除しません。履歴を削除する場合は <strong>履歴クリア</strong> を使います。</p>
+      <p class="small-note">未読バッジとトラップ通知は、トラップ画面を開いた時点でリセットされます。イベント履歴を削除する場合は <strong>クリア</strong> を使います。</p>
     </section>
 
     <nav class="next-links" aria-label="前後ページ">

@@ -106,7 +106,7 @@
         <div role="row"><div role="cell">開き方</div><div role="cell">右上メニューから <strong>CSVコメント読込</strong> を開きます。</div></div>
         <div role="row"><div role="cell">目的</div><div role="cell">PC や ProjectBuilder で作成したコメント表を端末へ取り込みます。</div></div>
         <div role="row"><div role="cell">対象</div><div role="cell">CSV に含まれるデバイスアドレスとコメントです。MELSEC / KEYENCE のどちらでも使用できます。</div></div>
-        <div role="row"><div role="cell">確認先</div><div role="cell">読込結果は成功件数とスキップ件数で確認します。失敗した場合はエラー履歴も確認してください。</div></div>
+        <div role="row"><div role="cell">確認先</div><div role="cell">読込結果は成功件数とスキップ件数で確認します。スキップ行がある場合は、行番号と理由を画面表示とエラー履歴で確認できます。</div></div>
       </div>
     </section>
 
@@ -115,7 +115,7 @@
       <ol class="steps compact">
         <li><strong>CSV を準備する</strong><span>アドレスとコメントを含む CSV ファイルを用意します。</span></li>
         <li><strong>CSVコメント読込を開く</strong><span>右上メニューから <strong>CSVコメント読込</strong> を選び、OS のファイル選択で CSV を指定します。</span></li>
-        <li><strong>結果を確認する</strong><span>成功件数、スキップ件数、監視画面のコメント表示を確認します。</span></li>
+        <li><strong>結果を確認する</strong><span>成功件数、スキップ件数、スキップ理由、監視画面のコメント表示を確認します。</span></li>
       </ol>
     </section>
 
@@ -123,8 +123,10 @@
       <h2>確認内容</h2>
       <ul>
         <li>CSV のアドレス表記が、現在の PLC 種別やデバイス表記に合っているか確認します。</li>
+        <li>ビット指定付きアドレスはコメント取り込み対象外です。代表メッセージを確認し、必要ならワード単位のアドレスへ修正します。</li>
+        <li>コメントは最大 1024 文字です。長すぎるコメントや空コメントはスキップされます。</li>
         <li>文字化けや列のずれがある場合は、PC 側で CSV を修正してから再読込します。</li>
-        <li>読み込んだコメントは端末内に保存され、同じプロジェクトの表示に反映されます。</li>
+        <li>読み込んだコメントは端末内のコメントDBに保存され、同じプロジェクトの表示に反映されます。</li>
       </ul>
     </section>
 

@@ -126,6 +126,16 @@
     </section>
 
     <section class="section">
+      <h2>CSV 書出</h2>
+      <p>エラー履歴は <code>error-history-YYYYMMDD-HHMMSS.csv</code> というファイル名で書き出します。</p>
+      <div class="info-table" role="table" aria-label="エラー履歴 CSV">
+        <div role="row"><div role="cell">アプリ情報</div><div role="cell"><code>AppPlatform</code>、<code>AppVersion</code>、<code>BuildNumber</code>、<code>OSVersion</code>、<code>NativeCoreVersion</code> を出力します。</div></div>
+        <div role="row"><div role="cell">発生情報</div><div role="cell"><code>Timestamp</code>、<code>TimestampEpochMs</code>、<code>Project</code>、<code>Endpoint</code> を出力します。</div></div>
+        <div role="row"><div role="cell">内容</div><div role="cell"><code>Title</code>、<code>Detail</code>、<code>Diagnostics</code> を出力します。</div></div>
+      </div>
+    </section>
+
+    <section class="section">
       <h2>エラー別の見直し先</h2>
       <div class="content-grid">
         <article>

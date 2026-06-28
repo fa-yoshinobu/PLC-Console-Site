@@ -107,10 +107,10 @@
           <ul>
             <li><strong>画面名</strong>: アプリ下部/上部のタブでは <strong>タイムチャート</strong> と表示されます。</li>
             <li><strong>CH追加</strong>: 監視したいアドレスをチャンネルに追加します。</li>
-            <li><strong>REC</strong>: 記録を開始・停止します。</li>
+            <li><strong>開始 / 停止</strong>: 記録を開始・停止します。</li>
             <li><strong>CSV</strong>: 記録データを書き出します。</li>
             <li><strong>クリア</strong>: 表示中の履歴を消去します。</li>
-            <li><strong>ゆったり / 省スペース</strong>: チャンネルの高さを切り替えます。設定はプロジェクトに保存されます。</li>
+            <li><strong>表示密度</strong>: BIT 系は省スペース、WORD / 数値系はゆったり相当の高さに自動調整されます。</li>
           </ul>
         </div>
         <figure class="inline-shot"><img src="../assets/images/monitoring/time-chart.png" width="800" height="1280" alt="タイムチャート画面" loading="lazy"><figcaption>タイムチャート</figcaption></figure>
@@ -121,20 +121,20 @@
       <h2>チャンネル登録と表示</h2>
       <p>タイムチャートのチャンネル登録は、List 登録とは別です。<strong>タイムチャート</strong> 画面の <strong>CH追加</strong>、またはデバイス操作パネルの <strong>タイムチャート</strong> から追加します。</p>
       <div class="info-table" role="table" aria-label="タイムチャート表示状態">
-        <div role="row"><div role="cell">登録直後</div><div role="cell">REC を開始していなくても、登録済みチャンネルとして画面に表示されます。</div></div>
-        <div role="row"><div role="cell">REC 前</div><div role="cell">記録サンプルがまだないため、現在値は <code>--</code> と表示されます。</div></div>
-        <div role="row"><div role="cell">REC 中</div><div role="cell">通信成功ごとに値を記録し、波形に追加します。</div></div>
+        <div role="row"><div role="cell">登録直後</div><div role="cell">記録を開始していなくても、登録済みチャンネルとして画面に表示されます。</div></div>
+        <div role="row"><div role="cell">開始前</div><div role="cell">記録サンプルがまだないため、現在値は <code>--</code> と表示されます。</div></div>
+        <div role="row"><div role="cell">記録中</div><div role="cell">通信成功ごとに値を記録し、波形に追加します。</div></div>
         <div role="row"><div role="cell">登録上限</div><div role="cell">最大 20 チャンネルです。</div></div>
       </div>
       <p class="small-note">TimeChart 画面の登録内容はプロジェクトに保存されます。QR / JSON で移した場合も、登録チャンネルはプロジェクト情報として引き継がれます。</p>
     </section>
 
     <section class="section">
-      <h2>ゆったり / 省スペース表示</h2>
+      <h2>表示密度</h2>
       <div class="info-table" role="table" aria-label="タイムチャート表示密度">
-        <div role="row"><div role="cell">ゆったり</div><div role="cell">チャンネル行とグラフを高めにして、値や波形を読み取りやすくします。</div></div>
-        <div role="row"><div role="cell">省スペース</div><div role="cell">チャンネル行とグラフを低めにして、同時に見えるチャンネル数を増やします。</div></div>
-        <div role="row"><div role="cell">保存</div><div role="cell">表示密度はプロジェクト設定として保存され、Android / iOS で同じ意味で扱います。</div></div>
+        <div role="row"><div role="cell">BIT 系</div><div role="cell">ON/OFF の変化を多く見られるよう、省スペースの高さで表示します。</div></div>
+        <div role="row"><div role="cell">WORD / 数値系</div><div role="cell">値ラベルや波形を読み取りやすいよう、ゆったり相当の高さで表示します。</div></div>
+        <div role="row"><div role="cell">切替</div><div role="cell">チャンネルの表示高さはデバイス種別に合わせて自動調整されます。</div></div>
       </div>
     </section>
 
@@ -152,8 +152,8 @@
     <section class="section">
       <h2>記録条件</h2>
       <ul>
-        <li>REC は PLC 接続中かつ 1 チャンネル以上登録済みの場合に開始できます。</li>
-        <li>REC 開始前の現在値は <code>--</code> と表示されます。</li>
+        <li>記録は PLC 接続中かつ 1 チャンネル以上登録済みの場合に開始できます。</li>
+        <li>記録開始前の現在値は <code>--</code> と表示されます。</li>
         <li>WORD デバイスは折れ線のみで表示します。BIT デバイスは ON 区間を塗りつぶして表示します。</li>
         <li>チャート上をタップ、または左右ドラッグするとカーソル位置の値を確認できます。</li>
       </ul>
@@ -162,8 +162,8 @@
     <section class="section">
       <h2>バックグラウンド動作</h2>
       <div class="info-table" role="table" aria-label="バックグラウンド動作の違い">
-        <div role="row"><div role="cell">Android（REC 中）</div><div role="cell">ホーム画面に戻っても記録が継続されます。通知バーに「タイムチャート記録中」が表示されます。</div></div>
-        <div role="row"><div role="cell">Android（REC 停止中）</div><div role="cell">ホーム画面に戻るとポーリングが停止します。</div></div>
+        <div role="row"><div role="cell">Android（記録中）</div><div role="cell">ホーム画面に戻っても記録が継続されます。通知バーに「タイムチャート記録中」が表示されます。</div></div>
+        <div role="row"><div role="cell">Android（停止中）</div><div role="cell">ホーム画面に戻るとポーリングが停止します。</div></div>
         <div role="row"><div role="cell">iOS</div><div role="cell">ホーム画面に戻るとアプリが一時停止し、記録は中断されます。記録中は画面を表示したままにしてください。記録中の画面スリープは防止されます。</div></div>
       </div>
     </section>
