@@ -117,6 +117,22 @@
     </section>
 
     <section class="section">
+      <h2>Excel 貼り付け</h2>
+      <p>リスト / タイムチャート / トラップ / コメント の各グリッドは、Excel とタブ区切りでコピー/貼り付けできます(<code>Ctrl+C</code> / <code>Ctrl+V</code>、または各タブの <strong>Excel</strong> ボタン)。<strong>Excel</strong> ボタンからは列見出しのテンプレートもコピーでき、Excel に貼り付けてシートを作り始められます。貼り付けると<strong>貼り付けプレビュー</strong>が開き、行ごとの検証結果を確認してから取り込みます。</p>
+      <div class="info-table" role="table" aria-label="貼り付けプレビューの状態">
+        <div role="row"><div role="cell">OK</div><div role="cell">取り込まれる行です。正規化後のアドレスとデータ型が表示されます。</div></div>
+        <div role="row"><div role="cell">エラー</div><div role="cell">取り込まれない行です。データ型未指定や不正な検知条件などの理由が表示されます。エラー行があっても OK の行だけを取り込めます。</div></div>
+        <div role="row"><div role="cell">スキップ</div><div role="cell">アドレスが空欄の行です。取り込まれません。</div></div>
+      </div>
+      <ul>
+        <li>データ型は正規値(<code>BIT</code>、<code>INT16</code> など)を明示します。<code>WORD</code> などの別名やデータ型の推測は受け付けません。大文字小文字は区別しません。</li>
+        <li>トラップの検知条件も正規値(<code>Rise</code>、<code>GreaterOrEqual</code> など)を明示します。</li>
+        <li>1 行目が <code>Address</code> などのヘッダー行の場合は自動的に読み飛ばします。</li>
+        <li>貼り付けは選択行の位置から既存行を上書きします。取り込み直後に <code>Ctrl+Z</code> を押すと、貼り付け前の行に戻せます。</li>
+      </ul>
+    </section>
+
+    <section class="section">
       <h2>リスト</h2>
       <div class="info-table" role="table" aria-label="リスト列">
         <div role="row"><div role="cell">アドレス</div><div role="cell">監視する PLC デバイスアドレスです。</div></div>
