@@ -106,6 +106,7 @@
         <div role="row"><div role="cell">開き方</div><div role="cell">右上メニューから <strong>CSVコメント読込</strong> を開きます。</div></div>
         <div role="row"><div role="cell">目的</div><div role="cell">PC や ProjectBuilder で作成したコメント表を端末へ取り込みます。</div></div>
         <div role="row"><div role="cell">対象</div><div role="cell">CSV に含まれるデバイスアドレスとコメントです。MELSEC / KEYENCE のどちらでも使用できます。</div></div>
+        <div role="row"><div role="cell">上限</div><div role="cell">5 MiB（5,242,880 bytes）、100,000 レコード、コメント 1 件あたり 1,024 文字です。</div></div>
         <div role="row"><div role="cell">確認先</div><div role="cell">読込結果は成功件数とスキップ件数で確認します。スキップ行がある場合は、行番号と理由を画面表示とエラー履歴で確認できます。</div></div>
       </div>
     </section>
@@ -125,6 +126,7 @@
         <li>CSV のアドレス表記が、現在の PLC 種別やデバイス表記に合っているか確認します。</li>
         <li>ビット指定付きアドレスはコメント取り込み対象外です。代表メッセージを確認し、必要ならワード単位のアドレスへ修正します。</li>
         <li>コメントは最大 1024 文字です。長すぎるコメントや空コメントはスキップされます。</li>
+        <li>引用符で囲んだカンマや改行を含むコメントも読み込めます。</li>
         <li>文字化けや列のずれがある場合は、PC 側で CSV を修正してから再読込します。</li>
         <li>読み込んだコメントは端末内のコメントDBに保存され、同じプロジェクトの表示に反映されます。</li>
       </ul>
