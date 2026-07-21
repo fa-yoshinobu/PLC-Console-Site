@@ -117,16 +117,18 @@
         <article><h3>登録内容</h3><p>List、タイムチャート、トラップの登録内容を保存します。</p></article>
         <article><h3>共通メタ情報</h3><p>アドレス単位のコメントとデータ型は <code>deviceMeta</code> に保存され、各登録から共有されます。</p></article>
       </div>
-      <p class="small-note">TimeChart は最大 20 チャンネル、Trap は最大 20 件を取り込み対象にします。上限を超える登録は ProjectBuilder またはモバイルアプリ側で調整してください。</p>
+      <p class="small-note">List は最大 1,000 件、TimeChart は最大 20 チャンネル、Trap は最大 20 件、deviceMeta は最大 1,040 件です。上限を超えたファイルは途中まで取り込まず、エラーにします。</p>
     </section>
 
     <section class="section">
       <h2>形式</h2>
       <div class="info-table" role="table" aria-label="プロジェクトJSON形式">
         <div role="row"><div role="cell">schema</div><div role="cell"><code>plc-io-checker-project</code></div></div>
-        <div role="row"><div role="cell">schemaVersion</div><div role="cell"><code>1</code></div></div>
+        <div role="row"><div role="cell">schemaVersion</div><div role="cell"><code>2</code> のみ。旧バージョンは変換せずエラーにします。</div></div>
+        <div role="row"><div role="cell">ファイル上限</div><div role="cell">5 MiB（5,242,880 bytes）です。</div></div>
+        <div role="row"><div role="cell">通信時間</div><div role="cell">ポーリング間隔は 100～10,000 ms、通信タイムアウトは 250～10,000 ms です。タイムアウトはポーリング間隔より短くてもかまいません。</div></div>
         <div role="row"><div role="cell">コメント / データ型</div><div role="cell"><code>deviceMeta</code> を正として読み書きします。List / TimeChart / Trap 側に同じ情報を重複して持たせません。</div></div>
-        <div role="row"><div role="cell">読込条件</div><div role="cell">必須情報が欠けている JSON は取り込みエラーにします。旧形式への暗黙変換や推測補完は行いません。</div></div>
+        <div role="row"><div role="cell">読込条件</div><div role="cell">必須情報不足、未知の項目、重複アドレス／ID、不正アドレス、非有限値、範囲外値は取り込みエラーにします。暗黙変換、推測補完、上限での切り捨ては行いません。</div></div>
       </div>
     </section>
 
