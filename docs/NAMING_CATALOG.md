@@ -1,6 +1,6 @@
 # 名称台帳
 
-PLC IO Checker の画面名以外の呼び方を揃えるための保守メモです。公開マニュアル、アプリ表示、リリースノート、ストア説明、GitHub の作業メモで表記を合わせる目的で使います。
+FA Labo PLC Console の画面名以外の呼び方を揃えるための保守メモです。公開マニュアル、アプリ表示、リリースノート、ストア説明、GitHub の作業メモで表記を合わせる目的で使います。
 
 画面、パネル、シート、ダイアログの名前は [`WINDOW_NAMES.md`](./WINDOW_NAMES.md) で管理します。
 
@@ -112,7 +112,7 @@ PLC IO Checker の画面名以外の呼び方を揃えるための保守メモ�
 
 | 正式名 | 英語名 | 対象 | 避ける表記 / 注意 |
 | --- | --- | --- | --- |
-| ProjectBuilder | ProjectBuilder | PC 側プロジェクト作成ツール | `プロジェクトビルダー` 表記は使わない。 |
+| PLC Console ProjectBuilder | PLC Console ProjectBuilder | PC 側プロジェクト作成ツール | 文中では `ProjectBuilder` と短縮してよい。`プロジェクトビルダー` 表記は使わない。 |
 | QR | QR | ProjectBuilder からの転送形式 | QR の枚数は固定しない。 |
 | プロジェクトJSON | Project JSON | モバイルアプリ間/PC間のプロジェクト転送 | 互換形式の説明は必要時だけ。 |
 | CSVコメント | CSV Comments | デバイスコメント読込用CSV | タイムチャートCSVと分ける。 |
