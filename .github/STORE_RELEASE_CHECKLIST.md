@@ -1,6 +1,6 @@
 # Store Release Checklist
 
-PLC IO Checker の App Store / Google Play 公開前に確認する内部リストです。
+FA Labo PLC Console の App Store / Google Play 公開前に確認する内部リストです。
 このファイルは GitHub Pages の公開対象外です。
 
 ## 公開前ブロッカー

@@ -1,6 +1,6 @@
 # Maintenance Guide
 
-PLC IO Checker マニュアルサイトのメンテナ向け資料です。GitHub の入口になる `README.md` には軽い説明だけを置き、編集方針や運用ルールはこのファイルで管理します。
+FA Labo PLC Console マニュアルサイトのメンテナ向け資料です。GitHub の入口になる `README.md` には軽い説明だけを置き、編集方針や運用ルールはこのファイルで管理します。
 
 ## Directory Layout
 
@@ -57,7 +57,7 @@ PLC IO Checker マニュアルサイトのメンテナ向け資料です。GitHu
 
 ### 表記ルール
 
-- アプリ名は `PLC IO Checker`、PC ツール名は `ProjectBuilder` または `PlcIoChecker_ProjectBuilder` に統一する。
+- アプリ名は `FA Labo PLC Console`、PC ツール名は `PLC Console ProjectBuilder`（短縮時は `ProjectBuilder`）、repository 名は `PlcIoChecker_ProjectBuilder` に統一する。
 - 日本語表記は `プロジェクト`、`プロジェクト名`、`プロジェクトJSON` に統一する。
 - 画面名は app 表示に合わせて `List`、`Block`、`デバイス操作パネル`、`タイムチャート`、`トラップ`、`List 登録編集` を使う。
 - 操作名は表示文言に合わせて `QR読込`、`JSON読込`、`JSON書出`、`CSVコメント読込`、`コメント読込`、`CPU操作` と書く。
@@ -103,7 +103,7 @@ PLC IO Checker マニュアルサイトのメンテナ向け資料です。GitHu
 
 ### リリースノート
 
-- リリースノートには、公開済みの PLC IO Checker アプリの変更点だけを書く。
+- リリースノートには、公開済みの FA Labo PLC Console アプリの変更点だけを書く。
 - 未実装の予定機能や、公開していない変更は書かない。
 - MELSEC / KEYENCE、Android / iOS で影響範囲が違う場合は分けて書く。
 - ProjectBuilder の更新履歴は、ProjectBuilder 側の Releases で扱う。

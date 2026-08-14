@@ -1,8 +1,8 @@
-# PLC IO Checker Manual Site
+# FA Labo PLC Console Manual Site
 
 [![Deploy GitHub Pages](https://github.com/fa-yoshinobu/PlcIoChecker_Site/actions/workflows/pages.yml/badge.svg)](https://github.com/fa-yoshinobu/PlcIoChecker_Site/actions/workflows/pages.yml)
 
-PLC IO Checker の公開マニュアルサイトです。Android / iOS アプリの基本操作、PLC 接続設定、監視・書込・記録機能、PC 用 `PlcIoChecker_ProjectBuilder` の使い方を HTML ページとして管理しています。
+FA Labo PLC Console の公開マニュアルサイトです。Android / iOS アプリの基本操作、PLC 接続設定、監視・書込・記録機能、PC 用 `PlcIoChecker_ProjectBuilder` の使い方を HTML ページとして管理しています。
 
 - Public site: <https://fa-yoshinobu.github.io/PlcIoChecker_Site/>
 - Privacy policy: <https://fa-yoshinobu.github.io/PlcIoChecker_Site/reference/privacy-policy.html>
@@ -14,7 +14,7 @@ ProjectBuilder の exe は、[`PlcIoChecker_ProjectBuilder` の Releases](https:
 
 | 監視 | タイムチャート | QR / JSON |
 | --- | --- | --- |
-| <img src="assets/images/monitoring/block-monitor.png" width="220" alt="PLC IO Checker のブロック監視画面"> | <img src="assets/images/monitoring/time-chart.png" width="220" alt="PLC IO Checker のタイムチャート画面"> | <img src="assets/images/transfer/qr-import.png" width="220" alt="PLC IO Checker の QR 読込画面"> |
+| <img src="assets/images/monitoring/block-monitor.png" width="220" alt="FA Labo PLC Console のブロック監視画面"> | <img src="assets/images/monitoring/time-chart.png" width="220" alt="FA Labo PLC Console のタイムチャート画面"> | <img src="assets/images/transfer/qr-import.png" width="220" alt="FA Labo PLC Console の QR 読込画面"> |
 
 | ProjectBuilder |
 | --- |

@@ -1,12 +1,14 @@
-# PLC IO Checker マニュアルサイト TODO
+# FA Labo PLC Console マニュアルサイト TODO
 
 ページ作成状態と更新前後の確認項目を管理します。
 
-最終確認日: 2026-06-10
+最終確認日: 2026-08-14
 
 ## 未完了作業
 
-- `reference/release-notes.html` は、公開済みの PLC IO Checker アプリ変更点だけを整理する。
+- `reference/release-notes.html` は、公開済みの FA Labo PLC Console アプリ変更点だけを整理する。
+- 新名称が表示される状態でモバイルアプリのバージョン情報画面を再撮影し、`settings/version-info.html` に再掲載する。
+- Windowsで PLC Console ProjectBuilder の5画面を再撮影し、ProjectBuilderの操作ページに再掲載する。
 
 ## ページ状態
 

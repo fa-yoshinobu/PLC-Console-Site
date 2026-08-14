@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the PLC IO Checker static manual site."""
+"""Validate the FA Labo PLC Console static manual site."""
 
 from __future__ import annotations
 
