@@ -57,7 +57,7 @@ FA Labo PLC Console マニュアルサイトのメンテナ向け資料です。
 
 ### 表記ルール
 
-- アプリ名は `FA Labo PLC Console`、PC ツール名は `PLC Console ProjectBuilder`（短縮時は `ProjectBuilder`）、repository 名は `PlcIoChecker_ProjectBuilder` に統一する。
+- アプリ名は `FA Labo PLC Console`、PC ツール名は `PLC Console ProjectBuilder`（短縮時は `ProjectBuilder`）、repository 名は `PLC-Console-ProjectBuilder` に統一する。
 - 日本語表記は `プロジェクト`、`プロジェクト名`、`プロジェクトJSON` に統一する。
 - 画面名は app 表示に合わせて `List`、`Block`、`デバイス操作パネル`、`タイムチャート`、`トラップ`、`List 登録編集` を使う。
 - 操作名は表示文言に合わせて `QR読込`、`JSON読込`、`JSON書出`、`CSVコメント読込`、`コメント読込`、`CPU操作` と書く。
@@ -122,7 +122,7 @@ FA Labo PLC Console マニュアルサイトのメンテナ向け資料です。
 macOS の terminal から開く場合:
 
 ```bash
-open https://fa-yoshinobu.github.io/PlcIoChecker_Site/
+open https://plc-console.fa-labo.com/
 ```
 
 Windows PowerShell からローカル確認する場合:

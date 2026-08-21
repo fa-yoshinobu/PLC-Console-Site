@@ -1,14 +1,14 @@
 # FA Labo PLC Console Manual Site
 
-[![Deploy GitHub Pages](https://github.com/fa-yoshinobu/PlcIoChecker_Site/actions/workflows/pages.yml/badge.svg)](https://github.com/fa-yoshinobu/PlcIoChecker_Site/actions/workflows/pages.yml)
+[![Deploy GitHub Pages](https://github.com/fa-yoshinobu/PLC-Console-Site/actions/workflows/pages.yml/badge.svg)](https://github.com/fa-yoshinobu/PLC-Console-Site/actions/workflows/pages.yml)
 
-FA Labo PLC Console の公開マニュアルサイトです。Android / iOS アプリの基本操作、PLC 接続設定、監視・書込・記録機能、PC 用 `PlcIoChecker_ProjectBuilder` の使い方を HTML ページとして管理しています。
+FA Labo PLC Console の公開マニュアルサイトです。Android / iOS アプリの基本操作、PLC 接続設定、監視・書込・記録機能、PC 用 `PLC Console ProjectBuilder` の使い方を HTML ページとして管理しています。
 
-- Public site: <https://fa-yoshinobu.github.io/PlcIoChecker_Site/>
-- Privacy policy: <https://fa-yoshinobu.github.io/PlcIoChecker_Site/reference/privacy-policy.html>
-- ProjectBuilder: <https://github.com/fa-yoshinobu/PlcIoChecker_ProjectBuilder>
+- Public site: <https://plc-console.fa-labo.com/>
+- Privacy policy: <https://plc-console.fa-labo.com/reference/privacy-policy.html>
+- ProjectBuilder: <https://github.com/fa-yoshinobu/PLC-Console-ProjectBuilder>
 
-ProjectBuilder の exe は、[`PlcIoChecker_ProjectBuilder` の Releases](https://github.com/fa-yoshinobu/PlcIoChecker_ProjectBuilder/releases) にある Assets から `PlcIoCheckerProjectBuilder-win-x64.zip` をダウンロードして使用します。
+ProjectBuilder の exe は、[`PLC-Console-ProjectBuilder` の Releases](https://github.com/fa-yoshinobu/PLC-Console-ProjectBuilder/releases) にある Assets から `PlcIoCheckerProjectBuilder-win-x64.zip` をダウンロードして使用します。
 
 ## スクリーンショット
 
@@ -40,7 +40,7 @@ ProjectBuilder の exe は、[`PlcIoChecker_ProjectBuilder` の Releases](https:
 macOS の terminal から公開サイトを開く場合:
 
 ```bash
-open https://fa-yoshinobu.github.io/PlcIoChecker_Site/
+open https://plc-console.fa-labo.com/
 ```
 
 Windows PowerShell からローカル確認する場合:
@@ -59,5 +59,5 @@ Start-Process .\index.html
 
 ## 関連リポジトリ
 
-- Manual site: <https://github.com/fa-yoshinobu/PlcIoChecker_Site>
-- ProjectBuilder: <https://github.com/fa-yoshinobu/PlcIoChecker_ProjectBuilder>
+- Manual site: <https://github.com/fa-yoshinobu/PLC-Console-Site>
+- ProjectBuilder: <https://github.com/fa-yoshinobu/PLC-Console-ProjectBuilder>

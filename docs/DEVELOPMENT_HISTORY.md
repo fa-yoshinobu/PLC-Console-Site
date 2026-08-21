@@ -1,6 +1,6 @@
 # Development History
 
-Last consolidated: 2026-06-11
+Last consolidated: 2026-08-14
 
 This document preserves the useful content that used to live in temporary
 refactor memo files. Keep this file as the durable engineering record for the
@@ -14,6 +14,12 @@ static documentation site.
 - Do not change manual content, navigation semantics, or visual styling as part
   of mechanical refactors.
 - Keep checks lightweight enough to run in GitHub Actions before deploy.
+
+## 2026-08-14 Repository And Domain Migration
+
+- Renamed the repository to `PLC-Console-Site`.
+- Updated repository links for `PLC-Console-ProjectBuilder`.
+- Changed the canonical public URL to `https://plc-console.fa-labo.com/`.
 
 ## Refactoring And Guard Rails
 
