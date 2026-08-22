@@ -97,20 +97,21 @@
     <section class="page-hero section">
       <p class="eyebrow">Privacy Policy</p>
       <h1>プライバシーポリシー</h1>
-      <p class="lead">FA Labo PLC Console は、ユーザーが設定した PLC へ接続するためにネットワーク通信を使用します。個人情報の収集は行いません。</p>
+      <p class="lead">FA Labo PLC Console は、ユーザーが設定した PLC へ接続するためにネットワーク通信を使用します。PLC データやプロジェクトデータを開発者サーバーへ送信しません。</p>
     </section>
 
     <section class="section">
       <div class="notice">
         <h2>最終更新日</h2>
-        <p>2026-08-14</p>
+        <p>2026-08-22</p>
       </div>
     </section>
 
     <section class="section">
-      <h2>収集する情報</h2>
-      <p>FA Labo PLC Console は、氏名、住所、電話番号、メールアドレス、連絡先、写真、位置情報などの個人情報を収集しません。開発者のサーバーへ個人情報、PLC データ、プロジェクトデータを送信しません。</p>
+      <h2>アプリで扱う情報</h2>
+      <p>FA Labo PLC Console はユーザーアカウントを作成しません。アプリの通常利用において、氏名、住所、電話番号、メールアドレス、連絡先、写真、位置情報を開発者が自動的に収集する機能はありません。アプリ自体は、開発者のサーバーへ個人情報、PLC データ、プロジェクトデータを送信しません。</p>
       <p>アプリ内の接続設定、プロジェクト、登録デバイス、タイムチャート、トラップ、コメント、履歴などは、ユーザーの端末内で利用されます。ユーザーが JSON、CSV、QR、画像などを保存または共有した場合、その保存先や共有先での扱いはユーザーが選択したサービスの規約に従います。</p>
+      <p>サポートへ問い合わせる場合、ユーザーが任意に提供したメールアドレス、問い合わせ本文、添付ファイル、端末情報、PLC や接続環境に関する情報を、回答および不具合調査のために取り扱います。これらは対応と調査に必要な期間保持し、不要になった後に削除します。削除を希望する場合は、<a href="../reference/support.html">サポート</a>窓口から依頼してください。</p>
     </section>
 
     <section class="section">
@@ -121,7 +122,8 @@
 
     <section class="section">
       <h2>カメラと QR</h2>
-      <p>Android / iOS 版は、ProjectBuilder に表示した QR コードからプロジェクト設定を取り込むためにカメラを使用します。カメラ画像や動画を保存したり、開発者サーバーへ送信したりする用途では使用しません。</p>
+      <p>Android / iOS 版は、ProjectBuilder に表示した QR コードからプロジェクト設定を取り込むためにカメラを使用します。カメラ画像や動画を保存したり、QR 画像または読み取った QR の内容を開発者サーバーへ送信したりする用途では使用しません。</p>
+      <p>Android 版の QR 読取には Google ML Kit Barcode Scanning SDK を使用します。同 SDK が診断および利用分析のために送信する情報については、「第三者サービス」を確認してください。Google の公式データ開示では、QR 画像および読み取った文字列自体は収集項目として記載されていません。</p>
     </section>
 
     <section class="section">
@@ -132,19 +134,35 @@
     </section>
 
     <section class="section">
+      <h2>Android のバックアップと端末移行</h2>
+      <p>Android 版は OS のバックアップ機能を有効にしています。Android 12 以降のクラウドバックアップでは、プロジェクト、アプリのセッションと履歴、実行中データ、プロジェクトコメント、PLC のリモートパスワードを対象外にしています。</p>
+      <p>Android 12 以降の端末間移行では、プロジェクト、アプリのセッションと履歴、実行中データ、プロジェクトコメントが OS による移行対象となる場合があります。PLC のリモートパスワードは端末間移行の対象外であり、移行後に必要に応じて再入力してください。Android 11 以前では、これらのプロジェクト関連データ、コメント、リモートパスワードをバックアップ対象外にしています。</p>
+      <p>実際にバックアップまたは移行されるかは、OS、端末メーカー、ユーザーのバックアップ設定および利用する移行方法によって異なります。詳しくは <a href="https://developer.android.com/identity/data/autobackup">Android のバックアップに関する説明</a>を確認してください。</p>
+    </section>
+
+    <section class="section">
       <h2>タイムチャート記録</h2>
       <p>Android 版はタイムチャート記録中にバックグラウンドへ移った場合、foreground service の通知を表示して記録を継続します。これは端末内での記録継続のためであり、PLC データを開発者サーバーへ同期する用途ではありません。</p>
     </section>
 
     <section class="section">
       <h2>第三者サービス</h2>
-      <p>FA Labo PLC Console は、広告配信、トラッキング、解析 SDK による個人情報収集を目的とした第三者サービスを使用しません。</p>
+      <p>FA Labo PLC Console は、広告配信またはユーザーを横断的に追跡する目的の第三者サービスを使用しません。</p>
+      <p>Android 版は QR 読取のために Google ML Kit Barcode Scanning SDK を使用します。<a href="https://developers.google.com/ml-kit/android-data-disclosure">Google の公式データ開示</a>によると、ML Kit Android SDK は、診断および利用分析のために次の情報を収集します。</p>
+      <ul>
+        <li>端末のメーカー、モデル、OS バージョン、ビルド、利用可能な機械学習用ハードウェアなどの端末情報</li>
+        <li>パッケージ名、アプリバージョンなどのアプリ情報</li>
+        <li>ユーザーや物理端末を一意に識別することを目的としない、インストールごとの識別子</li>
+        <li>処理時間などの性能情報、画像形式や解像度などの API 設定、入出力サイズ、機能バージョン</li>
+        <li>初期化、検出、リソース解放などのイベント種別とエラーコード</li>
+      </ul>
+      <p>これらの情報は HTTPS で暗号化して Google へ送信され、Google の開示では第三者へ移転しないとされています。送信先は Google であり、FA Labo の開発者サーバーではありません。Android 版は ML Kit の自動ズーム機能を使用していません。</p>
       <p>アプリ内購入やストア配布に関する処理は Apple App Store または Google Play によって行われます。FA Labo PLC Console はクレジットカード番号などの支払情報を取得しません。</p>
     </section>
 
     <section class="section">
       <h2>保存期間と削除</h2>
-      <p>FA Labo PLC Console はユーザーアカウントを作成しません。開発者サーバーに個人情報、PLC データ、プロジェクトデータを保存しないため、サーバー側のアカウント削除手続きはありません。</p>
+      <p>FA Labo PLC Console はユーザーアカウントを作成しません。開発者サーバーにアプリから個人情報、PLC データ、プロジェクトデータを保存しないため、サーバー側のアカウント削除手続きはありません。サポート問い合わせで任意に提供された情報の削除については、<a href="../reference/support.html">サポート</a>窓口へ依頼してください。</p>
       <p>端末内に保存されたプロジェクト、設定、履歴は、ユーザーがアプリ内操作、OS のアプリデータ削除、またはアプリのアンインストールによって削除できます。ユーザーが外部へ保存または共有した JSON、CSV、QR、画像は、保存先や共有先で管理してください。</p>
     </section>
 
@@ -160,7 +178,7 @@
 
     <section class="section">
       <h2>English Summary</h2>
-      <p>FA Labo PLC Console uses network access only to connect to PLCs configured by the user. Camera access is used only for QR import. File import/export is limited to files selected by the user through the operating system. The app does not collect personal data, does not send PLC data or project data to developer servers, and does not use advertising, tracking, or analytics services for personal data collection.</p>
+      <p>FA Labo PLC Console uses network access to connect to PLCs configured by the user. Camera access is used only for QR import. File import/export is limited to files selected by the user through the operating system. The app does not send personal data, PLC data, project data, QR images, or decoded QR content to FA Labo developer servers. The Android app uses Google ML Kit Barcode Scanning. According to Google, the SDK sends device and app information, per-installation identifiers, performance and API metrics, event types, and error codes to Google over HTTPS for diagnostics and usage analytics. Information voluntarily provided in a support request is used to respond and investigate issues, retained only as long as needed, and then deleted.</p>
     </section>
 
     <nav class="next-links" aria-label="前後ページ">

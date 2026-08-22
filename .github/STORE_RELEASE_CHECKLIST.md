@@ -8,6 +8,7 @@ FA Labo PLC Console の App Store / Google Play 公開前に確認する内部�
 - 正式なサポート連絡先。
 - 販売者名 / 開発者名の表記。
 - iOS / Android の正式 Store URL。
+- `templates/store-links.html.tmpl` に正式 Store URL と公式バッジ画像を設定し、公開ページへ挿入すること。
 - メーカー別アプリ内購入の最終ストア設定。
 - 価格、提供国、法人利用時の案内。
 - プライバシーポリシーの最終更新日と連絡先。
@@ -17,7 +18,7 @@ FA Labo PLC Console の App Store / Google Play 公開前に確認する内部�
 - StoreKit / Google Play Billing の sandbox / tester 購入確認。
 - iOS Privacy Manifest / Required Reason API の確認。
 - iOS Accessibility Nutrition Labels を入力する場合は、評価基準に沿って過大申告しないこと。
-- Android Foreground Service `dataSync` の Play Console 宣言とデモ動画。
+- Android Foreground Service `connectedDevice` の Play Console 宣言とデモ動画。
 - Android Predictive Back と release 難読化の確認。
 - Android `POST_NOTIFICATIONS` の許可 / 拒否時の通知挙動確認。
 
@@ -28,7 +29,7 @@ FA Labo PLC Console の App Store / Google Play 公開前に確認する内部�
 | Support URL | `reference/support.html`。GitHub Pages 公開後の絶対 URL にする。 |
 | Privacy Policy URL | `reference/privacy-policy.html`。公開申請ではこの URL を使用する。 |
 | Terms URL | `reference/terms.html`。Apple 標準 EULA / 独自規約の選択を決める。 |
-| Purchase URL | `reference/purchase-info.html`。価格、メーカー別商品、Store URL を確定する。 |
+| Purchase URL | `reference/purchase-info.html`。価格とメーカー別商品を確定する。正式 Store URL は `templates/store-links.html.tmpl` から公開ページへ反映する。 |
 
 ## App Store Connect
 
@@ -51,9 +52,9 @@ FA Labo PLC Console の App Store / Google Play 公開前に確認する内部�
 
 - Store listing の short description、full description、feature graphic、screenshots、category を確定する。
 - Privacy Policy URL に公開済みの privacy-policy.html 絶対 URL を設定する。
-- Data safety section を privacy policy と矛盾しない内容で入力する。現方針: 個人情報の収集なし、広告なし、トラッキングなし、PLC データを開発者へ送信しない。
+- Data safety section を privacy policy と矛盾しない内容で入力する。広告・横断トラッキングはなく、PLC データを開発者へ送信しない。Google ML Kit Barcode Scanning が診断・利用分析のために扱う端末・アプリ情報、インストール識別子、性能・API情報、イベント種別、エラーコードを含めて回答する。
 - `INTERNET`、`ACCESS_NETWORK_STATE`、`CAMERA`、`POST_NOTIFICATIONS`、foreground service 系 permission の用途を `reference/app-permissions.html` と矛盾しない説明にする。
-- `FOREGROUND_SERVICE_DATA_SYNC` は Play Console の App content で foreground service declaration を入力する。用途は、ユーザー開始のタイムチャート記録中に PLC 通信と記録を継続するため。中断時の影響と、通知が出るデモ動画も用意する。
+- `FOREGROUND_SERVICE_CONNECTED_DEVICE` は Play Console の App content で foreground service declaration を入力する。用途は、ユーザー開始のタイムチャート記録または Trap 監視中に PLC 通信と記録・監視を継続するため。中断時の影響と、通知が出るデモ動画も用意する。
 - 外部ストレージ全体への permission は現行 Android 実装では宣言していない。JSON / CSV / ログは document picker / create document 経由であることを Data safety と説明文に反映する。
 - MELSEC / KEYENCE 別のアプリ内購入商品を確認し、価格、提供国、税・支払い profile を確定する。金額は公開前に確定するまで manual へ書かない。
 - Content rating questionnaire を入力し、産業用ツールとしての対象年齢を確認する。

@@ -2,11 +2,11 @@
 
 ページ作成状態と更新前後の確認項目を管理します。
 
-最終確認日: 2026-08-14
+最終確認日: 2026-08-22
 
 ## 未完了作業
 
-- `reference/release-notes.html` は、公開済みの FA Labo PLC Console アプリ変更点だけを整理する。
+- 正式な App Store / Google Play URL と公式バッジ画像が確定したら、`templates/store-links.html.tmpl` を使って公開ページへストアリンクを追加する。
 - 新名称が表示される状態でモバイルアプリのバージョン情報画面を再撮影し、`settings/version-info.html` に再掲載する。
 - Windowsで PLC Console ProjectBuilder の5画面を再撮影し、ProjectBuilderの操作ページに再掲載する。
 
@@ -43,7 +43,7 @@
 | 作成済み | `reference/purchase-info.html` |
 | 作成済み | `reference/support.html` |
 | 作成済み | `reference/glossary.html` |
-| 作成中 | `reference/release-notes.html` |
+| 作成済み | `reference/release-notes.html` |
 | 作成済み | `reference/troubleshooting.html` |
 
 ## 更新チェックリスト
