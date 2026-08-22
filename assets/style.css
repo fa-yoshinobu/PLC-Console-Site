@@ -329,6 +329,12 @@ code {
   letter-spacing: 0.02em;
 }
 
+.store-badge {
+  display: block;
+  width: auto;
+  height: 48px;
+}
+
 /* ─── Typography ─── */
 
 .eyebrow {

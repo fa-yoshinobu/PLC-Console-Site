@@ -20,7 +20,8 @@ FA Labo PLC Console マニュアルサイトのメンテナ向け資料です。
 | `assets/images/monitoring/` | 監視・記録系スクリーンショット |
 | `assets/images/transfer/` | QR / JSON 転送系スクリーンショット |
 | `assets/images/projectbuilder/` | ProjectBuilder ロゴ・関連画像 |
-| `templates/` | 共通ヘッダー/ナビ更新時の参照テンプレート |
+| `templates/page-shell.html.tmpl` | 共通ヘッダー/ナビ更新時の参照テンプレート |
+| `templates/store-links.html.tmpl` | 正式 Store URL と公式バッジが確定した後に公開ページへ挿入するテンプレート |
 | `TODO.md` | ページ作成状態と更新チェックリスト |
 
 ## Editing Workflow
@@ -95,6 +96,7 @@ FA Labo PLC Console マニュアルサイトのメンテナ向け資料です。
 ### ストア公開時の扱い
 
 - App Store / Google Play のリンクは、正式 URL が確定してから掲載する。
+- 正式 URL と公式バッジ画像が揃ったら、`templates/store-links.html.tmpl` の変数を置換し、リンクと画像を検証してから公開ページへ挿入する。
 - 未確定の金額は書かない。価格は Store 公開時の表示を正とする。
 - ユーザー向けページには、未確定項目を作業メモとして出さず、必要な場合は `公開状況` や `ストアリンク` として説明する。
 - Store 公開作業の内部チェックは `.github/STORE_RELEASE_CHECKLIST.md` で管理する。

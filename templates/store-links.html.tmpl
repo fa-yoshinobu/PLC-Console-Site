@@ -1,0 +1,28 @@
+<!--
+  公開手順:
+  1. {{APP_STORE_URL}} と {{GOOGLE_PLAY_URL}} を正式 URL に置換する。
+  2. 各ストアが提供する日本語の公式バッジ画像を assets/images/store/ に保存し、
+     {{APP_STORE_BADGE_IMAGE_PATH}} と {{GOOGLE_PLAY_BADGE_IMAGE_PATH}} を公開ページからの相対パスに置換する。
+  3. URL、画像、表示を検証してから、この section を公開ページの main 内へコピーする。
+-->
+<section class="section" aria-labelledby="official-store-links-title">
+  <h2 id="official-store-links-title">公式ストア</h2>
+  <div class="content-grid">
+    <article>
+      <h3>App Store</h3>
+      <p>
+        <a href="{{APP_STORE_URL}}">
+          <img class="store-badge" src="{{APP_STORE_BADGE_IMAGE_PATH}}" alt="App Store でダウンロード" loading="lazy">
+        </a>
+      </p>
+    </article>
+    <article>
+      <h3>Google Play</h3>
+      <p>
+        <a href="{{GOOGLE_PLAY_URL}}">
+          <img class="store-badge" src="{{GOOGLE_PLAY_BADGE_IMAGE_PATH}}" alt="Google Play で手に入れよう" loading="lazy">
+        </a>
+      </p>
+    </article>
+  </div>
+</section>
