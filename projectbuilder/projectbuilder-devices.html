@@ -165,10 +165,10 @@
 
     <section class="section">
       <h2>コメント</h2>
-      <p>アドレスごとのコメントとデータ型を編集します。ここで編集した内容は QR/JSON の <code>deviceMeta</code> に保存され、リスト / タイムチャート / トラップ の同じアドレスにも反映されます。</p>
+      <p>アドレスごとのコメントと、登録先で使うデータ型を編集します。コメントは QR/JSON の <code>deviceMeta</code> に保存され、リスト / タイムチャート / トラップ の同じアドレスにも反映されます。データ型は、そのアドレスがいずれかの登録先から参照される場合だけ <code>deviceMeta</code> に出力されます。</p>
       <div class="info-table" role="table" aria-label="コメント列">
         <div role="row"><div role="cell">アドレス</div><div role="cell">コメントを紐づける PLC デバイスアドレスです。</div></div>
-        <div role="row"><div role="cell">データ型</div><div role="cell">同じアドレスで共有する表示用のデータ型です。</div></div>
+        <div role="row"><div role="cell">データ型</div><div role="cell">同じアドレスがリスト / タイムチャート / トラップから参照される場合に共有するデータ型です。コメント専用のアドレスでは空欄にしてください。指定されていると生成エラーになります。</div></div>
         <div role="row"><div role="cell">コメント</div><div role="cell">モバイルアプリで表示するアドレスコメントです。</div></div>
       </div>
       <p>Excel からタブ区切りでコピー/貼り付けできます。列は アドレス / データ型 / コメント です。</p>
