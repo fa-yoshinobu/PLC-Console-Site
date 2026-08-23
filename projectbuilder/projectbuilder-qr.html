@@ -132,7 +132,7 @@
       <h2>出力形式</h2>
       <div class="info-table" role="table" aria-label="ProjectBuilder output format">
         <div role="row"><div role="cell">Project JSON</div><div role="cell">Android / iOS が読み込む <code>plc-io-checker-project</code> schema v2 で出力します。JSON の上限は 5 MiB です。</div></div>
-        <div role="row"><div role="cell">コメントとデータ型</div><div role="cell">アドレス単位の <code>deviceMeta</code> に保存され、リスト / タイムチャート / トラップ から共有されます。</div></div>
+        <div role="row"><div role="cell">コメントとデータ型</div><div role="cell">アドレス単位の <code>deviceMeta</code> に保存され、リスト / タイムチャート / トラップから共有されます。各登録が参照するアドレスを正規化して重複を除いた項目は最大 1,040 件、未参照のコメント専用項目は最大 100,000 件で、コメント専用項目には空でないコメントが必要です。</div></div>
         <div role="row"><div role="cell">データ型の補完</div><div role="cell">データ型が未指定の行は、同じアドレスに明示済みのデータ型が 1 つだけある場合に限り補完されます。同じアドレスに異なるデータ型が明示されていると生成エラーになります。</div></div>
         <div role="row"><div role="cell">QR payload</div><div role="cell"><code>PLCIOC1|ZSTD</code> 形式です。JSON を Zstd 圧縮し、必要に応じて複数ページに分割します。</div></div>
         <div role="row"><div role="cell">QR 上限</div><div role="cell">最大 4,096 ページ、圧縮後 1 MiB、展開後 5 MiB です。</div></div>

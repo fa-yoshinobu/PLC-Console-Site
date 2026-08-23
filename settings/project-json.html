@@ -117,7 +117,7 @@
         <article><h3>登録内容</h3><p>List、タイムチャート、トラップの登録内容を保存します。</p></article>
         <article><h3>共通メタ情報</h3><p>アドレス単位のコメントとデータ型は <code>deviceMeta</code> に保存され、各登録から共有されます。</p></article>
       </div>
-      <p class="small-note">List は最大 1,000 件、TimeChart は最大 20 チャンネル、Trap は最大 20 件、deviceMeta は最大 1,040 件です。上限を超えたファイルは途中まで取り込まず、エラーにします。</p>
+      <p class="small-note">List は最大 1,000 件、TimeChart は最大 20 チャンネル、Trap は最大 20 件です。List / TimeChart / Trap が参照するアドレスを正規化して重複を除いた <code>deviceMeta</code> は最大 1,040 件、どの登録からも参照されないコメント専用の <code>deviceMeta</code> は最大 100,000 件です。コメント専用の項目には空でないコメントが必要です。上限を超えたファイルは途中まで取り込まず、エラーにします。</p>
     </section>
 
     <section class="section">
@@ -125,7 +125,9 @@
       <div class="info-table" role="table" aria-label="プロジェクトJSON形式">
         <div role="row"><div role="cell">schema</div><div role="cell"><code>plc-io-checker-project</code></div></div>
         <div role="row"><div role="cell">schemaVersion</div><div role="cell"><code>2</code> のみ。旧バージョンは変換せずエラーにします。</div></div>
-        <div role="row"><div role="cell">ファイル上限</div><div role="cell">5 MiB（5,242,880 bytes）です。</div></div>
+        <div role="row"><div role="cell">ファイル上限</div><div role="cell">JSON 全体で 5 MiB（5,242,880 bytes）です。</div></div>
+        <div role="row"><div role="cell">参照メタ情報</div><div role="cell">List / TimeChart / Trap が参照するアドレスを正規化して重複を除いた <code>deviceMeta</code> は最大 1,040 件です。</div></div>
+        <div role="row"><div role="cell">コメント専用メタ情報</div><div role="cell">List / TimeChart / Trap のどの登録からも参照されない <code>deviceMeta</code> は最大 100,000 件です。各項目に空でないコメントが必要です。</div></div>
         <div role="row"><div role="cell">通信時間</div><div role="cell">ポーリング間隔は 100～10,000 ms、通信タイムアウトは 250～10,000 ms です。タイムアウトはポーリング間隔より短くてもかまいません。</div></div>
         <div role="row"><div role="cell">コメント / データ型</div><div role="cell"><code>deviceMeta</code> を正として読み書きします。List / TimeChart / Trap 側に同じ情報を重複して持たせません。</div></div>
         <div role="row"><div role="cell">読込条件</div><div role="cell">必須情報不足、未知の項目、重複アドレス／ID、不正アドレス、非有限値、範囲外値は取り込みエラーにします。暗黙変換、推測補完、上限での切り捨ては行いません。</div></div>
