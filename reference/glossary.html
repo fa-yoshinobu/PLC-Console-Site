@@ -35,10 +35,8 @@
           <summary>操作</summary>
           <div class="nav-menu">
             <a href="../monitoring/monitoring.html">監視</a>
-            <a href="../monitoring/list-edit.html">List 登録編集</a>
+            <a href="../monitoring/list-edit.html">リスト登録編集</a>
             <a href="../monitoring/focus-panel.html">デバイス操作パネル</a>
-            <a href="../monitoring/writing.html">書込</a>
-            <a href="../monitoring/comments.html">コメント</a>
             <a href="../monitoring/time-chart.html">タイムチャート</a>
             <a href="../monitoring/traps.html">トラップ</a>
           </div>
@@ -101,14 +99,14 @@
         <div role="row"><div role="cell">プロジェクト</div><div role="cell">PLC 接続設定、登録デバイス、タイムチャート、トラップなどをまとめて扱う設定単位です。Android / iOS / ProjectBuilder で共通して使います。</div></div>
         <div role="row"><div role="cell">ProjectBuilder</div><div role="cell">PC でプロジェクトを作成し、QR または JSON でモバイルアプリへ取り込むためのツールです。</div></div>
         <div role="row"><div role="cell">プロジェクトJSON</div><div role="cell">プロジェクトをファイルとして読み込み、または書き出すための JSON ファイルです。</div></div>
-        <div role="row"><div role="cell">List / リスト</div><div role="cell">登録したデバイスを一覧で監視する画面です。編集は <strong>List 登録編集</strong> から行います。</div></div>
-        <div role="row"><div role="cell">Block / ブロック</div><div role="cell">PLC の <a href="../settings/device-range.html">デバイス範囲</a> をページ単位で表示する監視画面です。</div></div>
-        <div role="row"><div role="cell">デバイス操作パネル</div><div role="cell">List / Block で選択した 1 デバイスの現在値確認、書込、タイムチャート/トラップ追加を行うパネルです。縦向きでは下部シート、横向きでは右側ペインとして表示されます。</div></div>
+        <div role="row"><div role="cell">リスト</div><div role="cell">登録したデバイスを一覧で監視する画面です。編集は <strong>リスト登録編集</strong> から行います。</div></div>
+        <div role="row"><div role="cell">ブロック</div><div role="cell">PLC の <a href="../settings/device-range.html">デバイス範囲</a> をページ単位で表示する監視画面です。</div></div>
+        <div role="row"><div role="cell">デバイス操作パネル</div><div role="cell">リスト／ブロックで選択した 1 デバイスの現在値確認、書込、タイムチャート／トラップ追加を行うパネルです。縦向きでは下部シート、横向きでは右側ペインとして表示されます。</div></div>
         <div role="row"><div role="cell">ON/OFF操作</div><div role="cell">デバイス操作パネル内で BIT デバイスを書き込む大きな <strong>ON</strong> / <strong>OFF</strong> ボタンの操作です。</div></div>
         <div role="row"><div role="cell">コンパクト / 詳細</div><div role="cell"><strong>ブロック</strong> 画面の表示密度です。コンパクトは点数優先、詳細はコメントや値の読みやすさ優先です。</div></div>
         <div role="row"><div role="cell">モニタ表示設定</div><div role="cell"><a href="../settings/monitor-display-settings.html"><strong>ブロック</strong> 画面の表示密度と <strong>グラフ100%値</strong></a> を設定する画面です。</div></div>
         <div role="row"><div role="cell">アドレス / address</div><div role="cell">PLC デバイスのアドレスです。例: <code>X0</code>、<code>D100</code>、<code>DM100</code>。</div></div>
-        <div role="row"><div role="cell">コメント / Comment</div><div role="cell">デバイスに付ける表示用コメントです。同じアドレスのコメントは List / Block / タイムチャート / トラップで共通して表示されます。</div></div>
+        <div role="row"><div role="cell">コメント</div><div role="cell">デバイスに付ける表示用コメントです。同じアドレスのコメントはリスト／ブロック／タイムチャート／トラップで共通して表示されます。</div></div>
         <div role="row"><div role="cell">データタイプ</div><div role="cell"><code>BIT</code>、<code>INT16</code>、<code>UINT16</code>、<code>INT32</code>、<code>UINT32</code>、<code>FLOAT32</code> の表示/書込型です。</div></div>
         <div role="row"><div role="cell">タイムチャート</div><div role="cell">登録したチャンネルの値を記録し、波形や CSV で確認する機能です。</div></div>
         <div role="row"><div role="cell">トラップ</div><div role="cell">指定した条件に一致したタイミングをイベントとして記録する機能です。</div></div>

@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="List 登録編集の操作。">
-  <title>List 登録編集 | FA Labo PLC Console 操作マニュアル</title>
+  <meta name="description" content="リスト登録編集の操作。">
+  <title>リスト登録編集 | FA Labo PLC Console 操作マニュアル</title>
   <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
@@ -35,10 +35,8 @@
           <summary class="active">操作</summary>
           <div class="nav-menu">
             <a href="../monitoring/monitoring.html">監視</a>
-            <a class="active" aria-current="page" href="../monitoring/list-edit.html">List 登録編集</a>
+            <a class="active" aria-current="page" href="../monitoring/list-edit.html">リスト登録編集</a>
             <a href="../monitoring/focus-panel.html">デバイス操作パネル</a>
-            <a href="../monitoring/writing.html">書込</a>
-            <a href="../monitoring/comments.html">コメント</a>
             <a href="../monitoring/time-chart.html">タイムチャート</a>
             <a href="../monitoring/traps.html">トラップ</a>
           </div>
@@ -89,21 +87,25 @@
   </header>
 
   <main class="doc-page">
-    <nav class="breadcrumb" aria-label="パンくず"><a href="../index.html">トップ</a><span aria-current="page">List 登録編集</span></nav>
+    <nav class="breadcrumb" aria-label="パンくず"><a href="../index.html">トップ</a><span aria-current="page">リスト登録編集</span></nav>
     <section class="page-hero section">
       <p class="eyebrow">List Editor</p>
-      <h1>List 登録編集</h1>
-      <p class="lead">List に表示するデバイスを登録・編集する画面です。タイムチャートやトラップの登録とは別です。</p>
+      <h1>リスト登録編集</h1>
+      <p class="lead">リストに表示するデバイスを登録・編集する画面です。タイムチャートやトラップの登録とは別です。</p>
     </section>
 
     <section class="section">
       <h2>入口と実行条件</h2>
       <ul>
-        <li>入口は <strong>List</strong> 画面の <strong>List 登録編集</strong> です。ハンバーガーメニューには置きません。</li>
+        <li>入口は <strong>リスト</strong> 画面の <strong>リスト登録編集</strong> です。</li>
         <li>登録編集は全画面で開きます。登録件数が多い場合でも、一覧と編集操作を同じ画面内で確認できます。</li>
         <li>プロジェクトが開いている状態で使用します。</li>
-        <li>登録したデバイスは List 監視に表示されます。コメントはアドレス単位のコメントDBへ保存され、List / Block / デバイス操作パネル / TimeChart 登録 / Trap 登録・編集で共通表示されます。</li>
+        <li>登録したデバイスはリスト監視に表示されます。コメントはアドレス単位のコメントDBへ保存され、リスト／ブロック／デバイス操作パネル／タイムチャート登録／トラップ登録・編集で共通表示されます。</li>
       </ul>
+      <figure class="inline-shot section-shot">
+        <img src="../assets/images/monitoring/list-edit.png" width="1086" height="1448" alt="デバイス追加と登録済みデバイスを表示したリスト登録編集画面" loading="lazy">
+        <figcaption>リスト登録編集</figcaption>
+      </figure>
     </section>
 
     <section class="section">
@@ -128,7 +130,7 @@
       <h2>登録済みデバイス</h2>
       <ul>
         <li>検索でアドレスやコメントを絞り込めます。</li>
-        <li>各行で comment を編集できます。保存したコメントは同じアドレスの共通コメントとして扱われます。</li>
+        <li>各行でコメントを編集できます。保存したコメントは同じアドレスの共通コメントとして扱われます。</li>
         <li>上へ / 下へで表示順を変更できます。ドラッグによる並び替えは使いません。</li>
         <li>保存で行の編集を反映し、削除で行を消します。</li>
       </ul>

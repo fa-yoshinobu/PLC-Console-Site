@@ -58,7 +58,7 @@ FA Labo PLC Console の画面、パネル、シート、ダイアログ、バナ
 
 | 正式表示名 | 英語名 | iOS内部名 | Android内部名 | 入口 / 用途 |
 | --- | --- | --- | --- | --- |
-| List 登録編集 | List Registration Edit | `DeviceEditorSheet` / `isDeviceEditorSheetPresented` | `DeviceEditorDialog` / `showDeviceEditor` | List の登録デバイス、範囲追加、一括削除を編集する。 |
+| リスト登録編集 | List Registration Edit | `DeviceEditorSheet` / `isDeviceEditorSheetPresented` | `DeviceEditorDialog` / `showDeviceEditor` | List の登録デバイス、範囲追加、一括削除を編集する。 |
 | デバイス選択 | Device Selection | なし | `DevicePickerDialog` / `showDevicePicker` | Android の縦向きなどでデバイス選択用に開く。公開説明では必要時のみ使う。 |
 | ブロック選択 | Block Selection | `BlockSelectionSheet` | `BlockPagePickerDialog` | Block のページ/範囲を選ぶ。 |
 | 表示型を選択 | Select Display Type | `DataTypeSelectionSheet` | `StaticDialog` in `FocusPanel` | デバイス操作パネルの `Type` から開き、WORD の表示/書込型を選ぶ。 |
@@ -71,7 +71,7 @@ FA Labo PLC Console の画面、パネル、シート、ダイアログ、バナ
 
 | 正式表示名 | 英語名 | iOS内部名 | Android内部名 | 入口 / 用途 |
 | --- | --- | --- | --- | --- |
-| 範囲削除の確認 | Confirm Range Delete | SwiftUI `.alert` in `DeviceEditorSheet` | `AlertDialog` in `DeviceEditorDialog` | List 登録編集で範囲一括削除前に表示する。 |
+| 範囲削除の確認 | Confirm Range Delete | SwiftUI `.alert` in `DeviceEditorSheet` | `AlertDialog` in `DeviceEditorDialog` | リスト登録編集で範囲一括削除前に表示する。 |
 | プロジェクト削除 | Project Delete | SwiftUI `.alert` in `ConnectionHubSheet` | `AlertDialog` in `ConnectionHubSheet` | 接続先切替でプロジェクト削除前に表示する。 |
 | エラー履歴クリア確認 | Confirm Clear Error History | `ErrorHistorySheet` 内の確認UI | `AlertDialog` in `ErrorHistoryDialog` | エラー履歴のクリア前に表示する。 |
 | トラップ削除の確認 | Confirm Trap Delete | `TrapListView` 内の確認UI | `AlertDialog` in `TrapListView` | トラップ定義を削除する前に表示する。 |

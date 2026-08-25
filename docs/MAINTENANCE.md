@@ -14,7 +14,7 @@ FA Labo PLC Console マニュアルサイトのメンテナ向け資料です。
 | `start/` | 入手・インストール、はじめる |
 | `plc/` | 接続、接続設定例、MELSEC / KEYENCE 設定 |
 | `plc/models/` | 対応機種ごとの接続設定例ページ |
-| `monitoring/` | 監視、List 登録編集、デバイス操作パネル、書込、コメント、タイムチャート、トラップ |
+| `monitoring/` | 監視、リスト登録編集、デバイス操作パネル、書込、コメント、タイムチャート、トラップ |
 | `settings/` | CPU操作、表示設定、コメント・QR・JSON、エラー履歴、アプリ設定、ライセンス/購入 |
 | `projectbuilder/` | ProjectBuilder、入力、QR 生成 |
 | `reference/` | 問い合わせ、公開情報、用語集、リリースノート、困ったとき |
@@ -85,7 +85,7 @@ FA Labo PLC Console マニュアルサイトのメンテナ向け資料です。
 
 - アプリ名は `FA Labo PLC Console`、PC ツール名は `PLC Console ProjectBuilder`（短縮時は `ProjectBuilder`）、repository 名は `PLC-Console-ProjectBuilder` に統一する。
 - 日本語表記は `プロジェクト`、`プロジェクト名`、`プロジェクトJSON` に統一する。
-- 画面名は app 表示に合わせて `List`、`Block`、`デバイス操作パネル`、`タイムチャート`、`トラップ`、`List 登録編集` を使う。
+- 画面名は app 表示に合わせて `List`、`Block`、`デバイス操作パネル`、`タイムチャート`、`トラップ`、`リスト登録編集` を使う。
 - 操作名は表示文言に合わせて `QR読込`、`JSON読込`、`JSON書出`、`CSVコメント読込`、`コメント読込`、`CPU操作` と書く。
 - PLC 種別は `MELSEC` / `KEYENCE`、通信方式は `SLMP（Seamless Message Protocol）` / `Host-link（上位リンク）` と書く。
 - 通常の操作ページでは、内部フィールド名ではなく画面表示を使う。例: `ネットワーク`、`局番`、`ユニットI/O`。

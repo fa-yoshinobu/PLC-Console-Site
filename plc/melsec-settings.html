@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="MELSEC 接続設定、SLMP（Seamless Message Protocol）、ルート指定、アドレス表記。">
+  <meta name="description" content="MELSEC 接続設定、SLMP（Seamless Message Protocol）、ルーティング、アドレス表記。">
   <title>MELSEC 設定 | FA Labo PLC Console 操作マニュアル</title>
   <link rel="stylesheet" href="../assets/style.css">
 </head>
@@ -35,10 +35,8 @@
           <summary>操作</summary>
           <div class="nav-menu">
             <a href="../monitoring/monitoring.html">監視</a>
-            <a href="../monitoring/list-edit.html">List 登録編集</a>
+            <a href="../monitoring/list-edit.html">リスト登録編集</a>
             <a href="../monitoring/focus-panel.html">デバイス操作パネル</a>
-            <a href="../monitoring/writing.html">書込</a>
-            <a href="../monitoring/comments.html">コメント</a>
             <a href="../monitoring/time-chart.html">タイムチャート</a>
             <a href="../monitoring/traps.html">トラップ</a>
           </div>
@@ -93,7 +91,7 @@
     <section class="page-hero section">
       <p class="eyebrow">MELSEC</p>
       <h1>MELSEC 設定</h1>
-      <p class="lead">MELSEC で使う通信設定と表記ルールです。</p>
+      <p class="lead">MELSEC で使う接続設定と表記ルールです。</p>
     </section>
 
     <section class="section">
@@ -106,51 +104,104 @@
     </section>
 
     <section class="section">
-      <h2>通信設定</h2>
-      <div class="info-table" role="table" aria-label="MELSEC 通信設定">
+      <h2>接続設定</h2>
+      <div class="info-table" role="table" aria-label="MELSEC 接続設定">
         <div role="row"><div role="cell">通信方式</div><div role="cell">SLMP（Seamless Message Protocol）</div></div>
-        <div role="row"><div role="cell">既定ポート</div><div role="cell"><code>1025</code></div></div>
+        <div role="row"><div role="cell">PLC IP / Port</div><div role="cell">PLC 側の Ethernet 設定に合わせます。既定ポートは <code>1025</code> です。</div></div>
         <div role="row"><div role="cell">通信</div><div role="cell"><code>TCP</code> / <code>UDP</code></div></div>
         <div role="row"><div role="cell">機種</div><div role="cell"><code>MELSEC iQ-R (built-in)</code>、<code>MELSEC iQ-R (RJ71EN71)</code>、<code>MELSEC iQ-F (built-in)</code>、<code>MELSEC iQ-L (built-in)</code>、<code>MELSEC MX-R (built-in)</code>、<code>MELSEC MX-F (built-in)</code>、<code>MELSEC QnUDV (built-in)</code>、<code>MELSEC QnUDV (QJ71E71-100)</code>、<code>MELSEC QnU (built-in)</code>、<code>MELSEC QnU (QJ71E71-100)</code>、<code>MELSEC-Q (QJ71E71-100)</code>、<code>MELSEC-L (built-in)</code>、<code>MELSEC-L (LJ71E71-100)</code>。<code>(built-in)</code> は内蔵 Ethernet ポート、ユニット名付きは Ethernet ユニット経由の接続です。</div></div>
         <div role="row"><div role="cell">リモートパスワード</div><div role="cell">PLC 側で設定している場合に入力します。使用していない場合は空欄にします。</div></div>
+        <div role="row"><div role="cell">到達確認</div><div role="cell">入力した接続設定で確認を実行し、結果とエラーメッセージを確認します。</div></div>
+      </div>
+      <p class="small-note">PLC 側の Ethernet 設定、通信許可、リモートパスワードは <a href="../plc/plc-side-settings.html">接続設定例</a> で確認します。</p>
+      <figure class="inline-shot section-shot">
+        <img src="../assets/images/plc/melsec-connection-settings.png" width="1536" height="1857" alt="MELSECの接続設定画面" loading="lazy">
+        <figcaption>MELSECの接続設定</figcaption>
+      </figure>
+    </section>
+
+    <section class="section">
+      <h2>ルーティング</h2>
+      <div class="info-table" role="table" aria-label="MELSEC ルーティング">
+        <div role="row"><div role="cell">ネットワーク</div><div role="cell">ネットワーク経由で他局に接続したい場合、ネットワークの番号を指定します。自局CPUに接続する場合は、<code>0</code>を指定してください。</div></div>
+        <div role="row"><div role="cell">局番</div><div role="cell">ネットワーク経由で他局に接続したい場合、子局の番号を指定します。自局CPUに接続する場合は、<code>255</code>を指定してください。</div></div>
+        <div role="row"><div role="cell">ユニットI/O</div><div role="cell">接続先に合わせて <code>自局</code>、<code>制御系CPU</code>、<code>待機系CPU</code>、<code>A系CPU</code>、<code>B系CPU</code>、<code>マルチCPU1号機</code>、<code>マルチCPU2号機</code>、<code>マルチCPU3号機</code>、<code>マルチCPU4号機</code>、<code>リモートヘッド1号機</code>、<code>リモートヘッド2号機</code>、<code>制御系リモートヘッド</code>、<code>待機系リモートヘッド</code>から選択します。自局CPUに接続する場合は、<code>自局</code>を選択してください。</div></div>
       </div>
     </section>
 
     <section class="section">
-      <h2>ルート指定</h2>
-      <div class="info-table" role="table" aria-label="MELSEC ルート指定">
-        <div role="row"><div role="cell">ネットワーク</div><div role="cell">ネットワーク経由で他局に接続したい場合、ネットワークの番号を指定します。自局CPUに接続する場合は、<code>0</code>を指定してください。</div></div>
-        <div role="row"><div role="cell">局番</div><div role="cell">ネットワーク経由で他局に接続したい場合、子局の番号を指定します。自局CPUに接続する場合は、<code>255</code>を指定してください。</div></div>
-        <div role="row"><div role="cell">ユニットI/O</div><div role="cell">通常は<code>0x03FF</code>を指定してください。詳細はユニットI/O 設定値を参照してください。</div></div>
+      <h2>タイミング</h2>
+      <div class="info-table" role="table" aria-label="MELSEC タイミング">
+        <div role="row"><div role="cell">監視周期 ms</div><div role="cell">PLC の値を読み取る間隔です。<code>100</code>～<code>10000</code> ms で指定します。既定値は <code>500</code> ms です。</div></div>
+        <div role="row"><div role="cell">タイムアウト ms</div><div role="cell">PLC からの応答を待つ時間です。<code>250</code>～<code>10000</code> ms で指定します。既定値は <code>2000</code> ms です。</div></div>
       </div>
-      <h3>ユニットI/O 設定値</h3>
-      <div class="info-table" role="table" aria-label="ユニットI/O 設定値">
-        <div role="row"><div role="cell">制御系CPU</div><div role="cell"><code>0x03D0</code></div></div>
-        <div role="row"><div role="cell">待機系CPU</div><div role="cell"><code>0x03D1</code></div></div>
-        <div role="row"><div role="cell">A系CPU</div><div role="cell"><code>0x03D2</code></div></div>
-        <div role="row"><div role="cell">B系CPU</div><div role="cell"><code>0x03D3</code></div></div>
-        <div role="row"><div role="cell">マルチCPU1号機</div><div role="cell"><code>0x03E0</code></div></div>
-        <div role="row"><div role="cell">マルチCPU2号機</div><div role="cell"><code>0x03E1</code></div></div>
-        <div role="row"><div role="cell">マルチCPU3号機</div><div role="cell"><code>0x03E2</code></div></div>
-        <div role="row"><div role="cell">マルチCPU4号機</div><div role="cell"><code>0x03E3</code></div></div>
-        <div role="row"><div role="cell">自局CPU／管理CPU</div><div role="cell"><code>0x03FF</code></div></div>
+      <figure class="inline-shot section-shot">
+        <img src="../assets/images/plc/melsec-routing-settings.png" width="1536" height="1159" alt="MELSECのルーティングとタイミング設定画面" loading="lazy">
+        <figcaption>MELSECのルーティングとタイミング</figcaption>
+      </figure>
+    </section>
+
+    <section class="section">
+      <h2>Demoの値変化パターン</h2>
+      <p class="small-note">この項目はデモの場合のみ設定できます。</p>
+      <p>Demoプロジェクトでは、アプリ内で生成された監視値が変化します。PLC 設定の <strong>値変化パターン</strong> で、画面表示やトラップ確認に使う変化の出方を選べます。</p>
+      <div class="info-table" role="table" aria-label="MELSEC Demoの値変化パターン">
+        <div role="row"><div role="cell"><code>スイープ</code></div><div role="cell">BIT は周期的に ON/OFF し、数値は 0 から 100 へ繰り返し変化します。</div></div>
+        <div role="row"><div role="cell"><code>パルス</code></div><div role="cell">短い瞬間的な変化を出します。立上り、立下り、変化検出のトラップ確認に向いています。</div></div>
+        <div role="row"><div role="cell"><code>ウェーブ</code></div><div role="cell">なめらかな波形で数値が上下します。タイムチャートで値の推移を確認できます。</div></div>
+        <div role="row"><div role="cell"><code>ステップ</code></div><div role="cell">段階的に値が切り替わります。しきい値付近やトラップ条件を確認できます。</div></div>
+        <div role="row"><div role="cell"><code>固定</code></div><div role="cell">自動変化を止め、現在値を保持します。</div></div>
       </div>
+      <p class="small-note">Demoの値は実機 PLC の状態を表すものではありません。値変化パターンはプロジェクト JSON には含まれません。</p>
     </section>
 
     <section class="section">
       <h2>デバイス表記</h2>
-      <ul>
-        <li>主な表示順は <code>X</code>、<code>Y</code>、<code>M</code>、<code>D</code>、<code>L</code>、<code>F</code>、<code>B</code>、<code>SB</code>、<code>SM</code>、<code>STC</code>、<code>TC</code>、<code>CC</code>、<code>W</code>、<code>SW</code>、<code>R</code>、<code>ZR</code>、<code>SD</code> です。</li>
-        <li><code>B</code>、<code>W</code>、<code>SB</code>、<code>SW</code> は 16 進表記です。</li>
-        <li><code>iQ-F</code> の <code>X</code> / <code>Y</code> は 8 進表記です。</li>
-        <li>それ以外の MELSEC <code>X</code> / <code>Y</code> は 16 進表記です。</li>
-      </ul>
+      <div class="content-grid">
+        <article>
+          <h3>利用可能なデバイス</h3>
+          <p><code>X</code>、<code>Y</code>、<code>M</code>、<code>D</code>、<code>L</code>、<code>F</code>、<code>B</code>、<code>SB</code>、<code>SM</code>、<code>STC</code>、<code>STN</code>、<code>TC</code>、<code>TN</code>、<code>CC</code>、<code>CN</code>、<code>W</code>、<code>SW</code>、<code>R</code>、<code>ZR</code>、<code>SD</code></p>
+        </article>
+        <article>
+          <h3><code>X</code> / <code>Y</code></h3>
+          <p><code>iQ-F</code> は 8 進表記です。それ以外の MELSEC は 16 進表記です。</p>
+        </article>
+      </div>
       <div class="info-table" role="table" aria-label="MELSEC データタイプ">
         <div role="row"><div role="cell">BIT</div><div role="cell">BIT デバイス用です。ON/OFF として扱います。</div></div>
         <div role="row"><div role="cell">INT16 / UINT16</div><div role="cell">16 bit の符号付き整数／符号なし整数として扱います。</div></div>
-        <div role="row"><div role="cell">INT32 / UINT32 / FLOAT32</div><div role="cell">32 bit の符号付き整数／符号なし整数／浮動小数点数として扱います。使用するデバイス点数はデバイス種別によって異なります。</div></div>
+        <div role="row"><div role="cell">INT32 / UINT32 / FLOAT32</div><div role="cell">32 bit の符号付き整数／符号なし整数／浮動小数点数として扱います。</div></div>
       </div>
       <p class="small-note">選択中の CPU機種で使えないアドレスやデータタイプは、登録時や読込時にエラーになります。</p>
+    </section>
+
+    <section class="section">
+      <div class="notice danger">
+        <h2>実機接続の注意</h2>
+        <p>接続すると PLC との通信が始まります。接続前に対象 PLC、IP、ポート、TCP/UDP、通信許可、ネットワーク経路を確認してください。</p>
+        <p>デバイス書込や CPU操作は設備動作に影響します。設備側の安全手順に従って操作してください。</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>接続結果の見方</h2>
+      <ul>
+        <li>接続成功時は上部ステータスに RUN/STOP、CPU、IP、プロジェクト名が表示されます。</li>
+        <li>未接続時の CPU 状態は <code>--</code> と表示されます。</li>
+        <li>接続できない場合は <strong>到達確認</strong> を実行し、IP、ポート、TCP/UDP、端末のネットワーク接続を確認してください。</li>
+        <li>ネットワーク、局番、ユニット I/O、リモートパスワードも確認してください。</li>
+        <li>PLC 側の設定や通信許可は <a href="../plc/plc-side-settings.html">接続設定例</a> と照らし合わせてください。</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>到達確認のエラー例</h2>
+      <div class="info-table" role="table" aria-label="MELSEC 到達確認エラー例">
+        <div role="row"><div role="cell">タイムアウト</div><div role="cell">PLC から応答がありません。IP アドレス、ポート、通信方式、端末のネットワーク接続を確認してください。</div></div>
+        <div role="row"><div role="cell">接続拒否</div><div role="cell">PLC 側が接続を受け付けていません。ポートと PLC 側の通信設定を確認してください。</div></div>
+        <div role="row"><div role="cell">認証エラー</div><div role="cell">リモートパスワードを確認してください。</div></div>
+        <div role="row"><div role="cell">ルーティングエラー</div><div role="cell">ネットワーク、局番、ユニットI/Oを確認してください。</div></div>
+      </div>
     </section>
 
     <nav class="next-links" aria-label="前後ページ">

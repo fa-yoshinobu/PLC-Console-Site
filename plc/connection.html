@@ -35,10 +35,8 @@
           <summary>操作</summary>
           <div class="nav-menu">
             <a href="../monitoring/monitoring.html">監視</a>
-            <a href="../monitoring/list-edit.html">List 登録編集</a>
+            <a href="../monitoring/list-edit.html">リスト登録編集</a>
             <a href="../monitoring/focus-panel.html">デバイス操作パネル</a>
-            <a href="../monitoring/writing.html">書込</a>
-            <a href="../monitoring/comments.html">コメント</a>
             <a href="../monitoring/time-chart.html">タイムチャート</a>
             <a href="../monitoring/traps.html">トラップ</a>
           </div>
@@ -93,66 +91,39 @@
     <section class="page-hero section">
       <p class="eyebrow">Connection</p>
       <h1>接続・プロジェクト</h1>
-      <p class="lead">接続先切替、プロジェクト選択、通信設定、デモの値変化パターン、到達確認の操作を説明します。</p>
+      <p class="lead">接続先切替、プロジェクト選択、上部ステータスの確認方法を説明します。</p>
     </section>
 
     <section class="section">
       <div class="two-column">
         <div>
-          <h2>接続先切替を開く</h2>
-          <p>上部ステータス部分をタップすると接続先切替を開けます。通信設定はハンバーガーメニューではなく、このタイトル導線から開きます。</p>
+          <h2>接続先を選ぶ</h2>
+          <p>初回は <strong>はじめかた</strong> が表示されます。接続する PLC メーカー、または操作を確認する Demo を選びます。通常は前回の接続先から再開します。</p>
           <ul>
-            <li>現在の接続内容を確認できます。</li>
-            <li>MELSEC / KEYENCE の接続先を切り替えられます。</li>
-            <li>最近使ったプロジェクトから再選択できます。</li>
+            <li><strong>MELSEC を使う</strong> / <strong>KEYENCE を使う</strong>：実機の通信設定を開きます。</li>
+            <li><strong>MELSEC デモ</strong> / <strong>KEYENCE デモ</strong>：デモプロジェクトを開きます。</li>
+            <li>接続先を変更するときは、上部ステータス部分をタップします。</li>
           </ul>
         </div>
         <figure class="inline-shot">
-          <img src="../assets/images/plc/connection-switch.png" width="800" height="1280" alt="接続先切替画面" loading="lazy">
-          <figcaption>接続先切替</figcaption>
+          <img src="../assets/images/plc/connection-switch.png" width="1536" height="2048" alt="初回に接続先を選ぶ、はじめかた画面" loading="lazy">
+          <figcaption>初回に表示される「はじめかた」</figcaption>
         </figure>
       </div>
     </section>
 
     <section class="section">
       <h2>上部ステータスの見方</h2>
-      <p>上部ステータスには、現在の CPU 状態、CPU機種、IP、プロジェクト名を短く表示します。表示幅を優先するため、ポート番号はこの行には表示しません。</p>
+      <figure class="inline-shot">
+        <img src="../assets/images/plc/connection-status.png" width="1536" height="412" alt="RUN、CPU機種、IP、プロジェクト名を表示した上部ステータス" loading="lazy">
+        <figcaption>接続中の上部ステータスと操作タブ</figcaption>
+      </figure>
       <div class="info-table" role="table" aria-label="上部ステータス">
         <div role="row"><div role="cell">表示内容</div><div role="cell"><code>RUN/STOP/PROGRAM</code> / CPU機種 / IP / プロジェクト名。</div></div>
-        <div role="row"><div role="cell">状態表示</div><div role="cell">CPU 状態は丸マークではなく、<code>RUN</code>、<code>STOP</code>、<code>PROGRAM</code> の文字で確認します。</div></div>
-        <div role="row"><div role="cell">MELSEC</div><div role="cell">CPU停止側の状態は <code>STOP</code> と表示します。</div></div>
-        <div role="row"><div role="cell">KEYENCE</div><div role="cell">CPU停止側の状態は <code>PROGRAM</code> と表示します。</div></div>
+        <div role="row"><div role="cell">状態表示</div><div role="cell">CPU 状態は <code>RUN</code>、<code>STOP</code>、<code>PROGRAM</code> の文字で確認します。</div></div>
         <div role="row"><div role="cell">接続ボタン</div><div role="cell"><strong>接続中</strong> または <strong>未接続</strong> の 2 状態で表示します。デモの場合はボタン内に <strong>DEMO</strong> が表示されます。</div></div>
         <div role="row"><div role="cell">書込ロック</div><div role="cell"><strong>ロック</strong> / <strong>解除</strong> で、出力や値の書込が許可されているかを示します。</div></div>
       </div>
-    </section>
-
-    <section class="section">
-      <h2>通信設定で確認する項目</h2>
-      <div class="info-table" role="table" aria-label="通信設定">
-        <div role="row"><div role="cell">PLC 種別</div><div role="cell">MELSEC または KEYENCE を選択します。</div></div>
-        <div role="row"><div role="cell">CPU機種</div><div role="cell">接続する PLC の CPU機種を選択します。機種別の設定例は接続設定例で確認します。</div></div>
-        <div role="row"><div role="cell">IP / Port</div><div role="cell">PLC 側の Ethernet 設定に合わせます。</div></div>
-        <div role="row"><div role="cell">通信</div><div role="cell">TCP または UDP を選択します。</div></div>
-        <div role="row"><div role="cell">ルーティング</div><div role="cell">MELSEC で必要な場合だけネットワーク、局番、ユニットI/Oを指定します。</div></div>
-        <div role="row"><div role="cell">KEYENCE 表示</div><div role="cell">KEYENCE ではデバイス表記を <code>Normal</code> または <code>XYM</code> から選択します。</div></div>
-        <div role="row"><div role="cell">デモの値変化</div><div role="cell">デモでは、PLC 設定で監視値の変化パターンを選択できます。</div></div>
-        <div role="row"><div role="cell">到達確認</div><div role="cell">入力した通信設定で確認を実行し、結果とエラーメッセージを確認します。</div></div>
-      </div>
-      <p class="small-note">PLC 側の Ethernet 設定、通信許可、リモートパスワードは <a href="../plc/plc-side-settings.html">接続設定例</a> で確認します。</p>
-    </section>
-
-    <section class="section">
-      <h2>デモの値変化パターン</h2>
-      <p>デモ接続では、実機 PLC なしで監視値が変化します。PLC 設定の <strong>値変化パターン</strong> で、デモ表示やトラップ確認に使う変化の出方を選べます。</p>
-      <div class="info-table" role="table" aria-label="デモの値変化パターン">
-        <div role="row"><div role="cell"><code>Sweep</code></div><div role="cell">現在の標準動作です。BIT は周期的に ON/OFF し、数値は 0 から 100 へ繰り返し変化します。</div></div>
-        <div role="row"><div role="cell"><code>Pulse</code></div><div role="cell">短い瞬間的な変化を出します。立上り、立下り、変化検出のトラップ確認に向いています。</div></div>
-        <div role="row"><div role="cell"><code>Wave</code></div><div role="cell">なめらかな波形で数値が上下します。タイムチャートで値の推移を見たいときに使います。</div></div>
-        <div role="row"><div role="cell"><code>Step</code></div><div role="cell">段階的に値が切り替わります。しきい値付近の表示やトラップ条件を確認しやすいパターンです。</div></div>
-        <div role="row"><div role="cell"><code>Hold</code></div><div role="cell">自動変化を止め、現在値を保持します。デモで書き込んだ値も、そのまま固定して確認できます。</div></div>
-      </div>
-      <p class="small-note">この設定は端末アプリ側のデモ動作用です。プロジェクト JSON には含まれません。</p>
     </section>
 
     <section class="section">
@@ -160,45 +131,14 @@
       <div class="content-grid">
         <article>
           <h3>MELSEC</h3>
-          <p>ルーティング、リモートパスワード、X/Y 表記は MELSEC ページで確認します。</p>
+          <p>通信設定、ルーティング、Demo、到達確認は MELSEC ページで確認します。</p>
           <p><a href="../plc/melsec-settings.html">MELSEC 設定を見る</a></p>
         </article>
         <article>
           <h3>KEYENCE</h3>
-          <p>KEYENCE 表示、コメント読込、対応デバイスは KEYENCE ページで確認します。</p>
+          <p>通信設定、デバイス表記、Demo、到達確認は KEYENCE ページで確認します。</p>
           <p><a href="../plc/keyence-settings.html">KEYENCE 設定を見る</a></p>
         </article>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="notice danger">
-        <h2>実機接続の注意</h2>
-        <p>接続すると PLC との通信が始まります。接続前に対象 PLC、IP、ポート、TCP/UDP、通信許可、ネットワーク経路を確認してください。</p>
-        <p>デバイス書込や CPU操作は設備動作に影響します。設備側の安全手順に従って操作してください。</p>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>接続結果の見方</h2>
-      <ul>
-        <li>接続成功時は上部ステータスに RUN/STOP/PROGRAM、CPU、IP、プロジェクト名が表示されます。</li>
-        <li>未処理の CPU 状態は <code>--</code> と表示されます。</li>
-        <li>接続できない場合は、通信設定の <strong>到達確認</strong> を実行し、結果とエラーメッセージを確認してください。</li>
-        <li>IP、ポート、TCP/UDP、端末のネットワーク接続を確認してください。</li>
-        <li>MELSEC では、ルート指定とリモートパスワードも確認してください。</li>
-        <li>PLC 側の通信設定や許可状態は、接続設定例の確認項目と照らし合わせてください。</li>
-      </ul>
-    </section>
-
-    <section class="section">
-      <h2>到達確認のエラー例</h2>
-      <p>通信設定の <strong>到達確認</strong> を実行したときの主なエラーと確認箇所です。</p>
-      <div class="info-table" role="table" aria-label="到達確認エラー例">
-        <div role="row"><div role="cell">タイムアウト</div><div role="cell">IP アドレスまたはポートが合っていない可能性があります。PLC 側の Ethernet モジュール設定と端末のネットワーク接続を確認してください。</div></div>
-        <div role="row"><div role="cell">接続拒否</div><div role="cell">TCP/UDP の選択が PLC 側と合っていないか、PLC 側で通信が許可されていない可能性があります。</div></div>
-        <div role="row"><div role="cell">認証エラー</div><div role="cell">MELSEC のリモートパスワードが合っていません。通信設定のパスワード欄を確認してください。</div></div>
-        <div role="row"><div role="cell">ルートエラー</div><div role="cell">MELSEC のネットワーク番号、局番、ユニット I/O が合っていない可能性があります。<a href="../plc/melsec-settings.html">MELSEC 設定</a> を確認してください。</div></div>
       </div>
     </section>
 

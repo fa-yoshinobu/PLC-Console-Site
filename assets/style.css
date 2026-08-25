@@ -424,8 +424,9 @@ li + li {
 
 .hero-shot img {
   width: 100%;
-  max-height: 620px;
-  object-fit: cover;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
   object-position: top center;
 }
 
@@ -631,6 +632,108 @@ li + li {
   object-position: top center;
 }
 
+.inline-shot:not(.projectbuilder-logo) img {
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+}
+
+.inline-shot.detail-shot {
+  width: fit-content;
+  max-width: 100%;
+}
+
+.inline-shot.detail-shot img {
+  width: auto;
+  max-width: 100%;
+}
+
+.image-zoom-trigger {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  color: inherit;
+  background: transparent;
+  font: inherit;
+  cursor: zoom-in;
+}
+
+.image-zoom-trigger > img {
+  display: block;
+}
+
+.image-zoom-trigger:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: -3px;
+}
+
+.image-zoom-label {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  padding: 5px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 999px;
+  color: #fff;
+  background: rgba(10, 18, 23, 0.78);
+  font-size: 0.82rem;
+  font-weight: 800;
+  line-height: 1.2;
+  pointer-events: none;
+}
+
+.image-lightbox {
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100dvh;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: 56px 16px 16px;
+  border: 0;
+  background: rgba(5, 10, 13, 0.96);
+  overflow: auto;
+}
+
+.image-lightbox::backdrop {
+  background: rgba(5, 10, 13, 0.88);
+}
+
+.image-lightbox-image {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: calc(100dvh - 72px);
+  margin: auto;
+  object-fit: contain;
+  cursor: zoom-out;
+  touch-action: pinch-zoom;
+}
+
+.image-lightbox-close {
+  position: fixed;
+  z-index: 1;
+  top: 10px;
+  right: 14px;
+  min-width: 42px;
+  min-height: 42px;
+  padding: 6px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 999px;
+  color: #fff;
+  background: rgba(10, 18, 23, 0.9);
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.lightbox-open {
+  overflow: hidden;
+}
+
 .projectbuilder-logo {
   display: flex;
   flex-direction: column;
@@ -804,6 +907,7 @@ figcaption {
   background: #f8faf8;
 }
 
+.section-shot,
 .projectbuilder-shot {
   margin-top: 18px;
 }

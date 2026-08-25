@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="デバイス操作パネル、ON/OFF、数値書込、表示型変更。">
+  <meta name="description" content="デバイス操作パネル、ON/OFF、数値書込、書込ロック、表示型変更。">
   <title>デバイス操作パネル | FA Labo PLC Console 操作マニュアル</title>
   <link rel="stylesheet" href="../assets/style.css">
 </head>
@@ -35,10 +35,8 @@
           <summary class="active">操作</summary>
           <div class="nav-menu">
             <a href="../monitoring/monitoring.html">監視</a>
-            <a href="../monitoring/list-edit.html">List 登録編集</a>
+            <a href="../monitoring/list-edit.html">リスト登録編集</a>
             <a class="active" aria-current="page" href="../monitoring/focus-panel.html">デバイス操作パネル</a>
-            <a href="../monitoring/writing.html">書込</a>
-            <a href="../monitoring/comments.html">コメント</a>
             <a href="../monitoring/time-chart.html">タイムチャート</a>
             <a href="../monitoring/traps.html">トラップ</a>
           </div>
@@ -93,25 +91,29 @@
     <section class="page-hero section">
       <p class="eyebrow">Device Control Panel</p>
       <h1>デバイス操作パネル</h1>
-      <p class="lead">List / Block で選択したデバイスの現在値確認、書込、タイムチャート/トラップへの追加を行います。</p>
+      <p class="lead">リスト／ブロックで選択したデバイスの現在値確認、書込、タイムチャート／トラップへの追加を行います。</p>
     </section>
 
     <section class="section">
       <h2>画面名と呼び方</h2>
       <div class="info-table" role="table" aria-label="デバイス操作パネルの呼び方">
-        <div role="row"><div role="cell">デバイス操作パネル</div><div role="cell">List / Block で選択した 1 デバイスを操作するパネル全体の名前です。縦向きでは下部シート、横向きでは右側ペインとして表示されます。</div></div>
+        <div role="row"><div role="cell">デバイス操作パネル</div><div role="cell">リスト／ブロックで選択した 1 デバイスを操作するパネル全体の名前です。縦向きでは下部シート、横向きでは右側ペインとして表示されます。</div></div>
         <div role="row"><div role="cell">ON/OFF操作</div><div role="cell">デバイス操作パネル内で BIT デバイスを書き込む大きな <strong>ON</strong> / <strong>OFF</strong> ボタンの操作名です。</div></div>
-        <div role="row"><div role="cell">表示型を選択</div><div role="cell">WORD デバイスの <strong>Type</strong> から開く、数値の表示/書込型を選ぶ画面です。</div></div>
+        <div role="row"><div role="cell">表示型を選択</div><div role="cell">WORD デバイスの <strong>型</strong> から開く、数値の表示・書込型を選ぶ画面です。</div></div>
       </div>
     </section>
 
     <section class="section">
       <h2>表示条件</h2>
       <ul>
-        <li>PLC 接続中に List の行、または Block のセル/行をタップすると開きます。</li>
+        <li>PLC 接続中にリストの行、またはブロックのセル／行をタップすると開きます。</li>
         <li>縦向きでは下部シート、横向きでは右側ペインとして表示されます。</li>
-        <li>Block のページ移動、開始番号ジャンプ、ブロック選択だけでは自動で開きません。</li>
+        <li>ブロックのページ移動、開始番号ジャンプ、ブロック選択だけでは自動で開きません。</li>
       </ul>
+      <figure class="inline-shot section-shot">
+        <img src="../assets/images/monitoring/focus-bit-panel.png" width="1536" height="1764" alt="X0を選択して表示したBITデバイスのデバイス操作パネル" loading="lazy">
+        <figcaption>BITデバイスのデバイス操作パネル</figcaption>
+      </figure>
     </section>
 
     <section class="section">
@@ -130,31 +132,106 @@
           <p>ビット書き込み設定が長押しの場合、進行表示が完了するまで押し続けます。</p>
         </article>
       </div>
+      <figure class="inline-shot section-shot">
+        <img src="../assets/images/monitoring/focus-bit-hold.png" width="739" height="382" alt="長押し中の進行表示が付いたONボタン" loading="lazy">
+        <figcaption>ON/OFFを長押しして書き込む場合</figcaption>
+      </figure>
     </section>
 
     <section class="section">
       <h2>WORD デバイス</h2>
       <ul>
-        <li><strong>Type</strong> から <code>Int16</code>、<code>UInt16</code>、<code>Int32</code>、<code>UInt32</code>、<code>Float32</code> を選びます。</li>
-        <li><strong>DEC</strong>、<strong>HEX</strong>、<strong>BIT</strong> の表示/入力モードがあります。</li>
+        <li><strong>型</strong> から <code>Int16</code>、<code>UInt16</code>、<code>Int32</code>、<code>UInt32</code>、<code>Float32</code> を選びます。</li>
+        <li><strong>DEC</strong>、<strong>HEX</strong>、<strong>BIT</strong> の表示・入力モードがあります。</li>
         <li>選択中のデバイス種別やアドレスで使用できない型は選択できません。</li>
-        <li>BIT 編集モードでは現在値の bit を編集して書込できます。</li>
+        <li>BIT編集モードでは現在値のビットを編集して書込できます。</li>
       </ul>
-    </section>
-
-    <section class="section">
-      <h2>追加導線</h2>
-      <div class="info-table" role="table" aria-label="追加導線">
-        <div role="row"><div role="cell">List</div><div role="cell">選択デバイスを List 登録へ関連づける導線です。</div></div>
-        <div role="row"><div role="cell">コメント読込</div><div role="cell">KEYENCE 接続中は、コメント行の読込アイコンから選択中デバイス 1 点のコメントを PLC から取得できます。</div></div>
-        <div role="row"><div role="cell">タイムチャート</div><div role="cell">選択デバイスをタイムチャートのチャンネルへ追加します。最大 20 チャンネルです。</div></div>
-        <div role="row"><div role="cell">トラップ</div><div role="cell">選択デバイスのトラップ登録を開きます。最大 20 件です。登録済みアドレスではここから追加できないため、別条件はトラップ画面から追加します。</div></div>
+      <figure class="inline-shot section-shot">
+        <img src="../assets/images/monitoring/focus-word-panel.png" width="1536" height="1493" alt="D3を選択してDEC入力を表示したWORDデバイスのデバイス操作パネル" loading="lazy">
+        <figcaption>WORDデバイスのデバイス操作パネル</figcaption>
+      </figure>
+      <h3>表示型</h3>
+      <figure class="inline-shot section-shot">
+        <img src="../assets/images/monitoring/focus-display-type.png" width="1137" height="1283" alt="D3でInt16、UInt16、Int32、UInt32、Float32を選ぶ表示型画面" loading="lazy">
+        <figcaption>表示型を選択</figcaption>
+      </figure>
+      <h3>入力モード</h3>
+      <div class="content-grid section-shot">
+        <figure class="inline-shot">
+          <img src="../assets/images/monitoring/focus-dec-input.png" width="1536" height="867" alt="DEC入力の数値キーパッド" loading="lazy">
+          <figcaption>DEC入力</figcaption>
+        </figure>
+        <figure class="inline-shot">
+          <img src="../assets/images/monitoring/focus-hex-input.png" width="1536" height="1001" alt="HEX入力の16進キーパッド" loading="lazy">
+          <figcaption>HEX入力</figcaption>
+        </figure>
+        <figure class="inline-shot">
+          <img src="../assets/images/monitoring/focus-bit-input.png" width="1536" height="568" alt="16ビットを個別に選択するBIT編集画面" loading="lazy">
+          <figcaption>BIT編集</figcaption>
+        </figure>
       </div>
     </section>
 
+    <section class="section" id="writing">
+      <h2>書込</h2>
+      <div class="notice danger">
+        <h3>書込前の確認</h3>
+        <p>対象 PLC、アドレス、データタイプ、書込値が正しいことを確認してください。</p>
+      </div>
+
+      <h3>書込手順</h3>
+      <ol class="steps compact">
+        <li><strong>対象を選ぶ</strong><span>ブロックまたはリストから書き込むデバイスをタップします。</span></li>
+        <li><strong>値を確認する</strong><span>BIT の ON/OFF、または WORD の表示型と入力値を確認します。</span></li>
+        <li><strong>ロックを解除する</strong><span>上部の解除ボタンで書込ロックを解除します。</span></li>
+        <li><strong>書込を実行する</strong><span>デバイス操作パネル内のボタンで書き込みます。BIT の長押し設定時は、進行表示が完了するまで押し続けます。</span></li>
+      </ol>
+
+      <h3>書込ロックが戻るタイミング</h3>
+      <p>別のプロジェクトを開いた場合、または新規プロジェクトを作成した場合は自動でロックへ戻ります。同じプロジェクトの設定保存、開き直し、切断、再接続、通信復旧では解除状態を維持します。</p>
+      <p>未接続などにより現在値が <code>--</code> のデバイスには書き込めません。接続後、現在値が表示されたことを確認してください。</p>
+      <figure class="inline-shot section-shot">
+        <img src="../assets/images/monitoring/focus-bit-write-lock.png" width="1536" height="520" alt="書込ロック中のBITデバイス操作パネルに表示されたロック解除ボタンとON/OFFボタン" loading="lazy">
+        <figcaption>BITデバイスの書込ロック</figcaption>
+      </figure>
+      <figure class="inline-shot section-shot">
+        <img src="../assets/images/monitoring/focus-word-write-lock.png" width="1536" height="1520" alt="書込ロック中のWORDデバイス操作パネルに表示されたロック解除ボタンと数値入力画面" loading="lazy">
+        <figcaption>WORDデバイスの書込ロック</figcaption>
+      </figure>
+
+      <div class="notice">
+        <h3>失敗時の確認</h3>
+        <p>書込に失敗した場合は、接続状態、書込ロック、アドレス、データタイプ、エラー履歴を確認してください。</p>
+      </div>
+
+      <div class="notice danger">
+        <h3>出力デバイスを書き込む場合</h3>
+        <p>出力デバイスを操作する場合は、CPU を MELSEC では <strong>PAUSE</strong>、KEYENCE では <strong>PROGRAM</strong> 状態に変更してから書込してください。</p>
+        <p>MELSEC では <strong>STOP</strong> 状態だとリモート I/O へ出力が転送されないため、プログラムだけを停止させる <strong>PAUSE</strong> を使用してください。</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>その他の操作</h2>
+      <div class="info-table" role="table" aria-label="その他の操作">
+        <div role="row"><div role="cell">リスト</div><div role="cell">選択中のデバイスをリストへ追加します。</div></div>
+        <div role="row"><div role="cell">コメント読込</div><div role="cell">KEYENCE 接続中に、選択中のデバイス 1 点のコメントを PLC から読み込みます。</div></div>
+        <div role="row"><div role="cell">タイムチャート</div><div role="cell">選択中のデバイスをタイムチャートへ追加します。</div></div>
+        <div role="row"><div role="cell">トラップ</div><div role="cell">選択中のデバイスのトラップ登録を開きます。</div></div>
+      </div>
+      <figure class="inline-shot section-shot detail-shot">
+        <img src="../assets/images/monitoring/focus-comment-import.png" width="392" height="204" alt="KEYENCEデバイスR000のコメント行に表示された読込アイコンとコメント" loading="lazy">
+        <figcaption>KEYENCEの個別コメント読込</figcaption>
+      </figure>
+      <figure class="inline-shot section-shot">
+        <img src="../assets/images/monitoring/focus-actions.png" width="724" height="120" alt="リスト、タイムチャート、トラップの操作ボタン" loading="lazy">
+        <figcaption>リスト／タイムチャート／トラップ</figcaption>
+      </figure>
+    </section>
+
     <nav class="next-links" aria-label="前後ページ">
-      <a href="../monitoring/list-edit.html">前へ: List 登録編集</a>
-      <a href="../monitoring/writing.html">次へ: 書込</a>
+      <a href="../monitoring/list-edit.html">前へ: リスト登録編集</a>
+      <a href="../monitoring/time-chart.html">次へ: タイムチャート</a>
     </nav>
   </main>
 

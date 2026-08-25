@@ -9,7 +9,7 @@
 - 正式な App Store / Google Play URL と公式バッジ画像が確定したら、`templates/store-links.html.tmpl` を使って公開ページへストアリンクを追加する。
 - 新名称が表示される状態でモバイルアプリのバージョン情報画面を再撮影し、`settings/version-info.html` に再掲載する。
 - Windowsで PLC Console ProjectBuilder の5画面を再撮影し、ProjectBuilderの操作ページに再掲載する。
-- 最新のモバイルアプリUIが確定したら、`start/getting-started.html`、`monitoring/list-edit.html`、`monitoring/focus-panel.html`、`monitoring/writing.html`、`settings/tools-menu.html` の操作説明用画像を撮影して掲載する。
+- 最新のモバイルアプリUIが確定したら、`start/getting-started.html`、`monitoring/list-edit.html`、`monitoring/focus-panel.html`、`settings/tools-menu.html` の操作説明用画像を撮影して掲載する。
 
 ## ページ状態
 
@@ -28,8 +28,6 @@
 | 作成済み | `monitoring/monitoring.html` |
 | 作成済み | `monitoring/list-edit.html` |
 | 作成済み | `monitoring/focus-panel.html` |
-| 作成済み | `monitoring/writing.html` |
-| 作成済み | `monitoring/comments.html` |
 | 作成済み | `monitoring/time-chart.html` |
 | 作成済み | `monitoring/traps.html` |
 | 作成済み | `settings/tools-menu.html` |

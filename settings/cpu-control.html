@@ -35,10 +35,8 @@
           <summary>操作</summary>
           <div class="nav-menu">
             <a href="../monitoring/monitoring.html">監視</a>
-            <a href="../monitoring/list-edit.html">List 登録編集</a>
+            <a href="../monitoring/list-edit.html">リスト登録編集</a>
             <a href="../monitoring/focus-panel.html">デバイス操作パネル</a>
-            <a href="../monitoring/writing.html">書込</a>
-            <a href="../monitoring/comments.html">コメント</a>
             <a href="../monitoring/time-chart.html">タイムチャート</a>
             <a href="../monitoring/traps.html">トラップ</a>
           </div>
@@ -144,7 +142,8 @@
     <section class="section">
       <div class="notice danger">
         <h2 id="output-device-write">出力デバイスを書き込む場合</h2>
-        <p>出力デバイスの書込に必要な CPU状態は、PLC機種や設備構成によって異なります。設備側の操作手順と PLCメーカーの資料を確認してください。</p>
+        <p>出力デバイスを操作する場合は、CPU を MELSEC では <strong>PAUSE</strong>、KEYENCE では <strong>PROGRAM</strong> 状態に変更してから書込してください。</p>
+        <p>MELSEC では <strong>STOP</strong> 状態だとリモート I/O へ出力が転送されないため、プログラムだけを停止させる <strong>PAUSE</strong> を使用してください。</p>
       </div>
     </section>
 
