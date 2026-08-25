@@ -77,7 +77,7 @@ FA Labo PLC Console の App Store / Google Play 公開前に確認する内部�
 
 - ProjectBuilder は GitHub Releases の Assets にある `PLCConsoleProjectBuilder-win-x64.zip` から exe を配布する。Store のリリースノートには ProjectBuilder の履歴を書かず、ProjectBuilder 側の Releases へ誘導する。
 - ProjectBuilder の license は MIT。モバイルアプリの利用条件と混同しないよう、ProjectBuilder ページでは ProjectBuilder の配布元と license を分けて書く。
-- QR / JSON は `PLCIOC3|ZSTD` と schema v3 を前提にする。旧 `PLCIOC2D` は現行の取込処理では未対応のまま説明する。
+- QR / JSON は QR prefix `PLCIOC1|ZSTD`、schema identifier `plc-console-project`、schema version 2 を前提にする。旧 `PLCIOC2D` は現行の取込処理では未対応のまま説明する。
 - ProjectBuilder が生成する QR / JSON のサンプルを公開するか、Review Notes だけに添付するか決める。
 
 ## 公式資料
