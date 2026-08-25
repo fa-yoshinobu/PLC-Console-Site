@@ -103,9 +103,94 @@
     <section class="section">
       <div class="notice">
         <h2>問い合わせ先</h2>
-        <p>問い合わせは、アプリを入手したストアに掲載されている FA Labo のデベロッパ連絡先から受け付けます。設備情報を送る場合は、社外秘の情報を含めないでください。</p>
+        <p>FA Labo PLC Console と ProjectBuilder に関する問い合わせは、このページの問い合わせフォームから受け付けます。設備情報を送る場合は、社外秘の情報を含めないでください。</p>
         <p>操作方法や通信エラーは、はじめに <a href="troubleshooting.html">困ったとき</a> とアプリ内のエラー履歴を確認してください。</p>
       </div>
+    </section>
+
+    <section class="section" id="contact-form">
+      <div class="section-heading">
+        <h2>問い合わせフォーム</h2>
+        <p>返信に必要なメールアドレスと、問い合わせ内容を入力してください。通常のサポート問い合わせにファイルを添付することはできません。</p>
+      </div>
+
+      <form class="support-form" id="support-form" action="https://formspree.io/f/myegqpgq" method="post" accept-charset="utf-8">
+        <input type="hidden" name="_subject" value="PLC Console サポート問い合わせ">
+
+        <div class="form-honeypot" aria-hidden="true">
+          <label for="contact-company-site">この項目は入力しないでください</label>
+          <input id="contact-company-site" name="_gotcha" type="text" tabindex="-1" autocomplete="off">
+        </div>
+
+        <div class="form-grid">
+          <div class="form-field">
+            <label for="contact-name">お名前 <span class="optional">任意</span></label>
+            <input id="contact-name" name="name" type="text" autocomplete="name" maxlength="100">
+          </div>
+
+          <div class="form-field">
+            <label for="contact-email">返信先メールアドレス <span class="required">必須</span></label>
+            <input id="contact-email" name="email" type="email" autocomplete="email" inputmode="email" maxlength="254" required>
+          </div>
+
+          <div class="form-field">
+            <label for="contact-category">問い合わせ種別 <span class="required">必須</span></label>
+            <select id="contact-category" name="category" required>
+              <option value="">選択してください</option>
+              <option value="operation">操作方法</option>
+              <option value="connection">PLC 接続・通信</option>
+              <option value="data-transfer">QR・JSON・コメント読込</option>
+              <option value="projectbuilder">ProjectBuilder</option>
+              <option value="purchase">購入・ライセンス・返金</option>
+              <option value="privacy">プライバシー・データ削除</option>
+              <option value="other">その他</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="contact-platform">対象 <span class="required">必須</span></label>
+            <select id="contact-platform" name="platform" required>
+              <option value="">選択してください</option>
+              <option value="android">Android</option>
+              <option value="ios">iOS</option>
+              <option value="projectbuilder">ProjectBuilder</option>
+              <option value="website">このWebサイト</option>
+              <option value="not-applicable">該当なし</option>
+            </select>
+          </div>
+
+          <div class="form-field">
+            <label for="contact-app-version">アプリ／ProjectBuilder バージョン <span class="optional">任意</span></label>
+            <input id="contact-app-version" name="app_version" type="text" maxlength="100" placeholder="例: 1.0.0 build 4">
+          </div>
+
+          <div class="form-field">
+            <label for="contact-device">端末・OS <span class="optional">任意</span></label>
+            <input id="contact-device" name="device_os" type="text" maxlength="200" placeholder="例: Pixel 9 / Android 16">
+          </div>
+
+          <div class="form-field form-field-wide">
+            <label for="contact-plc">PLC 情報 <span class="optional">任意</span></label>
+            <input id="contact-plc" name="plc_info" type="text" maxlength="300" placeholder="例: MELSEC iQ-R / SLMP TCP（IPアドレスやパスワードは入力しないでください）">
+          </div>
+
+          <div class="form-field form-field-wide">
+            <label for="contact-message">問い合わせ内容 <span class="required">必須</span></label>
+            <textarea id="contact-message" name="message" rows="9" maxlength="5000" required placeholder="発生した操作、画面の表示、再現手順などを入力してください。"></textarea>
+            <p class="form-help">パスワード、社外秘のIPアドレス、設備名、顧客名、個人情報などは入力しないでください。</p>
+          </div>
+        </div>
+
+        <div class="form-consent">
+          <input id="contact-consent" name="privacy_agreement" type="checkbox" value="agreed" required>
+          <label for="contact-consent">入力した情報が、回答および不具合調査のために Formspree を経由して送信・保存されることと、<a href="privacy-policy.html">プライバシーポリシー</a>に同意します。 <span class="required">必須</span></label>
+        </div>
+
+        <div class="form-actions">
+          <button class="form-submit" type="submit">問い合わせを送信</button>
+          <p class="form-status" id="form-status" role="status" hidden>送信しています。画面が切り替わるまでお待ちください。</p>
+        </div>
+      </form>
     </section>
 
     <section class="section">
@@ -154,5 +239,6 @@
 
   <footer class="site-footer"><p>FA Labo PLC Console / サポート</p></footer>
   <script src="../assets/nav.js"></script>
+  <script src="../assets/support-form.js"></script>
 </body>
 </html>
