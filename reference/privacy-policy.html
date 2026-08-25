@@ -16,14 +16,14 @@
       </button>
       <nav class="top-nav" id="top-nav" aria-label="主要ページ">
         <details class="nav-group">
-          <summary>開始</summary>
+          <summary>はじめに</summary>
           <div class="nav-menu">
             <a href="../start/install.html">入手</a>
             <a href="../start/getting-started.html">はじめる</a>
           </div>
         </details>
         <details class="nav-group">
-          <summary>PLC</summary>
+          <summary>PLC接続</summary>
           <div class="nav-menu">
             <a href="../plc/connection.html">接続・プロジェクト</a>
             <a href="../plc/plc-side-settings.html">接続設定例</a>
@@ -63,16 +63,6 @@
           </div>
         </details>
         <details class="nav-group">
-          <summary class="active">公開情報</summary>
-          <div class="nav-menu">
-            <a href="../reference/support.html">サポート</a>
-            <a class="active" aria-current="page" href="../reference/privacy-policy.html">プライバシー</a>
-            <a href="../reference/app-permissions.html">権限</a>
-            <a href="../reference/terms.html">利用条件</a>
-            <a href="../reference/purchase-info.html">購入・返金</a>
-          </div>
-        </details>
-        <details class="nav-group">
           <summary>ProjectBuilder</summary>
           <div class="nav-menu">
             <a href="../projectbuilder/projectbuilder.html">ProjectBuilder</a>
@@ -81,11 +71,16 @@
           </div>
         </details>
         <details class="nav-group">
-          <summary class="active">参考</summary>
+          <summary class="active">サポート</summary>
           <div class="nav-menu">
-            <a href="../reference/glossary.html">用語集</a>
-            <a href="../reference/release-notes.html">リリースノート</a>
             <a href="../reference/troubleshooting.html">困ったとき</a>
+            <a href="../reference/support.html">問い合わせ</a>
+            <a href="../reference/purchase-info.html">購入・返金</a>
+            <a href="../reference/release-notes.html">リリースノート</a>
+            <a href="../reference/glossary.html">用語集</a>
+            <a class="active" aria-current="page" href="../reference/privacy-policy.html">プライバシー</a>
+            <a href="../reference/app-permissions.html">権限</a>
+            <a href="../reference/terms.html">利用条件</a>
           </div>
         </details>
       </nav>
@@ -108,82 +103,62 @@
     </section>
 
     <section class="section">
-      <h2>アプリで扱う情報</h2>
-      <p>FA Labo PLC Console はユーザーアカウントを作成しません。アプリの通常利用において、氏名、住所、電話番号、メールアドレス、連絡先、写真、位置情報を開発者が自動的に収集する機能はありません。アプリ自体は、開発者のサーバーへ個人情報、PLC データ、プロジェクトデータを送信しません。</p>
-      <p>アプリ内の接続設定、プロジェクト、登録デバイス、タイムチャート、トラップ、コメント、履歴などは、ユーザーの端末内で利用されます。ユーザーが JSON、CSV、QR、画像などを保存または共有した場合、その保存先や共有先での扱いはユーザーが選択したサービスの規約に従います。</p>
-      <p>サポートへ問い合わせる場合、ユーザーが入力した名前またはハンドルネーム、メールアドレス、問い合わせ本文、アプリまたは ProjectBuilder のバージョン、端末・OS、PLC や接続環境に関する情報を、回答および不具合調査のために取り扱います。問い合わせフォームではファイルを収集しません。不具合解析に必要な場合、返信時に案内したメールアドレスへユーザーが任意に送付したログデータ、画像なども同じ目的で取り扱います。これらは対応と調査に必要な期間保持し、不要になった後に削除します。削除を希望する場合は、<a href="../reference/support.html#contact-form">問い合わせフォーム</a>から依頼してください。</p>
+      <h2>取り扱う情報</h2>
+      <p>FA Labo PLC Console はユーザーアカウントを作成しません。アプリの通常利用において、氏名、住所、電話番号、メールアドレス、連絡先、写真、位置情報を FA Labo が自動的に収集する機能はありません。</p>
+      <p>接続設定、プロジェクト、登録デバイス、タイムチャート、トラップ、コメント、履歴などは端末内で利用されます。JSON、CSV、QR、画像などを保存または共有した場合は、ユーザーが選択した保存先または共有先の規約に従って取り扱われます。</p>
+      <p>サポートへ問い合わせる場合、名前またはハンドルネーム、メールアドレス、問い合わせ内容、アプリまたは ProjectBuilder のバージョン、端末・OS、PLC 型式など、ユーザーが入力した情報を回答および不具合調査のために利用します。問い合わせフォームではファイルを収集しません。不具合解析に必要な場合は、返信時に案内したメールアドレスへユーザーが任意に送付したログデータや画像も同じ目的で利用します。</p>
     </section>
 
     <section class="section">
-      <h2>ネットワーク通信</h2>
-      <p>Android 版は <code>INTERNET</code> と <code>ACCESS_NETWORK_STATE</code> permission を使用します。iOS 版は Local Network の説明を <code>NSLocalNetworkUsageDescription</code> に記載しています。これらは、ユーザーがアプリで設定した PLC の IP アドレス、ポート、通信方式に対して接続するために使用します。</p>
-      <p>FA Labo PLC Console は、ユーザーが設定した接続先以外へ PLC 監視値や書込値を送信する目的で通信しません。MELSEC / KEYENCE の読込、書込、コメント読込、CPU操作などの通信は、ユーザーが選択した PLC に対して行われます。</p>
-    </section>
-
-    <section class="section">
-      <h2>カメラと QR</h2>
-      <p>Android / iOS 版は、ProjectBuilder に表示した QR コードからプロジェクト設定を取り込むためにカメラを使用します。カメラ画像や動画を保存したり、QR 画像または読み取った QR の内容を開発者サーバーへ送信したりする用途では使用しません。</p>
-      <p>Android 版の QR 読取には Google ML Kit Barcode Scanning SDK を使用します。同 SDK が診断および利用分析のために送信する情報については、「第三者サービス」を確認してください。Google の公式データ開示では、QR 画像および読み取った文字列自体は収集項目として記載されていません。</p>
-    </section>
-
-    <section class="section">
-      <h2>ファイルと端末内保存</h2>
-      <p>Android 版は外部ストレージ全体へアクセスする permission を宣言していません。iOS 版も写真ライブラリや端末全体のファイルへ常時アクセスする権限は使用しません。</p>
-      <p>JSON、CSV、ログの読込・書出は、OS のファイル選択または保存ダイアログでユーザーが選んだファイルだけを対象にします。プロジェクト、設定、コメント、履歴は端末内のアプリ領域に保存されます。</p>
-      <p>権限の詳細は <a href="../reference/app-permissions.html">アプリ権限</a> を確認してください。</p>
-    </section>
-
-    <section class="section">
-      <h2>Android のバックアップと端末移行</h2>
-      <p>Android 版は OS のバックアップ機能を有効にしています。Android 12 以降のクラウドバックアップでは、プロジェクト、アプリのセッションと履歴、実行中データ、プロジェクトコメント、PLC のリモートパスワードを対象外にしています。</p>
-      <p>Android 12 以降の端末間移行では、プロジェクト、アプリのセッションと履歴、実行中データ、プロジェクトコメントが OS による移行対象となる場合があります。PLC のリモートパスワードは端末間移行の対象外であり、移行後に必要に応じて再入力してください。Android 11 以前では、これらのプロジェクト関連データ、コメント、リモートパスワードをバックアップ対象外にしています。</p>
-      <p>実際にバックアップまたは移行されるかは、OS、端末メーカー、ユーザーのバックアップ設定および利用する移行方法によって異なります。詳しくは <a href="https://developer.android.com/identity/data/autobackup">Android のバックアップに関する説明</a>を確認してください。</p>
-    </section>
-
-    <section class="section">
-      <h2>タイムチャート記録</h2>
-      <p>Android 版はタイムチャート記録中にバックグラウンドへ移った場合、foreground service の通知を表示して記録を継続します。これは端末内での記録継続のためであり、PLC データを開発者サーバーへ同期する用途ではありません。</p>
+      <h2>ネットワーク、カメラ、ファイル</h2>
+      <p>ネットワーク通信は、ユーザーが設定した PLC への読込、書込、コメント読込、CPU操作などに使用します。</p>
+      <p>カメラは、ProjectBuilder に表示した QR コードからプロジェクト設定を取り込むために使用します。カメラ画像や動画は保存せず、読み取った内容は端末内でプロジェクトの取込みに使用します。</p>
+      <p>JSON、CSV、ログの読込・書出は、OS のファイル選択または保存画面でユーザーが選んだファイルだけを対象にします。カメラやローカルネットワークなどの権限は、OS の設定から変更できます。詳しくは <a href="../reference/app-permissions.html">アプリ権限</a>を確認してください。</p>
     </section>
 
     <section class="section">
       <h2>第三者サービス</h2>
-      <p>FA Labo PLC Console は、広告配信またはユーザーを横断的に追跡する目的の第三者サービスを使用しません。</p>
-      <h3>問い合わせフォーム（Formspree）</h3>
-      <p>Webサイトの問い合わせフォームには Formspree, Inc. が提供する Formspree を使用します。フォームへ入力して送信した情報は、問い合わせの受付、迷惑送信の判定、通知および回答のために Formspree へ送信され、Formspree のサーバーと FA Labo の通知先メールボックスに保存されます。</p>
-      <p>送信時には、入力内容に加えて IP アドレス、ブラウザの種類、アクセス日時、参照元Webサイトなどが Formspree により取得される場合があります。情報は米国その他の Formspree がサービスを運営する国で処理される場合があります。詳しくは <a href="https://formspree.io/legal/privacy-policy/">Formspree Privacy Policy</a> を確認してください。</p>
-      <p>問い合わせフォームは Formspree の迷惑送信対策を使用します。対策の判定により CAPTCHA が表示される場合があります。フォームを送信しない限り、FA Labo はフォームの入力内容を取得しません。</p>
+      <p>FA Labo PLC Console は、広告配信またはアプリを横断してユーザーを追跡する目的のサービスを使用しません。第三者サービスについては、各社の規約とプライバシーポリシーを確認し、本ポリシーおよび適用法令と同等の保護が確保されるサービスを利用します。</p>
+
       <h3>Android QR 読取（Google ML Kit）</h3>
-      <p>Android 版は QR 読取のために Google ML Kit Barcode Scanning SDK を使用します。<a href="https://developers.google.com/ml-kit/android-data-disclosure">Google の公式データ開示</a>によると、ML Kit Android SDK は、診断および利用分析のために次の情報を収集します。</p>
-      <ul>
-        <li>端末のメーカー、モデル、OS バージョン、ビルド、利用可能な機械学習用ハードウェアなどの端末情報</li>
-        <li>パッケージ名、アプリバージョンなどのアプリ情報</li>
-        <li>ユーザーや物理端末を一意に識別することを目的としない、インストールごとの識別子</li>
-        <li>処理時間などの性能情報、画像形式や解像度などの API 設定、入出力サイズ、機能バージョン</li>
-        <li>初期化、検出、リソース解放などのイベント種別とエラーコード</li>
-      </ul>
-      <p>これらの情報は HTTPS で暗号化して Google へ送信され、Google の開示では第三者へ移転しないとされています。送信先は Google であり、FA Labo の開発者サーバーではありません。Android 版は ML Kit の自動ズーム機能を使用していません。</p>
-      <p>アプリ内購入やストア配布に関する処理は Apple App Store または Google Play によって行われます。FA Labo PLC Console はクレジットカード番号などの支払情報を取得しません。</p>
+      <p>Android 版の QR 読取には Google ML Kit Barcode Scanning SDK を使用します。<a href="https://developers.google.com/ml-kit/android-data-disclosure">Google の公式データ開示</a>によると、同 SDK は診断および利用分析のため、端末・アプリ情報、インストールごとの識別子、性能情報、API 設定、イベント種別、エラーコードなどを HTTPS で Google へ送信します。QR 画像および読み取った文字列は収集項目として記載されていません。Android 版は ML Kit の自動ズーム機能を使用していません。</p>
+
+      <h3>アプリ内購入</h3>
+      <p>購入処理は Apple App Store または Google Play を通じて行われます。アプリは、利用権を確認するために商品情報、購入状態、取引情報を取得しますが、クレジットカード番号などの支払情報は取得しません。</p>
+
+      <h3>問い合わせフォーム（Formspree）</h3>
+      <p>問い合わせフォームには Formspree, Inc. が提供する Formspree を使用します。送信された内容は、問い合わせの受付、迷惑送信の判定、通知および回答のため、Formspree と FA Labo の通知先メールボックスに保存されます。送信時には、IP アドレス、ブラウザの種類、アクセス日時、参照元Webサイトなどが Formspree により取得される場合があります。情報は米国その他の Formspree がサービスを運営する国で処理される場合があります。詳しくは <a href="https://formspree.io/legal/privacy-policy/">Formspree Privacy Policy</a>を確認してください。</p>
+      <p>迷惑送信対策の判定により CAPTCHA が表示される場合があります。フォームを送信しない限り、FA Labo はフォームの入力内容を取得しません。</p>
+
+      <h3>Webサイト（GitHub Pages）</h3>
+      <p>本Webサイトは GitHub Pages を利用して配信しています。閲覧時には、GitHub がセキュリティ目的で訪問者の IP アドレスを記録します。詳しくは <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub Privacy Statement</a>を確認してください。</p>
     </section>
 
     <section class="section">
-      <h2>保存期間と削除</h2>
-      <p>FA Labo PLC Console はユーザーアカウントを作成しません。開発者サーバーにアプリから個人情報、PLC データ、プロジェクトデータを保存しないため、サーバー側のアカウント削除手続きはありません。サポート問い合わせの送信履歴は Formspree で利用中のプランに定められた期間保存されます。FA Labo の通知先メールボックスでは、対応と調査に必要な期間保持し、不要になった後に削除します。削除については、<a href="../reference/support.html#contact-form">問い合わせフォーム</a>から依頼してください。</p>
-      <p>端末内に保存されたプロジェクト、設定、履歴は、ユーザーがアプリ内操作、OS のアプリデータ削除、またはアプリのアンインストールによって削除できます。ユーザーが外部へ保存または共有した JSON、CSV、QR、画像は、保存先や共有先で管理してください。</p>
+      <h2>端末内保存、バックアップ、削除</h2>
+      <p>プロジェクト、設定、コメント、履歴は端末内のアプリ領域に保存されます。Android 版では、プロジェクト関連データ、コメント、PLC のリモートパスワードをクラウドバックアップの対象外にしています。端末間移行では、リモートパスワードを除くプロジェクト関連データが移行される場合があります。iOS 版では、プロジェクト関連データとコメントをバックアップの対象外にし、リモートパスワードを端末に限定した Keychain に保存します。実際のバックアップと端末移行は、OS、端末およびユーザーの設定によって異なります。</p>
+      <p>端末内データは、アプリ内の削除操作または OS のアプリデータ削除機能で削除できます。iOS の Keychain に保存したリモートパスワードは、アプリのアンインストールだけでは削除されない場合があるため、アプリ内の削除操作を利用してください。外部へ保存または共有した JSON、CSV、QR、画像は、保存先または共有先で削除してください。</p>
+    </section>
+
+    <section class="section">
+      <h2>保存期間と削除依頼</h2>
+      <p>問い合わせ情報は、回答、不具合調査、法令遵守および紛争対応に必要な期間保存します。問い合わせ情報の削除を希望する場合は、<a href="../reference/support.html#contact-form">問い合わせフォーム</a>から依頼できます。ただし、法令遵守または紛争対応のため保存が必要な情報を除きます。</p>
+      <p>FA Labo PLC Console はユーザーアカウントを作成しないため、アカウント削除の手続きはありません。</p>
     </section>
 
     <section class="section">
       <h2>ProjectBuilder</h2>
-      <p>PLC Console ProjectBuilder は、PC 上で FA Labo PLC Console 用のプロジェクトJSONと QR を作成するためのツールです。作成したファイル、QR、画像はユーザーが管理します。ProjectBuilder も個人情報を開発者のサーバーへ送信する用途では使用しません。</p>
+      <p>PLC Console ProjectBuilder は、PC 上でプロジェクトJSONと QR を作成します。作成したファイル、QR、画像はユーザーが管理し、ProjectBuilder から個人情報やプロジェクトデータを FA Labo のサーバーへ送信しません。</p>
     </section>
 
     <section class="section">
       <h2>お問い合わせ</h2>
-      <p>本ポリシーに関する問い合わせは、<a href="../reference/support.html#contact-form">問い合わせフォーム</a>を利用してください。</p>
+      <p>個人情報の取扱いに関する問い合わせ、保有個人データの開示、訂正、利用停止、削除等の請求は、<a href="../reference/support.html#contact-form">問い合わせフォーム</a>から受け付けます。本人確認をお願いする場合があります。事業者の氏名・住所その他の法令上の公表事項は、本人の求めに応じて回答します。</p>
     </section>
 
     <section class="section">
       <h2>English Summary</h2>
-      <p>FA Labo PLC Console uses network access to connect to PLCs configured by the user. Camera access is used only for QR import. File import/export is limited to files selected by the user through the operating system. The app does not send personal data, PLC data, project data, QR images, or decoded QR content to FA Labo developer servers. The Android app uses Google ML Kit Barcode Scanning. According to Google, the SDK sends device and app information, per-installation identifiers, performance and API metrics, event types, and error codes to Google over HTTPS for diagnostics and usage analytics. The website contact form is processed by Formspree. Information voluntarily submitted for support is used to respond and investigate issues, retained only as long as needed, and then deleted.</p>
+      <p>FA Labo PLC Console does not create user accounts or send personal data, PLC data, or project data to FA Labo servers. Project data is stored on the device. Network access is used for PLC communication, camera access is used for QR import, and file access is limited to files selected by the user. The Android app uses Google ML Kit Barcode Scanning, which sends diagnostic and usage data described by Google to Google. In-app purchases are processed through Apple App Store or Google Play. The contact form is processed by Formspree, and this website is hosted on GitHub Pages. Support information is retained only as needed for responses, investigations, legal compliance, and dispute resolution. Requests regarding access, correction, restriction, or deletion can be submitted through the contact form.</p>
     </section>
 
     <nav class="next-links" aria-label="前後ページ">
