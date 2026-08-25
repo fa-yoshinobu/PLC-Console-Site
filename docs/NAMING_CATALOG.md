@@ -2,6 +2,8 @@
 
 FA Labo PLC Console の画面名以外の呼び方を揃えるための保守メモです。公開マニュアル、アプリ表示、リリースノート、ストア説明、GitHub の作業メモで表記を合わせる目的で使います。
 
+最終実装照合: 2026-08-25
+
 画面、パネル、シート、ダイアログの名前は [`WINDOW_NAMES.md`](./WINDOW_NAMES.md) で管理します。
 
 ## 命名ルール
@@ -103,7 +105,7 @@ FA Labo PLC Console の画面名以外の呼び方を揃えるための保守メ
 | アドレス | Address | 例: `X0`、`D100`、`DM100` | `番地` は説明補助に留める。 |
 | BIT | BIT | ON/OFF の 1 bit 値 | `ビットデバイス` と説明してもよい。 |
 | WORD | WORD | 数値として扱う領域 | `ワード` は補足可。 |
-| データタイプ | Data Type | `Int16`、`UInt16`、`Int32`、`UInt32`、`Float32` | `表示型` と関係するが完全同義にはしない。 |
+| データタイプ | Data Type | `Int16`、`UInt16`、`Int32`、`UInt32`、`Float32` | `表示型` と関係するが完全同義にはしない。ビット幅と使用するPLCデバイス点数は別に扱い、32 bit 型を常に2デバイスとは説明しない。 |
 | SLMP | SLMP | MELSEC の通信方式 | 初出だけ `Seamless Message Protocol` を補足可。 |
 | Host-link | Host-link | KEYENCE の上位リンク通信 | `HostLink` 表記と混在させない。 |
 

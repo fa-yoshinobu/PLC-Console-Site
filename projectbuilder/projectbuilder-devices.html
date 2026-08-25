@@ -100,13 +100,16 @@
       <h2>PLC設定</h2>
       <p><strong>PLC設定</strong> では、モバイルアプリへ渡す基本情報と PLC 通信設定を入力します。</p>
       <div class="info-table" role="table" aria-label="ProjectBuilder connection settings">
-        <div role="row"><div role="cell">プロジェクト</div><div role="cell">プロジェクト名、メーカー、CPU機種、KEYENCE デバイス表記、使用可能デバイスを確認します。</div></div>
+        <div role="row"><div role="cell">プロジェクト</div><div role="cell">プロジェクト名、メーカー、CPU機種、使用可能デバイスを確認します。</div></div>
         <div role="row"><div role="cell">接続</div><div role="cell">接続モード、PLC IP / ホスト、ポート、トランスポート、監視周期 ms、タイムアウト ms を指定します。</div></div>
-        <div role="row"><div role="cell">MELSEC ルーティング</div><div role="cell">ネットワーク / 局番 は数字で、モジュール IO / マルチドロップ は画面の初期表示と同じ <code>0x</code> 付きで入力します。</div></div>
-        <div role="row"><div role="cell">既定値</div><div role="cell"><strong>ルーティング既定値に戻す</strong> でネットワーク、局番、モジュール IO、マルチドロップを既定値へ戻します。</div></div>
+        <div role="row"><div role="cell">MELSEC ルーティング</div><div role="cell">ネットワーク / 局番は数字で指定し、ユニット I/O は接続先に合わせて選択します。</div></div>
+        <div role="row"><div role="cell">既定値</div><div role="cell"><strong>ルーティング既定値に戻す</strong> でネットワーク、局番、ユニット I/O を既定値へ戻します。</div></div>
         <div role="row"><div role="cell">リモートパスワード</div><div role="cell">ProjectBuilder では入力しません。MELSEC のリモートパスワードはモバイルアプリ側で入力します。</div></div>
       </div>
-      <!-- 新名称を反映したWindows画面を再撮影するまで、旧名称入りスクリーンショットは掲載しません。 -->
+      <figure class="inline-shot projectbuilder-shot">
+        <img src="../assets/images/projectbuilder/project_connection.png" width="1634" height="1117" alt="ProjectBuilder の PLC設定画面" loading="lazy">
+        <figcaption>PLC設定</figcaption>
+      </figure>
     </section>
 
     <section class="section">
@@ -133,6 +136,10 @@
         <div role="row"><div role="cell">コメント</div><div role="cell">任意のコメントです。同じアドレスのコメントとデータ型は リスト / タイムチャート / トラップ / コメント で共有されます。</div></div>
       </div>
       <p>Excel からタブ区切りでコピー/貼り付けできます。列は アドレス / データ型 / コメント です。<strong>行を追加</strong>、<strong>ブロック追加</strong>、<strong>上へ</strong> / <strong>下へ</strong> で編集します。行を選択しているときだけ Delete キーで行を削除できます。</p>
+      <figure class="inline-shot projectbuilder-shot">
+        <img src="../assets/images/projectbuilder/device.png" width="1634" height="1117" alt="ProjectBuilder のリスト画面" loading="lazy">
+        <figcaption>リスト</figcaption>
+      </figure>
     </section>
 
     <section class="section">
@@ -144,6 +151,10 @@
         <div role="row"><div role="cell">コメント</div><div role="cell">同じアドレスのコメントがあれば共有され、QR/JSON では <code>deviceMeta</code> に保存されます。</div></div>
       </div>
       <p>Excel からタブ区切りでコピー/貼り付けできます。列は アドレス / データ型 / コメント です。<strong>行を追加</strong>、<strong>上へ</strong> / <strong>下へ</strong> で編集します。最大件数を超える貼り付けは受け付けません。</p>
+      <figure class="inline-shot projectbuilder-shot">
+        <img src="../assets/images/projectbuilder/timechart.png" width="1634" height="1117" alt="ProjectBuilder のタイムチャート画面" loading="lazy">
+        <figcaption>タイムチャート</figcaption>
+      </figure>
     </section>
 
     <section class="section">
@@ -157,6 +168,10 @@
         <div role="row"><div role="cell">有効</div><div role="cell">有効/無効を指定します。</div></div>
       </div>
       <p>Excel からタブ区切りでコピー/貼り付けできます。列は アドレス / データ型 / コメント / 検知条件 / しきい値 / 有効 です。</p>
+      <figure class="inline-shot projectbuilder-shot">
+        <img src="../assets/images/projectbuilder/trap.png" width="1634" height="1117" alt="ProjectBuilder のトラップ画面" loading="lazy">
+        <figcaption>トラップ</figcaption>
+      </figure>
     </section>
 
     <section class="section">
@@ -168,6 +183,10 @@
         <div role="row"><div role="cell">コメント</div><div role="cell">モバイルアプリで表示するアドレスコメントです。</div></div>
       </div>
       <p>Excel からタブ区切りでコピー/貼り付けできます。列は アドレス / データ型 / コメント です。</p>
+      <figure class="inline-shot projectbuilder-shot">
+        <img src="../assets/images/projectbuilder/comment.png" width="1634" height="1117" alt="ProjectBuilder のコメント画面" loading="lazy">
+        <figcaption>コメント</figcaption>
+      </figure>
     </section>
 
     <nav class="next-links" aria-label="前後ページ">

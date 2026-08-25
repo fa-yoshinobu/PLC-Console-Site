@@ -2,6 +2,8 @@
 
 FA Labo PLC Console の画面、パネル、シート、ダイアログ、バナーの呼び方を揃えるための保守メモです。公開ページでは「正式表示名」を使い、内部名は説明しません。実装確認や改修時だけ「iOS内部名」「Android内部名」を参照します。
 
+最終実装照合: 2026-08-25
+
 ## 命名ルール
 
 | 種別 | 使い方 |
@@ -16,10 +18,10 @@ FA Labo PLC Console の画面、パネル、シート、ダイアログ、バナ
 
 | 正式表示名 | 英語名 | iOS内部名 | Android内部名 | 入口 / 用途 |
 | --- | --- | --- | --- | --- |
-| 監視画面 | Monitor | `RootView` / `workspaceContent` | `PlcIoCheckerAppWorkspace` | アプリの主画面全体。 |
+| 監視画面 | Monitor | `RootView` / `workspaceContent` | `PlcIoCheckerApp` | アプリの主画面全体。 |
 | List / リスト | List | `DeviceListView` | `DeviceListView` / `ViewMode.List` | 登録済みデバイスを一覧監視する。 |
 | Block / ブロック | Block | `BlockMonitorView` | `BlockMonitorView` / `ViewMode.Block` | PLC のデバイス範囲をページ単位で監視する。 |
-| タイムチャート | Time Chart | `TimeChartView` | `TimeChartView` / `ViewMode.Log` | 登録チャンネルの値を記録し、波形とCSVで確認する。Android内部の `Log` は公開名に出さない。 |
+| タイムチャート | Time Chart | `TimeChartView` | `LogWaveView` / `ViewMode.Log` | 登録チャンネルの値を記録し、波形とCSVで確認する。Android内部の `Log` は公開名に出さない。 |
 | トラップ | Trap | `TrapListView` | `TrapListView` / `ViewMode.Trap` | 条件検知とイベント履歴を扱う。 |
 
 ## 常時表示・重ね表示
@@ -29,7 +31,7 @@ FA Labo PLC Console の画面、パネル、シート、ダイアログ、バナ
 | ヘッダー / ステータスライン | Header / Status Line | `headerSection` / `ConnectionSummaryCard` | `HeaderSection` | RUN/STOP、CPU機種、IP、プロジェクト名を表示する上部領域。 |
 | メニュー | Menu | `OverflowMenuOverlay` | `HeaderMenu` | ヘッダーのメニューボタンから開く。 |
 | 接続先切替 | Connection Switch | `ConnectionHubSheet` | `ConnectionHubSheet` | ヘッダーの接続情報から開く。現在の接続、最近使ったプロジェクト、クイック開始を扱う。 |
-| デバイス操作パネル | Device Control Panel | `FocusPanelView` / `FocusPanelOverlay` / `isFocusSheetPresented` | `FocusPanel` / `StaticFocusSheetOverlay` / `showFocusSheet` | List / Block で選択した 1 デバイスの現在値確認、ON/OFF操作、数値書込、追加導線を扱う。旧称や内部名の `FocusPanel` は公開名に出さない。 |
+| デバイス操作パネル | Device Control Panel | `FocusPanelView` / `FocusPanelOverlay` / `isFocusPanelOverlayVisible` | `FocusPanel` / `StaticFocusSheetOverlay` / `showFocusSheet` | List / Block で選択した 1 デバイスの現在値確認、ON/OFF操作、数値書込、追加導線を扱う。旧称や内部名の `FocusPanel` は公開名に出さない。 |
 | ON/OFF操作 | ON/OFF Control | `FocusPanelView` 内の BIT 操作 | `FocusPanel` 内の BIT 操作 | パネル名ではなく、BIT デバイスの大きな ON / OFF ボタンの操作名。 |
 | トラップ通知バナー | Trap Alert Banner | `trapAlertBanner` | `TrapAlertBanner` | トラップ検知時に一時表示する通知。 |
 | スリープ防止バナー | Sleep Prevention Banner | `TimeChartView.sleepPreventionBanner` | なし | iOS のタイムチャート記録中だけ表示する注意バナー。 |
@@ -39,7 +41,7 @@ FA Labo PLC Console の画面、パネル、シート、ダイアログ、バナ
 | 正式表示名 | 英語名 | iOS内部名 | Android内部名 | 入口 / 用途 |
 | --- | --- | --- | --- | --- |
 | 通信設定 | Connection Settings | `PlcSettingsSheet` / `isPlcSettingsSheetPresented` | `ConnectionSettingsDialog` / `showConnectionDialog` | PLC 接続設定とプロジェクト保存。 |
-| CPU操作 | CPU Operation | `CpuOperationSheet` / `isCpuSheetPresented` | `CpuDialog` / `showCpuDialog` | CPU の RUN / STOP 操作。 |
+| CPU操作 | CPU Operation | `CpuOperationSheet` / `isCpuSheetPresented` | `CpuDialog` / `showCpuDialog` | MELSEC CPU の RUN / STOP、KEYENCE CPU の RUN / PROGRAM 操作。 |
 | デバイス範囲 | Device Ranges | `DeviceRangeSheet` / `isDeviceRangeSheetPresented` | `DeviceRangeDialog` / `showDeviceRangeDialog` | CPU機種ごとの使用可能デバイス範囲を確認する。 |
 | モニタ表示設定 | Monitor Display Settings | `BlockDisplaySettingsSheet` / `isBlockDisplaySettingsSheetPresented` | `BlockDisplaySettingsDialog` / `showBlockSettingsDialog` | Block の表示密度と `グラフ100%値` を設定する。 |
 | コメント読込 | Comment Read | `CommentReadSheet` / `isCommentReadSheetPresented` | `CommentReadDialog` / `showCommentReadDialog` | PLC からコメントを読み込む。KEYENCE 対応接続のみ。 |

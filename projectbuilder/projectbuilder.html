@@ -103,7 +103,7 @@
       <div class="two-column">
         <div>
           <h2>公開ページ</h2>
-          <p>ProjectBuilder の exe は GitHub の <a href="https://github.com/fa-yoshinobu/PLC-Console-ProjectBuilder/releases">PLC-Console-ProjectBuilder Releases</a> を開き、対象リリースの Assets にある <code>PlcIoCheckerProjectBuilder-win-x64.zip</code> をダウンロードします。README やソースは <a href="https://github.com/fa-yoshinobu/PLC-Console-ProjectBuilder">PLC-Console-ProjectBuilder</a> で確認します。</p>
+          <p>ProjectBuilder の exe は GitHub の <a href="https://github.com/fa-yoshinobu/PLC-Console-ProjectBuilder/releases">PLC-Console-ProjectBuilder Releases</a> を開き、対象リリースの Assets にある <code>PLCConsoleProjectBuilder-win-x64.zip</code> をダウンロードします。README やソースは <a href="https://github.com/fa-yoshinobu/PLC-Console-ProjectBuilder">PLC-Console-ProjectBuilder</a> で確認します。</p>
         </div>
         <figure class="inline-shot projectbuilder-logo">
           <img src="../assets/images/projectbuilder/logo.png" width="600" height="600" alt="ProjectBuilder ロゴ" loading="lazy">
@@ -122,45 +122,9 @@
     </section>
 
     <section class="section">
-      <h2>MELSEC プロジェクト</h2>
-      <div class="content-grid">
-        <article>
-          <h3>接続設定</h3>
-          <p>CPU機種、PLC IP / ホスト、ポート、トランスポート、監視周期、ネットワーク、局番、モジュール IO、マルチドロップを設定します。リモートパスワードは ProjectBuilder では扱わず、モバイルアプリ側で入力します。</p>
-        </article>
-        <article>
-          <h3>ルーティング表記</h3>
-          <p>ネットワーク / 局番 は数字で、モジュール IO / マルチドロップ は画面の初期表示と同じ <code>0x</code> 付きで入力します。</p>
-        </article>
-        <article>
-          <h3>デバイス表記</h3>
-          <p><code>iQ-F</code> の <code>X</code> / <code>Y</code> は 8 進表記です。<code>B</code>、<code>W</code>、<code>SB</code>、<code>SW</code> は 16 進表記です。</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>KEYENCE プロジェクト</h2>
-      <div class="content-grid">
-        <article>
-          <h3>接続設定</h3>
-          <p>モデル、PLC IP / ホスト、ポート、トランスポート、KEYENCE デバイス表記を設定します。</p>
-        </article>
-        <article>
-          <h3>KEYENCE デバイス表記</h3>
-          <p><code>Normal</code> と <code>XYM</code> を選べます。使用するアドレス表記に合わせて選択します。</p>
-        </article>
-        <article>
-          <h3>デバイス表記</h3>
-          <p><code>Normal</code> では <code>R</code>、<code>DM</code> など、<code>XYM</code> では <code>X</code>、<code>Y</code>、<code>M</code> などの表記を扱います。</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section">
       <h2>基本手順</h2>
       <ol class="steps">
-        <li><strong>ProjectBuilder を起動する</strong><span><code>PlcIoCheckerProjectBuilder.exe</code> を起動します。</span></li>
+        <li><strong>ProjectBuilder を起動する</strong><span><code>PLCConsoleProjectBuilder.exe</code> を起動します。</span></li>
         <li><strong>PLC を設定する</strong><span>プロジェクト名、メーカー、CPU機種、PLC IP / ホスト、ポート、トランスポートを入力します。</span></li>
         <li><strong>リストを登録する</strong><span>監視するアドレス、データ型、コメントを登録します。</span></li>
         <li><strong>タイムチャート / トラップ / コメントを登録する</strong><span>必要に応じて記録対象、検知条件、アドレスコメントを登録します。</span></li>

@@ -2,24 +2,32 @@
 
 FA Labo PLC Console マニュアルサイトのメンテナ向け資料です。GitHub の入口になる `README.md` には軽い説明だけを置き、編集方針や運用ルールはこのファイルで管理します。
 
+最終更新: 2026-08-25
+
 ## Directory Layout
 
 | Path | 内容 |
 | --- | --- |
 | `index.html` | 目次トップ |
+| `search.html` | 静的なサイト内検索 |
+| `404.html` | 存在しないURLを開いた場合の案内 |
 | `start/` | 入手・インストール、はじめる |
 | `plc/` | 接続、接続設定例、MELSEC / KEYENCE 設定 |
 | `plc/models/` | 対応機種ごとの接続設定例ページ |
-| `monitoring/` | 監視、List 登録編集、デバイス操作パネル、書込、CPU操作、コメント、タイムチャート、トラップ |
-| `transfer/` | QR / JSON、プロジェクトJSON |
-| `settings/` | メニュー、アプリ設定、ライセンス/購入 |
+| `monitoring/` | 監視、List 登録編集、デバイス操作パネル、書込、コメント、タイムチャート、トラップ |
+| `settings/` | CPU操作、表示設定、コメント・QR・JSON、エラー履歴、アプリ設定、ライセンス/購入 |
 | `projectbuilder/` | ProjectBuilder、入力、QR 生成 |
-| `reference/` | 公開情報、用語集、リリースノート、困ったとき |
+| `reference/` | 問い合わせ、公開情報、用語集、リリースノート、困ったとき |
 | `assets/style.css` | ページスタイル |
+| `assets/nav.js` | モバイル用の共通ナビゲーション動作 |
+| `assets/search.js` | サイト内検索の照合・並び替え・結果表示 |
+| `assets/search-index.js` | HTMLから生成する検索データ。直接編集しない |
 | `assets/images/plc/` | 接続・PLC 設定系スクリーンショット |
 | `assets/images/monitoring/` | 監視・記録系スクリーンショット |
 | `assets/images/transfer/` | QR / JSON 転送系スクリーンショット |
 | `assets/images/projectbuilder/` | ProjectBuilder ロゴ・関連画像 |
+| `.github/scripts/check_site.py` | リンク、アンカー、画像、共通ヘッダー/フッターの検査 |
+| `.github/scripts/build_search_index.py` | 検索データの生成と更新漏れ検査 |
 | `templates/page-shell.html.tmpl` | 共通ヘッダー/ナビ更新時の参照テンプレート |
 | `templates/store-links.html.tmpl` | 正式 Store URL と公式バッジが確定した後に公開ページへ挿入するテンプレート |
 | `TODO.md` | ページ作成状態と更新チェックリスト |
@@ -33,6 +41,14 @@ FA Labo PLC Console マニュアルサイトのメンテナ向け資料です。
 5. 更新後にリンク、画像参照、表記ゆれ、実装との矛盾を確認する。
 6. 共通ヘッダーや上部ナビを変更する場合は、`templates/page-shell.html.tmpl` を先に更新し、各 HTML へ反映する。
 7. ページを追加または本文を更新した場合は、`python .github/scripts/build_search_index.py` で検索インデックスを更新する。
+8. `python .github/scripts/build_search_index.py --check` と `python .github/scripts/check_site.py` を実行する。
+
+### サイト内検索
+
+- `search.html` は外部サービスへ問い合わせず、`assets/search-index.js` をブラウザ内で検索する。
+- 検索対象は `404.html` と `search.html` を除く公開HTMLで、タイトル、説明、見出し、本文を収録する。
+- 複数語はすべてを含むページに絞り、タイトル、見出し、説明、本文の順で重み付けする。
+- `assets/search-index.js` は生成物なので、HTML本文を修正した後に生成スクリプトで更新する。
 
 ### 前後リンクの順序
 
@@ -72,7 +88,7 @@ FA Labo PLC Console マニュアルサイトのメンテナ向け資料です。
 - 画面名は app 表示に合わせて `List`、`Block`、`デバイス操作パネル`、`タイムチャート`、`トラップ`、`List 登録編集` を使う。
 - 操作名は表示文言に合わせて `QR読込`、`JSON読込`、`JSON書出`、`CSVコメント読込`、`コメント読込`、`CPU操作` と書く。
 - PLC 種別は `MELSEC` / `KEYENCE`、通信方式は `SLMP（Seamless Message Protocol）` / `Host-link（上位リンク）` と書く。
-- 通常の操作ページでは、内部フィールド名ではなく画面表示を使う。例: `ネットワーク`、`局番`、`ユニットI/O`、`マルチドロップ`。
+- 通常の操作ページでは、内部フィールド名ではなく画面表示を使う。例: `ネットワーク`、`局番`、`ユニットI/O`。
 - `BIT` / `WORD`、`データタイプ`、`address`、`comment` の意味を混ぜない。
 - 公開ページでは原則として内部名を出さない。内部名との対応はこの保守メモで管理する。
 

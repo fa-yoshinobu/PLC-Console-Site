@@ -8,7 +8,7 @@ FA Labo PLC Console の公開マニュアルサイトです。Android / iOS ア�
 - Privacy policy: <https://plc-console.fa-labo.com/reference/privacy-policy.html>
 - ProjectBuilder: <https://github.com/fa-yoshinobu/PLC-Console-ProjectBuilder>
 
-ProjectBuilder の exe は、[`PLC-Console-ProjectBuilder` の Releases](https://github.com/fa-yoshinobu/PLC-Console-ProjectBuilder/releases) にある Assets から `PlcIoCheckerProjectBuilder-win-x64.zip` をダウンロードして使用します。
+ProjectBuilder の exe は、[`PLC-Console-ProjectBuilder` の Releases](https://github.com/fa-yoshinobu/PLC-Console-ProjectBuilder/releases) にある Assets から `PLCConsoleProjectBuilder-win-x64.zip` をダウンロードして使用します。
 
 ## スクリーンショット
 

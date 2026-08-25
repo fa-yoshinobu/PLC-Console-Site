@@ -1,6 +1,6 @@
 # Development History
 
-Last consolidated: 2026-08-14
+Last consolidated: 2026-08-25
 
 This document preserves the useful content that used to live in temporary
 refactor memo files. Keep this file as the durable engineering record for the
@@ -20,6 +20,32 @@ static documentation site.
 - Renamed the repository to `PLC-Console-Site`.
 - Updated repository links for `PLC-Console-ProjectBuilder`.
 - Changed the canonical public URL to `https://plc-console.fa-labo.com/`.
+
+## 2026-08-25 Manual And Site Navigation Update
+
+Completed work:
+
+- Aligned the top navigation and homepage sections with the current manual structure.
+- Removed pre-release compatibility pages that were no longer needed.
+- Added the Formspree support form and aligned support, privacy, permissions,
+  terms, purchase, release notes, glossary, and troubleshooting content with
+  the current application and publication plan.
+- Added `search.html`, a generated static search index, and search links to the
+  shared header and footer.
+- Added `404.html` with links to the manual top, site search, and support form.
+- Split previous/next navigation into reciprocal main, ProjectBuilder, and
+  support sequences.
+- Updated README and TODO page inventories to match the actual file layout.
+- Clarified that numeric data type width does not determine a fixed number of
+  PLC device points.
+
+Validation:
+
+- The search index contains 55 manual pages and excludes `search.html` and
+  `404.html`.
+- The static checker validates 57 HTML pages, including internal links,
+  anchors, image alternatives, `nav.js`, and shared header/footer drift.
+- GitHub Actions checks search-index freshness before deploying GitHub Pages.
 
 ## Refactoring And Guard Rails
 
