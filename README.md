@@ -57,7 +57,7 @@ Start-Process .\index.html
 - [`docs/DEVELOPMENT_HISTORY.md`](docs/DEVELOPMENT_HISTORY.md): 開発・保守作業の履歴
 - [`docs/NAMING_CATALOG.md`](docs/NAMING_CATALOG.md): 機能名・操作名・データ名の表記
 - [`docs/WINDOW_NAMES.md`](docs/WINDOW_NAMES.md): 画面名とアプリ内部名の対応
-- [`.github/STORE_RELEASE_CHECKLIST.md`](.github/STORE_RELEASE_CHECKLIST.md): Store 公開時の内部チェック
+- Store公開時の内部チェックは、workspaceの`PlcIoChecker_memo/STORE_RELEASE_CHECKLIST.md`で管理する。
 
 ## 関連リポジトリ
 

@@ -129,9 +129,9 @@ FA Labo PLC Console マニュアルサイトのメンテナ向け資料です。
 - 正式 URL と公式バッジ画像が揃ったら、`templates/store-links.html.tmpl` の変数を置換し、リンクと画像を検証してから公開ページへ挿入する。
 - 未確定の金額は書かない。価格は Store 公開時の表示を正とする。
 - ユーザー向けページには、未確定項目を作業メモとして出さず、必要な場合は `公開状況` や `ストアリンク` として説明する。
-- Store 公開作業の内部チェックは `.github/STORE_RELEASE_CHECKLIST.md` で管理する。
+- Store公開作業の内部チェックは、workspaceの`PlcIoChecker_memo/STORE_RELEASE_CHECKLIST.md`で管理する。Site repository内には重複して置かない。
 - ユーザー向け本文には、作業メモ、仮リンク、開発用語を混ぜない。
-- 公開 build から開発用表記、開発用の購入状態表示、未確定の金額表示が消えていることを `.github/STORE_RELEASE_CHECKLIST.md` に残す。
+- 公開buildから開発用表記、開発用の購入状態表示、未確定の金額表示が消えていることを、同チェックリストへ記録する。
 
 ### リリースノート
 
