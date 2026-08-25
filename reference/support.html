@@ -111,7 +111,7 @@
     <section class="section" id="contact-form">
       <div class="section-heading">
         <h2>問い合わせフォーム</h2>
-        <p>返信に必要なメールアドレスと、問い合わせ内容を入力してください。通常のサポート問い合わせにファイルを添付することはできません。</p>
+        <p>返信に必要なメールアドレスと、問い合わせ内容を入力してください。このフォームではファイルを添付できません。不具合解析にログデータなどが必要な場合は、返信時に送付先メールアドレスをご案内します。</p>
       </div>
 
       <form class="support-form" id="support-form" action="https://formspree.io/f/myegqpgq" method="post" accept-charset="utf-8">
@@ -124,8 +124,8 @@
 
         <div class="form-grid">
           <div class="form-field">
-            <label for="contact-name">お名前 <span class="optional">任意</span></label>
-            <input id="contact-name" name="name" type="text" autocomplete="name" maxlength="100">
+            <label for="contact-name">お名前（ハンドルネーム可） <span class="required">必須</span></label>
+            <input id="contact-name" name="name" type="text" autocomplete="name" maxlength="100" required>
           </div>
 
           <div class="form-field">
