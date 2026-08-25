@@ -115,17 +115,6 @@
     </section>
 
     <section class="section">
-      <h2>形式</h2>
-      <div class="info-table" role="table" aria-label="プロジェクトJSON形式">
-        <div role="row"><div role="cell">schema</div><div role="cell"><code>plc-console-project</code></div></div>
-        <div role="row"><div role="cell">schemaVersion</div><div role="cell"><code>2</code> のみ。旧識別子 <code>plc-io-checker-project</code> と旧バージョンは変換せずエラーにします。</div></div>
-        <div role="row"><div role="cell">ファイル上限</div><div role="cell">JSON 全体で 5 MiB（5,242,880 bytes）です。</div></div>
-        <div role="row"><div role="cell">通信時間</div><div role="cell">ポーリング間隔は 100～10,000 ms、通信タイムアウトは 250～10,000 ms です。タイムアウトはポーリング間隔より短くてもかまいません。</div></div>
-        <div role="row"><div role="cell">読込条件</div><div role="cell">必須情報不足、重複、不正なアドレスや範囲外の値がある場合は、内容を変更せず読込エラーにします。</div></div>
-      </div>
-    </section>
-
-    <section class="section">
       <div class="notice">
         <h2>扱うときの注意</h2>
         <p>プロジェクトJSONには接続先や登録デバイスなどの設備情報が含まれます。共有や問い合わせ時は、IP アドレス、設備名、顧客名などを含めないようにしてください。</p>
