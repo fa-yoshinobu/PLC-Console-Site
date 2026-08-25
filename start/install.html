@@ -92,7 +92,7 @@
     <section class="page-hero section">
       <p class="eyebrow">Install</p>
       <div class="title-with-icon">
-        <img class="title-icon" src="../assets/images/app/android-icon.png" width="512" height="512" alt="FA Labo PLC Console アプリアイコン" loading="lazy">
+        <img class="title-icon" src="../assets/images/app/android-icon.png" width="512" height="512" alt="FA Labo PLC Console アプリアイコン">
         <h1>入手・インストール</h1>
       </div>
       <p class="lead">Android / iOS アプリと PC 用 ProjectBuilder の入手先をまとめます。</p>
@@ -112,7 +112,7 @@
         <div role="row"><div role="cell">Android</div><div role="cell">Android 10 以降を搭載し、Google Play に対応するスマートフォンまたはタブレット。</div></div>
         <div role="row"><div role="cell">実機 PLC 通信</div><div role="cell">端末から接続先 PLC へ到達できる Wi-Fi または有線 LAN 環境が必要です。</div></div>
         <div role="row"><div role="cell">Demo</div><div role="cell">PLC、ネットワーク接続、アプリ内購入なしで利用できます。</div></div>
-        <div role="row"><div role="cell">ProjectBuilder</div><div role="cell">Windows / .NET 8 / WPF。</div></div>
+        <div role="row"><div role="cell">ProjectBuilder</div><div role="cell">64ビット版 Windows（x64）。</div></div>
       </div>
     </section>
 
@@ -138,9 +138,9 @@
       <div class="two-column">
         <div>
           <h2>ProjectBuilder</h2>
-          <p>PC でプロジェクトを作成し、QR または JSON でモバイルアプリへ渡す Windows WPF アプリです。exe は GitHub Releases の Assets にある <code>PlcIoCheckerProjectBuilder-win-x64.zip</code> からダウンロードします。</p>
+          <p>PC でプロジェクトを作成し、QR または JSON でモバイルアプリへ渡す Windows アプリです。GitHub Releases から ZIP をダウンロードし、展開してから exe を起動します。</p>
           <div class="info-table" role="table" aria-label="ProjectBuilder">
-            <div role="row"><div role="cell">対象</div><div role="cell">Windows / .NET 8 / WPF</div></div>
+            <div role="row"><div role="cell">対象</div><div role="cell">64ビット版 Windows（x64）</div></div>
             <div role="row"><div role="cell">起動ファイル</div><div role="cell"><code>PlcIoCheckerProjectBuilder.exe</code></div></div>
             <div role="row"><div role="cell">主な用途</div><div role="cell">PLC 設定、デバイス、タイムチャート、トラップ、QR/JSON 出力</div></div>
             <div role="row"><div role="cell">ダウンロード</div><div role="cell"><a href="https://github.com/fa-yoshinobu/PLC-Console-ProjectBuilder/releases">PLC-Console-ProjectBuilder Releases</a> の Assets から <code>PlcIoCheckerProjectBuilder-win-x64.zip</code> を選びます。</div></div>
@@ -160,7 +160,26 @@
     </nav>
   </main>
 
-  <footer class="site-footer"><p>FA Labo PLC Console 操作マニュアル / 入手・インストール</p></footer>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <a class="footer-brand" href="../index.html">
+        <span class="brand-mark">PLC</span>
+        <span>
+          <strong>FA Labo PLC Console</strong>
+          <small>操作マニュアル</small>
+        </span>
+      </a>
+      <div>
+        <nav class="footer-links" aria-label="フッターリンク">
+          <a href="../reference/support.html">問い合わせ</a>
+          <a href="../reference/privacy-policy.html">プライバシーポリシー</a>
+          <a href="../reference/terms.html">利用条件</a>
+          <a href="../reference/purchase-info.html">購入・返金</a>
+        </nav>
+        <p class="footer-copy">© 2026 FA Labo</p>
+      </div>
+    </div>
+  </footer>
   <script src="../assets/nav.js"></script>
 </body>
 </html>

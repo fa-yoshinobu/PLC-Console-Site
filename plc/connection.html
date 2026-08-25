@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="FA Labo PLC Console の接続先切替、プロジェクト、通信設定、Demo Mock の値変化パターン。">
+  <meta name="description" content="FA Labo PLC Console の接続先切替、プロジェクト、通信設定、デモの値変化パターン。">
   <title>接続・プロジェクト | FA Labo PLC Console 操作マニュアル</title>
   <link rel="stylesheet" href="../assets/style.css">
 </head>
@@ -92,7 +92,7 @@
     <section class="page-hero section">
       <p class="eyebrow">Connection</p>
       <h1>接続・プロジェクト</h1>
-      <p class="lead">接続先切替、プロジェクト選択、通信設定、Demo Mock の値変化パターン、到達確認の操作を説明します。</p>
+      <p class="lead">接続先切替、プロジェクト選択、通信設定、デモの値変化パターン、到達確認の操作を説明します。</p>
     </section>
 
     <section class="section">
@@ -121,7 +121,7 @@
         <div role="row"><div role="cell">状態表示</div><div role="cell">CPU 状態は丸マークではなく、<code>RUN</code>、<code>STOP</code>、<code>PROGRAM</code> の文字で確認します。</div></div>
         <div role="row"><div role="cell">MELSEC</div><div role="cell">CPU停止側の状態は <code>STOP</code> と表示します。</div></div>
         <div role="row"><div role="cell">KEYENCE</div><div role="cell">CPU停止側の状態は <code>PROGRAM</code> と表示します。</div></div>
-        <div role="row"><div role="cell">接続ボタン</div><div role="cell"><strong>接続中</strong> または <strong>未接続</strong> の 2 状態で表示します。Demo Mock の場合はボタン内に <strong>DEMO</strong> が表示されます。</div></div>
+        <div role="row"><div role="cell">接続ボタン</div><div role="cell"><strong>接続中</strong> または <strong>未接続</strong> の 2 状態で表示します。デモの場合はボタン内に <strong>DEMO</strong> が表示されます。</div></div>
         <div role="row"><div role="cell">書込ロック</div><div role="cell"><strong>ロック</strong> / <strong>解除</strong> で、出力や値の書込が許可されているかを示します。</div></div>
       </div>
     </section>
@@ -132,26 +132,26 @@
         <div role="row"><div role="cell">PLC 種別</div><div role="cell">MELSEC または KEYENCE を選択します。</div></div>
         <div role="row"><div role="cell">CPU機種</div><div role="cell">接続する PLC の CPU機種を選択します。機種別の設定例は接続設定例で確認します。</div></div>
         <div role="row"><div role="cell">IP / Port</div><div role="cell">PLC 側の Ethernet 設定に合わせます。</div></div>
-        <div role="row"><div role="cell">Transport</div><div role="cell">TCP または UDP を選択します。</div></div>
+        <div role="row"><div role="cell">通信</div><div role="cell">TCP または UDP を選択します。</div></div>
         <div role="row"><div role="cell">ルーティング</div><div role="cell">MELSEC で必要な場合だけネットワーク、局番、ユニットI/O、マルチドロップを指定します。</div></div>
         <div role="row"><div role="cell">KEYENCE 表示</div><div role="cell">KEYENCE ではデバイス表記を <code>Normal</code> または <code>XYM</code> から選択します。</div></div>
-        <div role="row"><div role="cell">Demo Mock 値変化</div><div role="cell">Demo Mock では、PLC 設定で監視値の変化パターンを選択できます。</div></div>
+        <div role="row"><div role="cell">デモの値変化</div><div role="cell">デモでは、PLC 設定で監視値の変化パターンを選択できます。</div></div>
         <div role="row"><div role="cell">到達確認</div><div role="cell">入力した通信設定で確認を実行し、結果とエラーメッセージを確認します。</div></div>
       </div>
       <p class="small-note">PLC 側の Ethernet 設定、通信許可、リモートパスワードは <a href="../plc/plc-side-settings.html">接続設定例</a> で確認します。</p>
     </section>
 
     <section class="section">
-      <h2>Demo Mock の値変化パターン</h2>
-      <p>Demo Mock 接続では、実機 PLC なしで監視値が変化します。PLC 設定の <strong>値変化パターン</strong> で、デモ表示やトラップ確認に使う変化の出方を選べます。</p>
-      <div class="info-table" role="table" aria-label="Demo Mock 値変化パターン">
+      <h2>デモの値変化パターン</h2>
+      <p>デモ接続では、実機 PLC なしで監視値が変化します。PLC 設定の <strong>値変化パターン</strong> で、デモ表示やトラップ確認に使う変化の出方を選べます。</p>
+      <div class="info-table" role="table" aria-label="デモの値変化パターン">
         <div role="row"><div role="cell"><code>Sweep</code></div><div role="cell">現在の標準動作です。BIT は周期的に ON/OFF し、数値は 0 から 100 へ繰り返し変化します。</div></div>
         <div role="row"><div role="cell"><code>Pulse</code></div><div role="cell">短い瞬間的な変化を出します。立上り、立下り、変化検出のトラップ確認に向いています。</div></div>
         <div role="row"><div role="cell"><code>Wave</code></div><div role="cell">なめらかな波形で数値が上下します。タイムチャートで値の推移を見たいときに使います。</div></div>
         <div role="row"><div role="cell"><code>Step</code></div><div role="cell">段階的に値が切り替わります。しきい値付近の表示やトラップ条件を確認しやすいパターンです。</div></div>
-        <div role="row"><div role="cell"><code>Hold</code></div><div role="cell">自動変化を止め、現在値を保持します。Demo Mock で書き込んだ値も、そのまま固定して確認できます。</div></div>
+        <div role="row"><div role="cell"><code>Hold</code></div><div role="cell">自動変化を止め、現在値を保持します。デモで書き込んだ値も、そのまま固定して確認できます。</div></div>
       </div>
-      <p class="small-note">この設定は端末アプリ側の Demo Mock 動作用です。プロジェクト JSON には含まれません。</p>
+      <p class="small-note">この設定は端末アプリ側のデモ動作用です。プロジェクト JSON には含まれません。</p>
     </section>
 
     <section class="section">
@@ -173,7 +173,8 @@
     <section class="section">
       <div class="notice danger">
         <h2>実機接続の注意</h2>
-        <p>実機通信は設備の状態に影響する場合があります。接続前に対象 PLC、IP、ポート、Transport、通信許可、ネットワーク経路を確認してください。</p>
+        <p>接続すると PLC との通信が始まります。接続前に対象 PLC、IP、ポート、TCP/UDP、通信許可、ネットワーク経路を確認してください。</p>
+        <p>デバイス書込や CPU操作は設備動作に影響します。設備側の安全手順に従って操作してください。</p>
       </div>
     </section>
 
@@ -207,12 +208,25 @@
   </main>
 
   <footer class="site-footer">
-  <div class="footer-simple">
-    <span class="brand-mark">PLC</span>
-    <span>FA Labo PLC Console 操作マニュアル</span>
-    <span style="margin-left:auto">© 2026 FA Labo</span>
-  </div>
-</footer>
+    <div class="footer-inner">
+      <a class="footer-brand" href="../index.html">
+        <span class="brand-mark">PLC</span>
+        <span>
+          <strong>FA Labo PLC Console</strong>
+          <small>操作マニュアル</small>
+        </span>
+      </a>
+      <div>
+        <nav class="footer-links" aria-label="フッターリンク">
+          <a href="../reference/support.html">問い合わせ</a>
+          <a href="../reference/privacy-policy.html">プライバシーポリシー</a>
+          <a href="../reference/terms.html">利用条件</a>
+          <a href="../reference/purchase-info.html">購入・返金</a>
+        </nav>
+        <p class="footer-copy">© 2026 FA Labo</p>
+      </div>
+    </div>
+  </footer>
   <script src="../assets/nav.js"></script>
 </body>
 </html>

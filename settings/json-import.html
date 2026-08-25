@@ -101,7 +101,7 @@
         <div role="row"><div role="cell">開き方</div><div role="cell">右上メニューから <strong>JSON読込</strong> を開きます。</div></div>
         <div role="row"><div role="cell">目的</div><div role="cell">バックアップ済み、または ProjectBuilder で作成したプロジェクトJSONを読み込みます。</div></div>
         <div role="row"><div role="cell">対象</div><div role="cell">OS のファイル選択で指定した schemaVersion 2 の JSON ファイルです。上限は 5 MiB（5,242,880 bytes）です。</div></div>
-        <div role="row"><div role="cell">注意点</div><div role="cell">読み込み後、現在のプロジェクトは読み込んだ内容へ切り替わります。</div></div>
+        <div role="row"><div role="cell">注意点</div><div role="cell">読込と検証に成功すると、現在のプロジェクトが読み込んだ内容へ切り替わります。失敗した場合、編集中のプロジェクトは変更されません。</div></div>
       </div>
     </section>
 
@@ -128,12 +128,25 @@
   </main>
 
   <footer class="site-footer">
-  <div class="footer-simple">
-    <span class="brand-mark">PLC</span>
-    <span>FA Labo PLC Console 操作マニュアル</span>
-    <span style="margin-left:auto">© 2026 FA Labo</span>
-  </div>
-</footer>
+    <div class="footer-inner">
+      <a class="footer-brand" href="../index.html">
+        <span class="brand-mark">PLC</span>
+        <span>
+          <strong>FA Labo PLC Console</strong>
+          <small>操作マニュアル</small>
+        </span>
+      </a>
+      <div>
+        <nav class="footer-links" aria-label="フッターリンク">
+          <a href="../reference/support.html">問い合わせ</a>
+          <a href="../reference/privacy-policy.html">プライバシーポリシー</a>
+          <a href="../reference/terms.html">利用条件</a>
+          <a href="../reference/purchase-info.html">購入・返金</a>
+        </nav>
+        <p class="footer-copy">© 2026 FA Labo</p>
+      </div>
+    </div>
+  </footer>
   <script src="../assets/nav.js"></script>
 </body>
 </html>

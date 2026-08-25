@@ -100,27 +100,13 @@
       <div class="content-grid">
         <article>
           <h3>CSVコメント読込</h3>
-          <p>アドレスとコメントを含む CSV を読み込みます。PC で作成したコメント表を端末へ取り込む用途に向いています。</p>
+          <p>MELSEC / KEYENCE の両方で、アドレスとコメントを含む CSV を読み込みます。</p>
           <p><a href="../settings/csv-comment-import.html">CSVコメント読込を確認する</a></p>
         </article>
         <article>
-          <h3>コメント読込</h3>
-          <p>KEYENCE プロジェクトで接続中の場合、PLC からデバイスコメントを読み込めます。接続していない状態、または対応しない接続では実行できません。</p>
+          <h3>PLCからのコメント読込</h3>
+          <p>KEYENCE プロジェクトで接続中の場合だけ、PLC からコメントを読み込めます。メニューから範囲読込、デバイス操作パネルから個別読込を実行できます。</p>
           <p><a href="../settings/comment-import.html">コメント読込を確認する</a></p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>MELSEC / KEYENCE の違い</h2>
-      <div class="content-grid">
-        <article>
-          <h3>MELSEC</h3>
-          <p><a href="../settings/csv-comment-import.html"><strong>CSVコメント読込</strong></a> を使用します。PLC から直接コメントを読むメニューは MELSEC では表示されません。</p>
-        </article>
-        <article>
-          <h3>KEYENCE</h3>
-          <p><a href="../settings/csv-comment-import.html"><strong>CSVコメント読込</strong></a> に加えて、接続中は <a href="../settings/comment-import.html"><strong>コメント読込</strong></a> で PLC からコメントを取得できます。メニューから範囲読込、デバイス操作パネルから個別読込を使えます。</p>
         </article>
       </div>
     </section>
@@ -142,12 +128,25 @@
   </main>
 
   <footer class="site-footer">
-  <div class="footer-simple">
-    <span class="brand-mark">PLC</span>
-    <span>FA Labo PLC Console 操作マニュアル</span>
-    <span style="margin-left:auto">© 2026 FA Labo</span>
-  </div>
-</footer>
+    <div class="footer-inner">
+      <a class="footer-brand" href="../index.html">
+        <span class="brand-mark">PLC</span>
+        <span>
+          <strong>FA Labo PLC Console</strong>
+          <small>操作マニュアル</small>
+        </span>
+      </a>
+      <div>
+        <nav class="footer-links" aria-label="フッターリンク">
+          <a href="../reference/support.html">問い合わせ</a>
+          <a href="../reference/privacy-policy.html">プライバシーポリシー</a>
+          <a href="../reference/terms.html">利用条件</a>
+          <a href="../reference/purchase-info.html">購入・返金</a>
+        </nav>
+        <p class="footer-copy">© 2026 FA Labo</p>
+      </div>
+    </div>
+  </footer>
   <script src="../assets/nav.js"></script>
 </body>
 </html>

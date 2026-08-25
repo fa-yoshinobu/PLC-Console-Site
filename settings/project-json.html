@@ -110,9 +110,9 @@
         <article><h3>プロジェクト</h3><p>プロジェクト名と更新情報を保存します。</p></article>
         <article><h3>接続設定</h3><p>PLC 種別、CPU機種、接続先、MELSEC / KEYENCE 固有の設定を保存します。</p></article>
         <article><h3>登録内容</h3><p>List、タイムチャート、トラップの登録内容を保存します。</p></article>
-        <article><h3>共通メタ情報</h3><p>アドレス単位のコメントと、登録先から参照されるアドレスのデータ型は <code>deviceMeta</code> に保存されます。</p></article>
+        <article><h3>コメントとデータ型</h3><p>アドレス単位のコメントとデータ型を保存します。</p></article>
       </div>
-      <p class="small-note">List は最大 1,000 件、TimeChart は最大 20 チャンネル、Trap は最大 20 件です。List / TimeChart / Trap が参照するアドレスを正規化して重複を除いた <code>deviceMeta</code> は最大 1,040 件、どの登録からも参照されないコメント専用の <code>deviceMeta</code> は最大 100,000 件です。参照される項目には <code>dataType</code> が必要です。コメント専用項目は <code>dataType</code> を持たず、空でない <code>comment</code> が必要です。上限を超えたファイルは途中まで取り込まず、エラーにします。</p>
+      <p class="small-note">登録上限を超えるファイルや必要な情報が不足しているファイルは、途中まで取り込まずエラーにします。</p>
     </section>
 
     <section class="section">
@@ -121,11 +121,8 @@
         <div role="row"><div role="cell">schema</div><div role="cell"><code>plc-console-project</code></div></div>
         <div role="row"><div role="cell">schemaVersion</div><div role="cell"><code>2</code> のみ。旧識別子 <code>plc-io-checker-project</code> と旧バージョンは変換せずエラーにします。</div></div>
         <div role="row"><div role="cell">ファイル上限</div><div role="cell">JSON 全体で 5 MiB（5,242,880 bytes）です。</div></div>
-        <div role="row"><div role="cell">参照メタ情報</div><div role="cell">List / TimeChart / Trap が参照するアドレスを正規化して重複を除いた <code>deviceMeta</code> は最大 1,040 件です。各項目に <code>dataType</code> が必要で、<code>comment</code> は省略できます。</div></div>
-        <div role="row"><div role="cell">コメント専用メタ情報</div><div role="cell">List / TimeChart / Trap のどの登録からも参照されない <code>deviceMeta</code> は最大 100,000 件です。<code>dataType</code> は記載せず、空でない <code>comment</code> が必要です。</div></div>
         <div role="row"><div role="cell">通信時間</div><div role="cell">ポーリング間隔は 100～10,000 ms、通信タイムアウトは 250～10,000 ms です。タイムアウトはポーリング間隔より短くてもかまいません。</div></div>
-        <div role="row"><div role="cell">コメント / データ型</div><div role="cell"><code>deviceMeta</code> を正として読み書きします。参照項目での <code>dataType</code> 欠落、コメント専用項目への <code>dataType</code> 記載、コメント専用項目の空コメントは、推測や補完をせず読込エラーにします。</div></div>
-        <div role="row"><div role="cell">読込条件</div><div role="cell">必須情報不足、未知の項目、重複アドレス／ID、不正アドレス、非有限値、範囲外値は取り込みエラーにします。暗黙変換、推測補完、上限での切り捨ては行いません。</div></div>
+        <div role="row"><div role="cell">読込条件</div><div role="cell">必須情報不足、重複、不正なアドレスや範囲外の値がある場合は、内容を変更せず読込エラーにします。</div></div>
       </div>
     </section>
 
@@ -144,12 +141,25 @@
   </main>
 
   <footer class="site-footer">
-  <div class="footer-simple">
-    <span class="brand-mark">PLC</span>
-    <span>FA Labo PLC Console 操作マニュアル</span>
-    <span style="margin-left:auto">© 2026 FA Labo</span>
-  </div>
-</footer>
+    <div class="footer-inner">
+      <a class="footer-brand" href="../index.html">
+        <span class="brand-mark">PLC</span>
+        <span>
+          <strong>FA Labo PLC Console</strong>
+          <small>操作マニュアル</small>
+        </span>
+      </a>
+      <div>
+        <nav class="footer-links" aria-label="フッターリンク">
+          <a href="../reference/support.html">問い合わせ</a>
+          <a href="../reference/privacy-policy.html">プライバシーポリシー</a>
+          <a href="../reference/terms.html">利用条件</a>
+          <a href="../reference/purchase-info.html">購入・返金</a>
+        </nav>
+        <p class="footer-copy">© 2026 FA Labo</p>
+      </div>
+    </div>
+  </footer>
   <script src="../assets/nav.js"></script>
 </body>
 </html>

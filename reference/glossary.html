@@ -107,7 +107,7 @@
         <div role="row"><div role="cell">コンパクト / 詳細</div><div role="cell"><strong>ブロック</strong> 画面の表示密度です。コンパクトは点数優先、詳細はコメントや値の読みやすさ優先です。</div></div>
         <div role="row"><div role="cell">モニタ表示設定</div><div role="cell"><a href="../settings/monitor-display-settings.html"><strong>ブロック</strong> 画面の表示密度と <strong>グラフ100%値</strong></a> を設定する画面です。</div></div>
         <div role="row"><div role="cell">アドレス / address</div><div role="cell">PLC デバイスのアドレスです。例: <code>X0</code>、<code>D100</code>、<code>DM100</code>。</div></div>
-        <div role="row"><div role="cell">コメント / Comment</div><div role="cell">デバイスに付ける表示用コメントです。アドレス単位のコメントDBを正として、List / Block / TimeChart / Trap で共有します。</div></div>
+        <div role="row"><div role="cell">コメント / Comment</div><div role="cell">デバイスに付ける表示用コメントです。同じアドレスのコメントは List / Block / タイムチャート / トラップで共通して表示されます。</div></div>
         <div role="row"><div role="cell">データタイプ</div><div role="cell"><code>BIT</code>、<code>INT16</code>、<code>UINT16</code>、<code>INT32</code>、<code>UINT32</code>、<code>FLOAT32</code> の表示/書込型です。</div></div>
         <div role="row"><div role="cell">タイムチャート</div><div role="cell">登録したチャンネルの値を記録し、波形や CSV で確認する機能です。</div></div>
         <div role="row"><div role="cell">トラップ</div><div role="cell">指定した条件に一致したタイミングをイベントとして記録する機能です。</div></div>
@@ -126,7 +126,26 @@
     </nav>
   </main>
 
-  <footer class="site-footer"><p>FA Labo PLC Console 操作マニュアル / 用語集</p></footer>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <a class="footer-brand" href="../index.html">
+        <span class="brand-mark">PLC</span>
+        <span>
+          <strong>FA Labo PLC Console</strong>
+          <small>操作マニュアル</small>
+        </span>
+      </a>
+      <div>
+        <nav class="footer-links" aria-label="フッターリンク">
+          <a href="../reference/support.html">問い合わせ</a>
+          <a href="../reference/privacy-policy.html">プライバシーポリシー</a>
+          <a href="../reference/terms.html">利用条件</a>
+          <a href="../reference/purchase-info.html">購入・返金</a>
+        </nav>
+        <p class="footer-copy">© 2026 FA Labo</p>
+      </div>
+    </div>
+  </footer>
   <script src="../assets/nav.js"></script>
 </body>
 </html>

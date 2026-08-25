@@ -164,6 +164,16 @@ def find_headers(node: Element) -> list[Element]:
     return headers
 
 
+def find_footers(node: Element) -> list[Element]:
+    footers: list[Element] = []
+    for child in node.children:
+        if isinstance(child, Element):
+            if child.tag == "footer" and "site-footer" in class_names(child.attrs):
+                footers.append(child)
+            footers.extend(find_footers(child))
+    return footers
+
+
 def base_prefix(page: Path) -> str:
     depth = len(page.relative_to(ROOT).parent.parts)
     return "../" * depth
@@ -209,6 +219,13 @@ def header_for(path: Path, source: str) -> Element | None:
     if len(headers) != 1:
         return None
     return headers[0]
+
+
+def footer_for(path: Path, source: str) -> Element | None:
+    footers = find_footers(parse_dom(source))
+    if len(footers) != 1:
+        return None
+    return footers[0]
 
 
 def is_skipped_reference(value: str) -> bool:
@@ -319,6 +336,14 @@ def expected_header_lines(page: Path, template_source: str) -> list[str] | None:
     return render_normalized(header)
 
 
+def expected_footer_lines(page: Path, template_source: str) -> list[str] | None:
+    source = template_source.replace("{{BASE}}", base_prefix(page))
+    footer = footer_for(TEMPLATE, source)
+    if footer is None:
+        return None
+    return render_normalized(footer)
+
+
 def check_header(
     page: Path, source: str, template_source: str
 ) -> tuple[list[SiteIssue], list[str]]:
@@ -345,11 +370,38 @@ def check_header(
     return [SiteIssue(page, header.line, "site-header differs from template")], diff
 
 
+def check_footer(
+    page: Path, source: str, template_source: str
+) -> tuple[list[SiteIssue], list[str]]:
+    footer = footer_for(page, source)
+    expected = expected_footer_lines(page, template_source)
+    if footer is None:
+        return [SiteIssue(page, None, "expected exactly one site-footer block")], []
+    if expected is None:
+        return [SiteIssue(TEMPLATE, None, "expected exactly one site-footer block")], []
+
+    actual = render_normalized(footer)
+    if actual == expected:
+        return [], []
+
+    diff = list(
+        difflib.unified_diff(
+            expected,
+            actual,
+            fromfile=f"{relpath(TEMPLATE)} expected for {relpath(page)}",
+            tofile=relpath(page),
+            lineterm="",
+        )
+    )
+    return [SiteIssue(page, footer.line, "site-footer differs from template")], diff
+
+
 def run() -> int:
     pages = iter_pages()
     template_source = read_text(TEMPLATE)
     issues: list[SiteIssue] = []
     header_diffs: list[tuple[Path, list[str]]] = []
+    footer_diffs: list[tuple[Path, list[str]]] = []
     anchor_cache: dict[Path, set[str]] = {}
 
     for page in pages:
@@ -363,6 +415,10 @@ def run() -> int:
         issues.extend(header_issues)
         if diff:
             header_diffs.append((page, diff))
+        footer_issues, diff = check_footer(page, source, template_source)
+        issues.extend(footer_issues)
+        if diff:
+            footer_diffs.append((page, diff))
 
     if issues:
         print("Site check failed:")
@@ -372,6 +428,10 @@ def run() -> int:
             print()
             print(f"Header diff for {relpath(page)}:")
             print("\n".join(diff))
+        for page, diff in footer_diffs:
+            print()
+            print(f"Footer diff for {relpath(page)}:")
+            print("\n".join(diff))
         return 1
 
     print(f"Site check passed: {len(pages)} HTML pages checked.")
@@ -380,6 +440,7 @@ def run() -> int:
     print("- every img has non-empty alt")
     print("- every page loads assets/nav.js")
     print("- site-header blocks match templates/page-shell.html.tmpl")
+    print("- site-footer blocks match templates/page-shell.html.tmpl")
     return 0
 
 

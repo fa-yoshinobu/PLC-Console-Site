@@ -119,6 +119,7 @@
         <li>WORD デバイスでは、変化や閾値条件を使えます。</li>
         <li>各定義には個別の有効/無効があります。全体の開始 / 停止とは別に切り替えられます。</li>
         <li>同じアドレス、条件、しきい値の組み合わせは重複登録できません。別条件で監視したい場合は新しい定義として追加できます。</li>
+        <li>登録済みアドレスの別条件は、デバイス操作パネルではなくトラップ画面から追加します。</li>
       </ul>
     </section>
 
@@ -146,6 +147,15 @@
       <p class="small-note">未読バッジとトラップ通知は、トラップ画面を開いた時点でリセットされます。イベント履歴を削除する場合は <strong>クリア</strong> を使います。</p>
     </section>
 
+    <section class="section">
+      <h2>バックグラウンド動作</h2>
+      <div class="info-table" role="table" aria-label="トラップ監視のバックグラウンド動作">
+        <div role="row"><div role="cell">Android（監視中）</div><div role="cell">ホーム画面に戻っても監視を継続します。継続中は通知が表示されます。</div></div>
+        <div role="row"><div role="cell">Android（停止中）</div><div role="cell">ホーム画面に戻るとポーリングが停止します。</div></div>
+        <div role="row"><div role="cell">iOS</div><div role="cell">ホーム画面に戻ると PLC の読込を一時停止します。監視中は画面を表示したままにしてください。</div></div>
+      </div>
+    </section>
+
     <nav class="next-links" aria-label="前後ページ">
       <a href="../monitoring/time-chart.html">前へ: タイムチャート</a>
       <a href="../settings/tools-menu.html">次へ: メニュー</a>
@@ -153,12 +163,25 @@
   </main>
 
   <footer class="site-footer">
-  <div class="footer-simple">
-    <span class="brand-mark">PLC</span>
-    <span>FA Labo PLC Console 操作マニュアル</span>
-    <span style="margin-left:auto">© 2026 FA Labo</span>
-  </div>
-</footer>
+    <div class="footer-inner">
+      <a class="footer-brand" href="../index.html">
+        <span class="brand-mark">PLC</span>
+        <span>
+          <strong>FA Labo PLC Console</strong>
+          <small>操作マニュアル</small>
+        </span>
+      </a>
+      <div>
+        <nav class="footer-links" aria-label="フッターリンク">
+          <a href="../reference/support.html">問い合わせ</a>
+          <a href="../reference/privacy-policy.html">プライバシーポリシー</a>
+          <a href="../reference/terms.html">利用条件</a>
+          <a href="../reference/purchase-info.html">購入・返金</a>
+        </nav>
+        <p class="footer-copy">© 2026 FA Labo</p>
+      </div>
+    </div>
+  </footer>
   <script src="../assets/nav.js"></script>
 </body>
 </html>

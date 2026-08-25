@@ -92,12 +92,12 @@
     <section class="page-hero section">
       <p class="eyebrow">Permissions</p>
       <h1>アプリ権限</h1>
-      <p class="lead">FA Labo PLC Console が使用する Android / iOS の権限と、その用途です。権限はソースコードの Manifest、Info.plist、ファイル入出力、QR読込実装を確認して整理しています。</p>
+      <p class="lead">FA Labo PLC Console が使用する Android / iOS の権限と、その用途を説明します。</p>
     </section>
 
     <section class="section">
       <h2>概要</h2>
-      <p>実機通信は、ユーザーがプロジェクトで設定した PLC の IP アドレス、ポート、通信方式に対して行います。開発者サーバーへの PLC データ送信、広告、ユーザーを横断的に追跡する SDK は使用しません。Android 版は QR 読取に Google ML Kit Barcode Scanning SDK を使用し、同 SDK は診断および利用分析のための情報を Google へ送信します。</p>
+      <p>実機通信は、ユーザーがプロジェクトで設定した PLC の IP アドレス、ポート、通信方式に対して行います。開発者サーバーへの PLC データ送信、広告、ユーザーを横断的に追跡する SDK は使用しません。</p>
       <p>QR読込はカメラを使います。JSON / CSV / ログの読込・書出は OS のファイル選択または保存ダイアログでユーザーが選んだファイルだけを対象にします。</p>
     </section>
 
@@ -135,14 +135,12 @@
     <section class="section">
       <h2>QR とカメラ画像</h2>
       <p>カメラは QR コードの読み取りに使います。QR の内容はプロジェクトJSONを分割・圧縮したプロジェクトデータです。カメラ画像や動画を保存したり、QR 画像または読み取った QR の内容を開発者サーバーへ送信したりする用途では使用しません。</p>
-      <p>Android 版は <code>com.google.mlkit:barcode-scanning</code> を使用します。Google の公式開示によると、同 SDK は診断および利用分析のため、端末・アプリ情報、インストールごとの識別子、性能情報、API 設定、入出力サイズ、機能バージョン、イベント種別、エラーコードを HTTPS で Google へ送信します。Google の開示では、QR 画像および読み取った文字列自体は収集項目に含まれていません。現在の実装は自動ズームを有効にしていません。詳しくは <a href="https://developers.google.com/ml-kit/android-data-disclosure">ML Kit Android SDK のデータ開示</a>を確認してください。</p>
+      <p>Android 版の QR読取で使用する Google ML Kit と外部送信については、<a href="../reference/privacy-policy.html#android-qr">プライバシーポリシー</a>を確認してください。</p>
     </section>
 
     <section class="section">
       <h2>バックアップと端末移行</h2>
-      <p>Android 版は <code>android:allowBackup="true"</code> を設定しています。Android 12 以降では、クラウドバックアップからプロジェクト領域、セッションと履歴、実行中データ、プロジェクトコメントのデータベース、リモートパスワードを除外しています。</p>
-      <p>Android 12 以降の端末間移行では、プロジェクト領域、セッションと履歴、実行中データ、プロジェクトコメントが OS による移行対象となる場合があります。リモートパスワードは移行しません。Android 11 以前では、プロジェクト領域、プロジェクトコメント、リモートパスワードをバックアップ対象外にしています。実際の動作は OS、端末メーカー、ユーザー設定および移行方法によって異なります。</p>
-      <p>iOS 版は、プロジェクト領域とプロジェクトコメントをバックアップ対象外にしています。リモートパスワードは端末に限定した Keychain に保存し、バックアップや別端末への移行対象にしません。</p>
+      <p>端末内データの保存、バックアップ、端末移行については、<a href="../reference/privacy-policy.html#device-storage">プライバシーポリシー</a>を確認してください。</p>
     </section>
 
     <section class="section">
@@ -156,7 +154,26 @@
     </nav>
   </main>
 
-  <footer class="site-footer"><p>FA Labo PLC Console / アプリ権限</p></footer>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <a class="footer-brand" href="../index.html">
+        <span class="brand-mark">PLC</span>
+        <span>
+          <strong>FA Labo PLC Console</strong>
+          <small>操作マニュアル</small>
+        </span>
+      </a>
+      <div>
+        <nav class="footer-links" aria-label="フッターリンク">
+          <a href="../reference/support.html">問い合わせ</a>
+          <a href="../reference/privacy-policy.html">プライバシーポリシー</a>
+          <a href="../reference/terms.html">利用条件</a>
+          <a href="../reference/purchase-info.html">購入・返金</a>
+        </nav>
+        <p class="footer-copy">© 2026 FA Labo</p>
+      </div>
+    </div>
+  </footer>
   <script src="../assets/nav.js"></script>
 </body>
 </html>

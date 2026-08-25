@@ -120,7 +120,7 @@
       <h2>第三者サービス</h2>
       <p>FA Labo PLC Console は、広告配信またはアプリを横断してユーザーを追跡する目的のサービスを使用しません。第三者サービスについては、各社の規約とプライバシーポリシーを確認し、本ポリシーおよび適用法令と同等の保護が確保されるサービスを利用します。</p>
 
-      <h3>Android QR 読取（Google ML Kit）</h3>
+      <h3 id="android-qr">Android QR 読取（Google ML Kit）</h3>
       <p>Android 版の QR 読取には Google ML Kit Barcode Scanning SDK を使用します。<a href="https://developers.google.com/ml-kit/android-data-disclosure">Google の公式データ開示</a>によると、同 SDK は診断および利用分析のため、端末・アプリ情報、インストールごとの識別子、性能情報、API 設定、イベント種別、エラーコードなどを HTTPS で Google へ送信します。QR 画像および読み取った文字列は収集項目として記載されていません。Android 版は ML Kit の自動ズーム機能を使用していません。</p>
 
       <h3>アプリ内購入</h3>
@@ -135,7 +135,7 @@
     </section>
 
     <section class="section">
-      <h2>端末内保存、バックアップ、削除</h2>
+      <h2 id="device-storage">端末内保存、バックアップ、削除</h2>
       <p>プロジェクト、設定、コメント、履歴は端末内のアプリ領域に保存されます。Android 版では、プロジェクト関連データ、コメント、PLC のリモートパスワードをクラウドバックアップの対象外にしています。端末間移行では、リモートパスワードを除くプロジェクト関連データが移行される場合があります。iOS 版では、プロジェクト関連データとコメントをバックアップの対象外にし、リモートパスワードを端末に限定した Keychain に保存します。実際のバックアップと端末移行は、OS、端末およびユーザーの設定によって異なります。</p>
       <p>端末内データは、アプリ内の削除操作または OS のアプリデータ削除機能で削除できます。iOS の Keychain に保存したリモートパスワードは、アプリのアンインストールだけでは削除されない場合があるため、アプリ内の削除操作を利用してください。外部へ保存または共有した JSON、CSV、QR、画像は、保存先または共有先で削除してください。</p>
     </section>
@@ -167,7 +167,26 @@
     </nav>
   </main>
 
-  <footer class="site-footer"><p>FA Labo PLC Console / プライバシーポリシー</p></footer>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <a class="footer-brand" href="../index.html">
+        <span class="brand-mark">PLC</span>
+        <span>
+          <strong>FA Labo PLC Console</strong>
+          <small>操作マニュアル</small>
+        </span>
+      </a>
+      <div>
+        <nav class="footer-links" aria-label="フッターリンク">
+          <a href="../reference/support.html">問い合わせ</a>
+          <a href="../reference/privacy-policy.html">プライバシーポリシー</a>
+          <a href="../reference/terms.html">利用条件</a>
+          <a href="../reference/purchase-info.html">購入・返金</a>
+        </nav>
+        <p class="footer-copy">© 2026 FA Labo</p>
+      </div>
+    </div>
+  </footer>
   <script src="../assets/nav.js"></script>
 </body>
 </html>

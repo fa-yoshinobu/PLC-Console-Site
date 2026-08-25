@@ -121,9 +121,8 @@
     <section class="section">
       <h2>操作手順</h2>
       <ol class="steps compact">
-        <li><strong>操作を選ぶ</strong><span>表示された操作から、実行したい CPU状態を選びます。</span></li>
-        <li><strong>内容を確認する</strong><span>対象 PLC、選択した操作、設備状態が正しいことを確認します。</span></li>
-        <li><strong>送信する</strong><span>確認後、CPU操作を PLC へ送信します。</span></li>
+        <li><strong>内容を確認する</strong><span>対象 PLC、実行する CPU状態、設備状態が正しいことを確認します。</span></li>
+        <li><strong>3秒間長押しする</strong><span>対象の CPU状態ボタンを、進行表示が完了するまで押し続けます。完了すると操作が PLC へ送信されます。</span></li>
       </ol>
     </section>
 
@@ -144,8 +143,7 @@
     <section class="section">
       <div class="notice danger">
         <h2 id="output-device-write">出力デバイスを書き込む場合</h2>
-        <p>出力デバイスを操作する場合は、CPU を MELSEC では <strong>PAUSE</strong>、KEYENCE では <strong>PROGRAM</strong> 状態に変更してから書込してください。</p>
-        <p>MELSEC では <strong>STOP</strong> 状態だとリモート I/O へ出力が転送されないため、プログラムだけを停止させる <strong>PAUSE</strong> を使用してください。</p>
+        <p>出力デバイスの書込に必要な CPU状態は、PLC機種や設備構成によって異なります。設備側の操作手順と PLCメーカーの資料を確認してください。</p>
       </div>
     </section>
 
@@ -163,12 +161,25 @@
   </main>
 
   <footer class="site-footer">
-  <div class="footer-simple">
-    <span class="brand-mark">PLC</span>
-    <span>FA Labo PLC Console 操作マニュアル</span>
-    <span style="margin-left:auto">© 2026 FA Labo</span>
-  </div>
-</footer>
+    <div class="footer-inner">
+      <a class="footer-brand" href="../index.html">
+        <span class="brand-mark">PLC</span>
+        <span>
+          <strong>FA Labo PLC Console</strong>
+          <small>操作マニュアル</small>
+        </span>
+      </a>
+      <div>
+        <nav class="footer-links" aria-label="フッターリンク">
+          <a href="../reference/support.html">問い合わせ</a>
+          <a href="../reference/privacy-policy.html">プライバシーポリシー</a>
+          <a href="../reference/terms.html">利用条件</a>
+          <a href="../reference/purchase-info.html">購入・返金</a>
+        </nav>
+        <p class="footer-copy">© 2026 FA Labo</p>
+      </div>
+    </div>
+  </footer>
   <script src="../assets/nav.js"></script>
 </body>
 </html>

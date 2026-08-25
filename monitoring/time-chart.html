@@ -102,7 +102,7 @@
           <ul>
             <li><strong>画面名</strong>: アプリ下部/上部のタブでは <strong>タイムチャート</strong> と表示されます。</li>
             <li><strong>CH追加</strong>: 監視したいアドレスをチャンネルに追加します。</li>
-            <li><strong>開始 / 停止</strong>: 記録を開始・停止します。</li>
+            <li><strong>開始 / 停止</strong>: 開始すると前回の履歴を消去して新しい記録を開始します。停止すると記録を終了します。</li>
             <li><strong>CSV</strong>: 記録データを書き出します。</li>
             <li><strong>クリア</strong>: 表示中の履歴を消去します。</li>
           </ul>
@@ -124,11 +124,11 @@
     </section>
 
     <section class="section">
-      <h2>記録容量と最大時間</h2>
+      <h2>記録容量と時間の目安</h2>
       <div class="info-table" role="table" aria-label="タイムチャート仕様">
         <div role="row"><div role="cell">記録間隔</div><div role="cell">Monitor Interval と同じです。通信成功 1 回につき 1 サンプルを追加します。</div></div>
         <div role="row"><div role="cell">最大サンプル数</div><div role="cell">1,000 サンプル</div></div>
-        <div role="row"><div role="cell">最大記録時間</div><div role="cell">Monitor Interval × 1,000 サンプルです。既定値 500 ms では約 500 秒です。</div></div>
+        <div role="row"><div role="cell">記録時間の目安</div><div role="cell">全周期で通信に成功した場合は Monitor Interval × 1,000 サンプルです。既定値 500 ms では約 500 秒です。</div></div>
         <div role="row"><div role="cell">最大チャンネル数</div><div role="cell">20 チャンネル</div></div>
       </div>
       <p class="small-note">バッファが上限に達すると、古いサンプルから順に削除されます。波形バッファはプロジェクト単位で保存され、前回と同じ接続設定を開いたときだけ復元されます。</p>
@@ -160,12 +160,25 @@
   </main>
 
   <footer class="site-footer">
-  <div class="footer-simple">
-    <span class="brand-mark">PLC</span>
-    <span>FA Labo PLC Console 操作マニュアル</span>
-    <span style="margin-left:auto">© 2026 FA Labo</span>
-  </div>
-</footer>
+    <div class="footer-inner">
+      <a class="footer-brand" href="../index.html">
+        <span class="brand-mark">PLC</span>
+        <span>
+          <strong>FA Labo PLC Console</strong>
+          <small>操作マニュアル</small>
+        </span>
+      </a>
+      <div>
+        <nav class="footer-links" aria-label="フッターリンク">
+          <a href="../reference/support.html">問い合わせ</a>
+          <a href="../reference/privacy-policy.html">プライバシーポリシー</a>
+          <a href="../reference/terms.html">利用条件</a>
+          <a href="../reference/purchase-info.html">購入・返金</a>
+        </nav>
+        <p class="footer-copy">© 2026 FA Labo</p>
+      </div>
+    </div>
+  </footer>
   <script src="../assets/nav.js"></script>
 </body>
 </html>

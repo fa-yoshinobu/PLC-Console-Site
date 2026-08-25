@@ -6,7 +6,7 @@
   --ink: #17211b;
   --muted: #5f6d65;
   --line: #d8e0da;
-  --accent: #168a56;
+  --accent: #117346;
   --accent-2: #255ca8;
   --accent-soft: #e4f4ec;
   --danger: #9c2f2f;
@@ -928,7 +928,7 @@ figcaption {
 
 .form-field input::placeholder,
 .form-field textarea::placeholder {
-  color: #77857d;
+  color: var(--muted);
 }
 
 .required {
@@ -994,7 +994,7 @@ figcaption {
 }
 
 .form-submit:hover {
-  background: #117346;
+  background: #0d5e38;
   box-shadow: 0 8px 20px rgba(22, 138, 86, 0.2);
 }
 
@@ -1093,31 +1093,6 @@ figcaption {
   margin-top: 14px;
   color: var(--muted);
   font-size: 0.84rem;
-}
-
-/* Inner-page footer (single <p> fallback) */
-.site-footer > p {
-  width: min(1180px, calc(100% - 32px));
-  margin: 0 auto;
-  font-size: 0.88rem;
-}
-
-/* Simple footer for inner pages */
-.footer-simple {
-  width: min(1180px, calc(100% - 32px));
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  color: var(--muted);
-  font-size: 0.88rem;
-}
-
-.footer-simple .brand-mark {
-  width: 32px;
-  height: 26px;
-  font-size: 0.72rem;
-  flex-shrink: 0;
 }
 
 /* ─── Next/Prev links ─── */
