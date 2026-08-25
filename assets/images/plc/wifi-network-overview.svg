@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520" role="img" aria-labelledby="title desc">
+  <title id="title">スマートフォンからWi-Fi経由でPLCへ接続する基本構成</title>
+  <desc id="desc">スマートフォンをWi-Fiルーターまたはアクセスポイントへ接続し、そこから有線LANでPLCへ接続します。すべて同じローカルネットワークに配置します。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0 0 L12 6 L0 12 Z" fill="#238768"/>
+    </marker>
+    <style>
+      .title{font:700 30px system-ui,"Yu Gothic",sans-serif;fill:#15211e}
+      .label{font:700 25px system-ui,"Yu Gothic",sans-serif;fill:#15211e}
+      .sub{font:500 19px system-ui,"Yu Gothic",sans-serif;fill:#40504b}
+      .line{stroke:#238768;stroke-width:6;fill:none;marker-end:url(#arrow)}
+      .device{fill:#fff;stroke:#80aa9d;stroke-width:3}
+      .accent{fill:#dff4ed;stroke:#238768;stroke-width:3}
+    </style>
+  </defs>
+  <rect width="1200" height="520" rx="24" fill="#f3f8f6"/>
+  <text x="600" y="55" text-anchor="middle" class="title">スマートフォンからPLCへ接続する基本構成</text>
+
+  <rect x="55" y="125" width="245" height="245" rx="24" class="device"/>
+  <rect x="125" y="155" width="105" height="145" rx="15" fill="#17211f"/>
+  <rect x="137" y="171" width="81" height="108" rx="7" fill="#dff4ed"/>
+  <circle cx="177.5" cy="289" r="5" fill="#dff4ed"/>
+  <text x="177" y="332" text-anchor="middle" class="label">スマートフォン</text>
+  <text x="177" y="358" text-anchor="middle" class="sub">PLC Console</text>
+
+  <path d="M315 245 H420" class="line"/>
+  <text x="368" y="218" text-anchor="middle" class="label">Wi-Fi</text>
+
+  <rect x="435" y="125" width="330" height="245" rx="24" class="accent"/>
+  <path d="M535 222 Q600 160 665 222 M555 244 Q600 202 645 244 M579 266 Q600 246 621 266" fill="none" stroke="#238768" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="600" cy="284" r="10" fill="#238768"/>
+  <text x="600" y="328" text-anchor="middle" class="label">ルーター／AP</text>
+  <text x="600" y="355" text-anchor="middle" class="sub">LAN: 192.168.250.1</text>
+
+  <path d="M780 245 H875" class="line"/>
+  <text x="827" y="207" text-anchor="middle" class="label">Ethernet</text>
+  <text x="827" y="233" text-anchor="middle" class="sub">LAN</text>
+
+  <rect x="890" y="125" width="255" height="245" rx="24" class="device"/>
+  <rect x="952" y="166" width="130" height="112" rx="10" fill="#17211f"/>
+  <g fill="#54df9b">
+    <circle cx="978" cy="194" r="8"/><circle cx="1004" cy="194" r="8"/><circle cx="1030" cy="194" r="8"/><circle cx="1056" cy="194" r="8"/>
+    <circle cx="978" cy="222" r="8"/><circle cx="1004" cy="222" r="8"/><circle cx="1030" cy="222" r="8"/><circle cx="1056" cy="222" r="8"/>
+    <circle cx="978" cy="250" r="8"/><circle cx="1004" cy="250" r="8"/><circle cx="1030" cy="250" r="8"/><circle cx="1056" cy="250" r="8"/>
+  </g>
+  <text x="1017" y="328" text-anchor="middle" class="label">PLC</text>
+  <text x="1017" y="355" text-anchor="middle" class="sub">192.168.250.100</text>
+
+  <path d="M120 420 V440 H1080 V420" fill="none" stroke="#80aa9d" stroke-width="3"/>
+  <text x="600" y="478" text-anchor="middle" class="label">同じローカルネットワーク</text>
+  <text x="600" y="505" text-anchor="middle" class="sub">例: 192.168.250.0 / 255.255.255.0</text>
+</svg>

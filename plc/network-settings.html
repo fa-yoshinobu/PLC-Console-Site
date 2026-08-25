@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="FA Labo PLC Console でスマートフォンから Wi-Fi 経由で PLC に接続するためのネットワーク構成例。">
+  <title>Wi-Fi・ネットワーク設定例 | FA Labo PLC Console 操作マニュアル</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="../index.html"><span class="brand-mark">PLC</span><span><strong>FA Labo PLC Console</strong><small>操作マニュアル</small></span></a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="メニュー" aria-expanded="false" aria-controls="top-nav">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="top-nav" id="top-nav" aria-label="主要ページ">
+        <details class="nav-group">
+          <summary>はじめに</summary>
+          <div class="nav-menu">
+            <a href="../start/install.html">入手</a>
+            <a href="../start/getting-started.html">はじめる</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary class="active">PLC接続</summary>
+          <div class="nav-menu">
+            <a href="../plc/connection.html">接続・プロジェクト</a>
+            <a class="active" aria-current="page" href="../plc/network-settings.html">Wi-Fi・ネットワーク</a>
+            <a href="../plc/plc-side-settings.html">接続設定例</a>
+            <a href="../plc/melsec-settings.html">MELSEC</a>
+            <a href="../plc/keyence-settings.html">KEYENCE</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>操作</summary>
+          <div class="nav-menu">
+            <a href="../monitoring/monitoring.html">監視</a>
+            <a href="../monitoring/list-edit.html">リスト登録編集</a>
+            <a href="../monitoring/focus-panel.html">デバイス操作パネル</a>
+            <a href="../monitoring/time-chart.html">タイムチャート</a>
+            <a href="../monitoring/traps.html">トラップ</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>設定</summary>
+          <div class="nav-menu">
+            <a href="../settings/tools-menu.html">メニュー</a>
+            <a href="../settings/cpu-control.html">CPU操作</a>
+            <a href="../settings/device-range.html">デバイス範囲</a>
+            <a href="../settings/monitor-display-settings.html">モニタ表示設定</a>
+            <a href="../settings/comment-import.html">コメント読込</a>
+            <a href="../settings/csv-comment-import.html">CSVコメント読込</a>
+            <a href="../settings/qr-import.html">QR読込</a>
+            <a href="../settings/json-import.html">JSON読込</a>
+            <a href="../settings/json-export.html">JSON書出</a>
+            <a href="../settings/error-history.html">エラー履歴</a>
+            <a href="../settings/app-settings.html">アプリ設定</a>
+            <a href="../settings/license.html">ライセンス/購入</a>
+            <a href="../settings/version-info.html">バージョン情報</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>ProjectBuilder</summary>
+          <div class="nav-menu">
+            <a href="../projectbuilder/projectbuilder.html">ProjectBuilder</a>
+            <a href="../projectbuilder/projectbuilder-devices.html">入力</a>
+            <a href="../projectbuilder/projectbuilder-qr.html">QR 生成</a>
+          </div>
+        </details>
+        <details class="nav-group">
+          <summary>サポート</summary>
+          <div class="nav-menu">
+            <a href="../search.html">サイト内検索</a>
+            <a href="../reference/troubleshooting.html">困ったとき</a>
+            <a href="../reference/support.html">問い合わせ</a>
+            <a href="../reference/purchase-info.html">購入・返金</a>
+            <a href="../reference/release-notes.html">リリースノート</a>
+            <a href="../reference/glossary.html">用語集</a>
+            <a href="../reference/privacy-policy.html">プライバシー</a>
+            <a href="../reference/app-permissions.html">権限</a>
+            <a href="../reference/terms.html">利用条件</a>
+          </div>
+        </details>
+      </nav>
+    </div>
+  </header>
+
+  <main class="doc-page">
+    <nav class="breadcrumb" aria-label="パンくず"><a href="../index.html">トップ</a><span aria-current="page">Wi-Fi・ネットワーク設定例</span></nav>
+    <section class="page-hero section">
+      <p class="eyebrow">Wi-Fi / Network</p>
+      <h1>Wi-Fi・ネットワーク設定例</h1>
+      <p class="lead">スマートフォンから Wi-Fi 経由で PLC に接続するための、ルーター／アクセスポイントと IP アドレスの構成例です。</p>
+    </section>
+
+    <section class="section">
+      <h2>基本構成</h2>
+      <figure class="inline-shot section-shot">
+        <img src="../assets/images/plc/wifi-network-overview.svg" width="1200" height="520" alt="スマートフォンをWi-Fiでルーターまたはアクセスポイントへ接続し、有線LANでPLCへ接続する構成図" loading="lazy">
+        <figcaption>スマートフォンと PLC を同じローカルネットワークへ接続します</figcaption>
+      </figure>
+      <div class="info-table" role="table" aria-label="Wi-Fiを使用したPLC接続の基本構成">
+        <div role="row"><div role="cell">スマートフォン</div><div role="cell">設備の Wi-Fi に接続し、PLC Console から PLC の IP アドレスを指定します。</div></div>
+        <div role="row"><div role="cell">ルーター／アクセスポイント</div><div role="cell">スマートフォンの Wi-Fi と PLC の有線 LAN を同じローカルネットワークへ接続します。</div></div>
+        <div role="row"><div role="cell">PLC</div><div role="cell">Ethernet ポートを LAN 側へ接続し、重複しない固定 IP アドレスを設定します。</div></div>
+      </div>
+      <p class="small-note">PLC 通信にインターネット接続は必要ありません。設備付近の管理されたローカルネットワークで使用します。</p>
+    </section>
+
+    <section class="section">
+      <h2>構成例</h2>
+      <div class="content-grid">
+        <article>
+          <h3>既設LANにアクセスポイントを追加</h3>
+          <p>既設の PLC 用 LAN にアクセスポイントを接続します。アクセスポイントは AP／ブリッジモードを使用し、スマートフォンと PLC を同じネットワークへ接続します。</p>
+        </article>
+        <article>
+          <h3>専用Wi-Fiルーターを使用</h3>
+          <p>PLC をルーターの LAN ポートへ接続し、スマートフォンをそのルーターの Wi-Fi へ接続します。WAN ポートやインターネット回線は使用しません。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>IPアドレス設定例</h2>
+      <p>次は独立したネットワークを新しく構成する場合の例です。既設LANへ接続する場合は、使用中のアドレスと重複しない値を使用してください。</p>
+      <div class="info-table" role="table" aria-label="IPアドレスの設定例">
+        <div role="row"><div role="cell">ルーター／アクセスポイント</div><div role="cell"><code>192.168.250.1</code> / <code>255.255.255.0</code></div></div>
+        <div role="row"><div role="cell">PLC</div><div role="cell"><code>192.168.250.100</code> / <code>255.255.255.0</code></div></div>
+        <div role="row"><div role="cell">スマートフォン</div><div role="cell">DHCP で <code>192.168.250.10</code> ～ <code>192.168.250.99</code> の範囲から割り当てます。</div></div>
+        <div role="row"><div role="cell">PLC Console</div><div role="cell">接続先 IP に <code>192.168.250.100</code>、Port に PLC 側で設定したポート番号を入力します。</div></div>
+      </div>
+      <p class="small-note">スマートフォンと PLC が同じサブネット内にある場合、PLC のデフォルトゲートウェイは通信に使用しません。</p>
+    </section>
+
+    <section class="section">
+      <h2>ルーター／アクセスポイントで確認する設定</h2>
+      <div class="info-table" role="table" aria-label="ルーターとアクセスポイントの確認項目">
+        <div role="row"><div role="cell">接続ポート</div><div role="cell">PLC は LAN ポートまたは同じLAN上のスイッチへ接続します。WAN ポートへは接続しません。</div></div>
+        <div role="row"><div role="cell">DHCP</div><div role="cell">スマートフォンへ割り当てる範囲と、PLC の固定 IP アドレスが重複しないようにします。</div></div>
+        <div role="row"><div role="cell">端末間通信</div><div role="cell">APアイソレーション、プライバシーセパレーター、クライアント分離など、無線端末からLAN側への通信を遮断する機能を無効にします。</div></div>
+        <div role="row"><div role="cell">ゲストWi-Fi</div><div role="cell">LAN 側への接続を禁止するゲスト用 SSID は使用しません。</div></div>
+        <div role="row"><div role="cell">VLAN／ファイアウォール</div><div role="cell">スマートフォンから PLC の IP アドレスと、PLC 通信で使用する TCP／UDP ポートへ到達できるようにします。</div></div>
+        <div role="row"><div role="cell">無線セキュリティ</div><div role="cell">WPA2 または WPA3 を使用し、管理画面と Wi-Fi の初期パスワードを変更します。</div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>接続確認</h2>
+      <ol class="steps compact">
+        <li><strong>PLCをLANへ接続する</strong><span>PLC の Ethernet ポートと、ルーター／アクセスポイント側の LAN を接続します。</span></li>
+        <li><strong>スマートフォンをWi-Fiへ接続する</strong><span>PLC と同じローカルネットワークへつながる SSID を選びます。</span></li>
+        <li><strong>PLC設定を入力する</strong><span>PLC Console で PLC の IP、Port、TCP／UDPをPLC側の設定に合わせます。</span></li>
+        <li><strong>到達確認を実行する</strong><span>通信設定の到達確認を実行し、成功後に PLC へ接続します。</span></li>
+      </ol>
+      <p>到達できない場合は、スマートフォンに割り当てられた IP アドレス、サブネット、接続中の SSID、端末間通信の制限、PLC の IP とポートを確認してください。</p>
+    </section>
+
+    <section class="section">
+      <div class="notice">
+        <h2>使用しない構成</h2>
+        <p>PLC の通信ポートをインターネットへ公開しないでください。ポート転送、VPN、公衆 Wi-Fi を使用せず、設備付近のローカルネットワークから接続します。</p>
+      </div>
+    </section>
+
+    <nav class="next-links" aria-label="前後ページ">
+      <a href="connection.html">前へ: 接続・プロジェクト</a>
+      <a href="plc-side-settings.html">次へ: 接続設定例</a>
+    </nav>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <a class="footer-brand" href="../index.html">
+        <span class="brand-mark">PLC</span>
+        <span>
+          <strong>FA Labo PLC Console</strong>
+          <small>操作マニュアル</small>
+        </span>
+      </a>
+      <div>
+        <nav class="footer-links" aria-label="フッターリンク">
+          <a href="../search.html">サイト内検索</a>
+          <a href="../reference/support.html">問い合わせ</a>
+          <a href="../reference/privacy-policy.html">プライバシーポリシー</a>
+          <a href="../reference/terms.html">利用条件</a>
+          <a href="../reference/purchase-info.html">購入・返金</a>
+        </nav>
+        <p class="footer-copy">© 2026 FA Labo</p>
+      </div>
+    </div>
+  </footer>
+  <script src="../assets/nav.js"></script>
+</body>
+</html>

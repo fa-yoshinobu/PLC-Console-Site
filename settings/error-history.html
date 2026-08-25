@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="FA Labo PLC Console のエラー履歴。通信、読込、書込、転送のエラー詳細を確認します。">
+  <meta name="description" content="FA Labo PLC Console のエラー履歴。アプリで発生したエラーの確認とログ保存について説明します。">
   <title>エラー履歴 | FA Labo PLC Console 操作マニュアル</title>
   <link rel="stylesheet" href="../assets/style.css">
 </head>
@@ -26,6 +26,7 @@
           <summary>PLC接続</summary>
           <div class="nav-menu">
             <a href="../plc/connection.html">接続・プロジェクト</a>
+            <a href="../plc/network-settings.html">Wi-Fi・ネットワーク</a>
             <a href="../plc/plc-side-settings.html">接続設定例</a>
             <a href="../plc/melsec-settings.html">MELSEC</a>
             <a href="../plc/keyence-settings.html">KEYENCE</a>
@@ -53,7 +54,6 @@
             <a href="../settings/qr-import.html">QR読込</a>
             <a href="../settings/json-import.html">JSON読込</a>
             <a href="../settings/json-export.html">JSON書出</a>
-            <a href="../settings/project-json.html">プロジェクトJSON</a>
             <a class="active" aria-current="page" href="../settings/error-history.html">エラー履歴</a>
             <a href="../settings/app-settings.html">アプリ設定</a>
             <a href="../settings/license.html">ライセンス/購入</a>
@@ -91,12 +91,12 @@
     <section class="page-hero section">
       <p class="eyebrow">Error History</p>
       <h1>エラー履歴</h1>
-      <p class="lead">通信、読込、書込、QR / JSON、コメント読込で発生したエラーの詳細を確認します。原因確認やサポート問い合わせ時の整理に使います。</p>
+      <p class="lead">アプリで発生した通信やファイル操作などのエラーを確認します。</p>
     </section>
 
     <section class="section">
       <div class="image-grid">
-        <figure><img src="../assets/images/settings/error-history.png" width="768" height="561" alt="エラー履歴画面" loading="lazy"><figcaption>エラー履歴</figcaption></figure>
+        <figure><img src="../assets/images/settings/error-history.png" width="1536" height="842" alt="エラー履歴画面" loading="lazy"><figcaption>エラー履歴</figcaption></figure>
       </div>
     </section>
 
@@ -104,23 +104,14 @@
       <h2>画面概要</h2>
       <div class="info-table" role="table" aria-label="エラー履歴の概要">
         <div role="row"><div role="cell">開き方</div><div role="cell">右上メニューから <strong>エラー履歴</strong> を開きます。</div></div>
-        <div role="row"><div role="cell">目的</div><div role="cell">通信、読込、書込、QR / JSON、コメント読込で発生したエラーの原因確認に使います。</div></div>
-        <div role="row"><div role="cell">通信エラー</div><div role="cell">接続、切断、タイムアウト、PLC からの応答エラーを確認します。</div></div>
-        <div role="row"><div role="cell">読込 / 書込エラー</div><div role="cell">対象デバイス、データタイプ、アドレス範囲、書込ロックの確認に使います。</div></div>
-        <div role="row"><div role="cell">データ入出力エラー</div><div role="cell">QR読込、JSON読込 / 書出、CSVコメント読込の失敗内容を確認します。</div></div>
+        <div role="row"><div role="cell">履歴の見方</div><div role="cell">タイトル、発生時刻、プロジェクト名、接続先、詳細を表示します。行を展開すると診断情報を確認できます。</div></div>
+        <div role="row"><div role="cell">ログ保存</div><div role="cell">履歴がある場合は <strong>ログ保存</strong> から CSV ファイルとして保存できます。</div></div>
+        <div role="row"><div role="cell">クリア</div><div role="cell"><strong>クリア</strong> を選び、確認画面で実行すると保存済みのエラー履歴を削除します。</div></div>
       </div>
     </section>
 
     <section class="section">
-      <h2>確認手順</h2>
-      <ol class="steps compact">
-        <li><strong>直近のエラーを見る</strong><span>発生時刻、操作内容、対象デバイス、メッセージを確認します。</span></li>
-        <li><strong>設定を見直す</strong><span>接続設定、デバイス範囲、書込ロック、ファイル内容など、該当する項目を確認します。</span></li>
-      </ol>
-    </section>
-
-    <section class="section">
-      <h2>CSV 書出</h2>
+      <h2>ログ保存</h2>
       <p>エラー履歴は <code>error-history-YYYYMMDD-HHMMSS.csv</code> というファイル名で書き出します。</p>
       <div class="info-table" role="table" aria-label="エラー履歴 CSV">
         <div role="row"><div role="cell">アプリ情報</div><div role="cell"><code>AppPlatform</code>、<code>AppVersion</code>、<code>BuildNumber</code>、<code>OSVersion</code>、<code>NativeCoreVersion</code> を出力します。</div></div>
@@ -129,33 +120,8 @@
       </div>
     </section>
 
-    <section class="section">
-      <h2>エラー別の見直し先</h2>
-      <div class="content-grid">
-        <article>
-          <h3>接続できない</h3>
-          <p>IP、ポート、TCP / UDP、PLC 側の通信設定を確認します。MELSEC はルート指定とリモートパスワードも確認してください。</p>
-        </article>
-        <article>
-          <h3>書込できない</h3>
-          <p>書込ロック、アドレスの有効範囲、データタイプ、入力値を確認します。出力デバイスを書き込む場合は CPU 状態も確認します。</p>
-        </article>
-        <article>
-          <h3>読込できない</h3>
-          <p>対象デバイスが CPU 機種の範囲内か、通信中か、PLC からエラー応答が返っていないかを確認します。</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="notice">
-        <h2>問い合わせ時の情報</h2>
-        <p>サポートへ問い合わせる場合は、発生した操作、エラー履歴の内容、接続設定、PLC 機種、再現手順をまとめてください。問い合わせ項目は <a href="../reference/support.html">サポート</a> も確認してください。</p>
-      </div>
-    </section>
-
     <nav class="next-links" aria-label="前後ページ">
-      <a href="../settings/project-json.html">前へ: プロジェクトJSON</a>
+      <a href="../settings/json-export.html">前へ: JSON書出</a>
       <a href="../settings/app-settings.html">次へ: アプリ設定</a>
     </nav>
   </main>

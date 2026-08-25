@@ -26,6 +26,7 @@
           <summary>PLC接続</summary>
           <div class="nav-menu">
             <a href="../plc/connection.html">接続・プロジェクト</a>
+            <a href="../plc/network-settings.html">Wi-Fi・ネットワーク</a>
             <a href="../plc/plc-side-settings.html">接続設定例</a>
             <a href="../plc/melsec-settings.html">MELSEC</a>
             <a href="../plc/keyence-settings.html">KEYENCE</a>
@@ -53,7 +54,6 @@
             <a href="../settings/qr-import.html">QR読込</a>
             <a href="../settings/json-import.html">JSON読込</a>
             <a href="../settings/json-export.html">JSON書出</a>
-            <a href="../settings/project-json.html">プロジェクトJSON</a>
             <a href="../settings/error-history.html">エラー履歴</a>
             <a href="../settings/app-settings.html">アプリ設定</a>
             <a href="../settings/license.html">ライセンス/購入</a>
@@ -95,6 +95,12 @@
     </section>
 
     <section class="section">
+      <div class="image-grid">
+        <figure><img src="../assets/images/monitoring/time-chart.png" width="1536" height="2048" alt="タイムチャート記録画面" loading="lazy"><figcaption>タイムチャート</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="section">
       <div class="two-column">
         <div>
           <h2>基本操作</h2>
@@ -112,6 +118,9 @@
     <section class="section">
       <h2>チャンネル登録と表示</h2>
       <p>タイムチャートのチャンネル登録は、リスト登録とは別です。<strong>タイムチャート</strong> 画面の <strong>CH追加</strong>、またはデバイス操作パネルの <strong>タイムチャート</strong> から追加します。</p>
+      <div class="image-grid">
+        <figure><img src="../assets/images/monitoring/time-chart-channel-add.png" width="1536" height="2048" alt="タイムチャートのチャンネル追加画面" loading="lazy"><figcaption>チャンネル追加</figcaption></figure>
+      </div>
       <div class="info-table" role="table" aria-label="タイムチャート表示状態">
         <div role="row"><div role="cell">登録直後</div><div role="cell">記録を開始していなくても、登録済みチャンネルとして画面に表示されます。</div></div>
         <div role="row"><div role="cell">開始前</div><div role="cell">記録サンプルがまだないため、現在値は <code>--</code> と表示されます。</div></div>

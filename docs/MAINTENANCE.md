@@ -30,13 +30,12 @@ FA Labo PLC Console マニュアルサイトのメンテナ向け資料です。
 | `.github/scripts/build_search_index.py` | 検索データの生成と更新漏れ検査 |
 | `templates/page-shell.html.tmpl` | 共通ヘッダー/ナビ更新時の参照テンプレート |
 | `templates/store-links.html.tmpl` | 正式 Store URL と公式バッジが確定した後に公開ページへ挿入するテンプレート |
-| `TODO.md` | ページ作成状態と更新チェックリスト |
 
 ## Editing Workflow
 
 1. Android / iOS / ProjectBuilder の source code、localization、resource を確認する。
 2. 実装されている画面名、ボタン名、メニュー名に合わせて本文を書く。
-3. 新しいページを追加した場合は、`index.html`、上部ナビ、前後リンク、`TODO.md` の状態一覧を同時に更新する。
+3. 新しいページを追加した場合は、`index.html`、上部ナビ、前後リンクを同時に更新する。
 4. スクリーンショットを差し替えた場合は、対象画面と撮影日を作業メモや PR 説明で追えるようにする。
 5. 更新後にリンク、画像参照、表記ゆれ、実装との矛盾を確認する。
 6. 共通ヘッダーや上部ナビを変更する場合は、`templates/page-shell.html.tmpl` を先に更新し、各 HTML へ反映する。
@@ -138,7 +137,6 @@ FA Labo PLC Console マニュアルサイトのメンテナ向け資料です。
 
 ## Tracking
 
-ページ作成状態と更新チェックリストは [`TODO.md`](../TODO.md) で管理します。
 画面、パネル、シート、ダイアログの正式名と内部名の対応は [`WINDOW_NAMES.md`](./WINDOW_NAMES.md) で管理します。
 画面名以外の機能名、操作名、表示モード名、データ名は [`NAMING_CATALOG.md`](./NAMING_CATALOG.md) で管理します。
 

@@ -26,6 +26,7 @@
           <summary>PLC接続</summary>
           <div class="nav-menu">
             <a href="../plc/connection.html">接続・プロジェクト</a>
+            <a href="../plc/network-settings.html">Wi-Fi・ネットワーク</a>
             <a href="../plc/plc-side-settings.html">接続設定例</a>
             <a href="../plc/melsec-settings.html">MELSEC</a>
             <a href="../plc/keyence-settings.html">KEYENCE</a>
@@ -53,7 +54,6 @@
             <a href="../settings/qr-import.html">QR読込</a>
             <a href="../settings/json-import.html">JSON読込</a>
             <a href="../settings/json-export.html">JSON書出</a>
-            <a href="../settings/project-json.html">プロジェクトJSON</a>
             <a href="../settings/error-history.html">エラー履歴</a>
             <a href="../settings/app-settings.html">アプリ設定</a>
             <a href="../settings/license.html">ライセンス/購入</a>
@@ -98,9 +98,9 @@
       <h2>画面概要</h2>
       <div class="info-table" role="table" aria-label="CSVコメント読込の概要">
         <div role="row"><div role="cell">開き方</div><div role="cell">右上メニューから <strong>CSVコメント読込</strong> を開きます。</div></div>
-        <div role="row"><div role="cell">目的</div><div role="cell">PC や ProjectBuilder で作成したコメント表を端末へ取り込みます。</div></div>
+        <div role="row"><div role="cell">目的</div><div role="cell">CSV ファイルからデバイスコメントを端末へ取り込みます。</div></div>
         <div role="row"><div role="cell">対象</div><div role="cell">CSV に含まれるデバイスアドレスとコメントです。MELSEC / KEYENCE のどちらでも使用できます。</div></div>
-        <div role="row"><div role="cell">上限</div><div role="cell">5 MiB（5,242,880 bytes）、100,000 レコード、コメント 1 件あたり 1,024 文字です。</div></div>
+        <div role="row"><div role="cell">上限</div><div role="cell">CSV ファイルは最大 5 MiB（5,242,880 bytes）、最大 100,000 レコードです。ヘッダーと空レコードもレコード数に含まれます。コメントは 1 件あたり最大 1,024 文字で、超過した行はスキップされます。</div></div>
         <div role="row"><div role="cell">確認先</div><div role="cell">読込結果は成功件数とスキップ件数で確認します。スキップ行がある場合は、行番号と理由を画面表示とエラー履歴で確認できます。</div></div>
       </div>
     </section>

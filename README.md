@@ -54,7 +54,6 @@ Start-Process .\index.html
 
 メンテナ向けの編集ルール、ディレクトリ構成、GitHub Pages 運用は [`docs/MAINTENANCE.md`](docs/MAINTENANCE.md) に分けています。
 
-- [`TODO.md`](TODO.md): ページ作成状態と更新チェックリスト
 - [`docs/DEVELOPMENT_HISTORY.md`](docs/DEVELOPMENT_HISTORY.md): 開発・保守作業の履歴
 - [`.github/STORE_RELEASE_CHECKLIST.md`](.github/STORE_RELEASE_CHECKLIST.md): Store 公開時の内部チェック
 

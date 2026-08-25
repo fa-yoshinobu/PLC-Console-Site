@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="FA Labo PLC Console のモニタ表示設定。ブロック監視の表示密度とグラフ100%値を設定します。">
+  <meta name="description" content="FA Labo PLC Console のモニタ表示設定。ブロック表示とグラフ100%値を設定します。">
   <title>モニタ表示設定 | FA Labo PLC Console 操作マニュアル</title>
   <link rel="stylesheet" href="../assets/style.css">
 </head>
@@ -26,6 +26,7 @@
           <summary>PLC接続</summary>
           <div class="nav-menu">
             <a href="../plc/connection.html">接続・プロジェクト</a>
+            <a href="../plc/network-settings.html">Wi-Fi・ネットワーク</a>
             <a href="../plc/plc-side-settings.html">接続設定例</a>
             <a href="../plc/melsec-settings.html">MELSEC</a>
             <a href="../plc/keyence-settings.html">KEYENCE</a>
@@ -53,7 +54,6 @@
             <a href="../settings/qr-import.html">QR読込</a>
             <a href="../settings/json-import.html">JSON読込</a>
             <a href="../settings/json-export.html">JSON書出</a>
-            <a href="../settings/project-json.html">プロジェクトJSON</a>
             <a href="../settings/error-history.html">エラー履歴</a>
             <a href="../settings/app-settings.html">アプリ設定</a>
             <a href="../settings/license.html">ライセンス/購入</a>
@@ -91,7 +91,7 @@
     <section class="page-hero section">
       <p class="eyebrow">Monitor Display Settings</p>
       <h1>モニタ表示設定</h1>
-      <p class="lead">ブロック監視の表示密度と、数値バーの基準になるグラフ100%値を設定します。現場で見たい点数と読みやすさのバランスを調整できます。</p>
+      <p class="lead">ブロック表示と、数値バーの基準になるグラフ100%値を設定します。現場で見たい点数と読みやすさのバランスを調整できます。</p>
     </section>
 
     <section class="section">
@@ -103,15 +103,15 @@
     <section class="section">
       <h2>画面概要</h2>
       <div class="info-table" role="table" aria-label="モニタ表示設定項目">
-        <div role="row"><div role="cell">開き方</div><div role="cell">右上メニューから <strong>モニタ表示設定</strong> を開きます。ブロック監視画面では表示密度だけを直接切り替えられます。</div></div>
-        <div role="row"><div role="cell">目的</div><div role="cell">ブロック監視の表示密度と数値バーの基準値を設定します。</div></div>
-        <div role="row"><div role="cell">表示密度</div><div role="cell"><code>コンパクト</code> と <code>詳細</code> を切り替えます。</div></div>
+        <div role="row"><div role="cell">開き方</div><div role="cell">右上メニューから <strong>モニタ表示設定</strong> を開きます。ブロック監視画面ではブロック表示だけを直接切り替えられます。</div></div>
+        <div role="row"><div role="cell">目的</div><div role="cell">ブロック表示と数値バーの基準値を設定します。</div></div>
+        <div role="row"><div role="cell">ブロック表示</div><div role="cell"><code>コンパクト</code> と <code>詳細</code> を切り替えます。</div></div>
         <div role="row"><div role="cell">グラフ100%値</div><div role="cell">数値デバイスのバー表示で 100% として扱う値を設定します。</div></div>
       </div>
     </section>
 
     <section class="section">
-      <h2>表示密度</h2>
+      <h2>ブロック表示</h2>
       <div class="content-grid">
         <article>
           <h3>コンパクト</h3>
