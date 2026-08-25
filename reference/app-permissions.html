@@ -104,14 +104,14 @@
     <section class="section">
       <h2>Android</h2>
       <div class="info-table" role="table" aria-label="Android 権限">
-        <div role="row"><div role="cell">INTERNET</div><div role="cell">MELSEC / KEYENCE の実機通信で、ユーザーが設定した PLC へ TCP / UDP 接続するために使用します。</div></div>
+        <div role="row"><div role="cell">INTERNET</div><div role="cell">ユーザーが設定した PLC への TCP / UDP 接続と、Android 版の QR読取で使用する Google ML Kit の通信に使用します。</div></div>
         <div role="row"><div role="cell">ACCESS_NETWORK_STATE</div><div role="cell">端末のネットワーク状態を確認し、通信可否やエラー表示の判断に使用します。</div></div>
         <div role="row"><div role="cell">CHANGE_NETWORK_STATE</div><div role="cell">PLC接続に使用するWi-Fi / Ethernetネットワークを通信単位で選択するために使用します。</div></div>
         <div role="row"><div role="cell">CAMERA</div><div role="cell">ProjectBuilder に表示した QR を読み込むために使用します。QR読込画面を開いた時に許可を求めます。</div></div>
-        <div role="row"><div role="cell">POST_NOTIFICATIONS</div><div role="cell">記録・Trap監視を継続するforeground serviceとTrap検出を通知するために使用します。</div></div>
-        <div role="row"><div role="cell">BILLING</div><div role="cell">Google Playで実機通信機能を購入・復元するために使用します。</div></div>
-        <div role="row"><div role="cell">FOREGROUND_SERVICE</div><div role="cell">タイムチャート記録中に、バックグラウンドへ移った場合でも記録を継続するための foreground service に使用します。</div></div>
-        <div role="row"><div role="cell">FOREGROUND_SERVICE_CONNECTED_DEVICE</div><div role="cell">PLCへ接続した状態でタイムチャート記録やTrap監視を継続するforeground serviceの種別です。</div></div>
+        <div role="row"><div role="cell">POST_NOTIFICATIONS</div><div role="cell">タイムチャート記録・トラップ監視の継続状態と、トラップ検出を通知するために使用します。</div></div>
+        <div role="row"><div role="cell">com.android.vending.BILLING</div><div role="cell">Google Playで実機通信機能を購入・復元するために使用します。</div></div>
+        <div role="row"><div role="cell">FOREGROUND_SERVICE</div><div role="cell">バックグラウンドでもタイムチャート記録またはトラップ監視を継続するために使用します。</div></div>
+        <div role="row"><div role="cell">FOREGROUND_SERVICE_CONNECTED_DEVICE</div><div role="cell">PLCへ接続した状態でタイムチャート記録またはトラップ監視を継続する foreground service の種別です。</div></div>
       </div>
       <p>カメラ機能は <code>android.hardware.camera</code> を <code>required=false</code> として宣言しています。カメラのない端末でも、QR読込以外の機能を使える前提です。</p>
     </section>
@@ -121,7 +121,7 @@
       <div class="info-table" role="table" aria-label="iOS 権限">
         <div role="row"><div role="cell">Local Network</div><div role="cell"><code>NSLocalNetworkUsageDescription</code> で、ユーザーが設定した PLC との TCP / UDP 通信に使うことを説明しています。</div></div>
         <div role="row"><div role="cell">Camera</div><div role="cell"><code>NSCameraUsageDescription</code> で、ProjectBuilder の QR からプロジェクト設定を取り込むために使うことを説明しています。</div></div>
-        <div role="row"><div role="cell">Local networking</div><div role="cell"><code>NSAllowsLocalNetworking</code> を有効にし、ローカルネットワーク上の PLC へ接続できるようにしています。</div></div>
+        <div role="row"><div role="cell">Local networking（ATS）</div><div role="cell"><code>NSAllowsLocalNetworking</code> を有効にし、ローカルネットワーク上の PLC へ接続できるようにしています。</div></div>
       </div>
       <p>現在の実装では Bonjour による PLC 自動検出、端末内写真ライブラリ、位置情報、連絡先、マイク、Bluetooth は使用しません。</p>
     </section>
@@ -139,9 +139,10 @@
     </section>
 
     <section class="section">
-      <h2>Android のバックアップと端末移行</h2>
+      <h2>バックアップと端末移行</h2>
       <p>Android 版は <code>android:allowBackup="true"</code> を設定しています。Android 12 以降では、クラウドバックアップからプロジェクト領域、セッションと履歴、実行中データ、プロジェクトコメントのデータベース、リモートパスワードを除外しています。</p>
       <p>Android 12 以降の端末間移行では、プロジェクト領域、セッションと履歴、実行中データ、プロジェクトコメントが OS による移行対象となる場合があります。リモートパスワードは移行しません。Android 11 以前では、プロジェクト領域、プロジェクトコメント、リモートパスワードをバックアップ対象外にしています。実際の動作は OS、端末メーカー、ユーザー設定および移行方法によって異なります。</p>
+      <p>iOS 版は、プロジェクト領域とプロジェクトコメントをバックアップ対象外にしています。リモートパスワードは端末に限定した Keychain に保存し、バックアップや別端末への移行対象にしません。</p>
     </section>
 
     <section class="section">

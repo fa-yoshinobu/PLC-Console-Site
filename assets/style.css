@@ -63,6 +63,7 @@ code {
   color: #0f3122;
   font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 0.94em;
+  overflow-wrap: anywhere;
 }
 
 /* ─── Header ─── */
@@ -745,7 +746,9 @@ figcaption {
 }
 
 .info-table [role="cell"] {
+  min-width: 0;
   padding: 13px 15px;
+  overflow-wrap: anywhere;
 }
 
 .info-table [role="cell"]:first-child {
