@@ -2,7 +2,7 @@
 
 FA Labo PLC Console マニュアルサイトのメンテナ向け資料です。GitHub の入口になる `README.md` には軽い説明だけを置き、編集方針や運用ルールはこのファイルで管理します。
 
-最終更新: 2026-08-25
+最終更新: 2026-08-26
 
 ## Directory Layout
 
@@ -12,18 +12,20 @@ FA Labo PLC Console マニュアルサイトのメンテナ向け資料です。
 | `search.html` | 静的なサイト内検索 |
 | `404.html` | 存在しないURLを開いた場合の案内 |
 | `start/` | 入手・インストール、はじめる |
-| `plc/` | 接続、接続設定例、MELSEC / KEYENCE 設定 |
+| `plc/` | 接続、Wi-Fi・ネットワーク、接続設定例、MELSEC / KEYENCE 設定 |
 | `plc/models/` | 対応機種ごとの接続設定例ページ |
-| `monitoring/` | 監視、リスト登録編集、デバイス操作パネル、書込、コメント、タイムチャート、トラップ |
-| `settings/` | CPU操作、表示設定、コメント・QR・JSON、エラー履歴、アプリ設定、ライセンス/購入 |
+| `monitoring/` | 監視、リスト登録編集、デバイス操作パネル、タイムチャート、トラップ |
+| `settings/` | メニュー、CPU操作、デバイス範囲、モニタ表示、コメント・QR・JSON、エラー履歴、アプリ設定、ライセンス/購入、バージョン情報 |
 | `projectbuilder/` | ProjectBuilder、入力、QR 生成 |
-| `reference/` | 問い合わせ、公開情報、用語集、リリースノート、困ったとき |
+| `reference/` | サポート、プライバシー、アプリ権限、利用条件、購入・返金、用語集、リリースノート、困ったとき |
 | `assets/style.css` | ページスタイル |
-| `assets/nav.js` | モバイル用の共通ナビゲーション動作 |
+| `assets/nav.js` | モバイル用ナビゲーションとスクリーンショット拡大ダイアログの共通動作 |
 | `assets/search.js` | サイト内検索の照合・並び替え・結果表示 |
 | `assets/search-index.js` | HTMLから生成する検索データ。直接編集しない |
+| `assets/images/app/` | アプリアイコンなどの共通画像 |
 | `assets/images/plc/` | 接続・PLC 設定系スクリーンショット |
 | `assets/images/monitoring/` | 監視・記録系スクリーンショット |
+| `assets/images/settings/` | 設定画面のスクリーンショット |
 | `assets/images/transfer/` | QR / JSON 転送系スクリーンショット |
 | `assets/images/projectbuilder/` | ProjectBuilder ロゴ・関連画像 |
 | `.github/scripts/check_site.py` | リンク、アンカー、画像、共通ヘッダー/フッターの検査 |
@@ -41,6 +43,10 @@ FA Labo PLC Console マニュアルサイトのメンテナ向け資料です。
 6. 共通ヘッダーや上部ナビを変更する場合は、`templates/page-shell.html.tmpl` を先に更新し、各 HTML へ反映する。
 7. ページを追加または本文を更新した場合は、`python .github/scripts/build_search_index.py` で検索インデックスを更新する。
 8. `python .github/scripts/build_search_index.py --check` と `python .github/scripts/check_site.py` を実行する。
+
+スクリーンショットはページ内の共通対象クラスに配置し、クリック時は
+`assets/nav.js` の拡大ダイアログで表示する。ページごとに別タブや独自の
+画像ビューアを実装しない。
 
 ### サイト内検索
 
@@ -84,20 +90,20 @@ FA Labo PLC Console マニュアルサイトのメンテナ向け資料です。
 
 - アプリ名は `FA Labo PLC Console`、PC ツール名は `PLC Console ProjectBuilder`（短縮時は `ProjectBuilder`）、repository 名は `PLC-Console-ProjectBuilder` に統一する。
 - 日本語表記は `プロジェクト`、`プロジェクト名`、`プロジェクトJSON` に統一する。
-- 画面名は app 表示に合わせて `List`、`Block`、`デバイス操作パネル`、`タイムチャート`、`トラップ`、`リスト登録編集` を使う。
+- 日本語ページの画面名はアプリ表示に合わせて `リスト`、`ブロック`、`デバイス操作パネル`、`タイムチャート`、`トラップ`、`リスト登録編集` を使う。
 - 操作名は表示文言に合わせて `QR読込`、`JSON読込`、`JSON書出`、`CSVコメント読込`、`コメント読込`、`CPU操作` と書く。
 - PLC 種別は `MELSEC` / `KEYENCE`、通信方式は `SLMP（Seamless Message Protocol）` / `Host-link（上位リンク）` と書く。
 - 通常の操作ページでは、内部フィールド名ではなく画面表示を使う。例: `ネットワーク`、`局番`、`ユニットI/O`。
-- `BIT` / `WORD`、`データタイプ`、`address`、`comment` の意味を混ぜない。
+- `BIT` / `WORD`、`データ型`、`address`、`comment` の意味を混ぜない。
 - 公開ページでは原則として内部名を出さない。内部名との対応はこの保守メモで管理する。
 
 ### 画面名と内部名
 
 | 公開表示名 | 英語表記 | アプリ内部名・実装名 | 備考 |
 | --- | --- | --- | --- |
-| List / リスト | List | `List` / `ViewMode.List` | 登録済みデバイス一覧 |
-| Block / ブロック | Block | `Block` / `ViewMode.Block` | デバイス範囲のページ表示 |
-| デバイス操作パネル | Device Control Panel | `FocusPanel` | List / Block で選択した 1 デバイスを操作する下部シート/右側ペイン |
+| リスト | List | `List` / `ViewMode.List` | 登録済みデバイス一覧 |
+| ブロック | Block | `Block` / `ViewMode.Block` | デバイス範囲のページ表示 |
+| デバイス操作パネル | Device Control Panel | `FocusPanel` | リスト / ブロックで選択した 1 デバイスを操作する下部シート/右側ペイン |
 | ON/OFF操作 | ON/OFF control | `FocusPanel` 内の BIT 書込操作 | パネル名ではなく、BIT デバイスの大きな ON/OFF ボタンの操作名 |
 | 表示型を選択 | Select display type | `Select display type` dialog | WORD デバイスの `Type` から開く表示/書込型選択 |
 | モニタ表示設定 | Monitor Display Settings | Block display/settings dialog | `コンパクト / 詳細` と `グラフ100%値` を設定 |

@@ -8,13 +8,13 @@ FA Labo PLC Console の公開マニュアルサイトです。Android / iOS ア�
 - Privacy policy: <https://plc-console.fa-labo.com/reference/privacy-policy.html>
 - ProjectBuilder: <https://github.com/fa-yoshinobu/PLC-Console-ProjectBuilder>
 
-ProjectBuilder の exe は、[`PLC-Console-ProjectBuilder` の Releases](https://github.com/fa-yoshinobu/PLC-Console-ProjectBuilder/releases) にある Assets から `PLCConsoleProjectBuilder-win-x64.zip` をダウンロードして使用します。
+ProjectBuilder は、[`PLC-Console-ProjectBuilder` の Releases](https://github.com/fa-yoshinobu/PLC-Console-ProjectBuilder/releases) にある Assets から `PLCConsoleProjectBuilder-win-x64.zip` をダウンロードして使用します。ZIP に含まれる配布物は、自己完結型の `PLCConsoleProjectBuilder.exe` 1ファイルだけです。
 
 ## スクリーンショット
 
 | 監視 | タイムチャート | QR / JSON |
 | --- | --- | --- |
-| <img src="assets/images/monitoring/block-monitor.png" width="220" alt="FA Labo PLC Console のブロック監視画面"> | <img src="assets/images/monitoring/time-chart.png" width="220" alt="FA Labo PLC Console のタイムチャート画面"> | <img src="assets/images/transfer/qr-import.png" width="220" alt="FA Labo PLC Console の QR 読込画面"> |
+| <img src="assets/images/monitoring/list-monitor.png" width="220" alt="FA Labo PLC Console のリスト監視画面"> | <img src="assets/images/monitoring/time-chart.png" width="220" alt="FA Labo PLC Console のタイムチャート画面"> | <img src="assets/images/transfer/qr-import.png" width="220" alt="FA Labo PLC Console の QR 読込画面"> |
 
 | ProjectBuilder |
 | --- |
@@ -27,11 +27,11 @@ ProjectBuilder の exe は、[`PLC-Console-ProjectBuilder` の Releases](https:/
 | [`index.html`](index.html) | マニュアルの目次トップ |
 | [`search.html`](search.html) | サイト内検索 |
 | [`start/`](start/) | 入手・インストール、はじめる |
-| [`plc/`](plc/) | PLC 接続、MELSEC / KEYENCE 設定、機種別の接続設定例 |
-| [`monitoring/`](monitoring/) | 監視、リスト登録編集、書込、コメント、タイムチャート、トラップ |
-| [`settings/`](settings/) | CPU操作、表示設定、コメント・QR・JSON、エラー履歴、アプリ設定、ライセンス |
+| [`plc/`](plc/) | PLC 接続、Wi-Fi・ネットワーク、MELSEC / KEYENCE 設定、機種別の接続設定例 |
+| [`monitoring/`](monitoring/) | 監視、リスト登録編集、デバイス操作パネル、タイムチャート、トラップ |
+| [`settings/`](settings/) | メニュー、CPU操作、デバイス範囲、モニタ表示設定、コメント・QR・JSON、エラー履歴、アプリ設定、ライセンス、バージョン情報 |
 | [`projectbuilder/`](projectbuilder/) | ProjectBuilder、デバイス入力、QR 生成 |
-| [`reference/`](reference/) | サポート、公開情報、用語集、リリースノート、困ったとき |
+| [`reference/`](reference/) | サポート、プライバシー、アプリ権限、利用条件、購入・返金、用語集、リリースノート、困ったとき |
 | [`404.html`](404.html) | 存在しないURLを開いた場合の案内 |
 
 ## ローカル確認
@@ -55,6 +55,8 @@ Start-Process .\index.html
 メンテナ向けの編集ルール、ディレクトリ構成、GitHub Pages 運用は [`docs/MAINTENANCE.md`](docs/MAINTENANCE.md) に分けています。
 
 - [`docs/DEVELOPMENT_HISTORY.md`](docs/DEVELOPMENT_HISTORY.md): 開発・保守作業の履歴
+- [`docs/NAMING_CATALOG.md`](docs/NAMING_CATALOG.md): 機能名・操作名・データ名の表記
+- [`docs/WINDOW_NAMES.md`](docs/WINDOW_NAMES.md): 画面名とアプリ内部名の対応
 - [`.github/STORE_RELEASE_CHECKLIST.md`](.github/STORE_RELEASE_CHECKLIST.md): Store 公開時の内部チェック
 
 ## 関連リポジトリ

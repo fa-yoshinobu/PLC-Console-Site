@@ -1,6 +1,6 @@
 # Development History
 
-Last consolidated: 2026-08-25
+Last consolidated: 2026-08-26
 
 This document preserves the useful content that used to live in temporary
 refactor memo files. Keep this file as the durable engineering record for the
@@ -21,7 +21,7 @@ static documentation site.
 - Updated repository links for `PLC-Console-ProjectBuilder`.
 - Changed the canonical public URL to `https://plc-console.fa-labo.com/`.
 
-## 2026-08-25 Manual And Site Navigation Update
+## 2026-08-25 To 2026-08-26 Manual And Site Navigation Update
 
 Completed work:
 
@@ -35,15 +35,26 @@ Completed work:
 - Added `404.html` with links to the manual top, site search, and support form.
 - Split previous/next navigation into reciprocal main, ProjectBuilder, and
   support sequences.
-- Updated README and TODO page inventories to match the actual file layout.
+- Updated the README page inventory to match the actual file layout.
 - Clarified that numeric data type width does not determine a fixed number of
   PLC device points.
+- Added the Wi-Fi / network configuration overview and topology diagram.
+- Consolidated device write instructions into the Device Control Panel page and
+  moved comment import guidance into the Settings section.
+- Replaced the manual screenshots with the current Android / iOS and
+  ProjectBuilder screens.
+- Applied one common screenshot rule: supported manual images open in an
+  in-page enlargement dialog.
+- Standardized Japanese manual wording for Demo as `デモ` and replaced the old
+  display-density wording with `ブロック表示` or `表示方法`.
+- Verified that the Formspree support form can send a submission and that the
+  notification reaches the configured destination.
 
 Validation:
 
-- The search index contains 55 manual pages and excludes `search.html` and
+- The search index contains 53 manual pages and excludes `search.html` and
   `404.html`.
-- The static checker validates 57 HTML pages, including internal links,
+- The static checker validates 55 HTML pages, including internal links,
   anchors, image alternatives, `nav.js`, and shared header/footer drift.
 - GitHub Actions checks search-index freshness before deploying GitHub Pages.
 
@@ -90,13 +101,15 @@ Effect:
 - Better static validation before deploy.
 - Lower layout-shift risk from images that now declare dimensions.
 
-## Work Intentionally Not Done
+## Current Maintenance Boundaries
 
-- No static-site-generator migration.
-- No navigation redesign.
-- No URL rewrite.
-- No broad copy rewrite.
-- No dark-mode or theme redesign as part of this maintenance pass.
+- Keep the hand-written static HTML structure; no static-site-generator
+  migration is planned.
+- Keep the current public page URLs stable. Add or remove a public URL only as
+  an explicit information-architecture change.
+- Update navigation and copy when required to match the current application,
+  then regenerate the search index and run the static checker.
+- No dark-mode or theme redesign is planned for the manual site.
 
 ## Future Notes
 
