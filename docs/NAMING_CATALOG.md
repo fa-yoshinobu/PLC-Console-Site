@@ -51,7 +51,7 @@ FA Labo PLC Console の画面名以外の呼び方を揃えるための保守メ
 
 | 正式名 | 英語名 | 対象 | 避ける表記 / 注意 |
 | --- | --- | --- | --- |
-| コンパクト / 詳細 | Compact / Detail | Block 表示密度 | Time Chart には使わない。 |
+| コンパクト / 詳細 | Compact / Detail | Block 表示方法 | Time Chart には使わない。 |
 | グラフ100%値 | Graph 100% Value | Block の数値バー基準 | `ワードバー上限値` は内部寄り。公開名はこれ。 |
 | 画面配置 | Screen Layout | アプリ設定 | `レイアウト` だけにしない。 |
 | 縦向き / 横向き / 自動 | Portrait / Landscape / Auto | 画面配置 | OS の向き固定説明で使う。 |
@@ -127,7 +127,7 @@ FA Labo PLC Console の画面名以外の呼び方を揃えるための保守メ
 | --- | --- | --- | --- |
 | 接続中 | Connected | PLC 接続状態 | `通信中` と混ぜる場合は文脈を明確にする。 |
 | 未接続 | Disconnected | PLC 接続状態 | `オフライン` は説明補助に留める。 |
-| Demo | Demo | 実機なしの動作確認 | `デモモード` と説明してもよい。 |
+| デモ | Demo | 実機なしの動作確認 | 日本語ページでは `Demo` と表記しない。 |
 | RUN | RUN | CPU状態 | ステータスラインの表示は短く保つ。 |
 | STOP | STOP | MELSEC 停止状態 | KEYENCE では `PROGRAM`。 |
 | PROGRAM | PROGRAM | KEYENCE 停止状態 | `STOP` に置き換えない。 |

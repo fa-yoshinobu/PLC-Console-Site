@@ -43,7 +43,7 @@ FA Labo PLC Console の画面、パネル、シート、ダイアログ、バナ
 | 通信設定 | Connection Settings | `PlcSettingsSheet` / `isPlcSettingsSheetPresented` | `ConnectionSettingsDialog` / `showConnectionDialog` | PLC 接続設定とプロジェクト保存。 |
 | CPU操作 | CPU Operation | `CpuOperationSheet` / `isCpuSheetPresented` | `CpuDialog` / `showCpuDialog` | MELSEC CPU の RUN / STOP、KEYENCE CPU の RUN / PROGRAM 操作。 |
 | デバイス範囲 | Device Ranges | `DeviceRangeSheet` / `isDeviceRangeSheetPresented` | `DeviceRangeDialog` / `showDeviceRangeDialog` | CPU機種ごとの使用可能デバイス範囲を確認する。 |
-| モニタ表示設定 | Monitor Display Settings | `BlockDisplaySettingsSheet` / `isBlockDisplaySettingsSheetPresented` | `BlockDisplaySettingsDialog` / `showBlockSettingsDialog` | Block の表示密度と `グラフ100%値` を設定する。 |
+| モニタ表示設定 | Monitor Display Settings | `BlockDisplaySettingsSheet` / `isBlockDisplaySettingsSheetPresented` | `BlockDisplaySettingsDialog` / `showBlockSettingsDialog` | Block の表示方法と `グラフ100%値` を設定する。 |
 | コメント読込 | Comment Read | `CommentReadSheet` / `isCommentReadSheetPresented` | `CommentReadDialog` / `showCommentReadDialog` | PLC からコメントを読み込む。KEYENCE 対応接続のみ。 |
 | CSVコメント読込 | CSV Comment Import | `DocumentImportSheet` / `isCommentImporterPresented` | Android OS file picker / `csvLauncher` | CSV からデバイスコメントを取り込む。 |
 | QR読込 | QR Import | `ProjectQrScannerSheet` / `isProjectQrScannerPresented` | `ProjectQrScannerDialog` / `showProjectQrScanner` | ProjectBuilder の QR を読み込む。 |
