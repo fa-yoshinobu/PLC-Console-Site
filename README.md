@@ -25,13 +25,14 @@ ProjectBuilder の exe は、[`PLC-Console-ProjectBuilder` の Releases](https:/
 | 入口 | 内容 |
 | --- | --- |
 | [`index.html`](index.html) | マニュアルの目次トップ |
+| [`search.html`](search.html) | サイト内検索 |
 | [`start/`](start/) | 入手・インストール、はじめる |
 | [`plc/`](plc/) | PLC 接続、MELSEC / KEYENCE 設定、機種別の接続設定例 |
-| [`monitoring/`](monitoring/) | 監視、List 登録編集、書込、CPU操作、コメント、タイムチャート、トラップ |
-| [`transfer/`](transfer/) | QR / JSON、プロジェクトJSON |
-| [`settings/`](settings/) | メニュー、アプリ設定、ライセンス |
+| [`monitoring/`](monitoring/) | 監視、List 登録編集、書込、コメント、タイムチャート、トラップ |
+| [`settings/`](settings/) | CPU操作、表示設定、コメント・QR・JSON、エラー履歴、アプリ設定、ライセンス |
 | [`projectbuilder/`](projectbuilder/) | ProjectBuilder、デバイス入力、QR 生成 |
 | [`reference/`](reference/) | サポート、公開情報、用語集、リリースノート、困ったとき |
+| [`404.html`](404.html) | 存在しないURLを開いた場合の案内 |
 
 ## ローカル確認
 

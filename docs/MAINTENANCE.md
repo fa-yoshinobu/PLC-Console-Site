@@ -32,6 +32,15 @@ FA Labo PLC Console マニュアルサイトのメンテナ向け資料です。
 4. スクリーンショットを差し替えた場合は、対象画面と撮影日を作業メモや PR 説明で追えるようにする。
 5. 更新後にリンク、画像参照、表記ゆれ、実装との矛盾を確認する。
 6. 共通ヘッダーや上部ナビを変更する場合は、`templates/page-shell.html.tmpl` を先に更新し、各 HTML へ反映する。
+7. ページを追加または本文を更新した場合は、`python .github/scripts/build_search_index.py` で検索インデックスを更新する。
+
+### 前後リンクの順序
+
+前後リンクは全ページを1本につなげず、次の3系統で管理する。同じ系統では「A の次が B なら、B の前は A」となるようにする。各系統の末尾はトップへ戻す。
+
+- 本編: `start` → `plc` → `monitoring` → `settings`
+- ProjectBuilder: `projectbuilder.html` → `projectbuilder-devices.html` → `projectbuilder-qr.html`
+- サポート: `support.html` → `privacy-policy.html` → `app-permissions.html` → `terms.html` → `purchase-info.html` → `glossary.html` → `release-notes.html` → `troubleshooting.html`
 
 ## Writing Rules
 

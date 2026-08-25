@@ -21,7 +21,9 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Run site checks
-        run: python3 .github/scripts/check_site.py
+        run: |
+          python3 .github/scripts/build_search_index.py --check
+          python3 .github/scripts/check_site.py
 
   deploy:
     needs: check
