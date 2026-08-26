@@ -113,6 +113,9 @@
         <div role="row"><div role="cell">FOREGROUND_SERVICE_CONNECTED_DEVICE</div><div role="cell">PLCへ接続した状態でタイムチャート記録またはトラップ監視を継続する foreground service の種別です。</div></div>
       </div>
       <p>カメラ機能は <code>android.hardware.camera</code> を <code>required=false</code> として宣言しています。カメラのない端末でも、QR読込以外の機能を使える前提です。</p>
+      <h3>通知の許可</h3>
+      <p>タイムチャート記録またはトラップ監視を開始したとき、端末の状態により通知の許可画面が表示されます。</p>
+      <figure class="inline-shot detail-shot"><img src="../assets/images/settings/notification-permission-android.jpg" width="1080" height="891" alt="AndroidでFA Labo PLC Consoleの通知を許可する画面" loading="lazy"><figcaption>Androidの通知許可</figcaption></figure>
     </section>
 
     <section class="section">
@@ -122,6 +125,9 @@
         <div role="row"><div role="cell">Camera</div><div role="cell"><code>NSCameraUsageDescription</code> で、ProjectBuilder の QR からプロジェクト設定を取り込むために使うことを説明しています。</div></div>
         <div role="row"><div role="cell">Local networking（ATS）</div><div role="cell"><code>NSAllowsLocalNetworking</code> を有効にし、ローカルネットワーク上の PLC へ接続できるようにしています。</div></div>
       </div>
+      <h3>ローカルネットワークの許可</h3>
+      <p>初めて実機 PLC との通信を開始したとき、ローカルネットワークの許可画面が表示されます。PLC と通信する場合は <strong>許可</strong> を選びます。</p>
+      <figure class="inline-shot detail-shot"><img src="../assets/images/settings/local-network-permission-ios.png" width="683" height="1322" alt="iOSでPLC Consoleのローカルネットワーク接続を許可する画面" loading="lazy"><figcaption>iOSのローカルネットワーク許可</figcaption></figure>
       <p>現在の実装では Bonjour による PLC 自動検出、端末内写真ライブラリ、位置情報、連絡先、マイク、Bluetooth は使用しません。</p>
     </section>
 
