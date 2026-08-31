@@ -1,8 +1,8 @@
 <!--
   公開手順:
-  1. {{APP_STORE_URL}} と {{GOOGLE_PLAY_URL}} を正式 URL に置換する。
-  2. 各ストアが提供する日本語の公式バッジ画像を assets/images/store/ に保存し、
-     {{APP_STORE_BADGE_IMAGE_PATH}} と {{GOOGLE_PLAY_BADGE_IMAGE_PATH}} を公開ページからの相対パスに置換する。
+  1. App Store URLは正式公開URLへ置換済み。{{GOOGLE_PLAY_URL}}を正式URLに置換する。
+  2. App StoreはApple公式Marketing Toolsの日本語バッジを使用済み。
+     Google Play公開時は公式バッジをassets/images/store/へ保存し、{{GOOGLE_PLAY_BADGE_IMAGE_PATH}}を置換する。
   3. URL、画像、表示を検証してから、この section を公開ページの main 内へコピーする。
 -->
 <section class="section" aria-labelledby="official-store-links-title">
@@ -10,9 +10,9 @@
   <div class="content-grid">
     <article>
       <h3>App Store</h3>
-      <p>
-        <a href="{{APP_STORE_URL}}">
-          <img class="store-badge" src="{{APP_STORE_BADGE_IMAGE_PATH}}" alt="App Store でダウンロード" loading="lazy">
+      <p class="store-badge-row">
+        <a href="https://apps.apple.com/jp/app/fa-labo-plc-console/id6783619471" aria-label="App StoreからFA Labo PLC Consoleをダウンロード">
+          <img class="store-badge" src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/ja-jp?size=250x83" alt="App Storeからダウンロード" loading="lazy">
         </a>
       </p>
     </article>

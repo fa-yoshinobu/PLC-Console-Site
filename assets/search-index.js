@@ -590,9 +590,11 @@ window.PLC_CONSOLE_SEARCH_INDEX = [
       "関連情報",
       "プライバシー",
       "利用条件",
-      "購入・返金"
+      "購入・返金",
+      "公式ストア",
+      "App Store"
     ],
-    "text": "Support サポート FA Labo PLC Console の問い合わせ方法と問い合わせフォームを案内します。 問い合わせ先 FA Labo PLC Console と ProjectBuilder に関する問い合わせは、このページの問い合わせフォームから受け付けます。設備情報を送る場合は、社外秘の情報を含めないでください。 運営・開発: FA Labo サポートメール: falabo.app@gmail.com 操作方法や通信エラーは、はじめに 困ったとき とアプリ内のエラー履歴を確認してください。 問い合わせフォーム 返信に必要なメールアドレスと、問い合わせ内容を入力してください。このフォームではファイルを添付できません。不具合解析にログデータなどが必要な場合は、返信時に送付先メールアドレスをご案内します。 この項目は入力しないでください お名前（ハンドルネーム可） 必須 返信先メールアドレス 必須 問い合わせ種別 必須 選択してください 不具合 操作方法 PLC接続関連 購入 ご意見 その他 対象 必須 選択してください Android iOS ProjectBuilder このWebサイト その他 アプリ／ProjectBuilder バージョン 任意 端末・OS 任意 PLCメーカー・CPU型式 任意 問い合わせ内容 必須 パスワード、社外秘のIPアドレス、設備名、顧客名、個人情報などは入力しないでください。 入力した情報が、回答および不具合調査のために Formspree を経由して送信・保存されることと、 プライバシーポリシー に同意します。 必須 問い合わせを送信 送信しています。画面が切り替わるまでお待ちください。 PLC本体、ネットワーク、設備の設計に関するお問い合わせには対応できません。実設備での操作は、設備管理者による安全確認のうえで行ってください。 関連情報 プライバシー アプリが扱う情報と外部送信の有無は、 プライバシーポリシー を確認してください。 利用条件 実設備で使用する際の責任範囲と安全上の条件は、 利用条件 を確認してください。 購入・返金 実機通信ライセンス、購入復元、返金窓口は、 購入・返金案内 を確認してください。"
+    "text": "Support サポート FA Labo PLC Console の問い合わせ方法と問い合わせフォームを案内します。 問い合わせ先 FA Labo PLC Console と ProjectBuilder に関する問い合わせは、このページの問い合わせフォームから受け付けます。設備情報を送る場合は、社外秘の情報を含めないでください。 運営・開発: FA Labo サポートメール: falabo.app@gmail.com 操作方法や通信エラーは、はじめに 困ったとき とアプリ内のエラー履歴を確認してください。 問い合わせフォーム 返信に必要なメールアドレスと、問い合わせ内容を入力してください。このフォームではファイルを添付できません。不具合解析にログデータなどが必要な場合は、返信時に送付先メールアドレスをご案内します。 この項目は入力しないでください お名前（ハンドルネーム可） 必須 返信先メールアドレス 必須 問い合わせ種別 必須 選択してください 不具合 操作方法 PLC接続関連 購入 ご意見 その他 対象 必須 選択してください Android iOS ProjectBuilder このWebサイト その他 アプリ／ProjectBuilder バージョン 任意 端末・OS 任意 PLCメーカー・CPU型式 任意 問い合わせ内容 必須 パスワード、社外秘のIPアドレス、設備名、顧客名、個人情報などは入力しないでください。 入力した情報が、回答および不具合調査のために Formspree を経由して送信・保存されることと、 プライバシーポリシー に同意します。 必須 問い合わせを送信 送信しています。画面が切り替わるまでお待ちください。 PLC本体、ネットワーク、設備の設計に関するお問い合わせには対応できません。実設備での操作は、設備管理者による安全確認のうえで行ってください。 関連情報 プライバシー アプリが扱う情報と外部送信の有無は、 プライバシーポリシー を確認してください。 利用条件 実設備で使用する際の責任範囲と安全上の条件は、 利用条件 を確認してください。 購入・返金 実機通信ライセンス、購入復元、返金窓口は、 購入・返金案内 を確認してください。 公式ストア App Store"
   },
   {
     "title": "利用条件",
@@ -830,6 +832,6 @@ window.PLC_CONSOLE_SEARCH_INDEX = [
       "確認",
       "ProjectBuilder"
     ],
-    "text": "Install 入手・インストール Android / iOS アプリと PC 用 ProjectBuilder の入手先をまとめます。 動作環境 iOS / iPadOS iOS 18 以降の iPhone、iPadOS 18 以降の iPad。 Android Android 10 以降を搭載し、Google Play に対応するスマートフォンまたはタブレット。 実機 PLC 通信 端末から接続先 PLC へ到達できる Wi-Fi または有線 LAN 環境が必要です。 デモ PLC、ネットワーク接続、アプリ内購入なしで利用できます。 ProjectBuilder 64ビット版 Windows（x64）。 モバイルアプリ Android Google Play で FA Labo PLC Console と提供元を確認してインストールします。 iOS App Store で FA Labo PLC Console と提供元を確認してインストールします。 確認 同名または類似名のアプリと区別するため、アプリ名だけでなくアイコンと提供元も確認してください。 ProjectBuilder PC でプロジェクトを作成し、QR または JSON でモバイルアプリへ渡す Windows アプリです。GitHub Releases から ZIP をダウンロードし、展開してから exe を起動します。 対象 64ビット版 Windows（x64） 起動ファイル PLCConsoleProjectBuilder.exe 主な用途 PLC 設定、デバイス、タイムチャート、トラップ、QR/JSON 出力 ダウンロード PLC-Console-ProjectBuilder Releases の Assets から PLCConsoleProjectBuilder-win-x64.zip を選びます。 ソース PLC-Console-ProjectBuilder ProjectBuilder"
+    "text": "Install 入手・インストール Android / iOS アプリと PC 用 ProjectBuilder の入手先をまとめます。 動作環境 iOS / iPadOS iOS 18 以降の iPhone、iPadOS 18 以降の iPad。 Android Android 10 以降を搭載し、Google Play に対応するスマートフォンまたはタブレット。 実機 PLC 通信 端末から接続先 PLC へ到達できる Wi-Fi または有線 LAN 環境が必要です。 デモ PLC、ネットワーク接続、アプリ内購入なしで利用できます。 ProjectBuilder 64ビット版 Windows（x64）。 モバイルアプリ Android Google Play で FA Labo PLC Console と提供元を確認してインストールします。 iOS App Storeでアプリ名と提供元を確認してインストールします。 確認 同名または類似名のアプリと区別するため、アプリ名だけでなくアイコンと提供元も確認してください。 ProjectBuilder PC でプロジェクトを作成し、QR または JSON でモバイルアプリへ渡す Windows アプリです。GitHub Releases から ZIP をダウンロードし、展開してから exe を起動します。 対象 64ビット版 Windows（x64） 起動ファイル PLCConsoleProjectBuilder.exe 主な用途 PLC 設定、デバイス、タイムチャート、トラップ、QR/JSON 出力 ダウンロード PLC-Console-ProjectBuilder Releases の Assets から PLCConsoleProjectBuilder-win-x64.zip を選びます。 ソース PLC-Console-ProjectBuilder ProjectBuilder"
   }
 ];
