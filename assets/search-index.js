@@ -47,7 +47,7 @@ window.PLC_CONSOLE_SEARCH_INDEX = [
   {
     "title": "リスト登録編集",
     "url": "monitoring/list-edit.html",
-    "description": "リスト登録編集の操作。",
+    "description": "FA Labo PLC Console でリストに表示するデバイスを登録・編集する手順。単体追加、範囲追加、検索、並び替え、削除に対応します。",
     "headings": [
       "リスト登録編集",
       "入口と実行条件",
@@ -74,7 +74,7 @@ window.PLC_CONSOLE_SEARCH_INDEX = [
   {
     "title": "タイムチャート",
     "url": "monitoring/time-chart.html",
-    "description": "FA Labo PLC Console のタイムチャート機能。",
+    "description": "FA Labo PLC Console のタイムチャート。最大20チャンネルを通信周期に合わせて記録し、波形確認とCSV書出を行います。",
     "headings": [
       "タイムチャート",
       "基本操作",
@@ -492,7 +492,7 @@ window.PLC_CONSOLE_SEARCH_INDEX = [
   {
     "title": "ProjectBuilder",
     "url": "projectbuilder/projectbuilder.html",
-    "description": "PLC Console ProjectBuilder の操作マニュアル。",
+    "description": "PC で FA Labo PLC Console のプロジェクトを作成し、Android / iOS アプリへ QR または JSON で転送するツール PLC Console ProjectBuilder の使い方。",
     "headings": [
       "ProjectBuilder",
       "公開ページ",
@@ -527,7 +527,7 @@ window.PLC_CONSOLE_SEARCH_INDEX = [
   {
     "title": "用語集",
     "url": "reference/glossary.html",
-    "description": "FA Labo PLC Console の用語集。",
+    "description": "FA Labo PLC Console のマニュアルで使う主な用語（プロジェクト、アドレス、データ型、トラップなど）の意味。",
     "headings": [
       "用語集"
     ],
@@ -582,7 +582,7 @@ window.PLC_CONSOLE_SEARCH_INDEX = [
   {
     "title": "サポート",
     "url": "reference/support.html",
-    "description": "FA Labo PLC Console のサポート情報。",
+    "description": "FA Labo PLC Console の問い合わせ方法と問い合わせフォームの案内。事前に確認する項目や返信の目安も掲載しています。",
     "headings": [
       "サポート",
       "問い合わせ先",
@@ -599,7 +599,7 @@ window.PLC_CONSOLE_SEARCH_INDEX = [
   {
     "title": "利用条件",
     "url": "reference/terms.html",
-    "description": "FA Labo PLC Console の利用条件。",
+    "description": "FA Labo PLC Console の利用条件。安全確認の責任、保証範囲、禁止事項、購入と利用権について説明します。",
     "headings": [
       "利用条件",
       "適用範囲",
@@ -660,7 +660,7 @@ window.PLC_CONSOLE_SEARCH_INDEX = [
   {
     "title": "CPU操作",
     "url": "settings/cpu-control.html",
-    "description": "FA Labo PLC Console の CPU操作。",
+    "description": "FA Labo PLC Console のCPU操作。RUN / STOP / PAUSE / PROGRAM の状態変更をPLCへ送信する手順と、実設備への影響に関する注意点。",
     "headings": [
       "CPU操作",
       "画面概要",

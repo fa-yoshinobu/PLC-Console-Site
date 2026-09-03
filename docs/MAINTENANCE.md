@@ -2,7 +2,7 @@
 
 FA Labo PLC Console マニュアルサイトのメンテナ向け資料です。GitHub の入口になる `README.md` には軽い説明だけを置き、編集方針や運用ルールはこのファイルで管理します。
 
-最終更新: 2026-08-26
+最終更新: 2026-09-04
 
 ## Directory Layout
 
@@ -22,6 +22,12 @@ FA Labo PLC Console マニュアルサイトのメンテナ向け資料です。
 | `assets/nav.js` | モバイル用ナビゲーションとスクリーンショット拡大ダイアログの共通動作 |
 | `assets/search.js` | サイト内検索の照合・並び替え・結果表示 |
 | `assets/search-index.js` | HTMLから生成する検索データ。直接編集しない |
+| `assets/favicon.svg` | ファビコン（手書きSVG） |
+| `assets/favicon-32.png` / `assets/apple-touch-icon.png` / `assets/icon-192.png` / `assets/icon-512.png` | `build_brand_assets.py` で生成するラスターアイコン。直接編集しない |
+| `assets/images/og-cover.png` | OGP / Twitter カード画像（1200x630）。`build_brand_assets.py` で生成する |
+| `site.webmanifest` | Web アプリマニフェスト（アイコン、テーマ色） |
+| `robots.txt` | クローラ向け。`sitemap.xml` の場所を示す |
+| `sitemap.xml` | 公開HTMLのURL一覧。`build_sitemap.py` で生成する。直接編集しない |
 | `assets/images/app/` | アプリアイコンなどの共通画像 |
 | `assets/images/plc/` | 接続・PLC 設定系スクリーンショット |
 | `assets/images/monitoring/` | 監視・記録系スクリーンショット |
@@ -30,6 +36,9 @@ FA Labo PLC Console マニュアルサイトのメンテナ向け資料です。
 | `assets/images/projectbuilder/` | ProjectBuilder ロゴ・関連画像 |
 | `.github/scripts/check_site.py` | リンク、アンカー、画像、共通ヘッダー/フッターの検査 |
 | `.github/scripts/build_search_index.py` | 検索データの生成と更新漏れ検査 |
+| `.github/scripts/build_seo.py` | 各ページ `<head>` の canonical / OGP / Twitter / JSON-LD ブロック生成と更新漏れ検査 |
+| `.github/scripts/build_sitemap.py` | `sitemap.xml` の生成と更新漏れ検査 |
+| `.github/scripts/build_brand_assets.py` | favicon PNG / OGP 画像の生成。フォント依存のため CI では検査しない |
 | `templates/page-shell.html.tmpl` | 共通ヘッダー/ナビ更新時の参照テンプレート |
 | `templates/store-links.html.tmpl` | 正式 Store URL と公式バッジが確定した後に公開ページへ挿入するテンプレート |
 
@@ -41,8 +50,12 @@ FA Labo PLC Console マニュアルサイトのメンテナ向け資料です。
 4. スクリーンショットを差し替えた場合は、対象画面と撮影日を作業メモや PR 説明で追えるようにする。
 5. 更新後にリンク、画像参照、表記ゆれ、実装との矛盾を確認する。
 6. 共通ヘッダーや上部ナビを変更する場合は、`templates/page-shell.html.tmpl` を先に更新し、各 HTML へ反映する。
-7. ページを追加または本文を更新した場合は、`python .github/scripts/build_search_index.py` で検索インデックスを更新する。
-8. `python .github/scripts/build_search_index.py --check` と `python .github/scripts/check_site.py` を実行する。
+7. ページを追加・改名した場合、または `<title>` / `<meta name="description">` を変更した場合は、
+   `python .github/scripts/build_seo.py` と `python .github/scripts/build_sitemap.py` を実行して
+   `<head>` の SEO ブロックと `sitemap.xml` を更新する。
+8. ページを追加または本文を更新した場合は、`python .github/scripts/build_search_index.py` で検索インデックスを更新する。
+9. `python .github/scripts/build_search_index.py --check`、`python .github/scripts/build_sitemap.py --check`、
+   `python .github/scripts/build_seo.py --check`、`python .github/scripts/check_site.py` を実行する。
 
 スクリーンショットはページ内の共通対象クラスに配置し、クリック時は
 `assets/nav.js` の拡大ダイアログで表示する。ページごとに別タブや独自の
@@ -54,6 +67,19 @@ FA Labo PLC Console マニュアルサイトのメンテナ向け資料です。
 - 検索対象は `404.html` と `search.html` を除く公開HTMLで、タイトル、説明、見出し、本文を収録する。
 - 複数語はすべてを含むページに絞り、タイトル、見出し、説明、本文の順で重み付けする。
 - `assets/search-index.js` は生成物なので、HTML本文を修正した後に生成スクリプトで更新する。
+
+### SEO / メタデータ
+
+- 各ページの `<head>` には `build_seo.py` が生成する `<!-- seo:begin --> ... <!-- seo:end -->` ブロックがある。
+  canonical URL、favicon、`site.webmanifest`、OGP / Twitter カード、JSON-LD（`BreadcrumbList` と `TechArticle`、
+  トップは `WebSite` と `SoftwareApplication`）を含む。手で編集せず、スクリプトを再実行する。
+- ブロックの内容はページ自身の `<title>` と `<meta name="description">` から作る。この2つが正しければメタデータも正しくなる。
+- `description` は各ページで具体的に書く（対象機能、主要な操作、上限値など）。「〜の機能。」だけの短い説明にしない。
+- `sitemap.xml` と `robots.txt` は `https://plc-console.fa-labo.com/` を基準にした絶対URL。ドメインを変えたら
+  `build_seo.py` / `build_sitemap.py` の `SITE_ORIGIN` を更新する。
+- `assets/favicon.svg` 以外のアイコンと `assets/images/og-cover.png` は `build_brand_assets.py` の生成物。
+  ブランドマークや文言を変えたときだけ再生成してコミットする（フォント依存のため CI では検査しない）。
+- 公開後は Google Search Console にサイト（`https://plc-console.fa-labo.com/`）を登録し、`sitemap.xml` を送信する。
 
 ### 前後リンクの順序
 
@@ -169,5 +195,7 @@ Start-Process .\index.html
 - 公開入口は repository root の `index.html`。
 - Jekyll 処理を避けるため `.nojekyll` を置く。
 - `.github/workflows/pages.yml` は `main` branch への push または manual dispatch で実行する。
-- workflow は root の静的ファイルを `_site` へコピーし、`.git`、`.github`、`README.md` を除外して Pages artifact として deploy する。
+- workflow は root の静的ファイルを `_site` へコピーし、`.git`、`.github`、`docs`、`templates`、`README.md` を除外して Pages artifact として deploy する（メンテナ向け資料はクロール対象に含めない）。
+- `check` job は `build_search_index.py --check`、`build_sitemap.py --check`、`build_seo.py --check`、`check_site.py` を実行する。
+- `pages: write` / `id-token: write` は `deploy` job だけに付与する。
 - GitHub repository settings の Pages source は `GitHub Actions` を選ぶ。
