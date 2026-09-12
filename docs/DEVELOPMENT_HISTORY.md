@@ -15,6 +15,11 @@ static documentation site.
   of mechanical refactors.
 - Keep checks lightweight enough to run in GitHub Actions before deploy.
 
+## 2026-09-12 Google Play公開リンク
+
+- Google Playの日本・米国向けページで公開とversion `1.0.0`を確認し、トップ、入手・インストール、Supportへ入手リンクを追加した。
+- Google公式Partner Marketing Hub（https://partnermarketinghub.withgoogle.com/brands/google-play/google-play/lockups-icons-badges/?folder=86718）の日本語SVGバッジを改変せず保存して使用した。StoreリンクテンプレートとREADMEも更新した。
+
 ## 2026-08-14 Repository And Domain Migration
 
 - Renamed the repository to `PLC-Console-Site`.

@@ -1,8 +1,8 @@
 <!--
   公開手順:
-  1. App Store URLは正式公開URLへ置換済み。{{GOOGLE_PLAY_URL}}を正式URLに置換する。
+  1. App Store / Google Playの正式URLは設定済み。2026-09-12、Google Playの日本・米国向け公開ページでHTTP 200とインストール表示を確認済み。
   2. App StoreはApple公式Marketing Toolsの日本語バッジを使用済み。
-     Google Play公開時は公式バッジをassets/images/store/へ保存し、{{GOOGLE_PLAY_BADGE_IMAGE_PATH}}を置換する。
+     Google PlayはGoogle公式Partner Marketing Hubの日本語バッジをassets/images/store/google-play-ja.svgへ保存済み。
   3. URL、画像、表示を検証してから、この section を公開ページの main 内へコピーする。
 -->
 <section class="section" aria-labelledby="official-store-links-title">
@@ -19,9 +19,7 @@
     <article>
       <h3>Google Play</h3>
       <p>
-        <a href="{{GOOGLE_PLAY_URL}}">
-          <img class="store-badge" src="{{GOOGLE_PLAY_BADGE_IMAGE_PATH}}" alt="Google Play で手に入れよう" loading="lazy">
-        </a>
+        <a href="https://play.google.com/store/apps/details?id=com.fa_labo.plc_io_checker"><img class="store-badge" src="assets/images/store/google-play-ja.svg" alt="Google Play で手に入れよう" loading="lazy"></a>
       </p>
     </article>
   </div>
