@@ -5,6 +5,8 @@
 FA Labo PLC Console の公開マニュアルサイトです。Android / iOS アプリの基本操作、PLC 接続設定、監視・書込・記録機能、PC 用 `PLC Console ProjectBuilder` の使い方を HTML ページとして管理しています。
 
 - Public site: <https://plc-console.fa-labo.com/>
+- Google Play: <https://play.google.com/store/apps/details?id=com.fa_labo.plc_io_checker>
+- App Store: <https://apps.apple.com/jp/app/fa-labo-plc-console/id6783619471>
 - Privacy policy: <https://plc-console.fa-labo.com/reference/privacy-policy.html>
 - ProjectBuilder: <https://github.com/fa-yoshinobu/PLC-Console-ProjectBuilder>
 
