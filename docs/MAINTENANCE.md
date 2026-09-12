@@ -40,7 +40,7 @@ FA Labo PLC Console マニュアルサイトのメンテナ向け資料です。
 | `.github/scripts/build_sitemap.py` | `sitemap.xml` の生成と更新漏れ検査 |
 | `.github/scripts/build_brand_assets.py` | favicon PNG / OGP 画像の生成。フォント依存のため CI では検査しない |
 | `templates/page-shell.html.tmpl` | 共通ヘッダー/ナビ更新時の参照テンプレート |
-| `templates/store-links.html.tmpl` | 正式 Store URL と公式バッジが確定した後に公開ページへ挿入するテンプレート |
+| `templates/store-links.html.tmpl` | 公開済みアプリの正式 Store URL と公式バッジをまとめた、ページ追加・更新用テンプレート |
 
 ## Editing Workflow
 
@@ -79,7 +79,7 @@ FA Labo PLC Console マニュアルサイトのメンテナ向け資料です。
   `build_seo.py` / `build_sitemap.py` の `SITE_ORIGIN` を更新する。
 - `assets/favicon.svg` 以外のアイコンと `assets/images/og-cover.png` は `build_brand_assets.py` の生成物。
   ブランドマークや文言を変えたときだけ再生成してコミットする（フォント依存のため CI では検査しない）。
-- 公開後は Google Search Console にサイト（`https://plc-console.fa-labo.com/`）を登録し、`sitemap.xml` を送信する。
+- Google Search Console でサイト（`https://plc-console.fa-labo.com/`）の登録状況と `sitemap.xml` の送信状況を確認し、未登録・未送信の場合は登録・送信する。
 
 ### 前後リンクの順序
 
@@ -149,15 +149,12 @@ FA Labo PLC Console マニュアルサイトのメンテナ向け資料です。
 - スクリーンショット画像は横並びにせず、1枚ずつ縦に並べて文字が読める大きさを保つ。
 - 説明用の IP アドレスやポート番号は、必須値ではなく設定例であることを前提文に明記する。
 
-### ストア公開時の扱い
+### 公開済みアプリのストア情報
 
-- App Store / Google Play のリンクは、正式 URL が確定してから掲載する。
-- 正式 URL と公式バッジ画像が揃ったら、`templates/store-links.html.tmpl` の変数を置換し、リンクと画像を検証してから公開ページへ挿入する。
-- 未確定の金額は書かない。価格は Store 公開時の表示を正とする。
-- ユーザー向けページには、未確定項目を作業メモとして出さず、必要な場合は `公開状況` や `ストアリンク` として説明する。
-- Store公開作業の内部チェックは、workspaceの`PlcIoChecker_memo/STORE_RELEASE_CHECKLIST.md`で管理する。Site repository内には重複して置かない。
+- App Store / Google Play のリンクと公式バッジは `templates/store-links.html.tmpl` と公開ページで一致させる。
+- 価格は各ストアの表示を正とする。
 - ユーザー向け本文には、作業メモ、仮リンク、開発用語を混ぜない。
-- 公開buildから開発用表記、開発用の購入状態表示、未確定の金額表示が消えていることを、同チェックリストへ記録する。
+- ストア情報を更新した場合は、公開ページのリンクと表示を確認する。
 
 ### リリースノート
 
