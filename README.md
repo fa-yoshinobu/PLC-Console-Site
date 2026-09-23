@@ -30,7 +30,7 @@ ProjectBuilder は、[`PLC-Console-ProjectBuilder` の Releases](https://github.
 | [`search.html`](search.html) | サイト内検索 |
 | [`start/`](start/) | 入手・インストール、はじめる |
 | [`plc/`](plc/) | PLC 接続、Wi-Fi・ネットワーク、MELSEC / KEYENCE 設定、機種別の接続設定例 |
-| [`monitoring/`](monitoring/) | 監視、リスト登録編集、デバイス操作パネル、タイムチャート、トラップ |
+| [`monitoring/`](monitoring/) | 監視、リスト登録編集、デバイス操作パネル、コメント、タイムチャート、トラップ |
 | [`settings/`](settings/) | メニュー、CPU操作、デバイス範囲、モニタ表示設定、コメント・QR・JSON、エラー履歴、アプリ設定、ライセンス、バージョン情報 |
 | [`projectbuilder/`](projectbuilder/) | ProjectBuilder、デバイス入力、QR 生成 |
 | [`reference/`](reference/) | サポート、プライバシー、アプリ権限、利用条件、購入・返金、用語集、リリースノート、困ったとき |

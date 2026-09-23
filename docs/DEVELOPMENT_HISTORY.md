@@ -15,6 +15,16 @@ static documentation site.
   of mechanical refactors.
 - Keep checks lightweight enough to run in GitHub Actions before deploy.
 
+## 2026-09-24 Comment Overview URL Restoration
+
+- Restored `monitoring/comments.html` as an overview of CSV comment import and
+  direct KEYENCE PLC comment reading, preserving its original two-method scope.
+- Preserved the legacy `csv-comment-import` and `plc-comment-import` fragment IDs
+  and linked to the current Settings guides.
+- Added the overview to the homepage and shared navigation, between the Device
+  Control Panel and Time Chart pages in the reciprocal main sequence.
+- Regenerated the page metadata, search index, and sitemap.
+
 ## 2026-09-12 Google Play公開リンク
 
 - Google Playの日本・米国向けページで公開とversion `1.0.0`を確認し、トップ、入手・インストール、Supportへ入手リンクを追加した。

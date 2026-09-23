@@ -5,6 +5,10 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://plc-console.fa-labo.com/monitoring/comments.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://plc-console.fa-labo.com/monitoring/focus-panel.html</loc>
     <priority>0.7</priority>
   </url>
