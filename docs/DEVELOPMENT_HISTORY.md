@@ -15,6 +15,20 @@ static documentation site.
   of mechanical refactors.
 - Keep checks lightweight enough to run in GitHub Actions before deploy.
 
+## 2026-10-07 Indexing And Legacy URL Maintenance
+
+- Restored `monitoring/writing.html` and `settings/project-json.html` as instant
+  meta-refresh redirects to the current write instructions and JSON export guide.
+  Each has a destination canonical and manual links, and is excluded from the
+  sitemap and site search. No `noindex` blocks the redirect signals.
+- Matched homepage links in all public pages, the shared template and site search
+  to the canonical directory root instead of `index.html`.
+- Added a versioned page-update date manifest for deterministic sitemap `lastmod`
+  generation. All 55 canonical pages were actually updated by the home-link fix
+  on 2026-10-07. Build time and sitemap resubmission do not alter these dates.
+- Extended existing checks to validate compatibility destinations and anchors,
+  and documented HTTP local previews for directory-root links.
+
 ## 2026-09-24 Comment Overview URL Restoration
 
 - Restored `monitoring/comments.html` as an overview of CSV comment import and

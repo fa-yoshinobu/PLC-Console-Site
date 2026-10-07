@@ -10,10 +10,12 @@ import sys
 from html.parser import HTMLParser
 from pathlib import Path
 
+from site_config import REDIRECTS
+
 
 ROOT = Path(__file__).resolve().parents[2]
 OUTPUT = ROOT / "assets" / "search-index.js"
-EXCLUDED = {"404.html", "search.html"}
+EXCLUDED = {"404.html", "search.html", *REDIRECTS}
 
 
 class SearchPageParser(HTMLParser):
@@ -84,12 +86,13 @@ def pages() -> list[Path]:
 def build() -> str:
     entries: list[dict[str, object]] = []
     for path in pages():
+        rel = path.relative_to(ROOT).as_posix()
         parser = SearchPageParser()
         parser.feed(path.read_text(encoding="utf-8"))
         entries.append(
             {
                 "title": parser.h1,
-                "url": path.relative_to(ROOT).as_posix(),
+                "url": "./" if rel == "index.html" else rel,
                 "description": parser.description,
                 "headings": parser.headings,
                 "text": clean_text(" ".join(parser.text)),

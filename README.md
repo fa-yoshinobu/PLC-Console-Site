@@ -38,7 +38,7 @@ ProjectBuilder は、[`PLC-Console-ProjectBuilder` の Releases](https://github.
 
 ## ローカル確認
 
-静的ファイルだけで動作するため、ブラウザで [`index.html`](index.html) を開けば確認できます。
+静的ファイルだけで動作します。トップへのリンクを正規URLの `/` に揃えているため、ローカルではHTTPサーバーで確認します。
 
 macOS の terminal から公開サイトを開く場合:
 
@@ -46,10 +46,10 @@ macOS の terminal から公開サイトを開く場合:
 open https://plc-console.fa-labo.com/
 ```
 
-Windows PowerShell からローカル確認する場合:
+repository root で次のコマンドを実行し、ブラウザで `http://127.0.0.1:8000/` を開きます。
 
 ```powershell
-Start-Process .\index.html
+python -m http.server 8000 --bind 127.0.0.1
 ```
 
 ## メンテナ向け資料

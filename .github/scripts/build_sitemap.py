@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Generate sitemap.xml for the FA Labo PLC Console manual site.
 
-Every public HTML page is listed with an absolute URL. `404.html` and the
-`templates/` directory are excluded. No `<lastmod>` is emitted so the output is
-deterministic and safe to verify in CI.
+Every canonical public HTML page is listed with an absolute URL. `404.html`,
+compatibility redirects and the `templates/` directory are excluded. Actual
+page-update dates come from .github/sitemap-lastmod.json, never the build date.
 
 Usage:
     python .github/scripts/build_sitemap.py            # write sitemap.xml
@@ -13,13 +13,17 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import json
 import sys
+from datetime import date
 from pathlib import Path
+
+from site_config import REDIRECTS, SITE_ORIGIN
 
 ROOT = Path(__file__).resolve().parents[2]
 OUTPUT = ROOT / "sitemap.xml"
-SITE_ORIGIN = "https://plc-console.fa-labo.com"
-EXCLUDED = {"404.html"}
+EXCLUDED = {"404.html", *REDIRECTS}
+LASTMOD = ROOT / ".github" / "sitemap-lastmod.json"
 
 
 def pages() -> list[str]:
@@ -39,15 +43,34 @@ def loc_for(rel: str) -> str:
 
 
 def build() -> str:
+    rels = pages()
+    modified = json.loads(LASTMOD.read_text(encoding="utf-8"))
+    if not isinstance(modified, dict):
+        raise SystemExit("sitemap-lastmod.json must be an object mapping page paths to dates")
+    missing = set(rels) - modified.keys()
+    extra = modified.keys() - set(rels)
+    if missing or extra:
+        raise SystemExit(
+            "sitemap-lastmod.json paths differ from canonical pages: "
+            f"missing={sorted(missing)}, extra={sorted(extra)}"
+        )
+    for rel, value in modified.items():
+        try:
+            valid = isinstance(value, str) and date.fromisoformat(value).isoformat() == value
+        except ValueError:
+            valid = False
+        if not valid:
+            raise SystemExit(f"sitemap-lastmod.json: {rel} must have a YYYY-MM-DD date")
     lines = [
         '<?xml version="1.0" encoding="UTF-8"?>',
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
     ]
-    for rel in pages():
+    for rel in rels:
         priority = "1.0" if rel == "index.html" else "0.7"
         lines += [
             "  <url>",
             f"    <loc>{loc_for(rel)}</loc>",
+            f"    <lastmod>{modified[rel]}</lastmod>",
             f"    <priority>{priority}</priority>",
             "  </url>",
         ]

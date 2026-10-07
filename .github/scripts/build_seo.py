@@ -28,8 +28,9 @@ import sys
 from html import escape, unescape
 from pathlib import Path
 
+from site_config import REDIRECTS, SITE_ORIGIN
+
 ROOT = Path(__file__).resolve().parents[2]
-SITE_ORIGIN = "https://plc-console.fa-labo.com"
 SITE_NAME = "FA Labo PLC Console 操作マニュアル"
 APP_NAME = "FA Labo PLC Console"
 APP_STORE_URL = "https://apps.apple.com/jp/app/fa-labo-plc-console/id6783619471"
@@ -179,6 +180,15 @@ def structured_data(page: Path, source: str, canonical: str, title: str, desc: s
 
 def build_block(page: Path, source: str) -> str:
     rel = page.relative_to(ROOT).as_posix()
+    if rel in REDIRECTS:
+        target = f"{SITE_ORIGIN}/{REDIRECTS[rel]}"
+        canonical = target.split("#", 1)[0]
+        return "\n".join([
+            f"  {BEGIN}",
+            f'  <meta http-equiv="refresh" content="0; url={escape(target, quote=True)}">',
+            f'  <link rel="canonical" href="{escape(canonical, quote=True)}">',
+            f"  {END}",
+        ])
     is_index = rel == "index.html"
     is_404 = rel == "404.html"
 

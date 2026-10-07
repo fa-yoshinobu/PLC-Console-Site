@@ -2,222 +2,277 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://plc-console.fa-labo.com/</loc>
+    <lastmod>2026-10-07</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://plc-console.fa-labo.com/monitoring/comments.html</loc>
+    <lastmod>2026-10-07</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://plc-console.fa-labo.com/monitoring/focus-panel.html</loc>
+    <lastmod>2026-10-07</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://plc-console.fa-labo.com/monitoring/list-edit.html</loc>
+    <lastmod>2026-10-07</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://plc-console.fa-labo.com/monitoring/monitoring.html</loc>
+    <lastmod>2026-10-07</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://plc-console.fa-labo.com/monitoring/time-chart.html</loc>
+    <lastmod>2026-10-07</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://plc-console.fa-labo.com/monitoring/traps.html</loc>
+    <lastmod>2026-10-07</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://plc-console.fa-labo.com/plc/connection.html</loc>
+    <lastmod>2026-10-07</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://plc-console.fa-labo.com/plc/keyence-settings.html</loc>
+    <lastmod>2026-10-07</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://plc-console.fa-labo.com/plc/melsec-settings.html</loc>
+    <lastmod>2026-10-07</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://plc-console.fa-labo.com/plc/models/keyence-kv-5000.html</loc>
+    <lastmod>2026-10-07</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://plc-console.fa-labo.com/plc/models/keyence-kv-7000.html</loc>
+    <lastmod>2026-10-07</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://plc-console.fa-labo.com/plc/models/keyence-kv-8000.html</loc>
+    <lastmod>2026-10-07</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://plc-console.fa-labo.com/plc/models/keyence-kv-x500.html</loc>
+    <lastmod>2026-10-07</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://plc-console.fa-labo.com/plc/models/keyence-kv-xle02.html</loc>
+    <lastmod>2026-10-07</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://plc-console.fa-labo.com/plc/models/melsec-iq-f.html</loc>
+    <lastmod>2026-10-07</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://plc-console.fa-labo.com/plc/models/melsec-iq-l.html</loc>
+    <lastmod>2026-10-07</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://plc-console.fa-labo.com/plc/models/melsec-iq-r.html</loc>
+    <lastmod>2026-10-07</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://plc-console.fa-labo.com/plc/models/melsec-lcpu.html</loc>
+    <lastmod>2026-10-07</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://plc-console.fa-labo.com/plc/models/melsec-lj71e71-100.html</loc>
+    <lastmod>2026-10-07</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://plc-console.fa-labo.com/plc/models/melsec-mx-f.html</loc>
+    <lastmod>2026-10-07</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://plc-console.fa-labo.com/plc/models/melsec-mx-r.html</loc>
+    <lastmod>2026-10-07</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://plc-console.fa-labo.com/plc/models/melsec-qj71e71-100.html</loc>
+    <lastmod>2026-10-07</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://plc-console.fa-labo.com/plc/models/melsec-qnu.html</loc>
+    <lastmod>2026-10-07</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://plc-console.fa-labo.com/plc/models/melsec-qnudv.html</loc>
+    <lastmod>2026-10-07</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://plc-console.fa-labo.com/plc/models/melsec-rj71en71.html</loc>
+    <lastmod>2026-10-07</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://plc-console.fa-labo.com/plc/network-settings.html</loc>
+    <lastmod>2026-10-07</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://plc-console.fa-labo.com/plc/plc-side-settings.html</loc>
+    <lastmod>2026-10-07</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://plc-console.fa-labo.com/projectbuilder/projectbuilder-devices.html</loc>
+    <lastmod>2026-10-07</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://plc-console.fa-labo.com/projectbuilder/projectbuilder-qr.html</loc>
+    <lastmod>2026-10-07</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://plc-console.fa-labo.com/projectbuilder/projectbuilder.html</loc>
+    <lastmod>2026-10-07</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://plc-console.fa-labo.com/reference/app-permissions.html</loc>
+    <lastmod>2026-10-07</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://plc-console.fa-labo.com/reference/glossary.html</loc>
+    <lastmod>2026-10-07</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://plc-console.fa-labo.com/reference/privacy-policy.html</loc>
+    <lastmod>2026-10-07</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://plc-console.fa-labo.com/reference/purchase-info.html</loc>
+    <lastmod>2026-10-07</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://plc-console.fa-labo.com/reference/release-notes.html</loc>
+    <lastmod>2026-10-07</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://plc-console.fa-labo.com/reference/support.html</loc>
+    <lastmod>2026-10-07</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://plc-console.fa-labo.com/reference/terms.html</loc>
+    <lastmod>2026-10-07</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://plc-console.fa-labo.com/reference/troubleshooting.html</loc>
+    <lastmod>2026-10-07</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://plc-console.fa-labo.com/search.html</loc>
+    <lastmod>2026-10-07</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://plc-console.fa-labo.com/settings/app-settings.html</loc>
+    <lastmod>2026-10-07</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://plc-console.fa-labo.com/settings/comment-import.html</loc>
+    <lastmod>2026-10-07</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://plc-console.fa-labo.com/settings/cpu-control.html</loc>
+    <lastmod>2026-10-07</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://plc-console.fa-labo.com/settings/csv-comment-import.html</loc>
+    <lastmod>2026-10-07</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://plc-console.fa-labo.com/settings/device-range.html</loc>
+    <lastmod>2026-10-07</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://plc-console.fa-labo.com/settings/error-history.html</loc>
+    <lastmod>2026-10-07</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://plc-console.fa-labo.com/settings/json-export.html</loc>
+    <lastmod>2026-10-07</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://plc-console.fa-labo.com/settings/json-import.html</loc>
+    <lastmod>2026-10-07</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://plc-console.fa-labo.com/settings/license.html</loc>
+    <lastmod>2026-10-07</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://plc-console.fa-labo.com/settings/monitor-display-settings.html</loc>
+    <lastmod>2026-10-07</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://plc-console.fa-labo.com/settings/qr-import.html</loc>
+    <lastmod>2026-10-07</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://plc-console.fa-labo.com/settings/tools-menu.html</loc>
+    <lastmod>2026-10-07</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://plc-console.fa-labo.com/settings/version-info.html</loc>
+    <lastmod>2026-10-07</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://plc-console.fa-labo.com/start/getting-started.html</loc>
+    <lastmod>2026-10-07</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://plc-console.fa-labo.com/start/install.html</loc>
+    <lastmod>2026-10-07</lastmod>
     <priority>0.7</priority>
   </url>
 </urlset>

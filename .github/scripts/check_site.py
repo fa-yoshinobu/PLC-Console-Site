@@ -13,6 +13,8 @@ from pathlib import Path
 from typing import Iterable
 from urllib.parse import unquote, urlsplit
 
+from site_config import REDIRECTS, SITE_ORIGIN
+
 
 ROOT = Path(__file__).resolve().parents[2]
 TEMPLATE = ROOT / "templates" / "page-shell.html.tmpl"
@@ -64,6 +66,8 @@ class SiteHTMLParser(HTMLParser):
         self.images: list[tuple[int, dict[str, str | None]]] = []
         self.script_sources: list[tuple[int, str]] = []
         self.anchors: set[str] = set()
+        self.canonical_urls: list[str | None] = []
+        self.refresh_values: list[str | None] = []
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         self._inspect_tag(tag.lower(), attrs)
@@ -74,6 +78,10 @@ class SiteHTMLParser(HTMLParser):
     def _inspect_tag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         line = self.getpos()[0]
         attr_map = dict(attrs)
+        if tag == "link" and "canonical" in (attr_map.get("rel") or "").split():
+            self.canonical_urls.append(attr_map.get("href"))
+        if tag == "meta" and (attr_map.get("http-equiv") or "").lower() == "refresh":
+            self.refresh_values.append(attr_map.get("content"))
         for attr_name in ("href", "src"):
             value = attr_map.get(attr_name)
             if value is not None:
@@ -246,7 +254,10 @@ def resolve_reference(page: Path, value: str) -> Path | None:
     else:
         normalized = posixpath.normpath(path)
         target = page.parent / Path(*normalized.split("/"))
-    return target.resolve()
+    target = target.resolve()
+    if target.is_dir():
+        target = target / "index.html"
+    return target
 
 
 def anchors_for(path: Path, cache: dict[Path, set[str]]) -> set[str]:
@@ -329,7 +340,7 @@ def check_nav_js(page: Path, parser: SiteHTMLParser) -> list[SiteIssue]:
 
 
 def expected_header_lines(page: Path, template_source: str) -> list[str] | None:
-    source = template_source.replace("{{BASE}}", base_prefix(page))
+    source = template_source.replace("{{BASE}}", base_prefix(page)).replace("{{HOME}}", base_prefix(page) or "./")
     header = header_for(TEMPLATE, source)
     if header is None:
         return None
@@ -337,7 +348,7 @@ def expected_header_lines(page: Path, template_source: str) -> list[str] | None:
 
 
 def expected_footer_lines(page: Path, template_source: str) -> list[str] | None:
-    source = template_source.replace("{{BASE}}", base_prefix(page))
+    source = template_source.replace("{{BASE}}", base_prefix(page)).replace("{{HOME}}", base_prefix(page) or "./")
     footer = footer_for(TEMPLATE, source)
     if footer is None:
         return None
@@ -403,6 +414,24 @@ def run() -> int:
     header_diffs: list[tuple[Path, list[str]]] = []
     footer_diffs: list[tuple[Path, list[str]]] = []
     anchor_cache: dict[Path, set[str]] = {}
+
+    for rel, target in REDIRECTS.items():
+        page = ROOT / rel
+        if not page.is_file():
+            issues.append(SiteIssue(page, None, "missing compatibility redirect page"))
+            continue
+        parser = parse_site_html(read_text(page))
+        absolute_target = f"{SITE_ORIGIN}/{target}"
+        if parser.refresh_values != [f"0; url={absolute_target}"]:
+            issues.append(SiteIssue(page, None, "compatibility redirect must instantly refresh to its registered destination"))
+        if parser.canonical_urls != [absolute_target.split("#", 1)[0]]:
+            issues.append(SiteIssue(page, None, "compatibility redirect canonical must match the destination page"))
+        parsed = urlsplit(target)
+        target_page = ROOT / parsed.path
+        if not target_page.is_file():
+            issues.append(SiteIssue(page, None, f"missing redirect destination: {target}"))
+        elif parsed.fragment and parsed.fragment not in anchors_for(target_page, anchor_cache):
+            issues.append(SiteIssue(page, None, f"missing redirect destination anchor: {target}"))
 
     for page in pages:
         source = read_text(page)

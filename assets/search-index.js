@@ -1,7 +1,7 @@
 window.PLC_CONSOLE_SEARCH_INDEX = [
   {
     "title": "FA Labo PLC Console",
-    "url": "index.html",
+    "url": "./",
     "description": "FA Labo PLC Console は MELSEC / KEYENCE PLC の監視、書込、記録を行う Android / iOS アプリです。",
     "headings": [
       "FA Labo PLC Console",

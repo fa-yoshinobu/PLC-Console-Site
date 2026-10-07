@@ -2,7 +2,7 @@
 
 FA Labo PLC Console マニュアルサイトのメンテナ向け資料です。GitHub の入口になる `README.md` には軽い説明だけを置き、編集方針や運用ルールはこのファイルで管理します。
 
-最終更新: 2026-09-04
+最終更新: 2026-10-07
 
 ## Directory Layout
 
@@ -38,6 +38,8 @@ FA Labo PLC Console マニュアルサイトのメンテナ向け資料です。
 | `.github/scripts/build_search_index.py` | 検索データの生成と更新漏れ検査 |
 | `.github/scripts/build_seo.py` | 各ページ `<head>` の canonical / OGP / Twitter / JSON-LD ブロック生成と更新漏れ検査 |
 | `.github/scripts/build_sitemap.py` | `sitemap.xml` の生成と更新漏れ検査 |
+| `.github/sitemap-lastmod.json` | 正規ページごとの実際の最終更新日。本文・リンクを変更したページの日付を更新する |
+| `.github/scripts/site_config.py` | 旧URLから現在の説明ページへの互換リダイレクト対応表 |
 | `.github/scripts/build_brand_assets.py` | favicon PNG / OGP 画像の生成。フォント依存のため CI では検査しない |
 | `templates/page-shell.html.tmpl` | 共通ヘッダー/ナビ更新時の参照テンプレート |
 | `templates/store-links.html.tmpl` | 公開済みアプリの正式 Store URL と公式バッジをまとめた、ページ追加・更新用テンプレート |
@@ -53,6 +55,7 @@ FA Labo PLC Console マニュアルサイトのメンテナ向け資料です。
 7. ページを追加・改名した場合、または `<title>` / `<meta name="description">` を変更した場合は、
    `python .github/scripts/build_seo.py` と `python .github/scripts/build_sitemap.py` を実行して
    `<head>` の SEO ブロックと `sitemap.xml` を更新する。
+   本文・リンクなどを変更した場合は、そのページの `.github/sitemap-lastmod.json` の日付を実際の更新日に変更して、`build_sitemap.py` を実行する。
 8. ページを追加または本文を更新した場合は、`python .github/scripts/build_search_index.py` で検索インデックスを更新する。
 9. `python .github/scripts/build_search_index.py --check`、`python .github/scripts/build_sitemap.py --check`、
    `python .github/scripts/build_seo.py --check`、`python .github/scripts/check_site.py` を実行する。
@@ -64,7 +67,7 @@ FA Labo PLC Console マニュアルサイトのメンテナ向け資料です。
 ### サイト内検索
 
 - `search.html` は外部サービスへ問い合わせず、`assets/search-index.js` をブラウザ内で検索する。
-- 検索対象は `404.html` と `search.html` を除く公開HTMLで、タイトル、説明、見出し、本文を収録する。
+- 検索対象は `404.html`、`search.html`、互換リダイレクトを除く公開HTMLで、タイトル、説明、見出し、本文を収録する。
 - 複数語はすべてを含むページに絞り、タイトル、見出し、説明、本文の順で重み付けする。
 - `assets/search-index.js` は生成物なので、HTML本文を修正した後に生成スクリプトで更新する。
 
@@ -76,7 +79,10 @@ FA Labo PLC Console マニュアルサイトのメンテナ向け資料です。
 - ブロックの内容はページ自身の `<title>` と `<meta name="description">` から作る。この2つが正しければメタデータも正しくなる。
 - `description` は各ページで具体的に書く（対象機能、主要な操作、上限値など）。「〜の機能。」だけの短い説明にしない。
 - `sitemap.xml` と `robots.txt` は `https://plc-console.fa-labo.com/` を基準にした絶対URL。ドメインを変えたら
-  `build_seo.py` / `build_sitemap.py` の `SITE_ORIGIN` を更新する。
+  `.github/scripts/site_config.py` の `SITE_ORIGIN` を更新する。
+- トップへのHTMLリンクは階層に応じた `./`、`../`、`../../` を使い、`index.html` を省略する。テンプレートの `{{HOME}}` はその相対ルート、`{{BASE}}` はその他のファイルへの相対接頭辞。
+- `lastmod` は `.github/sitemap-lastmod.json` に記録した実際のページ更新日を使う。ビルドや再送信だけで全ページの日付を変更しない。新規ページは日付も登録し、削除・リダイレクト化したページは日付表から除く。
+- 旧 `monitoring/writing.html` は `monitoring/focus-panel.html#writing`、旧 `settings/project-json.html` は `settings/json-export.html` へ即時 `meta refresh` で案内する。GitHub Pages本体ではパスごとのHTTP 301を設定できないための互換ページで、転送先canonicalと手動リンクを持つ。`noindex` は追加せず、サイトマップと検索インデックスには掲載しない。
 - `assets/favicon.svg` 以外のアイコンと `assets/images/og-cover.png` は `build_brand_assets.py` の生成物。
   ブランドマークや文言を変えたときだけ再生成してコミットする（フォント依存のため CI では検査しない）。
 - Google Search Console でサイト（`https://plc-console.fa-labo.com/`）の登録状況と `sitemap.xml` の送信状況を確認し、未登録・未送信の場合は登録・送信する。
@@ -171,7 +177,7 @@ FA Labo PLC Console マニュアルサイトのメンテナ向け資料です。
 
 ## Preview
 
-ブラウザで repository root の `index.html` を開けば確認できます。静的ファイルだけで動作するため、GitHub Pages や通常の Web サーバーへそのまま配置できます。
+静的ファイルだけで動作するため、GitHub Pages や通常の Web サーバーへそのまま配置できます。ローカルでは相対ディレクトリへのトップリンクを解決するためHTTPサーバーを使います。
 
 macOS の terminal から開く場合:
 
@@ -179,10 +185,10 @@ macOS の terminal から開く場合:
 open https://plc-console.fa-labo.com/
 ```
 
-Windows PowerShell からローカル確認する場合:
+repository root で実行し、ブラウザで `http://127.0.0.1:8000/` を開きます。
 
 ```powershell
-Start-Process .\index.html
+python -m http.server 8000 --bind 127.0.0.1
 ```
 
 ## GitHub Pages
